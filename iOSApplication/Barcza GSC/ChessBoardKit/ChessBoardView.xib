@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChessBoardView" customModule="ChessBoardKit" customModuleProvider="target">
+            <connections>
+                <outlet property="chessBoardView" destination="kmL-Xo-hOK" id="DWQ-zR-WxL"/>
+                <outletCollection property="squaresStorage" destination="5HV-nb-uKk" collectionClass="NSMutableArray" id="NR5-bC-Oli"/>
+                <outletCollection property="squaresStorage" destination="76I-0P-xcc" collectionClass="NSMutableArray" id="T0J-og-IIc"/>
+                <outletCollection property="squaresStorage" destination="ycj-XW-4bg" collectionClass="NSMutableArray" id="hMo-ol-DdF"/>
+                <outletCollection property="squaresStorage" destination="hiy-Gp-QFs" collectionClass="NSMutableArray" id="Vsl-mQ-l5F"/>
+                <outletCollection property="squaresStorage" destination="17S-sB-CsL" collectionClass="NSMutableArray" id="hUX-WR-hDa"/>
+                <outletCollection property="squaresStorage" destination="lEr-Tw-C5P" collectionClass="NSMutableArray" id="hif-dR-3v6"/>
+                <outletCollection property="squaresStorage" destination="WPp-T8-NUB" collectionClass="NSMutableArray" id="q5y-4o-EbD"/>
+                <outletCollection property="squaresStorage" destination="F3z-un-MRp" collectionClass="NSMutableArray" id="dca-EY-Fd7"/>
+                <outletCollection property="squaresStorage" destination="SdS-1O-88y" collectionClass="NSMutableArray" id="oGk-dx-lXD"/>
+                <outletCollection property="squaresStorage" destination="4dC-gp-SS5" collectionClass="NSMutableArray" id="1fE-09-Z8s"/>
+                <outletCollection property="squaresStorage" destination="Dnu-RB-fzA" collectionClass="NSMutableArray" id="ipU-nU-gcu"/>
+                <outletCollection property="squaresStorage" destination="4nd-sR-pCy" collectionClass="NSMutableArray" id="3SQ-wl-76C"/>
+                <outletCollection property="squaresStorage" destination="JaA-hh-xiR" collectionClass="NSMutableArray" id="prk-qt-DPe"/>
+                <outletCollection property="squaresStorage" destination="QXo-W7-Inb" collectionClass="NSMutableArray" id="l8P-Rb-Eyy"/>
+                <outletCollection property="squaresStorage" destination="qmH-kO-itf" collectionClass="NSMutableArray" id="KRE-hc-ayn"/>
+                <outletCollection property="squaresStorage" destination="lnL-7W-q2n" collectionClass="NSMutableArray" id="te9-2i-KVU"/>
+                <outletCollection property="squaresStorage" destination="x0f-eX-eV4" collectionClass="NSMutableArray" id="7cp-Uu-ZAb"/>
+                <outletCollection property="squaresStorage" destination="yJJ-Ji-ujs" collectionClass="NSMutableArray" id="Pds-ZN-UUt"/>
+                <outletCollection property="squaresStorage" destination="fxI-K8-mnD" collectionClass="NSMutableArray" id="YEF-oq-jVb"/>
+                <outletCollection property="squaresStorage" destination="2fN-os-ZbY" collectionClass="NSMutableArray" id="K1l-nE-qVX"/>
+                <outletCollection property="squaresStorage" destination="hbF-Ne-Hhv" collectionClass="NSMutableArray" id="7uj-Ja-98R"/>
+                <outletCollection property="squaresStorage" destination="Tnv-BR-Nkv" collectionClass="NSMutableArray" id="iF7-mf-nSG"/>
+                <outletCollection property="squaresStorage" destination="JhG-Ve-AHt" collectionClass="NSMutableArray" id="GYO-zp-5KV"/>
+                <outletCollection property="squaresStorage" destination="Jbj-k7-PB6" collectionClass="NSMutableArray" id="afc-OX-p75"/>
+                <outletCollection property="squaresStorage" destination="lzV-PM-gaY" collectionClass="NSMutableArray" id="4Jc-BJ-LU9"/>
+                <outletCollection property="squaresStorage" destination="bb9-SR-SPp" collectionClass="NSMutableArray" id="9dm-WT-EOf"/>
+                <outletCollection property="squaresStorage" destination="NGp-Cf-LkB" collectionClass="NSMutableArray" id="yfe-1v-zh2"/>
+                <outletCollection property="squaresStorage" destination="rE7-O9-doc" collectionClass="NSMutableArray" id="meD-4r-8wJ"/>
+                <outletCollection property="squaresStorage" destination="n7B-ND-mVR" collectionClass="NSMutableArray" id="o4M-kJ-m7g"/>
+                <outletCollection property="squaresStorage" destination="U4M-LD-lUL" collectionClass="NSMutableArray" id="bzk-3E-8Gn"/>
+                <outletCollection property="squaresStorage" destination="37L-SA-veM" collectionClass="NSMutableArray" id="oye-a9-bcd"/>
+                <outletCollection property="squaresStorage" destination="pWo-sh-EpE" collectionClass="NSMutableArray" id="r4e-sv-kSa"/>
+                <outletCollection property="squaresStorage" destination="t5C-ye-WkN" collectionClass="NSMutableArray" id="ONd-Dt-ZRC"/>
+                <outletCollection property="squaresStorage" destination="egY-uG-OiT" collectionClass="NSMutableArray" id="Sca-3L-jQE"/>
+                <outletCollection property="squaresStorage" destination="n89-MB-SfF" collectionClass="NSMutableArray" id="ILT-oa-OPA"/>
+                <outletCollection property="squaresStorage" destination="Rdu-06-GGQ" collectionClass="NSMutableArray" id="TqG-YK-4AL"/>
+                <outletCollection property="squaresStorage" destination="Ozj-NE-lhS" collectionClass="NSMutableArray" id="xUm-mG-kYQ"/>
+                <outletCollection property="squaresStorage" destination="dN7-P4-m4U" collectionClass="NSMutableArray" id="fre-i4-IxN"/>
+                <outletCollection property="squaresStorage" destination="Pl7-qJ-aM8" collectionClass="NSMutableArray" id="wa4-fh-QHF"/>
+                <outletCollection property="squaresStorage" destination="hv9-Nh-foa" collectionClass="NSMutableArray" id="fT0-pk-2lg"/>
+                <outletCollection property="squaresStorage" destination="Arp-CY-W8q" collectionClass="NSMutableArray" id="aCO-mY-2Gp"/>
+                <outletCollection property="squaresStorage" destination="zm9-yr-Xbi" collectionClass="NSMutableArray" id="EBr-1K-4O9"/>
+                <outletCollection property="squaresStorage" destination="15B-MX-zVl" collectionClass="NSMutableArray" id="mxC-uI-esG"/>
+                <outletCollection property="squaresStorage" destination="CMP-sj-9Fn" collectionClass="NSMutableArray" id="7Y4-Ui-54L"/>
+                <outletCollection property="squaresStorage" destination="4e9-ie-KXa" collectionClass="NSMutableArray" id="e2u-rU-dNm"/>
+                <outletCollection property="squaresStorage" destination="b0w-t0-hI4" collectionClass="NSMutableArray" id="ym3-eS-ZhM"/>
+                <outletCollection property="squaresStorage" destination="rkv-zm-c0B" collectionClass="NSMutableArray" id="t2K-Ku-dcN"/>
+                <outletCollection property="squaresStorage" destination="9cS-k9-1hn" collectionClass="NSMutableArray" id="Qa9-lM-wdX"/>
+                <outletCollection property="squaresStorage" destination="0H2-6c-Gc9" collectionClass="NSMutableArray" id="1rq-hQ-skb"/>
+                <outletCollection property="squaresStorage" destination="Ov1-7Y-tei" collectionClass="NSMutableArray" id="l6A-vv-fyx"/>
+                <outletCollection property="squaresStorage" destination="Ky9-mc-NxP" collectionClass="NSMutableArray" id="2CH-6l-N2c"/>
+                <outletCollection property="squaresStorage" destination="ghm-Vn-e3Y" collectionClass="NSMutableArray" id="rWd-8n-yIp"/>
+                <outletCollection property="squaresStorage" destination="PzF-RJ-W6X" collectionClass="NSMutableArray" id="hh6-Ou-Bp1"/>
+                <outletCollection property="squaresStorage" destination="IQh-wZ-dwk" collectionClass="NSMutableArray" id="aof-88-jun"/>
+                <outletCollection property="squaresStorage" destination="7iX-Tr-NEm" collectionClass="NSMutableArray" id="8ra-NQ-gHT"/>
+                <outletCollection property="squaresStorage" destination="F77-3W-NZ3" collectionClass="NSMutableArray" id="NmR-xY-wwH"/>
+                <outletCollection property="squaresStorage" destination="jq9-zJ-gr9" collectionClass="NSMutableArray" id="HjX-eG-jai"/>
+                <outletCollection property="squaresStorage" destination="paP-qg-uSD" collectionClass="NSMutableArray" id="sHj-at-vEM"/>
+                <outletCollection property="squaresStorage" destination="9jN-Zr-AZs" collectionClass="NSMutableArray" id="8T3-DI-gSd"/>
+                <outletCollection property="squaresStorage" destination="zXL-1Z-P9T" collectionClass="NSMutableArray" id="BUg-ZQ-1RE"/>
+                <outletCollection property="squaresStorage" destination="5jq-cH-lZQ" collectionClass="NSMutableArray" id="DlW-9p-Wx0"/>
+                <outletCollection property="squaresStorage" destination="dkU-Zo-hXB" collectionClass="NSMutableArray" id="UTm-cE-cS5"/>
+                <outletCollection property="squaresStorage" destination="Ge2-oZ-keh" collectionClass="NSMutableArray" id="ONI-pz-cc6"/>
+                <outletCollection property="squaresStorage" destination="9LC-hM-j2m" collectionClass="NSMutableArray" id="gKV-sV-CZl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kmL-Xo-hOK">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="c7b-s5-Yqu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vii-Hp-6qT">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HV-nb-uKk">
+                                    <rect key="frame" x="0.0" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="xys-Bx-3YP"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76I-0P-xcc">
+                                    <rect key="frame" x="47" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="OBb-cb-RrI"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycj-XW-4bg">
+                                    <rect key="frame" x="94" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="sUe-z6-cHT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiy-Gp-QFs">
+                                    <rect key="frame" x="140.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="B8B-8M-Vie"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17S-sB-CsL">
+                                    <rect key="frame" x="187.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="ofa-hZ-0xk"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEr-Tw-C5P">
+                                    <rect key="frame" x="234.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="luT-rD-MeG"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPp-T8-NUB">
+                                    <rect key="frame" x="281.5" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="HyB-ta-Sob"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnL-7W-q2n">
+                                    <rect key="frame" x="328" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="5Ud-hg-7jO"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dmn-0X-aQK">
+                            <rect key="frame" x="0.0" y="83.5" width="375" height="83.5"/>
+                            <subviews>
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3z-un-MRp">
+                                    <rect key="frame" x="0.0" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="ouz-qX-xyp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdS-1O-88y">
+                                    <rect key="frame" x="47" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="gZd-HA-b1d"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dC-gp-SS5">
+                                    <rect key="frame" x="94" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="WWZ-1n-7y3"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnu-RB-fzA">
+                                    <rect key="frame" x="140.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="ock-Dn-eKG"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nd-sR-pCy">
+                                    <rect key="frame" x="187.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="ZfQ-DC-OGv"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaA-hh-xiR">
+                                    <rect key="frame" x="234.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="EIb-ie-Oxp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXo-W7-Inb">
+                                    <rect key="frame" x="281.5" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="ZPr-PG-STv"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmH-kO-itf">
+                                    <rect key="frame" x="328" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="xwH-bZ-Xii"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HfO-Lq-8rE">
+                            <rect key="frame" x="0.0" y="167" width="375" height="83"/>
+                            <subviews>
+                                <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0f-eX-eV4">
+                                    <rect key="frame" x="0.0" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="lXi-Va-VAD"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJJ-Ji-ujs">
+                                    <rect key="frame" x="47" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="L2O-fM-tCI"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxI-K8-mnD">
+                                    <rect key="frame" x="94" y="0.0" width="46.5" height="83"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="fd0-K9-Dr6"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fN-os-ZbY">
+                                    <rect key="frame" x="140.5" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="jNh-Jg-zqb"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbF-Ne-Hhv">
+                                    <rect key="frame" x="187.5" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="hdm-SA-A4Z"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnv-BR-Nkv">
+                                    <rect key="frame" x="234.5" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="xNC-u5-oLg"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhG-Ve-AHt">
+                                    <rect key="frame" x="281.5" y="0.0" width="46.5" height="83"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="AVk-yn-dbR"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbj-k7-PB6">
+                                    <rect key="frame" x="328" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="dM2-4y-tL0"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TX7-lI-aTp">
+                            <rect key="frame" x="0.0" y="250" width="375" height="83.5"/>
+                            <subviews>
+                                <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzV-PM-gaY">
+                                    <rect key="frame" x="0.0" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="DaY-Vd-hKN"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb9-SR-SPp">
+                                    <rect key="frame" x="47" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="5W5-Ys-NIa"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGp-Cf-LkB">
+                                    <rect key="frame" x="94" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="qmL-73-v2N"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rE7-O9-doc">
+                                    <rect key="frame" x="140.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="3pr-iF-3Tg"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7B-ND-mVR">
+                                    <rect key="frame" x="187.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="APu-Ct-w4g"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="29" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4M-LD-lUL">
+                                    <rect key="frame" x="234.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="mYd-1L-9b6"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37L-SA-veM">
+                                    <rect key="frame" x="281.5" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="hjK-jp-MUA"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="31" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWo-sh-EpE">
+                                    <rect key="frame" x="328" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="usw-tl-tzJ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="w6G-eV-Y1n">
+                            <rect key="frame" x="0.0" y="333.5" width="375" height="83.5"/>
+                            <subviews>
+                                <button opaque="NO" tag="32" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5C-ye-WkN">
+                                    <rect key="frame" x="0.0" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="4TB-pH-fa8"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="33" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egY-uG-OiT">
+                                    <rect key="frame" x="47" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="Bge-EY-TzO"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="34" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n89-MB-SfF">
+                                    <rect key="frame" x="94" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="Ee1-mg-3qn"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="35" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdu-06-GGQ">
+                                    <rect key="frame" x="140.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="fdS-WJ-RZu"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="36" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozj-NE-lhS">
+                                    <rect key="frame" x="187.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="0d9-uX-0Dv"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="37" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dN7-P4-m4U">
+                                    <rect key="frame" x="234.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="iGK-X4-VPp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="38" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pl7-qJ-aM8">
+                                    <rect key="frame" x="281.5" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="9oP-nO-ksi"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="39" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hv9-Nh-foa">
+                                    <rect key="frame" x="328" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="Jq0-fL-TZY"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aWJ-dk-fl7">
+                            <rect key="frame" x="0.0" y="417" width="375" height="83.5"/>
+                            <subviews>
+                                <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Arp-CY-W8q">
+                                    <rect key="frame" x="0.0" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="Q38-JW-zC0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="41" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm9-yr-Xbi">
+                                    <rect key="frame" x="47" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="mrE-7o-Oek"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="42" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15B-MX-zVl">
+                                    <rect key="frame" x="94" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="4Hk-PT-Aff"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="43" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMP-sj-9Fn">
+                                    <rect key="frame" x="140.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="CSI-WJ-Jju"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4e9-ie-KXa">
+                                    <rect key="frame" x="187.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="EC4-sO-0yH"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="45" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0w-t0-hI4">
+                                    <rect key="frame" x="234.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="kHe-bL-8rN"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="46" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkv-zm-c0B">
+                                    <rect key="frame" x="281.5" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="ZiW-KO-hkA"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="47" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cS-k9-1hn">
+                                    <rect key="frame" x="328" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="lP5-Th-kJv"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Xn2-LZ-dKe">
+                            <rect key="frame" x="0.0" y="500.5" width="375" height="83"/>
+                            <subviews>
+                                <button opaque="NO" tag="48" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0H2-6c-Gc9">
+                                    <rect key="frame" x="0.0" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="TYE-xF-KPb"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="49" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ov1-7Y-tei">
+                                    <rect key="frame" x="47" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="1kP-vd-CBp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ky9-mc-NxP">
+                                    <rect key="frame" x="94" y="0.0" width="46.5" height="83"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="aHc-2r-Jcu"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghm-Vn-e3Y">
+                                    <rect key="frame" x="140.5" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="GY3-sr-xbx"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="52" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzF-RJ-W6X">
+                                    <rect key="frame" x="187.5" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="zOE-2Y-3zv"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="53" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQh-wZ-dwk">
+                                    <rect key="frame" x="234.5" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="aHL-wt-rzP"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="54" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iX-Tr-NEm">
+                                    <rect key="frame" x="281.5" y="0.0" width="46.5" height="83"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="TBb-jT-NCa"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F77-3W-NZ3">
+                                    <rect key="frame" x="328" y="0.0" width="47" height="83"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="m4n-O0-KAe"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="scZ-MS-nhI">
+                            <rect key="frame" x="0.0" y="583.5" width="375" height="83.5"/>
+                            <subviews>
+                                <button opaque="NO" tag="56" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jq9-zJ-gr9">
+                                    <rect key="frame" x="0.0" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="f9d-rH-DNj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="57" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paP-qg-uSD">
+                                    <rect key="frame" x="47" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="Bpr-Ik-aO3"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="58" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jN-Zr-AZs">
+                                    <rect key="frame" x="94" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="y1c-P1-AHv"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="59" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXL-1Z-P9T">
+                                    <rect key="frame" x="140.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="dZJ-01-7nJ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jq-cH-lZQ">
+                                    <rect key="frame" x="187.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="TmX-7o-F6s"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkU-Zo-hXB">
+                                    <rect key="frame" x="234.5" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="gJp-Jh-keh"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="62" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge2-oZ-keh">
+                                    <rect key="frame" x="281.5" y="0.0" width="46.5" height="83.5"/>
+                                    <color key="backgroundColor" red="0.65894670050000004" green="0.48610668369999999" blue="0.328333824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="kbW-ag-7Z1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="63" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LC-hM-j2m">
+                                    <rect key="frame" x="328" y="0.0" width="47" height="83.5"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="squarePressed:" destination="-1" eventType="touchUpInside" id="oqJ-2R-J9y"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="c7b-s5-Yqu" firstAttribute="leading" secondItem="2SK-vF-JgN" secondAttribute="leading" id="5x6-Mm-AcJ"/>
+                <constraint firstItem="2SK-vF-JgN" firstAttribute="bottom" secondItem="c7b-s5-Yqu" secondAttribute="bottom" id="W6O-zC-tZr"/>
+                <constraint firstItem="c7b-s5-Yqu" firstAttribute="top" secondItem="kmL-Xo-hOK" secondAttribute="top" id="gC8-CV-WZG"/>
+                <constraint firstItem="2SK-vF-JgN" firstAttribute="trailing" secondItem="c7b-s5-Yqu" secondAttribute="trailing" id="zuu-Pr-m9U"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="2SK-vF-JgN"/>
+            <point key="canvasLocation" x="169" y="-24"/>
+        </view>
+    </objects>
+</document>
