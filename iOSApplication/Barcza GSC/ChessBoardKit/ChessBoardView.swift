@@ -251,8 +251,6 @@ public class ChessBoardView: UIView {
                 if let delegate = delegate{
                     delegate.chessBoardView?(self, numberOfMove: "\(boardModel.moveCounter)")
                 }
-//                moveCounterLabel.text = "Move count: \(boardModel.moveCounter)"
-                //                testing check for white king
                 let opponentKing = boardModel.findKingPosition(withSide: .white)!
                 boardModel.threatsForWhiteKing = boardModel.searchAttackingFigurines(victim: opponentKing)
                 if boardModel.threatsForWhiteKing.isEmpty{
