@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class PGNParser{
     
@@ -31,6 +32,15 @@ class PGNParser{
     
     public func parsePGN(_ fileContent: String) -> [PGNGame]{
         return parsePGNHelper(rawData: fileContent.components(separatedBy: "\n"))
+    }
+    
+    public static func writePGNDatabaseToRealm(database: [PGNGame]){
+        let realmData = List<PGNGame>()
+        realmData.append(objectsIn: database)
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(realmData)
+        }
     }
     
     private func parsePGNHelper(rawData: [String]) -> [PGNGame]{

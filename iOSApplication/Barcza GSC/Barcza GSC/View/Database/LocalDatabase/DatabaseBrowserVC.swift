@@ -101,13 +101,16 @@ extension DatabaseBrowserVC{
                 let content = String(data: dataFromFile!,encoding: .utf8)
                 let parser = PGNParser.parser
                 let data = parser.parsePGN(content ?? "")
-                let realmData = List<PGNGame>()
-                realmData.append(objectsIn: data)
-                let realm = try! Realm()
-                try! realm.write {
-                    realm.add(realmData)
-                }
-            } 
+                PGNParser.writePGNDatabaseToRealm(database: data)
+            }
+        }else{
+            // file is not pgn
+            let alertController = UIAlertController(title: "Error", message: "File format must be pgn", preferredStyle: .alert)
+            
+            // Create the actions
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
 }
