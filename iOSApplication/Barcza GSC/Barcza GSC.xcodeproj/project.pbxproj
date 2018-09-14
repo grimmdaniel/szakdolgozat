@@ -93,6 +93,7 @@
 		081C7BD42118B7EC004B107B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		081C7BD62118B936004B107B /* MoveNameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveNameCollectionViewCell.swift; sourceTree = "<group>"; };
 		082F8C2B21162F7800A52D7F /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		085BC755214BAE7000F42C04 /* Barcza GSC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Barcza GSC.entitlements"; sourceTree = "<group>"; };
 		0861B57E2138317F00D50ED3 /* PGNGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNGame.swift; sourceTree = "<group>"; };
 		0864C8A520FB8E6900435EE3 /* GalleryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryData.swift; sourceTree = "<group>"; };
 		0864C8A820FBBB5E00435EE3 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 		08D402EE20F125730005038B /* Barcza GSC */ = {
 			isa = PBXGroup;
 			children = (
+				085BC755214BAE7000F42C04 /* Barcza GSC.entitlements */,
 				0864C8A720FBBB4B00435EE3 /* Requests */,
 				08D4030620F130D80005038B /* Cell */,
 				08D4030520F130D00005038B /* Utils */,
@@ -380,6 +382,14 @@
 					08D402EB20F125730005038B = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -669,16 +679,19 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Barcza GSC/Barcza GSC.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6C8MZX2F3A;
+				DEVELOPMENT_TEAM = H5N8DHC85Z;
 				INFOPLIST_FILE = "Barcza GSC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "daniel.grimm.Barcza-GSC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.grimm.barcza.gsc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Barcza GSC/Supplemental Files/Barcza GSC-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -693,16 +706,19 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Barcza GSC/Barcza GSC.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6C8MZX2F3A;
+				DEVELOPMENT_TEAM = H5N8DHC85Z;
 				INFOPLIST_FILE = "Barcza GSC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "daniel.grimm.Barcza-GSC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.grimm.barcza.gsc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Barcza GSC/Supplemental Files/Barcza GSC-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

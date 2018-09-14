@@ -41,7 +41,6 @@ class Piece: PieceMovement, FENGeneration{
         return _image
     }
     
-    
     func isValidMove(from: Coords,to: Coords) -> Bool {
         return !(from == to)
     }

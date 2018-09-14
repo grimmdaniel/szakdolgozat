@@ -29,6 +29,10 @@ class PGNParser{
         }
     }
     
+    public func parsePGN(_ fileContent: String) -> [PGNGame]{
+        return parsePGNHelper(rawData: fileContent.components(separatedBy: "\n"))
+    }
+    
     private func parsePGNHelper(rawData: [String]) -> [PGNGame]{
         var data = [PGNGame]()
         var type = RawType.token

@@ -9,9 +9,10 @@
 import UIKit
 import RealmSwift
 
-class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout  {
+class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIDocumentPickerDelegate{
     
     @IBOutlet weak var databasesCollectionView: UICollectionView!
+    let documentController = UIDocumentPickerViewController(documentTypes: ["public.text"], in: .import)
     var databases = [String]()
 
     override func viewDidLoad() {
@@ -19,6 +20,7 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
         
         databasesCollectionView.delegate = self
         databasesCollectionView.dataSource = self
+        documentController.delegate = self
         navigationController?.navigationBar.isHidden = false
     }
 
@@ -59,18 +61,21 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let parser = PGNParser.parser
-//        let data = parser.parsePGN(from: "twic")
-//        let realmData = List<PGNGame>()
-//        realmData.append(objectsIn: data)
-//        let realm = try! Realm()
-//        try! realm.write {
-//            realm.add(realmData)
-//        }
+        if indexPath.row == 0{
+            log.info("File storage accessed")
+            openFileFromLocalStorage()
+            return
+        }
+        
         let realm = try! Realm()
         let data = Array(realm.objects(PGNGame.self))
         navigationItem.title = ""
         performSegue(withIdentifier: "openDatabase", sender: data)
+    }
+    
+    private func openFileFromLocalStorage(){
+        documentController.modalPresentationStyle = .formSheet
+        present(documentController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,6 +84,30 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
             if let data = sender as? [PGNGame]{
                 vc.games = data
             }
+        }
+    }
+}
+
+
+extension DatabaseBrowserVC{
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+        let urlString = url.absoluteString
+        if urlString.hasSuffix(".pgn"){
+            print(url)
+            do {
+                let fm = FileManager()
+                let dataFromFile = fm.contents(atPath: url.path)
+                let content = String(data: dataFromFile!,encoding: .utf8)
+                let parser = PGNParser.parser
+                let data = parser.parsePGN(content ?? "")
+                let realmData = List<PGNGame>()
+                realmData.append(objectsIn: data)
+                let realm = try! Realm()
+                try! realm.write {
+                    realm.add(realmData)
+                }
+            } 
         }
     }
 }

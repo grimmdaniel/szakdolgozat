@@ -69,5 +69,5 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
     func chessBoardView(_ chessBoardView: ChessBoardView, numberOfMove: String) {
         moveCounterLabel.text = "Move count: " + numberOfMove
     }
-   
+    
 }

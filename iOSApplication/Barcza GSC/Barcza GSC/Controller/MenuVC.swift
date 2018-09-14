@@ -24,7 +24,6 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         menuTableView.delegate = self
         menuTableView.dataSource = self
         menuTableView.separatorStyle = .none
-        
         menuTableView.backgroundColor = ColorTheme.barczaOrange
         view.backgroundColor = ColorTheme.barczaOrange
         

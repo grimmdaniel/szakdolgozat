@@ -31,7 +31,6 @@ class Spot{
     
     func occupySpot(with piece: Piece){
         self._pieceHere = piece
-        
     }
     
     func releaseSpot(){
