@@ -75,7 +75,7 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
     
     private func openFileFromLocalStorage(){
         documentController.modalPresentationStyle = .formSheet
-        present(documentController, animated: true, completion: nil)
+        present(documentController, animated: false, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
