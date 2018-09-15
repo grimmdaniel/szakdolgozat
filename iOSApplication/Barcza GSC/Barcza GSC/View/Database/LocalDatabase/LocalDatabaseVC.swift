@@ -10,7 +10,7 @@ import UIKit
 
 class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var games: [PGNGame]!
+    var games: PGNDatabase!
     var filteredGames = [PGNGame]()
     @IBOutlet weak var databaseTableView: UITableView!
     
@@ -33,7 +33,7 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = "Local database (\(games.count) games)"
+        self.navigationItem.title = games.name + " (\(games.database.count) games)"
         navigationController?.navigationBar.isHidden = false
     }
     
@@ -45,7 +45,7 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         if shouldShowSearchResults{
             return filteredGames.count
         }else{
-            return games.count
+            return games.database.count
         }
     }
     
@@ -55,7 +55,7 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         if shouldShowSearchResults{
             cell.updateUI(with: filteredGames[indexPath.row])
         }else{
-            cell.updateUI(with: games[indexPath.row])
+            cell.updateUI(with: games.database[indexPath.row])
         }
         return cell
     }
@@ -82,7 +82,7 @@ extension LocalDatabaseVC: UISearchResultsUpdating,UISearchBarDelegate{
         if searchString  == ""{
             shouldShowSearchResults = false
         }else{
-            filteredGames = games.filter({ (game) -> Bool in
+            filteredGames = games.database.filter({ (game) -> Bool in
                 let white: NSString = game.white as NSString
                 let black: NSString = game.black as NSString
                 return ((white.range(of: searchString!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound) || ((black.range(of: searchString!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound)

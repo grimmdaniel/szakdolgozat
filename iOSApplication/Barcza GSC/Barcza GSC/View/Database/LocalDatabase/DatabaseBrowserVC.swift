@@ -72,10 +72,10 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
         }
         navigationItem.title = ""
         
+        let key = databases[indexPath.row - 1].name
         let realm = try! Realm()
-        let data = Array(realm.objects(PGNDatabaseMetadata.self))
-        print(data[indexPath.row - 1].name)
-//        performSegue(withIdentifier: "openDatabase", sender: data)
+        let database = realm.object(ofType: PGNDatabase.self, forPrimaryKey: key)
+        performSegue(withIdentifier: "openDatabase", sender: database)
     }
     
     private func openFileFromLocalStorage(){
@@ -86,7 +86,7 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "openDatabase"{
             let vc = segue.destination as! LocalDatabaseVC
-            if let data = sender as? [PGNGame]{
+            if let data = sender as? PGNDatabase{
                 vc.games = data
             }
         }
