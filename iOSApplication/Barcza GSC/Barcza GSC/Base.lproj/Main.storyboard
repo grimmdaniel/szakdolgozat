@@ -325,17 +325,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MdF-CX-fvd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jr4-Wx-kQn">
+                                                    <rect key="frame" x="0.0" y="15" width="50" height="35"/>
+                                                    <color key="backgroundColor" red="0.94117647058823528" green="0.58039215686274503" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="MoY-nu-pj6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" red="0.54509803921568623" green="0.3411764705882353" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="jr4-Wx-kQn" firstAttribute="top" secondItem="MdF-CX-fvd" secondAttribute="bottom" id="1WU-2f-KVL"/>
                                             <constraint firstItem="MdF-CX-fvd" firstAttribute="leading" secondItem="MT2-wB-2qw" secondAttribute="leading" id="F1r-X4-jnB"/>
-                                            <constraint firstAttribute="bottom" secondItem="MdF-CX-fvd" secondAttribute="bottom" id="Jv8-kq-PkJ"/>
                                             <constraint firstAttribute="trailing" secondItem="MdF-CX-fvd" secondAttribute="trailing" id="OdP-qS-5OT"/>
+                                            <constraint firstItem="jr4-Wx-kQn" firstAttribute="leading" secondItem="MT2-wB-2qw" secondAttribute="leading" id="Vfw-Xw-AAA"/>
+                                            <constraint firstAttribute="trailing" secondItem="jr4-Wx-kQn" secondAttribute="trailing" id="fuc-h4-74V"/>
                                             <constraint firstItem="MdF-CX-fvd" firstAttribute="top" secondItem="MT2-wB-2qw" secondAttribute="top" id="i9F-gM-W62"/>
+                                            <constraint firstAttribute="bottom" secondItem="jr4-Wx-kQn" secondAttribute="bottom" id="tRh-zh-cZY"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="databaseNameLabel" destination="jr4-Wx-kQn" id="NIP-ma-6nk"/>
                                             <outlet property="menuItemImageView" destination="MdF-CX-fvd" id="GOn-xB-ufY"/>
                                         </connections>
                                     </collectionViewCell>
@@ -358,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cX-0k-ceJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3749" y="2832"/>
+            <point key="canvasLocation" x="3748" y="2831.3343328335836"/>
         </scene>
         <!--Chess BoardVC-->
         <scene sceneID="a2v-wb-Uoc">

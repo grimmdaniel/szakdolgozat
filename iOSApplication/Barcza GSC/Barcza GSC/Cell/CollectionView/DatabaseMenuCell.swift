@@ -12,4 +12,5 @@ class DatabaseMenuCell: UICollectionViewCell {
     
     @IBOutlet weak var menuItemImageView: UIImageView!
     
+    @IBOutlet weak var databaseNameLabel: UILabel!
 }

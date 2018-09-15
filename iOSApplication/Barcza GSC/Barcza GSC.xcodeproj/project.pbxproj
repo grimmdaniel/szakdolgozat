@@ -33,6 +33,7 @@
 		0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */; };
 		0890687420FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890687320FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift */; };
 		08A2942020FCAFFE008BF214 /* InformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2941F20FCAFFE008BF214 /* InformationsVC.swift */; };
+		08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */; };
 		08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */; };
 		08D402F020F125730005038B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D402EF20F125730005038B /* AppDelegate.swift */; };
 		08D402F220F125730005038B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D402F120F125730005038B /* Main.swift */; };
@@ -105,6 +106,7 @@
 		0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryVC.swift; sourceTree = "<group>"; };
 		0890687320FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
 		08A2941F20FCAFFE008BF214 /* InformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsVC.swift; sourceTree = "<group>"; };
+		08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNDatabase.swift; sourceTree = "<group>"; };
 		08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessBoardVC.swift; sourceTree = "<group>"; };
 		08D402EC20F125730005038B /* Barcza GSC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barcza GSC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D402EF20F125730005038B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				080CD05D2138240300E4361B /* PGNParser.swift */,
 				0861B57E2138317F00D50ED3 /* PGNGame.swift */,
+				08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */,
 			);
 			path = PGNParser;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				081C7BD72118B936004B107B /* MoveNameCollectionViewCell.swift in Sources */,
 				0864C8AE20FBCF2400435EE3 /* AlbumCell.swift in Sources */,
 				08F4129920F21D3E00166F98 /* PlayerFinderVC.swift in Sources */,
+				08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */,
 				08D402F020F125730005038B /* AppDelegate.swift in Sources */,
 				0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */,
 				0861B57F2138317F00D50ED3 /* PGNGame.swift in Sources */,

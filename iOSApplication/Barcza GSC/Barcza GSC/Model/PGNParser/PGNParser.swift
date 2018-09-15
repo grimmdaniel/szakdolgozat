@@ -34,12 +34,13 @@ class PGNParser{
         return parsePGNHelper(rawData: fileContent.components(separatedBy: "\n"))
     }
     
-    public static func writePGNDatabaseToRealm(database: [PGNGame]){
-        let realmData = List<PGNGame>()
-        realmData.append(objectsIn: database)
+    public static func writePGNDatabaseToRealm(metadata: PGNDatabaseMetadata,database: PGNDatabase){
         let realm = try! Realm()
         try! realm.write {
-            realm.add(realmData)
+            realm.add(metadata)
+        }
+        try! realm.write {
+            realm.add(database)
         }
     }
     

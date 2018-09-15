@@ -21,9 +21,9 @@ class PGNGame: Object{
     @objc dynamic var result = ""
     @objc dynamic var gameText = ""
     
-    override class func primaryKey() -> String? {
-        return "id"
-    }
+//    override class func primaryKey() -> String? {
+//        return "id"
+//    }
     
     convenience init(event: String,site: String,date: String,round: String,white: String,black: String, result: PGNResult, gameText: String) {
         self.init()
@@ -36,71 +36,6 @@ class PGNGame: Object{
         self.result = result.rawValue
         self.gameText = gameText
     }
-    
-    
-//    var event: String{
-//        get{
-//            return _event
-//        }set{
-//            _event = newValue
-//        }
-//    }
-//
-//    var site: String{
-//        get{
-//            return _site
-//        }set{
-//            _site = newValue
-//        }
-//    }
-//
-//    var date: String{
-//        get{
-//            return _date
-//        }set{
-//            _date = newValue
-//        }
-//    }
-//
-//    var round: String{
-//        get{
-//            return _round
-//        }set{
-//            _round = newValue
-//        }
-//    }
-//
-//    var white: String{
-//        get{
-//            return _white
-//        }set{
-//            _white = newValue
-//        }
-//    }
-//
-//    var black: String{
-//        get{
-//            return _black
-//        }set{
-//            _black = newValue
-//        }
-//    }
-//
-//    var result: PGNResult{
-//        get{
-//            return _result
-//        }set{
-//            _result = newValue
-//        }
-//    }
-//
-//    var gameText: String{
-//        get{
-//            return _gameText
-//        }set{
-//            _gameText = newValue
-//        }
-//    }
 }
 
 enum PGNResult: String{

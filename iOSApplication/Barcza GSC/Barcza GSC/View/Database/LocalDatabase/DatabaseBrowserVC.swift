@@ -13,10 +13,13 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
     
     @IBOutlet weak var databasesCollectionView: UICollectionView!
     let documentController = UIDocumentPickerViewController(documentTypes: ["public.text"], in: .import)
-    var databases = [String]()
+    
+    var databases = [PGNDatabaseMetadata]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let realm = try! Realm()
+        databases = Array(realm.objects(PGNDatabaseMetadata.self))
         
         databasesCollectionView.delegate = self
         databasesCollectionView.dataSource = self
@@ -34,16 +37,17 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return databases.count + 1
-        return 10 + 1
+        return databases.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DatabaseMenuCell", for: indexPath) as! DatabaseMenuCell
         if indexPath.row == 0{
             cell.menuItemImageView.image = UIImage(named: "newDatabase.png")
+            cell.databaseNameLabel.text = ""
         }else{
             cell.menuItemImageView.image = UIImage(named: "databaseWithoutName.png")
+            cell.databaseNameLabel.text = databases[indexPath.row - 1].name
         }
         return cell
     }
@@ -57,7 +61,7 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width / 3 - 3, height: view.frame.size.width / 3 - 3)
+        return CGSize(width: view.frame.size.width / 3 - 3, height: view.frame.size.width / 3 - 3 + 35)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -66,11 +70,12 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
             openFileFromLocalStorage()
             return
         }
+        navigationItem.title = ""
         
         let realm = try! Realm()
-        let data = Array(realm.objects(PGNGame.self))
-        navigationItem.title = ""
-        performSegue(withIdentifier: "openDatabase", sender: data)
+        let data = Array(realm.objects(PGNDatabaseMetadata.self))
+        print(data[indexPath.row - 1].name)
+//        performSegue(withIdentifier: "openDatabase", sender: data)
     }
     
     private func openFileFromLocalStorage(){
@@ -91,17 +96,28 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
 
 extension DatabaseBrowserVC{
     
+    private func refreshListOfDatabases(){
+        let realm = try! Realm()
+        databases = Array(realm.objects(PGNDatabaseMetadata.self))
+        databasesCollectionView.reloadData()
+    }
+    
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         let urlString = url.absoluteString
         if urlString.hasSuffix(".pgn"){
-            print(url)
+            let fileName = url.lastPathComponent == "" ? "temp_\(Date().timeIntervalSince1970).pgn" : url.lastPathComponent
             do {
                 let fm = FileManager()
                 let dataFromFile = fm.contents(atPath: url.path)
                 let content = String(data: dataFromFile!,encoding: .utf8)
                 let parser = PGNParser.parser
                 let data = parser.parsePGN(content ?? "")
-                PGNParser.writePGNDatabaseToRealm(database: data)
+                let date = Date()
+                let metaData = PGNDatabaseMetadata(name: fileName,creationTime: date)
+                let pgnDatabase = PGNDatabase(name: fileName,creationTime: date, database: data)
+                PGNParser.writePGNDatabaseToRealm(metadata: metaData, database: pgnDatabase)
+            
+                refreshListOfDatabases()
             }
         }else{
             // file is not pgn
