@@ -106,19 +106,32 @@ extension DatabaseBrowserVC{
         let urlString = url.absoluteString
         if urlString.hasSuffix(".pgn"){
             let fileName = url.lastPathComponent == "" ? "temp_\(Date().timeIntervalSince1970).pgn" : url.lastPathComponent
-            do {
-                let fm = FileManager()
-                let dataFromFile = fm.contents(atPath: url.path)
-                let content = String(data: dataFromFile!,encoding: .utf8)
-                let parser = PGNParser.parser
-                let data = parser.parsePGN(content ?? "")
-                let date = Date()
-                let metaData = PGNDatabaseMetadata(name: fileName,creationTime: date)
-                let pgnDatabase = PGNDatabase(name: fileName,creationTime: date, database: data)
-                PGNParser.writePGNDatabaseToRealm(metadata: metaData, database: pgnDatabase)
             
-                refreshListOfDatabases()
+            let realm = try! Realm()
+            if realm.object(ofType: PGNDatabaseMetadata.self, forPrimaryKey: fileName) == nil{
+                do {
+                    let fm = FileManager()
+                    let dataFromFile = fm.contents(atPath: url.path)
+                    let content = String(data: dataFromFile!,encoding: .utf8)
+                    let parser = PGNParser.parser
+                    let data = parser.parsePGN(content ?? "")
+                    let date = Date()
+                    let metaData = PGNDatabaseMetadata(name: fileName,creationTime: date)
+                    let pgnDatabase = PGNDatabase(name: fileName,creationTime: date, database: data)
+                    PGNParser.writePGNDatabaseToRealm(metadata: metaData, database: pgnDatabase)
+                    
+                    refreshListOfDatabases()
+                }
+            }else{
+                //database already exists
+                let alertController = UIAlertController(title: "Error", message: "Database already exists", preferredStyle: .alert)
+                
+                // Create the actions
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
             }
+            
         }else{
             // file is not pgn
             let alertController = UIAlertController(title: "Error", message: "File format must be pgn", preferredStyle: .alert)
