@@ -51,6 +51,8 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
             }else{
                  // deleting cells, revert if zero selected
                 deleteErrorAlert()
+                self.inSelectionMode = false
+                self.databasesCollectionView.reloadData()
             }
         }else{
             inSelectionMode = true
@@ -72,6 +74,7 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
                 first > second
             })
             let realm = try! Realm()
+            
             for i in rows{
                 let name = self.databases[i].name
                 let item = realm.object(ofType: PGNDatabaseMetadata.self, forPrimaryKey: name)
@@ -84,8 +87,8 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
             }
             self.databasesCollectionView.deleteItems(at: self.indexesToDelete)
             self.inSelectionMode = false
-            self.indexesToDelete.removeAll()
             self.databasesCollectionView.reloadData()
+            self.indexesToDelete.removeAll()
         })
         
         deleteErrorAlert.addAction(cancelAction)
