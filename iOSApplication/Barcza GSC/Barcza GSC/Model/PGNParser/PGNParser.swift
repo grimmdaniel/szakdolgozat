@@ -80,6 +80,7 @@ class PGNParser{
                 tmpGame.gameText.append(i)
             }
         }
+        print(data.count)
         return data
     }
     

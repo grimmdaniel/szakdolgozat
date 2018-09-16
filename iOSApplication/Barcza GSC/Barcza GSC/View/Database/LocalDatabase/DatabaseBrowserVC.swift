@@ -14,6 +14,17 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
     @IBOutlet weak var databasesCollectionView: UICollectionView!
     let documentController = UIDocumentPickerViewController(documentTypes: ["public.text"], in: .import)
     
+    
+    var inSelectionMode = false{
+        didSet{
+            if inSelectionMode{
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(deleteDatabases))
+            }else{
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteDatabases))
+            }
+        }
+    }
+    var indexesToDelete = [IndexPath]()
     var databases = [PGNDatabaseMetadata]()
 
     override func viewDidLoad() {
@@ -29,7 +40,23 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
 
     override func viewDidAppear(_ animated: Bool) {
         navigationItem.title = "My Databases"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteDatabases))
         navigationController?.navigationBar.isHidden = false
+    }
+    
+    @objc func deleteDatabases(){
+        if inSelectionMode{
+            if indexesToDelete.isEmpty{
+                inSelectionMode = false
+            }else{
+                 // deleting cells, revert if zero selected
+                inSelectionMode = false
+                indexesToDelete.removeAll()
+            }
+        }else{
+            inSelectionMode = true
+        }
+        databasesCollectionView.reloadData()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -45,9 +72,22 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
         if indexPath.row == 0{
             cell.menuItemImageView.image = UIImage(named: "newDatabase.png")
             cell.databaseNameLabel.text = ""
+            cell.selectionImageView.isHidden = true
         }else{
             cell.menuItemImageView.image = UIImage(named: "databaseWithoutName.png")
             cell.databaseNameLabel.text = databases[indexPath.row - 1].name
+            if inSelectionMode{
+                cell.selectionImageView.isHidden = false
+                if indexesToDelete.contains(indexPath){
+                    // do what you want to do if the cell is selected
+                    cell.selectionImageView.image = UIImage(named: "selectionFull.png")
+                } else {
+                    cell.selectionImageView.image = UIImage(named: "selectionEmpty.png")
+                    // do what you want to do if the cell is not selected
+                }
+            }else{
+                cell.selectionImageView.isHidden = true
+            }
         }
         return cell
     }
@@ -66,16 +106,27 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0{
+            if inSelectionMode { return }
             log.info("File storage accessed")
             openFileFromLocalStorage()
             return
         }
-        navigationItem.title = ""
         
-        let key = databases[indexPath.row - 1].name
-        let realm = try! Realm()
-        let database = realm.object(ofType: PGNDatabase.self, forPrimaryKey: key)
-        performSegue(withIdentifier: "openDatabase", sender: database)
+        if inSelectionMode{
+            if (indexesToDelete.contains(indexPath)){
+                let indexOfIndexPath = indexesToDelete.index(of: indexPath)!
+                indexesToDelete.remove(at: indexOfIndexPath)
+            } else {
+                indexesToDelete += [indexPath]
+            }
+            databasesCollectionView.reloadItems(at: [indexPath])
+        }else{
+            navigationItem.title = ""
+            let key = databases[indexPath.row - 1].name
+            let realm = try! Realm()
+            let database = realm.object(ofType: PGNDatabase.self, forPrimaryKey: key)
+            performSegue(withIdentifier: "openDatabase", sender: database)
+        }
     }
     
     private func openFileFromLocalStorage(){

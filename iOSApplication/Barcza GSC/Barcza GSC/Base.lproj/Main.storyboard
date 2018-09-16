@@ -337,20 +337,30 @@
                                                     <color key="textColor" red="0.54509803921568623" green="0.3411764705882353" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rHQ-2U-8Q6">
+                                                    <rect key="frame" x="10" y="10" width="7.5" height="7.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="rHQ-2U-8Q6" secondAttribute="height" id="rw9-bH-kUn"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="jr4-Wx-kQn" firstAttribute="top" secondItem="MdF-CX-fvd" secondAttribute="bottom" id="1WU-2f-KVL"/>
                                             <constraint firstItem="MdF-CX-fvd" firstAttribute="leading" secondItem="MT2-wB-2qw" secondAttribute="leading" id="F1r-X4-jnB"/>
+                                            <constraint firstItem="rHQ-2U-8Q6" firstAttribute="leading" secondItem="MT2-wB-2qw" secondAttribute="leading" constant="10" id="FHX-Df-RRD"/>
                                             <constraint firstAttribute="trailing" secondItem="MdF-CX-fvd" secondAttribute="trailing" id="OdP-qS-5OT"/>
                                             <constraint firstItem="jr4-Wx-kQn" firstAttribute="leading" secondItem="MT2-wB-2qw" secondAttribute="leading" id="Vfw-Xw-AAA"/>
                                             <constraint firstAttribute="trailing" secondItem="jr4-Wx-kQn" secondAttribute="trailing" id="fuc-h4-74V"/>
                                             <constraint firstItem="MdF-CX-fvd" firstAttribute="top" secondItem="MT2-wB-2qw" secondAttribute="top" id="i9F-gM-W62"/>
                                             <constraint firstAttribute="bottom" secondItem="jr4-Wx-kQn" secondAttribute="bottom" id="tRh-zh-cZY"/>
+                                            <constraint firstItem="rHQ-2U-8Q6" firstAttribute="width" secondItem="MT2-wB-2qw" secondAttribute="width" multiplier="0.15" id="v8P-Rh-Yio"/>
+                                            <constraint firstItem="rHQ-2U-8Q6" firstAttribute="top" secondItem="MT2-wB-2qw" secondAttribute="top" constant="10" id="y61-Ga-IfR"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="databaseNameLabel" destination="jr4-Wx-kQn" id="NIP-ma-6nk"/>
                                             <outlet property="menuItemImageView" destination="MdF-CX-fvd" id="GOn-xB-ufY"/>
+                                            <outlet property="selectionImageView" destination="rHQ-2U-8Q6" id="odh-BE-G5w"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
