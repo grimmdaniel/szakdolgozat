@@ -204,6 +204,10 @@ extension DatabaseBrowserVC{
                     if content == nil{
                         content = String(data: dataFromFile!,encoding: .windowsCP1252)
                     }
+                    if content == nil{
+                        showEncodingError()
+                        return
+                    }
                     let parser = PGNParser.parser
                     let data = parser.parsePGN(content ?? "")
                     let date = Date()
@@ -232,5 +236,13 @@ extension DatabaseBrowserVC{
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
+    }
+    
+    private func showEncodingError(){
+        let alertController = UIAlertController(title: "Error", message: "File encoding must be UTF-8, or Windows 1252", preferredStyle: .alert)
+        // Create the actions
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
