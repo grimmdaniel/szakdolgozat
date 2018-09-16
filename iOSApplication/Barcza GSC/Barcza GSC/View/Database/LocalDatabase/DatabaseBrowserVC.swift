@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 import RealmSwift
 
 class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIDocumentPickerDelegate{
@@ -208,14 +209,28 @@ extension DatabaseBrowserVC{
                         showEncodingError()
                         return
                     }
-                    let parser = PGNParser.parser
-                    let data = parser.parsePGN(content ?? "")
-                    let date = Date()
-                    let metaData = PGNDatabaseMetadata(name: fileName,creationTime: date)
-                    let pgnDatabase = PGNDatabase(name: fileName,creationTime: date, database: data)
-                    PGNParser.writePGNDatabaseToRealm(metadata: metaData, database: pgnDatabase)
                     
-                    refreshListOfDatabases()
+                    let date = Date()
+                    SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
+                    SVProgressHUD.show()
+                    
+                    var metaData: PGNDatabaseMetadata?
+                    var pgnDatabase: PGNDatabase?
+                    
+                    DispatchQueue.background(background: {
+                        // do something in background
+                        let parser = PGNParser.parser
+                        let data = parser.parsePGN(content ?? "")
+                        metaData = PGNDatabaseMetadata(name: fileName,creationTime: date)
+                        pgnDatabase = PGNDatabase(name: fileName,creationTime: date, database: data)
+                    }, completion:{
+                        // when background job finished, do something in main thread
+                        if let meta = metaData, let database = pgnDatabase{
+                            PGNParser.writePGNDatabaseToRealm(metadata: meta, database: database)
+                            self.refreshListOfDatabases()
+                            SVProgressHUD.dismiss()
+                        }
+                    })
                 }
             }else{
                 //database already exists
