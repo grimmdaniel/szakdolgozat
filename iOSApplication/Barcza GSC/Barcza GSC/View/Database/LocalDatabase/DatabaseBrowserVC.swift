@@ -71,7 +71,15 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
             let rows = (self.indexesToDelete.map({$0.row - 1})).sorted(by: { (first, second) -> Bool in
                 first > second
             })
+            let realm = try! Realm()
             for i in rows{
+                let name = self.databases[i].name
+                let item = realm.object(ofType: PGNDatabaseMetadata.self, forPrimaryKey: name)
+                let item2 = realm.object(ofType: PGNDatabase.self, forPrimaryKey: name)
+                try! realm.write {
+                    realm.delete(item!)
+                    realm.delete(item2!)
+                }
                 self.databases.remove(at: i)
             }
             self.databasesCollectionView.deleteItems(at: self.indexesToDelete)
