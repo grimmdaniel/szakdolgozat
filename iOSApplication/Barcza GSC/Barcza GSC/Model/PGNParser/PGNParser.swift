@@ -31,7 +31,8 @@ class PGNParser{
     }
     
     public func parsePGN(_ fileContent: String) -> [PGNGame]{
-        return parsePGNHelper(rawData: fileContent.components(separatedBy: "\n"))
+        let tmp = fileContent.replacingOccurrences(of: "\r\n", with: "\n")
+        return parsePGNHelper(rawData: tmp.components(separatedBy: "\n"))
     }
     
     public static func writePGNDatabaseToRealm(metadata: PGNDatabaseMetadata,database: PGNDatabase){
