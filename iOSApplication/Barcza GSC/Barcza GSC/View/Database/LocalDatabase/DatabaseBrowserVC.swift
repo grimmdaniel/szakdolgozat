@@ -200,7 +200,10 @@ extension DatabaseBrowserVC{
                 do {
                     let fm = FileManager()
                     let dataFromFile = fm.contents(atPath: url.path)
-                    let content = String(data: dataFromFile!,encoding: .utf8)
+                    var content = String(data: dataFromFile!,encoding: .utf8)
+                    if content == nil{
+                        content = String(data: dataFromFile!,encoding: .windowsCP1252)
+                    }
                     let parser = PGNParser.parser
                     let data = parser.parsePGN(content ?? "")
                     let date = Date()
