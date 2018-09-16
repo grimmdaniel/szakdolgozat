@@ -50,13 +50,39 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
                 inSelectionMode = false
             }else{
                  // deleting cells, revert if zero selected
-                inSelectionMode = false
-                indexesToDelete.removeAll()
+                deleteErrorAlert()
             }
         }else{
             inSelectionMode = true
         }
         databasesCollectionView.reloadData()
+    }
+    
+    func deleteErrorAlert() {
+        let deleteErrorAlert = UIAlertController(title: "Confirmation", message: "Are you sure want to delete \(indexesToDelete.count) databases?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+        _ in
+            self.indexesToDelete.removeAll()
+            self.inSelectionMode = false
+            self.databasesCollectionView.reloadData()
+        })
+        let confirmAction = UIAlertAction(title: "Delete", style: .destructive, handler: {
+            _ in
+            let rows = (self.indexesToDelete.map({$0.row - 1})).sorted(by: { (first, second) -> Bool in
+                first > second
+            })
+            for i in rows{
+                self.databases.remove(at: i)
+            }
+            self.databasesCollectionView.deleteItems(at: self.indexesToDelete)
+            self.inSelectionMode = false
+            self.indexesToDelete.removeAll()
+            self.databasesCollectionView.reloadData()
+        })
+        
+        deleteErrorAlert.addAction(cancelAction)
+        deleteErrorAlert.addAction(confirmAction)
+        present(deleteErrorAlert, animated: true, completion: nil)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
