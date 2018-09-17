@@ -39,6 +39,12 @@ public class ChessBoardView: UIView {
         return boardModel.moveCounter
     }
     
+    public var isMovementEnabled = true{
+        didSet{
+            self.chessBoardView.isUserInteractionEnabled = isMovementEnabled
+        }
+    }
+    
     private func setUpView() {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: self.nibName, bundle: bundle)

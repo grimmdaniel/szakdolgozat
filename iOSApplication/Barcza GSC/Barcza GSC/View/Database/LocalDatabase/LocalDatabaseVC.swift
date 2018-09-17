@@ -59,6 +59,24 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationItem.title = ""
+        if shouldShowSearchResults{
+            performSegue(withIdentifier: "toGamePreview", sender: filteredGames[indexPath.row])
+        }else{
+            performSegue(withIdentifier: "toGamePreview", sender: games.database[indexPath.row])
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toGamePreview"{
+            let vc = segue.destination as! GamePreviewVC
+            if let game = sender as? PGNGame{
+                vc.game = game
+            }
+        }
+    }
 }
 
 extension LocalDatabaseVC: UISearchResultsUpdating,UISearchBarDelegate{

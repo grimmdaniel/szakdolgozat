@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08006EFE214FBA7500035698 /* GamePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08006EFD214FBA7500035698 /* GamePreviewVC.swift */; };
 		0801785120F13491009A7982 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0801785020F13491009A7982 /* SWRevealViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		0801785320F13525009A7982 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785220F13525009A7982 /* Settings.swift */; };
 		0801785520F13531009A7982 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785420F13531009A7982 /* Utils.swift */; };
@@ -79,6 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		08006EFD214FBA7500035698 /* GamePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePreviewVC.swift; sourceTree = "<group>"; };
 		0801784E20F13490009A7982 /* Barcza GSC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Barcza GSC-Bridging-Header.h"; sourceTree = "<group>"; };
 		0801784F20F13491009A7982 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		0801785020F13491009A7982 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				080CD05F2138247900E4361B /* LocalDatabaseVC.swift */,
 				087621052143ECD100CE69C3 /* DatabaseBrowserVC.swift */,
+				08006EFD214FBA7500035698 /* GamePreviewVC.swift */,
 			);
 			path = LocalDatabase;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				0801785120F13491009A7982 /* SWRevealViewController.m in Sources */,
 				0801785B20F14EBD009A7982 /* MenuTableViewCell.swift in Sources */,
 				0801785920F14CD7009A7982 /* MenuVC.swift in Sources */,
+				08006EFE214FBA7500035698 /* GamePreviewVC.swift in Sources */,
 				0864C8A620FB8E6900435EE3 /* GalleryData.swift in Sources */,
 				08A2942020FCAFFE008BF214 /* InformationsVC.swift in Sources */,
 				08F4129520F2173700166F98 /* RatingChangeCalculatorVC.swift in Sources */,
