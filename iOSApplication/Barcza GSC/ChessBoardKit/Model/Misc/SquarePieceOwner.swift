@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum SquarePieceOwner{
+public enum SquarePieceOwner{
     case white, black
 }

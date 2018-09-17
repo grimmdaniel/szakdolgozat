@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Coords: Equatable{
+public struct Coords: Equatable{
     
     private var _file: Int!
     private var _rank: Int!
@@ -37,7 +37,7 @@ struct Coords: Equatable{
         return _file
     }
     
-    static func ==(lhs: Coords,rhs: Coords) -> Bool{
+    public static func ==(lhs: Coords,rhs: Coords) -> Bool{
         return lhs._file == rhs._file && lhs._rank == rhs._rank
     }
     

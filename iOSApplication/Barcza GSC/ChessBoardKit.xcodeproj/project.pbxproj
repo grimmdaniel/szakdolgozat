@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08006F02214FC73900035698 /* MoveRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08006F01214FC73900035698 /* MoveRoute.swift */; };
 		089D7E51214684DD00689CCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089D7E50214684DD00689CCB /* Assets.xcassets */; };
 		08C4EB1721447436002ACD23 /* ChessBoardKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 08C4EB1521447436002ACD23 /* ChessBoardKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08C4EB1E214474DC002ACD23 /* ChessBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4EB1D214474DC002ACD23 /* ChessBoardView.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08006F01214FC73900035698 /* MoveRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveRoute.swift; sourceTree = "<group>"; };
 		089D7E50214684DD00689CCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08C4EB1221447436002ACD23 /* ChessBoardKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChessBoardKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C4EB1521447436002ACD23 /* ChessBoardKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessBoardKit.h; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				08C4EB4621447A25002ACD23 /* SquarePieceOwner.swift */,
 				08C4EB4821447A3C002ACD23 /* FigurineType.swift */,
 				08C4EB4A21447B64002ACD23 /* NextPlayer.swift */,
+				08006F01214FC73900035698 /* MoveRoute.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				08C4EB6021459624002ACD23 /* ChessBoardViewDelegate.swift in Sources */,
 				08C4EB342144787C002ACD23 /* ShapeQuarter.swift in Sources */,
 				08C4EB38214478AE002ACD23 /* Queen.swift in Sources */,
+				08006F02214FC73900035698 /* MoveRoute.swift in Sources */,
 				08C4EB2C21447808002ACD23 /* King.swift in Sources */,
 				08C4EB412144799E002ACD23 /* PawnReachedOppositeSideEnd.swift in Sources */,
 				08C4EB3621447898002ACD23 /* Rook.swift in Sources */,

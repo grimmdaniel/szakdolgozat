@@ -9,17 +9,21 @@
 import UIKit
 import ChessBoardKit
 
+
 class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     
     @IBOutlet weak var chessBoard: ChessBoardView!
     var game: PGNGame!
-
+    var parsedGame = [ChessBoardKit.MoveRoute]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         chessBoard.datasource = self
         chessBoard.delegate = self
         chessBoard.isMovementEnabled = false
+        
+        let parser = PGNGameTextParser.parser
+        parsedGame = parser.parseGameText(from: game.gameText) ?? []
     }
     
     @IBOutlet weak var forwardBtn: UIButton!

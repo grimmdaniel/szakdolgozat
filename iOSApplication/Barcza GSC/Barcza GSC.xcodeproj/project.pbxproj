@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08006EFE214FBA7500035698 /* GamePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08006EFD214FBA7500035698 /* GamePreviewVC.swift */; };
+		08006F00214FC36F00035698 /* PGNGameTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08006EFF214FC36F00035698 /* PGNGameTextParser.swift */; };
 		0801785120F13491009A7982 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0801785020F13491009A7982 /* SWRevealViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		0801785320F13525009A7982 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785220F13525009A7982 /* Settings.swift */; };
 		0801785520F13531009A7982 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785420F13531009A7982 /* Utils.swift */; };
@@ -81,6 +82,7 @@
 
 /* Begin PBXFileReference section */
 		08006EFD214FBA7500035698 /* GamePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePreviewVC.swift; sourceTree = "<group>"; };
+		08006EFF214FC36F00035698 /* PGNGameTextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNGameTextParser.swift; sourceTree = "<group>"; };
 		0801784E20F13490009A7982 /* Barcza GSC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Barcza GSC-Bridging-Header.h"; sourceTree = "<group>"; };
 		0801784F20F13491009A7982 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		0801785020F13491009A7982 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				080CD05D2138240300E4361B /* PGNParser.swift */,
 				0861B57E2138317F00D50ED3 /* PGNGame.swift */,
 				08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */,
+				08006EFF214FC36F00035698 /* PGNGameTextParser.swift */,
 			);
 			path = PGNParser;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				08D402F220F125730005038B /* Main.swift in Sources */,
 				080CD05A2138149000E4361B /* DatabaseMenuCell.swift in Sources */,
 				080CD0602138247900E4361B /* LocalDatabaseVC.swift in Sources */,
+				08006F00214FC36F00035698 /* PGNGameTextParser.swift in Sources */,
 				081C7BD72118B936004B107B /* MoveNameCollectionViewCell.swift in Sources */,
 				0864C8AE20FBCF2400435EE3 /* AlbumCell.swift in Sources */,
 				08F4129920F21D3E00166F98 /* PlayerFinderVC.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum FigurineType: String{
+public enum FigurineType: String{
     case pawn = "pawn",
     knight = "knight",
     bishop = "bishop",

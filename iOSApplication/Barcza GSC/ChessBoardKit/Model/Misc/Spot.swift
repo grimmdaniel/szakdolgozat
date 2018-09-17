@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Spot{
+public class Spot{
     
     private var _position: Coords!
     private var _pieceHere: Piece?
