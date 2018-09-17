@@ -237,7 +237,7 @@ extension DatabaseBrowserVC{
                 let alertController = UIAlertController(title: "Error", message: "Database already exists", preferredStyle: .alert)
                 
                 // Create the actions
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
             }
@@ -247,7 +247,7 @@ extension DatabaseBrowserVC{
             let alertController = UIAlertController(title: "Error", message: "File format must be pgn", preferredStyle: .alert)
             
             // Create the actions
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
@@ -256,7 +256,7 @@ extension DatabaseBrowserVC{
     private func showEncodingError(){
         let alertController = UIAlertController(title: "Error", message: "File encoding must be UTF-8, or Windows 1252", preferredStyle: .alert)
         // Create the actions
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }

@@ -78,7 +78,7 @@ class PGNParser{
                     type = .gameText
                 }
             }else{ // gametext
-                tmpGame.gameText.append(i)
+                tmpGame.gameText.append(i + " ")
             }
         }
         print(data.count)

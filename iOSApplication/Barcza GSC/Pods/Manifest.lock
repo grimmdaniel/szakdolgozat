@@ -10,16 +10,16 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.5.2):
     - PromiseKit/CorePromise
-  - Realm (3.5.0):
-    - Realm/Headers (= 3.5.0)
-  - Realm/Headers (3.5.0)
-  - RealmSwift (3.5.0):
-    - Realm (= 3.5.0)
-  - SDWebImage (4.3.3):
-    - SDWebImage/Core (= 4.3.3)
-  - SDWebImage/Core (4.3.3)
+  - Realm (3.9.0):
+    - Realm/Headers (= 3.9.0)
+  - Realm/Headers (3.9.0)
+  - RealmSwift (3.9.0):
+    - Realm (= 3.9.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - SVProgressHUD (2.2.5)
-  - SwiftyBeaver (1.5.2)
+  - SwiftyBeaver (1.6.0)
 
 DEPENDENCIES:
   - PromiseKit (~> 4.4)
@@ -40,12 +40,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   PromiseKit: 743e497a5f505a470d3bbbf4ce0663c1268af0a4
-  Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
-  RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
-  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  Realm: 3d36f208bf3aff8335dc3298742140182bde4edb
+  RealmSwift: aa4d11917bfcfaa3ed51f219102a487ecd895447
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftyBeaver: 85daaaa2b3ae6e31b7b55c99430e8b91dac088af
+  SwiftyBeaver: e45759613e50b522b0e6f53b1f0f14389b45ca34
 
-PODFILE CHECKSUM: e0ac7465da008b17f34f8c5b258feb6e261217fb
+PODFILE CHECKSUM: 10eb7c41e923810dc7ab0b9a356e5714391aca25
 
 COCOAPODS: 1.5.0

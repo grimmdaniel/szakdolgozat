@@ -16,7 +16,15 @@ class PGNGameTextParser{
     private init(){}
    
     public func parseGameText(from text: String) -> [ChessBoardKit.MoveRoute]?{
-        
+        let choppedGame = text.components(separatedBy: ". ").filter { (move) -> Bool in
+            Int(move) == nil
+        }
+        for i in choppedGame{
+            let tmp = i.components(separatedBy: " ")
+            if tmp.count == 3{
+                print(tmp[0] + " " + tmp[1])
+            }
+        }
         return []
     }
 }

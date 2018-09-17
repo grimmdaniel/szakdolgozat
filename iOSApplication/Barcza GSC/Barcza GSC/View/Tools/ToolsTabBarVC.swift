@@ -18,8 +18,8 @@ class ToolsTabBarVC: UITabBarController{
         self.tabBar.backgroundImage = backgroundImage
         self.tabBar.itemPositioning = .automatic
         self.tabBar.isTranslucent = false
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 15)], for: .selected)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 15)], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)], for: .normal)
         if let tabBarItems = self.tabBar.items {
             for tabBarItem in tabBarItems {
                 

@@ -23,6 +23,7 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
         chessBoard.isMovementEnabled = false
         
         let parser = PGNGameTextParser.parser
+        print(game.gameText)
         parsedGame = parser.parseGameText(from: game.gameText) ?? []
     }
     
