@@ -12,5 +12,7 @@ target 'Barcza GSC' do
   pod 'SwiftyBeaver'
   pod "PromiseKit", "~> 4.4"
   pod "PromiseKit/Foundation", " ~> 4.0"
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 
 end

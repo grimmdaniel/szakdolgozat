@@ -8,11 +8,17 @@
 
 import UIKit
 import SwiftyBeaver
+import Firebase
+import FirebaseInstanceID
+import FirebaseMessaging
+import UserNotifications
 
 let log = SwiftyBeaver.self
+var FCMTOKEN = ""
+let gcmMessageIDKey = "gcm.message_id"
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
     var window: UIWindow?
 
@@ -21,8 +27,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let console = ConsoleDestination()
         log.addDestination(console)
-        
         log.info("Application started")
+        FirebaseApp.configure()
+        
+        if #available(iOS 10.0, *) {
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_,_ in self.getToken()})
+            
+            Messaging.messaging().delegate = self
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        getToken()
         
         return true
     }
@@ -50,5 +75,62 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func getToken(){
+        InstanceID.instanceID().instanceID { (result, error) in
+            if (error != nil){
+                log.error("Firebase error occurred: \(error!)")
+            }else{
+                if let result = result{
+                    FCMTOKEN = result.token
+                }
+            }
+        }
+        return
+    }
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print(fcmToken)
+    }
+    
+    func application(received remoteMessage: MessagingRemoteMessage) {
+        print("%@", remoteMessage.appData)
+    }
 }
+
+@available(iOS 10, *)
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    
+    
+    // Receive displayed notifications for iOS 10 devices.
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        print("got message in the foreground iOS10")
+        print(userInfo)
+        completionHandler([.alert,.badge,.sound])
+    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        // Print message ID.
+        print("got message in the background iOS 10")
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        completionHandler()
+    }
+}
+// [END ios_10_message_handling]
+
 
