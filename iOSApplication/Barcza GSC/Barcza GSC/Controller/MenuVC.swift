@@ -26,7 +26,6 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         menuTableView.separatorStyle = .none
         menuTableView.backgroundColor = ColorTheme.barczaOrange
         view.backgroundColor = ColorTheme.barczaOrange
-        
         logoPositionConstraint.constant = (self.view.frame.size.width - 100) / 2 - logoImageView.frame.size.width / 2
     }
 

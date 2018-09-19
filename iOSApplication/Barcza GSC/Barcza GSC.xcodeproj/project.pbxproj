@@ -36,6 +36,8 @@
 		0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */; };
 		0890687420FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890687320FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift */; };
 		0895DC392152474300663F12 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0895DC382152474300663F12 /* CloudKit.framework */; };
+		0895DC3B21526DBD00663F12 /* DocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC3A21526DBD00663F12 /* DocumentsVC.swift */; };
+		0895DC3D2152728300663F12 /* PDFWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC3C2152728300663F12 /* PDFWebViewVC.swift */; };
 		08A2942020FCAFFE008BF214 /* InformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2941F20FCAFFE008BF214 /* InformationsVC.swift */; };
 		08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */; };
 		08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */; };
@@ -113,6 +115,8 @@
 		0890687320FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
 		0895DC372152469D00663F12 /* Barcza GSC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Barcza GSC.entitlements"; sourceTree = "<group>"; };
 		0895DC382152474300663F12 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		0895DC3A21526DBD00663F12 /* DocumentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsVC.swift; sourceTree = "<group>"; };
+		0895DC3C2152728300663F12 /* PDFWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFWebViewVC.swift; sourceTree = "<group>"; };
 		08A2941F20FCAFFE008BF214 /* InformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsVC.swift; sourceTree = "<group>"; };
 		08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNDatabase.swift; sourceTree = "<group>"; };
 		08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessBoardVC.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				08A2941F20FCAFFE008BF214 /* InformationsVC.swift */,
+				0895DC3A21526DBD00663F12 /* DocumentsVC.swift */,
+				0895DC3C2152728300663F12 /* PDFWebViewVC.swift */,
 			);
 			path = Informations;
 			sourceTree = "<group>";
@@ -528,6 +534,7 @@
 				0864C8AE20FBCF2400435EE3 /* AlbumCell.swift in Sources */,
 				08F4129920F21D3E00166F98 /* PlayerFinderVC.swift in Sources */,
 				08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */,
+				0895DC3B21526DBD00663F12 /* DocumentsVC.swift in Sources */,
 				08D402F020F125730005038B /* AppDelegate.swift in Sources */,
 				0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */,
 				0861B57F2138317F00D50ED3 /* PGNGame.swift in Sources */,
@@ -540,6 +547,7 @@
 				0867A441213AA8B00061B6DE /* PGNGameInfoCell.swift in Sources */,
 				080CD05E2138240300E4361B /* PGNParser.swift in Sources */,
 				0864C8A920FBBB5E00435EE3 /* Requests.swift in Sources */,
+				0895DC3D2152728300663F12 /* PDFWebViewVC.swift in Sources */,
 				0801785120F13491009A7982 /* SWRevealViewController.m in Sources */,
 				0801785B20F14EBD009A7982 /* MenuTableViewCell.swift in Sources */,
 				0801785920F14CD7009A7982 /* MenuVC.swift in Sources */,

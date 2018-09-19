@@ -31,6 +31,12 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
         informationsTableView.tableFooterView = UIView(frame: CGRect.zero)
         
         navigationController?.navigationBar.isHidden = true
+        Utils.setUpNavbarColorAndSpecs(navigationController!)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationItem.title = ""
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,5 +52,11 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
         cell.textLabel?.text = categories[indexPath.row]
         cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0{
+            performSegue(withIdentifier: "toDocumentsSegue", sender: nil)
+        }
     }
 }
