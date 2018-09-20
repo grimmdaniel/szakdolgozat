@@ -15,7 +15,7 @@ class Settings {
     static var headers: Dictionary<String,String> {
         return ["Content-Type":"application/json","client":"\(client)","token":"\(token)"]
     }
-    static let rootURL = "http://192.168.0.166:8080"
+    static let rootURL = "http://192.168.0.24:8080"
     static var email = ""
     static var language:String = ""
     static let device = UIDevice().model + " , " + UIDevice().systemName + " " + UIDevice().systemVersion
