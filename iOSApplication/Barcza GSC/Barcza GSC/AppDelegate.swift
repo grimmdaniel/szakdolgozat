@@ -45,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
-        
         application.registerForRemoteNotifications()
         getToken()
         
