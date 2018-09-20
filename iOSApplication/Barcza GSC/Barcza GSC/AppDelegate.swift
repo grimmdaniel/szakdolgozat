@@ -127,6 +127,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID: \(messageID)")
         }
+        UIApplication.shared.applicationIconBadgeNumber = 0
         completionHandler()
     }
 }
