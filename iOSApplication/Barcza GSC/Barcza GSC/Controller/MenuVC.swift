@@ -54,6 +54,8 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         //TODO menu navigation
         if indexPath.row == 0{
             performSegue(withIdentifier: "toMain", sender: nil)
+        }else if menuItems[indexPath.row] == "Hírek"{
+            performSegue(withIdentifier: "toNews", sender: nil)
         }else if menuItems[indexPath.row] == "Eszközök"{
             performSegue(withIdentifier: "toTools", sender: nil)
         }else if menuItems[indexPath.row] == "Adatbázis"{

@@ -37,6 +37,8 @@
 		0895DC392152474300663F12 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0895DC382152474300663F12 /* CloudKit.framework */; };
 		0895DC3B21526DBD00663F12 /* DocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC3A21526DBD00663F12 /* DocumentsVC.swift */; };
 		0895DC3D2152728300663F12 /* PDFWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC3C2152728300663F12 /* PDFWebViewVC.swift */; };
+		0895DC432153997000663F12 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC422153997000663F12 /* NewsVC.swift */; };
+		0895DC4521539AC200663F12 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC4421539AC200663F12 /* NewsTableViewCell.swift */; };
 		08A2942020FCAFFE008BF214 /* InformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2941F20FCAFFE008BF214 /* InformationsVC.swift */; };
 		08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */; };
 		08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */; };
@@ -117,6 +119,8 @@
 		0895DC382152474300663F12 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		0895DC3A21526DBD00663F12 /* DocumentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsVC.swift; sourceTree = "<group>"; };
 		0895DC3C2152728300663F12 /* PDFWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFWebViewVC.swift; sourceTree = "<group>"; };
+		0895DC422153997000663F12 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
+		0895DC4421539AC200663F12 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		08A2941F20FCAFFE008BF214 /* InformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsVC.swift; sourceTree = "<group>"; };
 		08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNDatabase.swift; sourceTree = "<group>"; };
 		08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessBoardVC.swift; sourceTree = "<group>"; };
@@ -208,6 +212,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0895DC412153996000663F12 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				0895DC422153997000663F12 /* NewsVC.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		08A2941E20FCAFDE008BF214 /* Informations */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +293,7 @@
 		08D4030320F130C00005038B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0895DC412153996000663F12 /* News */,
 				08A2941E20FCAFDE008BF214 /* Informations */,
 				0819208420FBF08C0071590C /* Gallery */,
 				080CD0562138129A00E4361B /* Database */,
@@ -325,6 +338,7 @@
 			children = (
 				0801785A20F14EBD009A7982 /* MenuTableViewCell.swift */,
 				0867A440213AA8B00061B6DE /* PGNGameInfoCell.swift */,
+				0895DC4421539AC200663F12 /* NewsTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -544,6 +558,7 @@
 				08D4030A20F131020005038B /* GradientView.swift in Sources */,
 				0890687420FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift in Sources */,
 				08F4129C20F22BA800166F98 /* ToolsTabBarVC.swift in Sources */,
+				0895DC4521539AC200663F12 /* NewsTableViewCell.swift in Sources */,
 				0867A441213AA8B00061B6DE /* PGNGameInfoCell.swift in Sources */,
 				080CD05E2138240300E4361B /* PGNParser.swift in Sources */,
 				0864C8A920FBBB5E00435EE3 /* Requests.swift in Sources */,
@@ -562,6 +577,7 @@
 				0864C8AB20FBBC8800435EE3 /* GalleryVC.swift in Sources */,
 				081C7BD52118B7EC004B107B /* Extensions.swift in Sources */,
 				0801785520F13531009A7982 /* Utils.swift in Sources */,
+				0895DC432153997000663F12 /* NewsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,7 +738,10 @@
 				DEVELOPMENT_TEAM = H5N8DHC85Z;
 				INFOPLIST_FILE = "Barcza GSC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.grimm.barcza.gsc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -746,7 +765,10 @@
 				DEVELOPMENT_TEAM = H5N8DHC85Z;
 				INFOPLIST_FILE = "Barcza GSC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.grimm.barcza.gsc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
