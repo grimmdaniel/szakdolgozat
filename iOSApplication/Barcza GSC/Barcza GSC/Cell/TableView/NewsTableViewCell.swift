@@ -27,7 +27,13 @@ class NewsTableViewCell: UITableViewCell {
         newsTitleLabel.text = data.title
         newsDateLabel.text = data.date
         
-        guard let url = URL(string: Settings.BGSC_ROOT_URL+data.image) else {
+        let chopped: String!
+        if data.image.contains(","){
+            chopped = data.image.components(separatedBy: ",").first
+        }else{
+            chopped = data.image
+        }
+        guard let url = URL(string: Settings.BGSC_ROOT_URL+chopped) else {
             newsImageView.image = #imageLiteral(resourceName: "placeholder.png")
             return
         }

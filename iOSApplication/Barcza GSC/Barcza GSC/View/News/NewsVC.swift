@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+import PromiseKit
 
 class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
@@ -29,9 +31,23 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         newsTableView.dataSource = self
         newsTableView.tableFooterView = UIView(frame: CGRect.zero)
         newsTableView.backgroundColor = UIColor.hexStringToUIColor(hex: "E3E3E3")
+        newsTableView.isHidden = true
         
         navigationController?.navigationBar.isHidden = true
         Utils.setUpNavbarColorAndSpecs(navigationController!)
+        
+        SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
+        SVProgressHUD.show()
+        
+        getAllNews().then { (completed) -> () in
+            log.info("News downloaded successfully")
+            self.newsTableView.reloadData()
+            self.newsTableView.isHidden = false
+            }.catch { (error) in
+                log.error(error)
+            }.always {
+                SVProgressHUD.dismiss()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,5 +107,4 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         view.backgroundColor = .clear
         return view
     }
-
 }

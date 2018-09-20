@@ -9,6 +9,74 @@
 import Foundation
 import PromiseKit
 
+extension NewsVC{
+    
+    func getAllNews() -> Promise<Void>{
+        return Promise<Void>{ fulfill, reject in
+            log.info("Getting news...")
+            let myNewsURLString = Settings.rootURL + "/news/all"
+            guard let myNewsURL = URL(string: myNewsURLString) else{
+                reject(NSError(domain:"Error: cannot create gallery URL",code: 100)); return
+            }
+            var myNewsURLRequest = URLRequest(url: myNewsURL)
+            myNewsURLRequest.allHTTPHeaderFields = Settings.headers
+            URLSession.shared.dataTask(with: myNewsURLRequest, completionHandler: { (data, response, error) in
+                
+                guard error == nil else {
+                    reject(NSError(domain:"Error getting response from my news request \(error!)",code: 101)); return
+                }
+                
+                guard let responseData = data else {
+                    reject(NSError(domain:"Did not receive my news data",code: 102)); return
+                }
+                
+                guard let news = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
+                    reject(NSError(domain: "Could not get JSON for my news call", code: 103)); return
+                }
+                
+                for newsData in news{
+                    let id: Int!
+                    if let _id = newsData["id"] as? Int{
+                        id = _id
+                    }else{
+                        id = -1
+                    }
+                    
+                    let title: String!
+                    if let _title = newsData["title"] as? String{
+                        title = _title
+                    }else{
+                        title = "null"
+                    }
+                    
+                    let image: String!
+                    if let _image = newsData["image"] as? String{
+                        image = _image
+                    }else{
+                        image = "null"
+                    }
+                    
+                    let date: String!
+                    if let _date = newsData["date"] as? String{
+                        date = _date
+                    }else{
+                        date = "2000.01.01.)"
+                    }
+                    
+                    let text: String!
+                    if let _text = newsData["text"] as? String{
+                        text = _text
+                    }else{
+                        text = ""
+                    }
+                    
+                    self.news.append(NewsData(id: id, title: title, image: image, date: date, text: text))
+                }
+                fulfill(())
+            }).resume()
+        }
+    }
+}
 
 extension GalleryVC{
     
