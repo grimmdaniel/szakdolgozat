@@ -82,7 +82,7 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.size.width * 0.7
+        return self.view.frame.size.width * 0.7 + 10
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
