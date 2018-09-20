@@ -40,6 +40,8 @@
 		0895DC432153997000663F12 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC422153997000663F12 /* NewsVC.swift */; };
 		0895DC4521539AC200663F12 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC4421539AC200663F12 /* NewsTableViewCell.swift */; };
 		0895DC472153A20C00663F12 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC462153A20C00663F12 /* NewsData.swift */; };
+		0895DC49215409D400663F12 /* DetailedNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC48215409D400663F12 /* DetailedNewsVC.swift */; };
+		0895DC4B21540B3500663F12 /* NewsDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC4A21540B3500663F12 /* NewsDataCell.swift */; };
 		08A2942020FCAFFE008BF214 /* InformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2941F20FCAFFE008BF214 /* InformationsVC.swift */; };
 		08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */; };
 		08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */; };
@@ -123,6 +125,8 @@
 		0895DC422153997000663F12 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		0895DC4421539AC200663F12 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		0895DC462153A20C00663F12 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
+		0895DC48215409D400663F12 /* DetailedNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedNewsVC.swift; sourceTree = "<group>"; };
+		0895DC4A21540B3500663F12 /* NewsDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataCell.swift; sourceTree = "<group>"; };
 		08A2941F20FCAFFE008BF214 /* InformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsVC.swift; sourceTree = "<group>"; };
 		08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNDatabase.swift; sourceTree = "<group>"; };
 		08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessBoardVC.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				0895DC422153997000663F12 /* NewsVC.swift */,
+				0895DC48215409D400663F12 /* DetailedNewsVC.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				0801785A20F14EBD009A7982 /* MenuTableViewCell.swift */,
 				0867A440213AA8B00061B6DE /* PGNGameInfoCell.swift */,
 				0895DC4421539AC200663F12 /* NewsTableViewCell.swift */,
+				0895DC4A21540B3500663F12 /* NewsDataCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 				08F4129920F21D3E00166F98 /* PlayerFinderVC.swift in Sources */,
 				08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */,
 				0895DC3B21526DBD00663F12 /* DocumentsVC.swift in Sources */,
+				0895DC49215409D400663F12 /* DetailedNewsVC.swift in Sources */,
 				08D402F020F125730005038B /* AppDelegate.swift in Sources */,
 				0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */,
 				0861B57F2138317F00D50ED3 /* PGNGame.swift in Sources */,
@@ -574,6 +581,7 @@
 				0864C8A620FB8E6900435EE3 /* GalleryData.swift in Sources */,
 				08A2942020FCAFFE008BF214 /* InformationsVC.swift in Sources */,
 				08F4129520F2173700166F98 /* RatingChangeCalculatorVC.swift in Sources */,
+				0895DC4B21540B3500663F12 /* NewsDataCell.swift in Sources */,
 				0801785320F13525009A7982 /* Settings.swift in Sources */,
 				082F8C2C21162F7800A52D7F /* Stack.swift in Sources */,
 				08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */,

@@ -22,6 +22,7 @@ class Settings {
     static let device = UIDevice().model + " , " + UIDevice().systemName + " " + UIDevice().systemVersion
 }
 
+
 public extension UIDevice {
     
     var modelName: String {

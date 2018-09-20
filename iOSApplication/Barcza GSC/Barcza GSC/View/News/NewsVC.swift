@@ -84,6 +84,20 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = news[indexPath.section]
+        performSegue(withIdentifier: "toDetailedNews", sender: data)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailedNews"{
+            let vc = segue.destination as! DetailedNewsVC
+            if let sender = sender as? NewsData{
+                vc.detailedArticle = sender
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.view.frame.size.width * 0.7 + 10
     }
