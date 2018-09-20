@@ -15,6 +15,7 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     @IBOutlet weak var newsTableView: UITableView!
     
+    var news = [NewsData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return news.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,7 +53,7 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         cell.backgroundColor = UIColor.hexStringToUIColor(hex: "E3E3E3")
         cell.corneredView.layer.cornerRadius = 10.0
         cell.newsImageView.layer.cornerRadius = 10.0
-        cell.updateUI()
+        cell.updateUI(data: news[indexPath.section])
         if #available(iOS 11.0, *) {
             cell.newsImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         } else {

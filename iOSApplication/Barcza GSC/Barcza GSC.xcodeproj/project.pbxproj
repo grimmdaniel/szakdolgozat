@@ -39,6 +39,7 @@
 		0895DC3D2152728300663F12 /* PDFWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC3C2152728300663F12 /* PDFWebViewVC.swift */; };
 		0895DC432153997000663F12 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC422153997000663F12 /* NewsVC.swift */; };
 		0895DC4521539AC200663F12 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC4421539AC200663F12 /* NewsTableViewCell.swift */; };
+		0895DC472153A20C00663F12 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC462153A20C00663F12 /* NewsData.swift */; };
 		08A2942020FCAFFE008BF214 /* InformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2941F20FCAFFE008BF214 /* InformationsVC.swift */; };
 		08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */; };
 		08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */; };
@@ -121,6 +122,7 @@
 		0895DC3C2152728300663F12 /* PDFWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFWebViewVC.swift; sourceTree = "<group>"; };
 		0895DC422153997000663F12 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		0895DC4421539AC200663F12 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		0895DC462153A20C00663F12 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		08A2941F20FCAFFE008BF214 /* InformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsVC.swift; sourceTree = "<group>"; };
 		08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNDatabase.swift; sourceTree = "<group>"; };
 		08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessBoardVC.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				080CD05C213823EC00E4361B /* PGNParser */,
 				08F4129620F218D200166F98 /* RatingChange.swift */,
 				0864C8A520FB8E6900435EE3 /* GalleryData.swift */,
+				0895DC462153A20C00663F12 /* NewsData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				080CD05E2138240300E4361B /* PGNParser.swift in Sources */,
 				0864C8A920FBBB5E00435EE3 /* Requests.swift in Sources */,
 				0895DC3D2152728300663F12 /* PDFWebViewVC.swift in Sources */,
+				0895DC472153A20C00663F12 /* NewsData.swift in Sources */,
 				0801785120F13491009A7982 /* SWRevealViewController.m in Sources */,
 				0801785B20F14EBD009A7982 /* MenuTableViewCell.swift in Sources */,
 				0801785920F14CD7009A7982 /* MenuVC.swift in Sources */,

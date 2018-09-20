@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewsTableViewCell: UITableViewCell {
 
@@ -16,12 +17,21 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var downView: UIView!
     @IBOutlet weak var corneredView: UIView!
 
-    func updateUI(){
+    func updateUI(data: NewsData){
         corneredView.layer.shadowOpacity = 0.18
         corneredView.layer.shadowOffset = CGSize(width: 0, height: 2)
         corneredView.layer.shadowRadius = 2
         corneredView.layer.shadowColor = UIColor.black.cgColor
         corneredView.layer.masksToBounds = false
+        
+        newsTitleLabel.text = data.title
+        newsDateLabel.text = data.date
+        
+        guard let url = URL(string: Settings.BGSC_ROOT_URL+data.image) else {
+            newsImageView.image = #imageLiteral(resourceName: "placeholder.png")
+            return
+        }
+        newsImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "placeholder.png"))
     }
     
 }
