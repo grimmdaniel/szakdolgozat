@@ -41,6 +41,9 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         
         getAllNews().then { (completed) -> () in
             log.info("News downloaded successfully")
+            self.news = self.news.sorted(by: { (lhs, rhs) -> Bool in
+                lhs.date > rhs.date
+            })
             self.newsTableView.reloadData()
             self.newsTableView.isHidden = false
             }.catch { (error) in
