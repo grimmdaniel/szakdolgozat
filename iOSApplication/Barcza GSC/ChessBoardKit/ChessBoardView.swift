@@ -64,7 +64,12 @@ public class ChessBoardView: UIView {
     @IBOutlet var squaresStorage: [UIButton]!
     
     @IBAction func squarePressed(_ sender: UIButton){
-        let coord: Coords = convertTagToCoords[sender.tag]!
+        let coords: Coords = convertTagToCoords[sender.tag]!
+        performMove(coords: coords, sender: sender)
+    }
+    
+    private func performMove(coords: Coords, sender: UIButton = UIButton()){
+        let coord = coords
         switch nextTask {
         case .whiteToMove:
             boardModel.selectedSquareFirst = boardModel.getSpotFromCoord(coord: coord)
@@ -407,21 +412,8 @@ public class ChessBoardView: UIView {
                     if let piece = piece1.pieceHere{
                         if piece.side == .white && piece.identifier == .pawn{
                             // found piece
-                            var from: Int!
-                            var to: Int!
-                            convertTagToCoords.forEach { (key,value) in
-                                if value == bid1{
-                                    to = key
-                                }else if value == Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1){
-                                    from = key
-                                }
-                            }
-                            let buttonFrom = UIButton()
-                            buttonFrom.tag = from
-                            let buttonTo = UIButton()
-                            buttonTo.tag = to
-                            squarePressed(buttonFrom)
-                            squarePressed(buttonTo)
+                            performMove(coords: bid1)
+                            performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1))
                             return
                         }
                         return
@@ -430,22 +422,8 @@ public class ChessBoardView: UIView {
                     if let piece = piece2.pieceHere{
                         if piece.side == .white && piece.identifier == .pawn{
                             // found piece
-                            var from: Int!
-                            var to: Int!
-                            convertTagToCoords.forEach { (key,value) in
-                                if value == bid2{
-                                    from = key
-                                }else if value == Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1){
-                                    to = key
-                                }
-                            }
-                            print(from)
-                            let buttonFrom = UIButton()
-                            buttonFrom.tag = from
-                            let buttonTo = UIButton()
-                            buttonTo.tag = to
-                            squarePressed(buttonFrom)
-                            squarePressed(buttonTo)
+                            performMove(coords: bid2)
+                            performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1))
                             return
                         }
                         return
