@@ -15,16 +15,30 @@ class PGNGameTextParser{
     
     private init(){}
    
-    public func parseGameText(from text: String) -> [ChessBoardKit.MoveRoute]?{
-        let choppedGame = text.components(separatedBy: ". ").filter { (move) -> Bool in
-            Int(move) == nil
-        }
-        for i in choppedGame{
-            let tmp = i.components(separatedBy: " ")
-            if tmp.count == 3{
-                print(tmp[0] + " " + tmp[1])
+    public func parseGameText(from text: String) -> [String]{
+        var moveSpace = MoveBorderComponent.number
+        var movesToReturn = [String]()
+        var tmpText = ""
+        for element in text.components(separatedBy: " "){
+            switch moveSpace{
+            case .number:
+                tmpText.append(element + " ")
+                moveSpace = .white
+            case .white:
+                tmpText.append(element + " ")
+                moveSpace = .black
+            case .black:
+                tmpText.append(element)
+                movesToReturn.append(tmpText)
+                tmpText = ""
+                moveSpace = .number
             }
         }
-        return []
+        print(movesToReturn)
+        return movesToReturn
+    }
+    
+    enum MoveBorderComponent{
+        case number,white,black
     }
 }

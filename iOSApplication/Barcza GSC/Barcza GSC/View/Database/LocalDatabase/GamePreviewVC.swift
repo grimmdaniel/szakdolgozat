@@ -14,7 +14,8 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     
     @IBOutlet weak var chessBoard: ChessBoardView!
     var game: PGNGame!
-    var parsedGame = [ChessBoardKit.MoveRoute]()
+    var parsedGame = [String]()
+    var currentMoveIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,18 +24,22 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
         chessBoard.isMovementEnabled = false
         
         let parser = PGNGameTextParser.parser
-        print(game.gameText)
-        parsedGame = parser.parseGameText(from: game.gameText) ?? []
+        parsedGame = parser.parseGameText(from: game.gameText)
     }
     
     @IBOutlet weak var forwardBtn: UIButton!
     @IBOutlet weak var backwardBtn: UIButton!
     
     @IBAction func backwardBtnPressed(_ sender: UIButton) {
+        if currentMoveIndex == 0 { return }
+        //TODO
         print("backward")
     }
     
     @IBAction func forwardBtnPressed(_ sender: UIButton) {
+        if parsedGame.count == currentMoveIndex { return }
+        chessBoard.processNextMove(movePair: parsedGame[currentMoveIndex])
+        currentMoveIndex += 1
         print("forward")
     }
     

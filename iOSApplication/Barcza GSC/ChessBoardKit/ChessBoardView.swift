@@ -341,6 +341,8 @@ public class ChessBoardView: UIView {
     
     private let convertTagToSquare = [0:"a8",1:"b8",2:"c8",3:"d8",4:"e8",5:"f8",6:"g8",7:"h8",8:"a7",9:"b7",10:"c7",11:"d7",12:"e7",13:"f7",14:"g7",15:"h8",16:"a6",17:"b6",18:"c6",19:"d6",20:"e6",21:"f6",22:"g6",23:"h6",24:"a5",25:"b5",26:"c5",27:"d5",28:"e5",29:"f5",30:"g5",31:"h5",32:"a4",33:"b4",34:"c4",35:"d4",36:"e4",37:"f4",38:"g4",39:"h4",40:"a3",41:"b3",42:"c3",43:"d3",44:"e3",45:"f3",46:"g3",47:"h3",48:"a2",49:"b2",50:"c2",51:"d2",52:"e2",53:"f2",54:"g2",55:"h2",56:"a1",57:"b1",58:"c1",59:"d1",60:"e1",61:"f1",62:"g1",63:"h1"]
     
+    private let convertFileLetterToIndex = ["a":0,"b":1,"c":2,"d":3,"e":4,"f":5,"g":6,"h":7]
+    
     private func switchBorderToButton(on: Bool,button: UIButton){
         if on{
             button.layer.borderWidth = 3
@@ -374,6 +376,100 @@ public class ChessBoardView: UIView {
                 index += 1
             }
         }
+    }
+    
+    public func processNextMove(movePair: String){
+        let pieceNames = ["K","Q","R","B","N","O"]
+        let chopped = movePair.components(separatedBy: " ")
+        if chopped.count != 3 { return }
+        var movenumber = chopped.first!
+        if movenumber.hasSuffix("."){
+            movenumber.removeLast()
+        }
+        
+        if (pieceNames.contains(String(chopped[1].first!))){ // Piece move, white
+            
+        }else{ // pawn move
+            if chopped[1].contains("x"){ //pawn capturing something
+                let pawnChopped = chopped[1].components(separatedBy: "x")
+                if pawnChopped.count != 2 { return }
+                if let number = getNumberFromDestination(pawnChopped[1], side: .white){
+                    print("\(pawnChopped[0])\(number) \(pawnChopped[1])")
+                }
+            }else{
+                let pawnChopped = chopped[1]
+                if pawnChopped.count == 2{
+                    let file = String(pawnChopped.first!)
+                    guard let number = Int(String(pawnChopped.last!)) else { return }
+                    let bid1 = Coords(rank: number + 1, file: convertFileLetterToIndex[file] ?? -1)
+                    let bid2 = Coords(rank: number + 2, file: convertFileLetterToIndex[file] ?? -1)
+                    let piece1 = boardModel.getSpotFromCoord(coord: bid1)
+                    if let piece = piece1.pieceHere{
+                        if piece.side == .white && piece.identifier == .pawn{
+                            // found piece
+                            var from: Int!
+                            var to: Int!
+                            convertTagToCoords.forEach { (key,value) in
+                                if value == bid1{
+                                    to = key
+                                }else if value == Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1){
+                                    from = key
+                                }
+                            }
+                            let buttonFrom = UIButton()
+                            buttonFrom.tag = from
+                            let buttonTo = UIButton()
+                            buttonTo.tag = to
+                            squarePressed(buttonFrom)
+                            squarePressed(buttonTo)
+                            return
+                        }
+                        return
+                    }
+                    let piece2 = boardModel.getSpotFromCoord(coord: bid2)
+                    if let piece = piece2.pieceHere{
+                        if piece.side == .white && piece.identifier == .pawn{
+                            // found piece
+                            var from: Int!
+                            var to: Int!
+                            convertTagToCoords.forEach { (key,value) in
+                                if value == bid2{
+                                    from = key
+                                }else if value == Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1){
+                                    to = key
+                                }
+                            }
+                            print(from)
+                            let buttonFrom = UIButton()
+                            buttonFrom.tag = from
+                            let buttonTo = UIButton()
+                            buttonTo.tag = to
+                            squarePressed(buttonFrom)
+                            squarePressed(buttonTo)
+                            return
+                        }
+                        return
+                    }else{
+                        return
+                    }
+                }
+                print(pawnChopped)
+            }
+        }
+    }
+    
+    private func getNumberFromDestination(_ destination: String, side: SquarePieceOwner) -> Int?{
+        let digitSet = CharacterSet.decimalDigits
+        for char in destination{
+            if digitSet.contains(char.unicodeScalars.first!){
+                if side == .white{
+                    return Int(String(char))! - 1
+                }else{
+                    return Int(String(char))! + 1
+                }
+            }
+        }
+        return nil
     }
 
 }
