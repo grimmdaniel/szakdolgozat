@@ -12,7 +12,7 @@ class Rook: Piece{
     
     var moved = false
     
-    init(position: Coords,side: SquarePieceOwner, isAlive: Bool) {
+    init(position: Coords,side: SquarePieceOwner) {
         switch side {
         case .black:
             super.init(identifier: .rook, value: 5, side: side, image: UIImage(named: "rook_black.png")!)

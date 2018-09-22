@@ -94,53 +94,53 @@ class BoardModel: AccessToChessBoard{
         for i in 0..<8{
             for j in 0..<8{
                 if i == 6{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Pawn(position: Coords(rank: i, file: j), side: .white, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Pawn(position: Coords(rank: i, file: j), side: .white))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                 }else if i == 1{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Pawn(position: Coords(rank: i, file: j), side: .black, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Pawn(position: Coords(rank: i, file: j), side: .black))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                     //black pieces
                 }else if i == 0 && j == 0 || i == 0 && j == 7{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Rook(position: Coords(rank: i, file: j), side: .black, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Rook(position: Coords(rank: i, file: j), side: .black))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                 }else if i == 0 && j == 1 || i == 0 && j == 6{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Knight(position: Coords(rank: i, file: j), side: .black, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Knight(position: Coords(rank: i, file: j), side: .black))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                 }else if i == 0 && j == 2 || i == 0 && j == 5{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Bishop(position: Coords(rank: i, file: j), side: .black, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Bishop(position: Coords(rank: i, file: j), side: .black))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                 }else if i == 0 && j == 3{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Queen(position: Coords(rank: i, file: j), side: .black, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Queen(position: Coords(rank: i, file: j), side: .black))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                 }else if i == 0 && j == 4{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: King(position: Coords(rank: i, file: j), side: .black, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: King(position: Coords(rank: i, file: j), side: .black))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                     // white pieces
                 }else if i == 7 && j == 0 || i == 7 && j == 7{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Rook(position: Coords(rank: i, file: j), side: .white, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Rook(position: Coords(rank: i, file: j), side: .white))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                 }else if i == 7 && j == 1 || i == 7 && j == 6{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Knight(position: Coords(rank: i, file: j), side: .white, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Knight(position: Coords(rank: i, file: j), side: .white))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                 }else if i == 7 && j == 2 || i == 7 && j == 5{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Bishop(position: Coords(rank: i, file: j), side: .white, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Bishop(position: Coords(rank: i, file: j), side: .white))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                 }else if i == 7 && j == 3{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Queen(position: Coords(rank: i, file: j), side: .white, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: Queen(position: Coords(rank: i, file: j), side: .white))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                 }else if i == 7 && j == 4{
-                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: King(position: Coords(rank: i, file: j), side: .white, isAlive: true))
+                    let spot = Spot(position: Coords(rank: i, file: j), pieceHere: King(position: Coords(rank: i, file: j), side: .white))
                     spot.pieceHere!.delegate = self
                     _board.append(spot)
                 }else{

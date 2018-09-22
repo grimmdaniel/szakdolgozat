@@ -14,7 +14,7 @@ class King: Piece{
     var isLongCastleAllowed = true
     var isInCheckNow = false
     
-    init(position: Coords,side: SquarePieceOwner, isAlive: Bool) {
+    init(position: Coords,side: SquarePieceOwner) {
         switch side {
         case .black:
             super.init(identifier: .king, value: 10, side: side, image: UIImage(named: "king_black.png")!)
@@ -70,7 +70,7 @@ class King: Piece{
                         if let piece = BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: 7, file: 7)){
                             if piece.identifier == .rook && piece.side == side{
                                 if (piece as! Rook).moved { return false }
-                                if delegate.emulateThreatSearch(with: Spot(position: Coords(rank: 7, file: 5), pieceHere: King(position: Coords(rank: 7, file: 5), side: .white, isAlive: true))).isEmpty{
+                                if delegate.emulateThreatSearch(with: Spot(position: Coords(rank: 7, file: 5), pieceHere: King(position: Coords(rank: 7, file: 5), side: .white))).isEmpty{
                                     delegate.setCastleMode(with: .whiteShort)
                                     print("white short castle")
                                     return true
@@ -88,7 +88,7 @@ class King: Piece{
                         if let piece = BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: 7, file: 0)){
                             if piece.identifier == .rook && piece.side == side{
                                 if (piece as! Rook).moved { return false }
-                                if delegate.emulateThreatSearch(with: Spot(position: Coords(rank: 7, file: 3), pieceHere: King(position: Coords(rank: 7, file: 3), side: .white, isAlive: true))).isEmpty{
+                                if delegate.emulateThreatSearch(with: Spot(position: Coords(rank: 7, file: 3), pieceHere: King(position: Coords(rank: 7, file: 3), side: .white))).isEmpty{
                                     delegate.setCastleMode(with: .whiteLong)
                                     print("white long castle")
                                     return true
@@ -108,7 +108,7 @@ class King: Piece{
                         if let piece = BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: 0, file: 7)){
                             if piece.identifier == .rook && piece.side == side{
                                 if (piece as! Rook).moved { return false }
-                                if delegate.emulateThreatSearch(with: Spot(position: Coords(rank: 0, file: 5), pieceHere: King(position: Coords(rank: 0, file: 5), side: .black, isAlive: true))).isEmpty{
+                                if delegate.emulateThreatSearch(with: Spot(position: Coords(rank: 0, file: 5), pieceHere: King(position: Coords(rank: 0, file: 5), side: .black))).isEmpty{
                                     delegate.setCastleMode(with: .blackShort)
                                     print("black short castle")
                                     return true
@@ -126,7 +126,7 @@ class King: Piece{
                         if let piece = BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: 0, file: 0)){
                             if piece.identifier == .rook && piece.side == side{
                                 if (piece as! Rook).moved { return false }
-                                if delegate.emulateThreatSearch(with: Spot(position: Coords(rank: 0, file: 3), pieceHere: King(position: Coords(rank: 0, file: 3), side: .black, isAlive: true))).isEmpty{
+                                if delegate.emulateThreatSearch(with: Spot(position: Coords(rank: 0, file: 3), pieceHere: King(position: Coords(rank: 0, file: 3), side: .black))).isEmpty{
                                     delegate.setCastleMode(with: .blackLong)
                                     print("black long castle")
                                     return true

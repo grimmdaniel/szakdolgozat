@@ -10,7 +10,7 @@ import Foundation
 
 class Pawn: Piece {
     
-    init(position: Coords,side: SquarePieceOwner, isAlive: Bool) {
+    init(position: Coords,side: SquarePieceOwner) {
         switch side {
         case .black:
             super.init(identifier: .pawn, value: 1, side: side, image: UIImage(named: "pawn_black.png")!)

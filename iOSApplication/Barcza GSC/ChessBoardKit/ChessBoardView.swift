@@ -121,7 +121,7 @@ public class ChessBoardView: UIView {
                     if boardModel.enPassantSquare != nil{
                         let piecePlace = boardModel.getSpotFromCoord(coord: Coords(rank: boardModel.enPassantSquare!.rank + 1, file: boardModel.enPassantSquare!.file))
                         if !piecePlace.isOccupied(){
-                            let newPawn = Pawn(position: piecePlace.position, side: .black, isAlive: true)
+                            let newPawn = Pawn(position: piecePlace.position, side: .black)
                             newPawn.delegate = boardModel
                             piecePlace.occupySpot(with: newPawn)
                         }
@@ -219,7 +219,7 @@ public class ChessBoardView: UIView {
                     if boardModel.enPassantSquare != nil{
                         let piecePlace = boardModel.getSpotFromCoord(coord: Coords(rank: boardModel.enPassantSquare!.rank - 1, file: boardModel.enPassantSquare!.file))
                         if !piecePlace.isOccupied(){
-                            let newPawn = Pawn(position: piecePlace.position, side: .white, isAlive: true)
+                            let newPawn = Pawn(position: piecePlace.position, side: .white)
                             newPawn.delegate = boardModel
                             piecePlace.occupySpot(with: newPawn)
                         }
@@ -297,7 +297,7 @@ public class ChessBoardView: UIView {
         
         actionSheet.addAction(UIAlertAction(title: "Queen", style: .default, handler: { (alert:UIAlertAction!) -> Void in
             if let piece = self.boardModel.findPromotedPawn(){
-                piece.pieceHere = Queen(position: piece.position, side: piece.pieceHere!.side, isAlive: true)
+                piece.pieceHere = Queen(position: piece.position, side: piece.pieceHere!.side)
                 piece.pieceHere!.delegate = self.boardModel
             }
             print("promoted to queen")
@@ -306,7 +306,7 @@ public class ChessBoardView: UIView {
         
         actionSheet.addAction(UIAlertAction(title: "Rook", style: .default, handler: { (alert:UIAlertAction!) -> Void in
             if let piece = self.boardModel.findPromotedPawn(){
-                piece.pieceHere = Rook(position: piece.position, side: piece.pieceHere!.side, isAlive: true)
+                piece.pieceHere = Rook(position: piece.position, side: piece.pieceHere!.side)
                 piece.pieceHere!.delegate = self.boardModel
             }
             print("promoted to rook")
@@ -315,7 +315,7 @@ public class ChessBoardView: UIView {
         
         actionSheet.addAction(UIAlertAction(title: "Bishop", style: .default, handler: { (alert:UIAlertAction!) -> Void in
             if let piece = self.boardModel.findPromotedPawn(){
-                piece.pieceHere = Bishop(position: piece.position, side: piece.pieceHere!.side, isAlive: true)
+                piece.pieceHere = Bishop(position: piece.position, side: piece.pieceHere!.side)
                 piece.pieceHere!.delegate = self.boardModel
             }
             print("promoted to bishop")
@@ -324,7 +324,7 @@ public class ChessBoardView: UIView {
         
         actionSheet.addAction(UIAlertAction(title: "Knight", style: .default, handler: { (alert:UIAlertAction!) -> Void in
             if let piece = self.boardModel.findPromotedPawn(){
-                piece.pieceHere = Knight(position: piece.position, side: piece.pieceHere!.side, isAlive: true)
+                piece.pieceHere = Knight(position: piece.position, side: piece.pieceHere!.side)
                 piece.pieceHere!.delegate = self.boardModel
             }
             print("promoted to knight")
@@ -334,7 +334,7 @@ public class ChessBoardView: UIView {
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:
             { (alert:UIAlertAction!) -> Void in
                 if let piece = self.boardModel.findPromotedPawn(){
-                    piece.pieceHere = Queen(position: piece.position, side: piece.pieceHere!.side, isAlive: true)
+                    piece.pieceHere = Queen(position: piece.position, side: piece.pieceHere!.side)
                     piece.pieceHere!.delegate = self.boardModel
                 }
                 print("promoted to queen")

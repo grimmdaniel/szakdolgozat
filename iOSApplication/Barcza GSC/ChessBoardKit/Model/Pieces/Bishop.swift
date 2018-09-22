@@ -10,7 +10,7 @@ import Foundation
 
 class Bishop: Piece{
     
-    init(position: Coords,side: SquarePieceOwner, isAlive: Bool) {
+    init(position: Coords,side: SquarePieceOwner) {
         switch side {
         case .black:
             super.init(identifier: .bishop, value: 3, side: side, image: UIImage(named: "bishop_black.png")!)

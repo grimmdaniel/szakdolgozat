@@ -10,7 +10,7 @@ import Foundation
 
 class Knight: Piece{
     
-    init(position: Coords,side: SquarePieceOwner, isAlive: Bool) {
+    init(position: Coords,side: SquarePieceOwner) {
         switch side {
         case .black:
             super.init(identifier: .knight, value: 3, side: side, image: UIImage(named: "knight_black.png")!)
