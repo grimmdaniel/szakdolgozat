@@ -15,9 +15,9 @@ class Rook: Piece{
     init(position: Coords,side: SquarePieceOwner, isAlive: Bool) {
         switch side {
         case .black:
-            super.init(identifier: .rook, value: 5, side: side, image: UIImage(named: "rook_black.png")!, isAlive: isAlive)
+            super.init(identifier: .rook, value: 5, side: side, image: UIImage(named: "rook_black.png")!)
         case .white:
-            super.init(identifier: .rook, value: 5, side: side, image: UIImage(named: "rook_white.png")!, isAlive: isAlive)
+            super.init(identifier: .rook, value: 5, side: side, image: UIImage(named: "rook_white.png")!)
         }
     }
     

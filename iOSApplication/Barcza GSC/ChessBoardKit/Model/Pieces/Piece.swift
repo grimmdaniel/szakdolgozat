@@ -15,14 +15,12 @@ class Piece: PieceMovement, FENGeneration{
     private var _value: Int!
     private var _side: SquarePieceOwner!
     private var _image: UIImage!
-    private var _isAlive: Bool!
     
-    init(identifier: FigurineType, value: Int, side: SquarePieceOwner, image: UIImage, isAlive: Bool) {
+    init(identifier: FigurineType, value: Int, side: SquarePieceOwner, image: UIImage) {
         _identifier = identifier
         _value = value
         _side = side
         _image = image
-        _isAlive = isAlive
     }
     
     var identifier: FigurineType{

@@ -13,9 +13,9 @@ class Pawn: Piece {
     init(position: Coords,side: SquarePieceOwner, isAlive: Bool) {
         switch side {
         case .black:
-            super.init(identifier: .pawn, value: 1, side: side, image: UIImage(named: "pawn_black.png")!, isAlive: isAlive)
+            super.init(identifier: .pawn, value: 1, side: side, image: UIImage(named: "pawn_black.png")!)
         case .white:
-            super.init(identifier: .pawn, value: 1, side: side, image: UIImage(named: "pawn_white.png")!, isAlive: isAlive)
+            super.init(identifier: .pawn, value: 1, side: side, image: UIImage(named: "pawn_white.png")!)
         }
     }
     

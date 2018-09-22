@@ -13,9 +13,9 @@ class Bishop: Piece{
     init(position: Coords,side: SquarePieceOwner, isAlive: Bool) {
         switch side {
         case .black:
-            super.init(identifier: .bishop, value: 3, side: side, image: UIImage(named: "bishop_black.png")!, isAlive: isAlive)
+            super.init(identifier: .bishop, value: 3, side: side, image: UIImage(named: "bishop_black.png")!)
         case .white:
-            super.init(identifier: .bishop, value: 3, side: side, image: UIImage(named: "bishop_white.png")!, isAlive: isAlive)
+            super.init(identifier: .bishop, value: 3, side: side, image: UIImage(named: "bishop_white.png")!)
         }
     }
     

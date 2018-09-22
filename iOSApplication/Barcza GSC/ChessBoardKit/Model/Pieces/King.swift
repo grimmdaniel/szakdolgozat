@@ -17,9 +17,9 @@ class King: Piece{
     init(position: Coords,side: SquarePieceOwner, isAlive: Bool) {
         switch side {
         case .black:
-            super.init(identifier: .king, value: 10, side: side, image: UIImage(named: "king_black.png")!, isAlive: isAlive)
+            super.init(identifier: .king, value: 10, side: side, image: UIImage(named: "king_black.png")!)
         case .white:
-            super.init(identifier: .king, value: 10, side: side, image: UIImage(named: "king_white.png")!, isAlive: isAlive)
+            super.init(identifier: .king, value: 10, side: side, image: UIImage(named: "king_white.png")!)
         }
     }
     
