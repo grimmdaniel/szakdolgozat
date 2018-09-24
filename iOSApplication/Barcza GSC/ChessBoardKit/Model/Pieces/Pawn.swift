@@ -27,13 +27,11 @@ class Pawn: Piece {
         }
     }
     
-    //en passant missing
     override func isValidMove(from: Coords, to: Coords) -> Bool {
         if let delegate = delegate{
             let board = delegate.accessToBoard()
             if side == .white {
-                
-                //              checking en passant
+                 //              checking en passant
                 if to == delegate.accessToEnPassantSquare(){
                     if abs(from.file - to.file) == 1 && from.rank - to.rank == 1{
                         for i in board{
@@ -44,7 +42,6 @@ class Pawn: Piece {
                         return true
                     }
                 }
-                
                 if to.file != from.file {
                     if from.rank - 1 == to.rank{
                         if  from.file - 1 == to.file{
@@ -120,7 +117,6 @@ class Pawn: Piece {
                     }
                 }
             }else{
-                
                 //              checking en passant
                 if to == delegate.accessToEnPassantSquare(){
                     if abs(from.file - to.file) == 1 && from.rank - to.rank == -1{
@@ -132,7 +128,6 @@ class Pawn: Piece {
                         return true
                     }
                 }
-                
                 if to.file != from.file {
                     if from.rank + 1 == to.rank{
                         if  from.file - 1 == to.file{

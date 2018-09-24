@@ -8,16 +8,6 @@
 
 import Foundation
 
-//
-//  BoardModel.swift
-//  Barcza GSC
-//
-//  Created by Grimm Dániel on 2018. 07. 15..
-//  Copyright © 2018. daniel.grimm. All rights reserved.
-//
-
-import Foundation
-
 class BoardModel: AccessToChessBoard{
     
     private var _board = [Spot]()
