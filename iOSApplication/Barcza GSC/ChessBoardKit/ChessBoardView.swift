@@ -402,36 +402,46 @@ public class ChessBoardView: UIView {
                     print("\(pawnChopped[0])\(number) \(pawnChopped[1])")
                 }
             }else{
-                let pawnChopped = chopped[1]
-                if pawnChopped.count == 2{
-                    let file = String(pawnChopped.first!)
-                    guard let number = Int(String(pawnChopped.last!)) else { return }
-                    let bid1 = Coords(rank: number + 1, file: convertFileLetterToIndex[file] ?? -1)
-                    let bid2 = Coords(rank: number + 2, file: convertFileLetterToIndex[file] ?? -1)
-                    let piece1 = boardModel.getSpotFromCoord(coord: bid1)
-                    if let piece = piece1.pieceHere{
-                        if piece.side == .white && piece.identifier == .pawn{
-                            // found piece
-                            performMove(coords: bid1)
-                            performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1))
-                            return
-                        }
-                        return
-                    }
-                    let piece2 = boardModel.getSpotFromCoord(coord: bid2)
-                    if let piece = piece2.pieceHere{
-                        if piece.side == .white && piece.identifier == .pawn{
-                            // found piece
-                            performMove(coords: bid2)
-                            performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1))
-                            return
-                        }
-                        return
-                    }else{
-                        return
-                    }
+                movePawnFromPGN(move: chopped[1], with: .white)
+                movePawnFromPGN(move: chopped[2], with: .black)
+            }
+        }
+    }
+    
+    private func movePawnFromPGN(move pawnChopped: String, with side: SquarePieceOwner){
+        let sideDeterminer: Int = side == .white ? 1 : -1
+        if pawnChopped.count == 2{
+            let file = String(pawnChopped.first!)
+            guard var number = Int(String(pawnChopped.last!)) else {
+                print("Can't find rank number")
+                return
+            }
+            
+            number = 8 - number
+            
+            let bid1 = Coords(rank: number + 1 * sideDeterminer, file: convertFileLetterToIndex[file] ?? -1)
+            let bid2 = Coords(rank: number + 2 * sideDeterminer, file: convertFileLetterToIndex[file] ?? -1)
+            let piece1 = boardModel.getSpotFromCoord(coord: bid1)
+            if let piece = piece1.pieceHere{
+                if piece.side == side && piece.identifier == .pawn{
+                    // found piece
+                    print("performing move with bid 1")
+                    performMove(coords: bid1)
+                    performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1))
+                    return
                 }
-                print(pawnChopped)
+                return
+            }
+            let piece2 = boardModel.getSpotFromCoord(coord: bid2)
+            if let piece = piece2.pieceHere{
+                if piece.side == side && piece.identifier == .pawn{
+                    // found piece
+                     print("performing move with bid 2")
+                    performMove(coords: bid2)
+                    performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1))
+                    return
+                }
+                return
             }
         }
     }
