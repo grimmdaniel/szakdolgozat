@@ -77,6 +77,18 @@ class BoardModel: AccessToChessBoard{
         return nil
     }
     
+    func getPossibleStartingPoints(figurineType: FigurineType, side: SquarePieceOwner) -> [Coords]{
+        var returnValue = [Coords]()
+        for possibleSquare in _board{
+            if let piece = possibleSquare.pieceHere{
+                if piece.identifier == figurineType && piece.side == side{
+                    returnValue.append(possibleSquare.position)
+                }
+            }
+        }
+        return returnValue
+    }
+    
     func initializeBoard(){
         _board.removeAll()
         _moveCounter = 1

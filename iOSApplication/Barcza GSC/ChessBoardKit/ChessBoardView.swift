@@ -393,24 +393,71 @@ public class ChessBoardView: UIView {
         }
         
         if (pieceNames.contains(String(chopped[1].first!))){ // Piece move, white
-            
+            moveFigurineFromPGN(move: chopped[1], with: .white)
         }else{ // pawn move
-            if chopped[1].contains("x"){ //pawn capturing something
-                let pawnChopped = chopped[1].components(separatedBy: "x")
-                if pawnChopped.count != 2 { return }
-                if let number = getNumberFromDestination(pawnChopped[1], side: .white){
-                    print("\(pawnChopped[0])\(number) \(pawnChopped[1])")
+            movePawnFromPGN(move: chopped[1], with: .white)
+        }
+        
+        if (pieceNames.contains(String(chopped[2].first!))){ // Piece move, black
+            moveFigurineFromPGN(move: chopped[2], with: .black)
+        }else{ // pawn move
+            movePawnFromPGN(move: chopped[2], with: .black)
+        }
+    }
+    
+    private func moveFigurineFromPGN(move: String, with side: SquarePieceOwner){
+        //TODO Castling
+        if move.contains("x"){ // capturing
+            
+        }else{
+            if move.count == 3{
+                let pieceID = String(move.first!)
+                let figurine: FigurineType!
+                switch pieceID{
+                case "N":
+                    figurine = .knight
+                case "B":
+                    figurine = .bishop
+                case "R":
+                    figurine = .rook
+                case "Q":
+                    figurine = .queen
+                case "K":
+                    figurine = .king
+                default:
+                    print("Fatal error")
+                    return
                 }
-            }else{
-                movePawnFromPGN(move: chopped[1], with: .white)
-                movePawnFromPGN(move: chopped[2], with: .black)
+             
+                guard var number = Int(String(move.last!)) else {
+                    print("Can't find rank number")
+                    return
+                }
+                number = 8 - number
+                let fileString = String(move[move.index(move.startIndex, offsetBy: 1)])
+                let destination = Coords(rank: number, file: convertFileLetterToIndex[fileString] ?? -1)
+                let possibleStartingSquares = boardModel.getPossibleStartingPoints(figurineType: figurine, side: side)
+                if possibleStartingSquares.count == 0 { print("Can't find piece starting point"); return }
+                let actualNextPlayer = nextTask
+                for i in possibleStartingSquares{
+                    performMove(coords: i)
+                    performMove(coords: destination)
+                    if actualNextPlayer != nextTask { return }
+                }
             }
         }
     }
     
     private func movePawnFromPGN(move pawnChopped: String, with side: SquarePieceOwner){
         let sideDeterminer: Int = side == .white ? 1 : -1
-        if pawnChopped.count == 2{
+        
+        if pawnChopped.contains("x"){ //pawn capturing something
+            let withCapture = pawnChopped.components(separatedBy: "x")
+            if withCapture.count != 2 { return }
+            if let number = getNumberFromDestination(withCapture[1], side: side){
+                print("\(withCapture[0])\(number) \(withCapture[1])")
+            }
+        } else if pawnChopped.count == 2{
             let file = String(pawnChopped.first!)
             guard var number = Int(String(pawnChopped.last!)) else {
                 print("Can't find rank number")
