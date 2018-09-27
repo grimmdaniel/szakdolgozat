@@ -26,6 +26,10 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
             presenter.sourceRect = sender.bounds
         }
         
+        actionSheet.addAction(UIAlertAction(title: "Flip board", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+            self.chessBoardView.flipChessBoard()
+        }))
+        
         actionSheet.addAction(UIAlertAction(title: "Copy FEN to clipboard", style: .default, handler: { (alert:UIAlertAction!) -> Void in
             UIPasteboard.general.string = self.chessBoardView.generateFENFromBoard()
         }))
