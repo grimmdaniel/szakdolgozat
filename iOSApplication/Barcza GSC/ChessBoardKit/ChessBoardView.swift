@@ -409,7 +409,7 @@ public class ChessBoardView: UIView {
         //TODO Castling
         let move = move.replacingOccurrences(of: "+", with: "")
         if move.contains("x"){ // capturing
-            
+            print(move)
         }else{
             if move.count == 3{
                 let pieceID = String(move.first!)
