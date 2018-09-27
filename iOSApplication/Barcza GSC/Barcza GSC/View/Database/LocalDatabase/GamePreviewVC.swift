@@ -27,6 +27,10 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
         parsedGame = parser.parseGameText(from: game.gameText)
     }
     
+    @IBAction func flipButtonPressed(_ sender: UIButton) {
+        chessBoard.flipChessBoard()
+    }
+    
     @IBOutlet weak var forwardBtn: UIButton!
     @IBOutlet weak var backwardBtn: UIButton!
     

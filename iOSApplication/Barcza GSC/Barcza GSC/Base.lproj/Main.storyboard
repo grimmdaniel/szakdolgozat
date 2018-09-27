@@ -508,13 +508,28 @@
                                                     <action selector="forwardBtnPressed:" destination="Y0z-dT-SKX" eventType="touchUpInside" id="FLt-Gb-R9S"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUv-tq-MtY">
+                                                <rect key="frame" x="120" y="37" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="3hb-ha-mwq"/>
+                                                    <constraint firstAttribute="height" constant="40" id="5pl-dh-o4U"/>
+                                                </constraints>
+                                                <state key="normal" title="Flip"/>
+                                                <connections>
+                                                    <action selector="flipButtonPressed:" destination="Y0z-dT-SKX" eventType="touchUpInside" id="Jka-VN-J9u"/>
+                                                    <action selector="forwardBtnPressed:" destination="Y0z-dT-SKX" eventType="touchUpInside" id="ssg-hA-JlJ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="TUv-tq-MtY" firstAttribute="leading" secondItem="Kt7-mo-XmY" secondAttribute="trailing" constant="10" id="6Xg-70-NVg"/>
                                             <constraint firstAttribute="trailing" secondItem="0Ue-oS-1e5" secondAttribute="trailing" id="7jL-ia-q2H"/>
                                             <constraint firstItem="Kt7-mo-XmY" firstAttribute="leading" secondItem="y2f-yt-ZIO" secondAttribute="trailing" constant="10" id="7un-JP-dv4"/>
                                             <constraint firstItem="y2f-yt-ZIO" firstAttribute="leading" secondItem="YNI-JU-x7E" secondAttribute="leading" constant="20" id="G3g-Rd-S04"/>
                                             <constraint firstItem="0Ue-oS-1e5" firstAttribute="top" secondItem="YNI-JU-x7E" secondAttribute="top" id="GFT-Pi-Jk3"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TUv-tq-MtY" secondAttribute="trailing" constant="20" symbolic="YES" id="GcW-cw-a7c"/>
+                                            <constraint firstItem="TUv-tq-MtY" firstAttribute="centerY" secondItem="YNI-JU-x7E" secondAttribute="centerY" id="LVu-vN-r8e"/>
                                             <constraint firstItem="0Ue-oS-1e5" firstAttribute="leading" secondItem="YNI-JU-x7E" secondAttribute="leading" id="OvI-Ls-ZIp"/>
                                             <constraint firstItem="y2f-yt-ZIO" firstAttribute="centerY" secondItem="YNI-JU-x7E" secondAttribute="centerY" id="ZuC-FJ-Ao3"/>
                                             <constraint firstItem="Kt7-mo-XmY" firstAttribute="centerY" secondItem="YNI-JU-x7E" secondAttribute="centerY" id="tQ9-CW-pE7"/>

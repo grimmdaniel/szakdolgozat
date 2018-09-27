@@ -60,6 +60,13 @@ public class ChessBoardView: UIView {
         refreshBoard()
     }
     
+    public func flipChessBoard(){
+        contentView.transform = contentView.transform.rotated(by: .pi)
+        squaresStorage.forEach { (button) in
+            button.transform = button.transform.rotated(by: .pi)
+        }
+    }
+    
     @IBOutlet weak var chessBoardView: UIView!
     @IBOutlet var squaresStorage: [UIButton]!
     
