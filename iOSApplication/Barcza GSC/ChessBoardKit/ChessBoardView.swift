@@ -431,8 +431,6 @@ public class ChessBoardView: UIView {
             move = move.replacingOccurrences(of: "x", with: "")
         }
         
-        print(move)
-        
         let pieceID = String(move.first!)
         let figurine: FigurineType!
         switch pieceID{
@@ -452,7 +450,6 @@ public class ChessBoardView: UIView {
         }
         
         move.remove(at: move.startIndex) // chopping Piece identifier
-        print(move)
         
         if move.count == 2{ //like Nd5
             guard var number = Int(String(move.last!)) else {
@@ -471,7 +468,33 @@ public class ChessBoardView: UIView {
                 if actualNextPlayer != nextTask { return }
             }
         }else if move.count == 3{ // like Nbd5 or N6d5
-            print("Under development")
+            let fileStringTo = String(move[move.index(move.startIndex, offsetBy: 1)])
+            let rankTo = Int(String(move.last!))
+            let fromHelper = String(move.first!)
+            if fromHelper >= "1" && fromHelper <= "9" { //digit
+                let rank = 8 - Int(fromHelper)!
+                let possibleStartingPoint = boardModel.getPossibleStartingPoints(figurineType: figurine, side: side).filter { (coord) -> Bool in
+                    coord.rank == rank
+                }
+                if possibleStartingPoint.count == 1{
+                    performMove(coords: possibleStartingPoint.first!)
+                    performMove(coords: Coords(rank: 8 - (rankTo ?? -1), file: convertFileLetterToIndex[fileStringTo] ?? -1))
+                }
+                
+            }else{ // it must be a letter
+                guard let file = convertFileLetterToIndex[fromHelper] else {
+                    print("cannot find file")
+                    return
+                }
+                let possibleStartingPoint = boardModel.getPossibleStartingPoints(figurineType: figurine, side: side).filter { (coord) -> Bool in
+                    coord.file == file
+                }
+                
+                if possibleStartingPoint.count == 1{
+                    performMove(coords: possibleStartingPoint.first!)
+                    performMove(coords: Coords(rank: 8 - (rankTo ?? -1), file: convertFileLetterToIndex[fileStringTo] ?? -1))
+                }
+            }
         }else if move.count == 4{ //like Nb6d5
             let fileStringFrom = String(move.first!)
             let rankFrom = Int(String(move[move.index(move.startIndex, offsetBy: 1)]))
@@ -517,7 +540,6 @@ public class ChessBoardView: UIView {
             if let piece = piece1.pieceHere{
                 if piece.side == side && piece.identifier == .pawn{
                     // found piece
-                    print("performing move with bid 1")
                     performMove(coords: bid1)
                     performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1))
                     return
@@ -528,7 +550,6 @@ public class ChessBoardView: UIView {
             if let piece = piece2.pieceHere{
                 if piece.side == side && piece.identifier == .pawn{
                     // found piece
-                     print("performing move with bid 2")
                     performMove(coords: bid2)
                     performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1))
                     return
