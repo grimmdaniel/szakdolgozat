@@ -406,7 +406,7 @@ public class ChessBoardView: UIView {
     }
     
     private func moveFigurineFromPGN(move: String, with side: SquarePieceOwner){
-        let move = move.replacingOccurrences(of: "+", with: "")
+        var move = move.replacingOccurrences(of: "+", with: "")
         if move.contains("O-O-O"){ // long castle
             if side == .white{
                 performMove(coords: Coords(rank: 7, file: 4))
@@ -427,42 +427,42 @@ public class ChessBoardView: UIView {
             return
         }
         if move.contains("x"){ // capturing
-            print(move)
-        }else{
-            if move.count == 3{
-                let pieceID = String(move.first!)
-                let figurine: FigurineType!
-                switch pieceID{
-                case "N":
-                    figurine = .knight
-                case "B":
-                    figurine = .bishop
-                case "R":
-                    figurine = .rook
-                case "Q":
-                    figurine = .queen
-                case "K":
-                    figurine = .king
-                default:
-                    print("Fatal error")
-                    return
-                }
-             
-                guard var number = Int(String(move.last!)) else {
-                    print("Can't find rank number")
-                    return
-                }
-                number = 8 - number
-                let fileString = String(move[move.index(move.startIndex, offsetBy: 1)])
-                let destination = Coords(rank: number, file: convertFileLetterToIndex[fileString] ?? -1)
-                let possibleStartingSquares = boardModel.getPossibleStartingPoints(figurineType: figurine, side: side)
-                if possibleStartingSquares.count == 0 { print("Can't find piece starting point"); return }
-                let actualNextPlayer = nextTask
-                for i in possibleStartingSquares{
-                    performMove(coords: i)
-                    performMove(coords: destination)
-                    if actualNextPlayer != nextTask { return }
-                }
+            move = move.replacingOccurrences(of: "x", with: "")
+        }
+        
+        if move.count == 3{
+            let pieceID = String(move.first!)
+            let figurine: FigurineType!
+            switch pieceID{
+            case "N":
+                figurine = .knight
+            case "B":
+                figurine = .bishop
+            case "R":
+                figurine = .rook
+            case "Q":
+                figurine = .queen
+            case "K":
+                figurine = .king
+            default:
+                print("Fatal error")
+                return
+            }
+            
+            guard var number = Int(String(move.last!)) else {
+                print("Can't find rank number")
+                return
+            }
+            number = 8 - number
+            let fileString = String(move[move.index(move.startIndex, offsetBy: 1)])
+            let destination = Coords(rank: number, file: convertFileLetterToIndex[fileString] ?? -1)
+            let possibleStartingSquares = boardModel.getPossibleStartingPoints(figurineType: figurine, side: side)
+            if possibleStartingSquares.count == 0 { print("Can't find piece starting point"); return }
+            let actualNextPlayer = nextTask
+            for i in possibleStartingSquares{
+                performMove(coords: i)
+                performMove(coords: destination)
+                if actualNextPlayer != nextTask { return }
             }
         }
     }
