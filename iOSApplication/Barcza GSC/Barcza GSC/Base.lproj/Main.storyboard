@@ -517,7 +517,6 @@
                                                 <state key="normal" title="Flip"/>
                                                 <connections>
                                                     <action selector="flipButtonPressed:" destination="Y0z-dT-SKX" eventType="touchUpInside" id="Jka-VN-J9u"/>
-                                                    <action selector="forwardBtnPressed:" destination="Y0z-dT-SKX" eventType="touchUpInside" id="ssg-hA-JlJ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
