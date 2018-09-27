@@ -407,6 +407,7 @@ public class ChessBoardView: UIView {
     
     private func moveFigurineFromPGN(move: String, with side: SquarePieceOwner){
         //TODO Castling
+        let move = move.replacingOccurrences(of: "+", with: "")
         if move.contains("x"){ // capturing
             
         }else{
@@ -450,12 +451,20 @@ public class ChessBoardView: UIView {
     
     private func movePawnFromPGN(move pawnChopped: String, with side: SquarePieceOwner){
         let sideDeterminer: Int = side == .white ? 1 : -1
+        let pawnChopped = pawnChopped.replacingOccurrences(of: "+", with: "")
         
         if pawnChopped.contains("x"){ //pawn capturing something
             let withCapture = pawnChopped.components(separatedBy: "x")
             if withCapture.count != 2 { return }
             if let number = getNumberFromDestination(withCapture[1], side: side){
-                print("\(withCapture[0])\(number) \(withCapture[1])")
+                if withCapture[1].count != 2 { return }
+                guard let destinationRank = Int(String(withCapture[1].last!)) else{
+                    print("Error, rank is not an integer"); return
+                }
+                let from = Coords(rank: 8 - number, file: convertFileLetterToIndex[withCapture[0]] ?? -1)
+                let to = Coords(rank: 8 - destinationRank, file: convertFileLetterToIndex[String(withCapture[1].first!)] ?? -1)
+                performMove(coords: from)
+                performMove(coords: to)
             }
         } else if pawnChopped.count == 2{
             let file = String(pawnChopped.first!)
