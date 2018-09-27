@@ -406,8 +406,26 @@ public class ChessBoardView: UIView {
     }
     
     private func moveFigurineFromPGN(move: String, with side: SquarePieceOwner){
-        //TODO Castling
         let move = move.replacingOccurrences(of: "+", with: "")
+        if move.contains("O-O-O"){ // long castle
+            if side == .white{
+                performMove(coords: Coords(rank: 7, file: 4))
+                performMove(coords: Coords(rank: 7, file: 2))
+            }else{
+                performMove(coords: Coords(rank: 0, file: 4))
+                performMove(coords: Coords(rank: 0, file: 2))
+            }
+            return
+        }else if move.contains("O-O"){ // short castle
+            if side == .white{
+                performMove(coords: Coords(rank: 7, file: 4))
+                performMove(coords: Coords(rank: 7, file: 6))
+            }else{
+                performMove(coords: Coords(rank: 0, file: 4))
+                performMove(coords: Coords(rank: 0, file: 6))
+            }
+            return
+        }
         if move.contains("x"){ // capturing
             print(move)
         }else{
