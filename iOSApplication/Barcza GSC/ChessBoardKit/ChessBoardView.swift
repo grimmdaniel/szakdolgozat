@@ -407,6 +407,7 @@ public class ChessBoardView: UIView {
     
     private func moveFigurineFromPGN(move: String, with side: SquarePieceOwner){
         var move = move.replacingOccurrences(of: "+", with: "")
+        move = move.replacingOccurrences(of: "#", with: "")
         if move.contains("O-O-O"){ // long castle
             if side == .white{
                 performMove(coords: Coords(rank: 7, file: 4))
@@ -430,31 +431,36 @@ public class ChessBoardView: UIView {
             move = move.replacingOccurrences(of: "x", with: "")
         }
         
-        if move.count == 3{
-            let pieceID = String(move.first!)
-            let figurine: FigurineType!
-            switch pieceID{
-            case "N":
-                figurine = .knight
-            case "B":
-                figurine = .bishop
-            case "R":
-                figurine = .rook
-            case "Q":
-                figurine = .queen
-            case "K":
-                figurine = .king
-            default:
-                print("Fatal error")
-                return
-            }
-            
+        print(move)
+        
+        let pieceID = String(move.first!)
+        let figurine: FigurineType!
+        switch pieceID{
+        case "N":
+            figurine = .knight
+        case "B":
+            figurine = .bishop
+        case "R":
+            figurine = .rook
+        case "Q":
+            figurine = .queen
+        case "K":
+            figurine = .king
+        default:
+            print("Fatal error piece identifier not found")
+            return
+        }
+        
+        move.remove(at: move.startIndex) // chopping Piece identifier
+        print(move)
+        
+        if move.count == 2{ //like Nd5
             guard var number = Int(String(move.last!)) else {
                 print("Can't find rank number")
                 return
             }
             number = 8 - number
-            let fileString = String(move[move.index(move.startIndex, offsetBy: 1)])
+            let fileString = String(move[move.index(move.startIndex, offsetBy: 0)])
             let destination = Coords(rank: number, file: convertFileLetterToIndex[fileString] ?? -1)
             let possibleStartingSquares = boardModel.getPossibleStartingPoints(figurineType: figurine, side: side)
             if possibleStartingSquares.count == 0 { print("Can't find piece starting point"); return }
@@ -464,12 +470,24 @@ public class ChessBoardView: UIView {
                 performMove(coords: destination)
                 if actualNextPlayer != nextTask { return }
             }
+        }else if move.count == 3{ // like Nbd5 or N6d5
+            print("Under development")
+        }else if move.count == 4{ //like Nb6d5
+            let fileStringFrom = String(move.first!)
+            let rankFrom = Int(String(move[move.index(move.startIndex, offsetBy: 1)]))
+            let fileStringTo = String(move[move.index(move.startIndex, offsetBy: 2)])
+            let rankTo = Int(String(move.last!))
+            if let rankFrom = rankFrom, let rankTo = rankTo{
+                performMove(coords: Coords(rank: 8 - rankFrom, file: convertFileLetterToIndex[fileStringFrom] ?? -1))
+                performMove(coords: Coords(rank: 8 - rankTo, file: convertFileLetterToIndex[fileStringTo] ?? -1))
+            }
         }
     }
     
     private func movePawnFromPGN(move pawnChopped: String, with side: SquarePieceOwner){
         let sideDeterminer: Int = side == .white ? 1 : -1
-        let pawnChopped = pawnChopped.replacingOccurrences(of: "+", with: "")
+        var pawnChopped = pawnChopped.replacingOccurrences(of: "+", with: "")
+        pawnChopped = pawnChopped.replacingOccurrences(of: "#", with: "")
         
         if pawnChopped.contains("x"){ //pawn capturing something
             let withCapture = pawnChopped.components(separatedBy: "x")
