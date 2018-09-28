@@ -16,6 +16,7 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     var game: PGNGame!
     var parsedGame = [String]()
     var currentMoveIndex = 0
+    var nextMove: String? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,9 +43,17 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     
     @IBAction func forwardBtnPressed(_ sender: UIButton) {
         if parsedGame.count == currentMoveIndex { return }
-        chessBoard.processNextMove(movePair: parsedGame[currentMoveIndex])
-        currentMoveIndex += 1
-        print("forward")
+        
+        if let move = nextMove{
+            chessBoard.processNextMove(move: move, side: .black)
+            nextMove = nil
+        }else{
+            let chopped = parsedGame[currentMoveIndex].components(separatedBy: " ")
+            if chopped.count != 3 { return }
+            nextMove = chopped[2]
+            chessBoard.processNextMove(move:chopped[1], side: .white)
+            currentMoveIndex += 1
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

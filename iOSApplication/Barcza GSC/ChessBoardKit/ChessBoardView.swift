@@ -390,25 +390,12 @@ public class ChessBoardView: UIView {
         }
     }
     
-    public func processNextMove(movePair: String){
+    public func processNextMove(move: String, side: SquarePieceOwner){
         let pieceNames = ["K","Q","R","B","N","O"]
-        let chopped = movePair.components(separatedBy: " ")
-        if chopped.count != 3 { return }
-        var movenumber = chopped.first!
-        if movenumber.hasSuffix("."){
-            movenumber.removeLast()
-        }
-        
-        if (pieceNames.contains(String(chopped[1].first!))){ // Piece move, white
-            moveFigurineFromPGN(move: chopped[1], with: .white)
+        if (pieceNames.contains(String(move.first!))){ // Piece move, white
+            moveFigurineFromPGN(move: move, with: side)
         }else{ // pawn move
-            movePawnFromPGN(move: chopped[1], with: .white)
-        }
-        
-        if (pieceNames.contains(String(chopped[2].first!))){ // Piece move, black
-            moveFigurineFromPGN(move: chopped[2], with: .black)
-        }else{ // pawn move
-            movePawnFromPGN(move: chopped[2], with: .black)
+            movePawnFromPGN(move: move, with: side)
         }
     }
     
