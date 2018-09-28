@@ -421,6 +421,7 @@ public class ChessBoardView: UIView {
             }
             return
         }
+        
         if move.contains("x"){ // capturing
             move = move.replacingOccurrences(of: "x", with: "")
         }
@@ -505,6 +506,10 @@ public class ChessBoardView: UIView {
         let sideDeterminer: Int = side == .white ? 1 : -1
         var pawnChopped = pawnChopped.replacingOccurrences(of: "+", with: "")
         pawnChopped = pawnChopped.replacingOccurrences(of: "#", with: "")
+        
+        if pawnChopped.contains("="){
+            print(pawnChopped)
+        }
         
         if pawnChopped.contains("x"){ //pawn capturing something
             let withCapture = pawnChopped.components(separatedBy: "x")

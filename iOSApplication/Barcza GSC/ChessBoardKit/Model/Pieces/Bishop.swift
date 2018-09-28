@@ -6,16 +6,16 @@
 //  Copyright © 2018. danielgrimm. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Bishop: Piece{
     
     init(position: Coords,side: SquarePieceOwner) {
         switch side {
         case .black:
-            super.init(identifier: .bishop, value: 3, side: side, image: UIImage(named: "bishop_black.png")!)
+            super.init(identifier: .bishop, value: 3, side: side, image: UIImage(named: "bishop_black.png", in: Bundle(for: ChessBoardView.self), compatibleWith: nil)!)
         case .white:
-            super.init(identifier: .bishop, value: 3, side: side, image: UIImage(named: "bishop_white.png")!)
+            super.init(identifier: .bishop, value: 3, side: side, image: UIImage(named: "bishop_white.png", in: Bundle(for: ChessBoardView.self), compatibleWith: nil)!)
         }
     }
     

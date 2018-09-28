@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08006F02214FC73900035698 /* MoveRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08006F01214FC73900035698 /* MoveRoute.swift */; };
-		08249CBB215E1B5600F8CA80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08249CBA215E1B5600F8CA80 /* Assets.xcassets */; };
+		084343EF215E515D00D6D3F5 /* ChessBoardKitAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 084343EE215E515D00D6D3F5 /* ChessBoardKitAssets.xcassets */; };
 		08C4EB1721447436002ACD23 /* ChessBoardKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 08C4EB1521447436002ACD23 /* ChessBoardKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08C4EB1E214474DC002ACD23 /* ChessBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4EB1D214474DC002ACD23 /* ChessBoardView.swift */; };
 		08C4EB202144752E002ACD23 /* ChessBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08C4EB1F2144752E002ACD23 /* ChessBoardView.xib */; };
@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		08006F01214FC73900035698 /* MoveRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveRoute.swift; sourceTree = "<group>"; };
-		08249CBA215E1B5600F8CA80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		084343EE215E515D00D6D3F5 /* ChessBoardKitAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChessBoardKitAssets.xcassets; sourceTree = "<group>"; };
 		08C4EB1221447436002ACD23 /* ChessBoardKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChessBoardKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C4EB1521447436002ACD23 /* ChessBoardKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessBoardKit.h; sourceTree = "<group>"; };
 		08C4EB1621447436002ACD23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,12 +94,12 @@
 		08C4EB1421447436002ACD23 /* ChessBoardKit */ = {
 			isa = PBXGroup;
 			children = (
+				084343EE215E515D00D6D3F5 /* ChessBoardKitAssets.xcassets */,
 				08C4EB2121447710002ACD23 /* Model */,
 				08C4EB1521447436002ACD23 /* ChessBoardKit.h */,
 				08C4EB1621447436002ACD23 /* Info.plist */,
 				08C4EB1D214474DC002ACD23 /* ChessBoardView.swift */,
 				08C4EB1F2144752E002ACD23 /* ChessBoardView.xib */,
-				08249CBA215E1B5600F8CA80 /* Assets.xcassets */,
 			);
 			path = ChessBoardKit;
 			sourceTree = "<group>";
@@ -225,8 +225,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08249CBB215E1B5600F8CA80 /* Assets.xcassets in Resources */,
 				08C4EB202144752E002ACD23 /* ChessBoardView.xib in Resources */,
+				084343EF215E515D00D6D3F5 /* ChessBoardKitAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

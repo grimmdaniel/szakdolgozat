@@ -15,9 +15,9 @@ class Rook: Piece{
     init(position: Coords,side: SquarePieceOwner) {
         switch side {
         case .black:
-            super.init(identifier: .rook, value: 5, side: side, image: UIImage(named: "rook_black.png")!)
+            super.init(identifier: .rook, value: 5, side: side, image: UIImage(named: "rook_black.png", in: Bundle(for: ChessBoardView.self), compatibleWith: nil)!)
         case .white:
-            super.init(identifier: .rook, value: 5, side: side, image: UIImage(named: "rook_white.png")!)
+            super.init(identifier: .rook, value: 5, side: side, image: UIImage(named: "rook_white.png", in: Bundle(for: ChessBoardView.self), compatibleWith: nil)!)
         }
     }
     

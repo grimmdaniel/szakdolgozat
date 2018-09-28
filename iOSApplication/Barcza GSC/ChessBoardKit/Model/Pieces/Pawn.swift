@@ -13,9 +13,9 @@ class Pawn: Piece {
     init(position: Coords,side: SquarePieceOwner) {
         switch side {
         case .black:
-            super.init(identifier: .pawn, value: 1, side: side, image: UIImage(named: "pawn_black.png")!)
+            super.init(identifier: .pawn, value: 1, side: side, image: UIImage(named: "pawn_black.png", in: Bundle(for: ChessBoardView.self), compatibleWith: nil)!)
         case .white:
-            super.init(identifier: .pawn, value: 1, side: side, image: UIImage(named: "pawn_white.png")!)
+            super.init(identifier: .pawn, value: 1, side: side, image: UIImage(named: "pawn_white.png", in: Bundle(for: ChessBoardView.self), compatibleWith: nil)!)
         }
     }
     
