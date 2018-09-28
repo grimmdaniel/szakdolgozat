@@ -66,6 +66,8 @@ class PGNParser{
                     tmpGame.black = chopTagData(tag: "Black", data: i)
                 }else if i.contains("[Result "){
                     tmpGame.result = chopTagData(tag: "Result", data: i)
+                }else if i.contains("[ECO "){
+                    tmpGame.eco = chopTagData(tag: "ECO", data: i)
                 }else{
                     // tag that dont need
                 }

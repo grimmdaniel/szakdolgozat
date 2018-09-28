@@ -20,12 +20,13 @@ class PGNGame: Object{
     @objc dynamic var black = ""
     @objc dynamic var result = ""
     @objc dynamic var gameText = ""
+    @objc dynamic var eco = ""
     
 //    override class func primaryKey() -> String? {
 //        return "id"
 //    }
     
-    convenience init(event: String,site: String,date: String,round: String,white: String,black: String, result: PGNResult, gameText: String) {
+    convenience init(event: String,site: String,date: String,round: String,white: String,black: String, result: PGNResult, gameText: String, eco: String) {
         self.init()
         self.event = event
         self.site = site
@@ -35,6 +36,7 @@ class PGNGame: Object{
         self.black = black
         self.result = result.rawValue
         self.gameText = gameText
+        self.eco = eco
     }
 }
 

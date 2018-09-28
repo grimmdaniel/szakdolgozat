@@ -15,6 +15,7 @@ class PGNGameInfoCell: UITableViewCell {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var eventLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var ecoLabel: UILabel!
     
     
     func updateUI(with data: PGNGame){
@@ -23,5 +24,6 @@ class PGNGameInfoCell: UITableViewCell {
         resultLabel.text = data.result
         eventLabel.text = data.event + " " + data.round
         placeLabel.text = data.site + " " + data.date
+        ecoLabel.text = data.eco
     }
 }
