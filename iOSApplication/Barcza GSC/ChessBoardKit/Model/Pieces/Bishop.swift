@@ -6,7 +6,7 @@
 //  Copyright © 2018. danielgrimm. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class Bishop: Piece{
     
