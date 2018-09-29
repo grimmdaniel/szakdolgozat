@@ -10,6 +10,7 @@ import Foundation
 
 class Round{
     
+    private var _expanded = false
     private var _name: String!
     private var _matches = [Match]()
     
@@ -24,6 +25,14 @@ class Round{
     
     var matches: [Match]{
         return _matches
+    }
+    
+    var expanded: Bool{
+        get{
+            return _expanded
+        }set{
+            _expanded = newValue
+        }
     }
 }
 
