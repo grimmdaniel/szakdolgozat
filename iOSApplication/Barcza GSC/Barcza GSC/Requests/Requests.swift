@@ -240,7 +240,7 @@ extension ResultsVC{
                 for team in teams{
                     if let id = team["id"] as? Int{
                         let name = team["name"] as? String ?? "N/A"
-                        let logo = team["logo"] as? String ?? "placeholder"
+                        let logo = team["logo"] as? String ?? "placeholder.png"
                         let points = team["points"] as? Int ?? 0
                         let penaltyPoints = team["penalty_points"] as? Int ?? 0
                         parsedTeams.append(Team(id: id, name: name, logo: logo, points: points, penaltyPoints: penaltyPoints))

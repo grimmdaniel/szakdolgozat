@@ -27,6 +27,7 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
         
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
+        resultsTableView.tableFooterView = UIView(frame: CGRect.zero)
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
         SVProgressHUD.show()
         getAllTeams().then { (data) -> () in
@@ -60,7 +61,7 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExpandableCell", for: indexPath) as! ExpandableCell
         cell.selectionStyle = .none
-        //TODO
+        cell.updateUI(with: allRounds[indexPath.section].matches[indexPath.row])
         return cell
     }
     

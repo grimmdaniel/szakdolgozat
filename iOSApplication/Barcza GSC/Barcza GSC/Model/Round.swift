@@ -44,7 +44,7 @@ class Match{
     private var _awayTeam: Team!
     private var _homeResult: Int!
     private var _awayResult: Int!
-    private var _date = Date()
+    private var _date: String!
     
     init(id: Int, round: Int, homeTeam: Team, awayTeam: Team, homeResult: Int, awayResult: Int, date: String) {
         
@@ -54,12 +54,12 @@ class Match{
         _awayTeam = awayTeam
         _homeResult = homeResult
         _awayResult = awayResult
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd - HH:mm"
-        if let date = dateFormatter.date(from: date){
-            _date = date
-        }
+        _date = date
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy.MM.dd - HH:mm"
+//        if let date = dateFormatter.date(from: date){
+//            _date = date
+//        }
     }
     
     var id: Int{
@@ -70,11 +70,11 @@ class Match{
         return _round
     }
     
-    var homeTeamName: Team{
+    var homeTeam: Team{
         return _homeTeam
     }
     
-    var awayTeamName: Team{
+    var awayTeam: Team{
         return _awayTeam
     }
     
@@ -86,7 +86,7 @@ class Match{
         return _awayResult
     }
     
-    var date: Date{
+    var date: String{
         return _date
     }
     
