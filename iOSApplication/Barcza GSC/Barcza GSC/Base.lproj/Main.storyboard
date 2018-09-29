@@ -1025,7 +1025,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ax7-nm-BER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4466" y="-475"/>
+            <point key="canvasLocation" x="4734" y="-880"/>
         </scene>
         <!--Eredmények-->
         <scene sceneID="Vwj-iI-19R">
@@ -1062,12 +1062,59 @@
                                     <constraint firstAttribute="bottom" secondItem="314-Jk-gCO" secondAttribute="bottom" constant="10" id="Xrf-bm-TLu"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="urr-Va-aQn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpandableCell" rowHeight="61" id="fFY-K7-NL6" customClass="ExpandableCell" customModule="Barcza_GSC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fFY-K7-NL6" id="GQ1-hA-Vff">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH2-ZK-tVF">
+                                                    <rect key="frame" x="20" y="18" width="287.5" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="Hxy-VW-Nne"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="full" translatesAutoresizingMaskIntoConstraints="NO" id="164-pU-2eR">
+                                                    <rect key="frame" x="317.5" y="9" width="42.5" height="42.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="164-pU-2eR" secondAttribute="height" multiplier="1:1" id="zsq-Oa-idg"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="164-pU-2eR" secondAttribute="trailing" constant="15" id="5R2-0j-rau"/>
+                                                <constraint firstItem="164-pU-2eR" firstAttribute="leading" secondItem="cH2-ZK-tVF" secondAttribute="trailing" constant="10" id="EW1-Cm-IrP"/>
+                                                <constraint firstItem="164-pU-2eR" firstAttribute="height" secondItem="GQ1-hA-Vff" secondAttribute="height" multiplier="0.7" id="JJu-la-77x"/>
+                                                <constraint firstItem="cH2-ZK-tVF" firstAttribute="leading" secondItem="GQ1-hA-Vff" secondAttribute="leading" constant="20" id="XJi-bh-Ltf"/>
+                                                <constraint firstItem="cH2-ZK-tVF" firstAttribute="centerY" secondItem="GQ1-hA-Vff" secondAttribute="centerY" id="aCM-vT-W3H"/>
+                                                <constraint firstItem="164-pU-2eR" firstAttribute="centerY" secondItem="GQ1-hA-Vff" secondAttribute="centerY" id="v4y-Op-66U"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkImageView" destination="164-pU-2eR" id="doo-Qz-ZeP"/>
+                                            <outlet property="titleLabel" destination="cH2-ZK-tVF" id="1gS-xT-4DM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="urr-Va-aQn" secondAttribute="bottom" id="P9B-YX-tL7"/>
+                            <constraint firstItem="urr-Va-aQn" firstAttribute="top" secondItem="QEG-gH-eJ2" secondAttribute="bottom" id="R79-8c-nnJ"/>
+                            <constraint firstItem="urr-Va-aQn" firstAttribute="leading" secondItem="osI-mz-udt" secondAttribute="leading" id="SvX-fd-ozL"/>
                             <constraint firstItem="QEG-gH-eJ2" firstAttribute="trailing" secondItem="osI-mz-udt" secondAttribute="trailing" id="WXc-EH-2Wl"/>
                             <constraint firstItem="QEG-gH-eJ2" firstAttribute="top" secondItem="Gj6-n4-r2B" secondAttribute="top" id="a5R-A2-a14"/>
                             <constraint firstItem="QEG-gH-eJ2" firstAttribute="leading" secondItem="osI-mz-udt" secondAttribute="leading" id="oKj-iF-IYX"/>
+                            <constraint firstAttribute="trailing" secondItem="urr-Va-aQn" secondAttribute="trailing" id="wDw-JD-Nb2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="osI-mz-udt"/>
                     </view>
@@ -1075,11 +1122,12 @@
                     <connections>
                         <outlet property="menuBtn" destination="314-Jk-gCO" id="Upm-9J-b4L"/>
                         <outlet property="navigationView" destination="QEG-gH-eJ2" id="SXd-DO-kkp"/>
+                        <outlet property="resultsTableView" destination="urr-Va-aQn" id="A25-1q-wxW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2E-xF-g08" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3670" y="-1136"/>
+            <point key="canvasLocation" x="3772" y="-1048.4257871064469"/>
         </scene>
         <!--Championship BaseVC-->
         <scene sceneID="yj3-bB-ghz">
@@ -1841,6 +1889,7 @@
         <image name="backward" width="400" height="400"/>
         <image name="exit" width="390" height="390"/>
         <image name="forward" width="400" height="400"/>
+        <image name="full" width="16" height="16"/>
         <image name="logo" width="400" height="400"/>
         <image name="misc" width="42" height="11"/>
         <image name="placeholder" width="300" height="169"/>

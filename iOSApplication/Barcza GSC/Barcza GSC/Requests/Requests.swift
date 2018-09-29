@@ -143,6 +143,47 @@ extension GalleryVC{
     }
 }
 
+extension ResultsVC{
+    
+    func getAllTeams() -> Promise<[Team]>{
+        return Promise<[Team]>{ fulfill, reject in
+            log.info("Getting teams...")
+            let teamsURLString = Settings.rootURL + "/championship/teams/all"
+            guard let teamsURL = URL(string: teamsURLString) else {
+                reject(NSError(domain:"Error: cannot create teams URL",code: 100)); return
+            }
+            var teamsURLRequest = URLRequest(url: teamsURL)
+            teamsURLRequest.allHTTPHeaderFields = Settings.headers
+            URLSession.shared.dataTask(with: teamsURLRequest, completionHandler: { (data, response, error) in
+                
+                guard error == nil else {
+                    reject(NSError(domain:"Error getting response from my teams \(error!)",code: 101)); return
+                }
+                
+                guard let responseData = data else {
+                    reject(NSError(domain:"Did not receive my teams data",code: 102)); return
+                }
+                
+                guard let teams = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
+                    reject(NSError(domain: "Could not get JSON for my teams call", code: 103)); return
+                }
+                
+                var parsedTeams = [Team]()
+                for team in teams{
+                    if let id = team["id"] as? Int{
+                        let name = team["name"] as? String ?? "N/A"
+                        let logo = team["logo"] as? String ?? "placeholder"
+                        let points = team["points"] as? Int ?? 0
+                        let penaltyPoints = team["penalty_points"] as? Int ?? 0
+                        parsedTeams.append(Team(id: id, name: name, logo: logo, points: points, penaltyPoints: penaltyPoints))
+                    }
+                }
+                fulfill(parsedTeams)
+            }).resume()
+        }
+    }
+}
+
 extension PlayerFinderVC{
     
     func getAllHunPlayers() -> Promise<Void>{
