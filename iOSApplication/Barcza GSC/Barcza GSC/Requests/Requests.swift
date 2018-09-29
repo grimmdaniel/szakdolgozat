@@ -163,18 +163,54 @@ extension ResultsVC{
                     reject(NSError(domain:"Did not receive rounds data",code: 102)); return
                 }
                 
-                guard let matches = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
+                guard let parsedMatches = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
                     reject(NSError(domain: "Could not get JSON for rounds call", code: 103)); return
                 }
                 
-                for match in matches{
-                    print(matches)
-                }
+                var matches = [Match]()
                 
+                for match in parsedMatches{
+                    if let id = match["id"] as? Int{
+                        let round = match["round"] as? Int ?? 0
+                        let homeResult = match["home_result"] as? Int ?? -1
+                        let awayResult = match["away_result"] as? Int ?? -1
+                        let date = match["date"] as? String ?? ""
+                        let homeTeam = self.getTeam(with: match["home"] as? Int ?? 0, from: teams)
+                        let awayTeam = self.getTeam(with: match["away"] as? Int ?? 0, from: teams)
+                        if homeTeam == nil { break }
+                        if awayTeam == nil { break }
+                        matches.append(Match(id: id, round: round, homeTeam: homeTeam!, awayTeam: awayTeam!, homeResult: homeResult, awayResult: awayResult, date: date))
+                    }
+                }
                 var rounds = [Round]()
+                
+                if matches.count != 0{
+                    var roundNumbers = [Int]()
+                    for match in matches{
+                        if !roundNumbers.contains(match.round){
+                            roundNumbers.append(match.round)
+                        }
+                    }
+                    for round in roundNumbers{
+                        rounds.append(Round(name: "\(round). forduló", matches: matches.filter({ (match) -> Bool in
+                            match.round == round
+                        })))
+                    }
+                }
                 fulfill(rounds)
             }).resume()
         }
+    }
+    
+    
+    func getTeam(with id: Int, from: [Team]) -> Team?{
+       let result = from.filter { (team) -> Bool in
+            team.id == id
+        }
+        if result.isEmpty {
+            return nil
+        }
+        return result.first!
     }
     
     func getAllTeams() -> Promise<[Team]>{
