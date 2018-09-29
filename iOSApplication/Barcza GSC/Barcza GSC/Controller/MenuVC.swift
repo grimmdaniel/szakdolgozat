@@ -64,6 +64,8 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             performSegue(withIdentifier: "toGallery", sender: nil)
         }else if menuItems[indexPath.row] == "Információk"{
             performSegue(withIdentifier: "toInformations", sender: nil)
+        }else if menuItems[indexPath.row] == "Bajnokság"{
+            performSegue(withIdentifier: "toChampionship", sender: nil)
         }
     }
     

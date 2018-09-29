@@ -23,6 +23,9 @@
 		081C7BD72118B936004B107B /* MoveNameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C7BD62118B936004B107B /* MoveNameCollectionViewCell.swift */; };
 		082F8C2C21162F7800A52D7F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F8C2B21162F7800A52D7F /* Stack.swift */; };
 		084EB3D7215234B800D28CB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 084EB3D6215234B800D28CB6 /* GoogleService-Info.plist */; };
+		085122E1215F86E80078AB7B /* ChampionshipBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085122E0215F86E80078AB7B /* ChampionshipBaseVC.swift */; };
+		085122E3215F89E70078AB7B /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085122E2215F89E70078AB7B /* ResultsVC.swift */; };
+		085122E5215F8A010078AB7B /* StandingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085122E4215F8A010078AB7B /* StandingsVC.swift */; };
 		0861B57F2138317F00D50ED3 /* PGNGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0861B57E2138317F00D50ED3 /* PGNGame.swift */; };
 		0864C8A620FB8E6900435EE3 /* GalleryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0864C8A520FB8E6900435EE3 /* GalleryData.swift */; };
 		0864C8A920FBBB5E00435EE3 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0864C8A820FBBB5E00435EE3 /* Requests.swift */; };
@@ -108,6 +111,9 @@
 		081C7BD62118B936004B107B /* MoveNameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveNameCollectionViewCell.swift; sourceTree = "<group>"; };
 		082F8C2B21162F7800A52D7F /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		084EB3D6215234B800D28CB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		085122E0215F86E80078AB7B /* ChampionshipBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionshipBaseVC.swift; sourceTree = "<group>"; };
+		085122E2215F89E70078AB7B /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
+		085122E4215F8A010078AB7B /* StandingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsVC.swift; sourceTree = "<group>"; };
 		0861B57E2138317F00D50ED3 /* PGNGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNGame.swift; sourceTree = "<group>"; };
 		0864C8A520FB8E6900435EE3 /* GalleryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryData.swift; sourceTree = "<group>"; };
 		0864C8A820FBBB5E00435EE3 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
@@ -200,6 +206,16 @@
 				0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */,
 			);
 			path = Gallery;
+			sourceTree = "<group>";
+		};
+		085122DF215F86C70078AB7B /* Championship */ = {
+			isa = PBXGroup;
+			children = (
+				085122E0215F86E80078AB7B /* ChampionshipBaseVC.swift */,
+				085122E2215F89E70078AB7B /* ResultsVC.swift */,
+				085122E4215F8A010078AB7B /* StandingsVC.swift */,
+			);
+			path = Championship;
 			sourceTree = "<group>";
 		};
 		0864C8A720FBBB4B00435EE3 /* Requests */ = {
@@ -301,6 +317,7 @@
 		08D4030320F130C00005038B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				085122DF215F86C70078AB7B /* Championship */,
 				0895DC412153996000663F12 /* News */,
 				08A2941E20FCAFDE008BF214 /* Informations */,
 				0819208420FBF08C0071590C /* Gallery */,
@@ -557,6 +574,7 @@
 				0864C8AE20FBCF2400435EE3 /* AlbumCell.swift in Sources */,
 				08F4129920F21D3E00166F98 /* PlayerFinderVC.swift in Sources */,
 				08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */,
+				085122E3215F89E70078AB7B /* ResultsVC.swift in Sources */,
 				0895DC3B21526DBD00663F12 /* DocumentsVC.swift in Sources */,
 				0895DC49215409D400663F12 /* DetailedNewsVC.swift in Sources */,
 				08D402F020F125730005038B /* AppDelegate.swift in Sources */,
@@ -571,6 +589,8 @@
 				0895DC4521539AC200663F12 /* NewsTableViewCell.swift in Sources */,
 				0867A441213AA8B00061B6DE /* PGNGameInfoCell.swift in Sources */,
 				080CD05E2138240300E4361B /* PGNParser.swift in Sources */,
+				085122E1215F86E80078AB7B /* ChampionshipBaseVC.swift in Sources */,
+				085122E5215F8A010078AB7B /* StandingsVC.swift in Sources */,
 				0864C8A920FBBB5E00435EE3 /* Requests.swift in Sources */,
 				0895DC3D2152728300663F12 /* PDFWebViewVC.swift in Sources */,
 				0895DC472153A20C00663F12 /* NewsData.swift in Sources */,
@@ -750,7 +770,10 @@
 				DEVELOPMENT_TEAM = H5N8DHC85Z;
 				INFOPLIST_FILE = "Barcza GSC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.grimm.barcza.gsc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -774,7 +797,10 @@
 				DEVELOPMENT_TEAM = H5N8DHC85Z;
 				INFOPLIST_FILE = "Barcza GSC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.grimm.barcza.gsc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

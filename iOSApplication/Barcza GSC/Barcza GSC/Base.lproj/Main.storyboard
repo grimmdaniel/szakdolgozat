@@ -876,6 +876,7 @@
                         <segue destination="ewc-rO-UMq" kind="custom" identifier="toGallery" customClass="SWRevealViewControllerSeguePushController" id="Y3B-ue-m8A"/>
                         <segue destination="ea4-4m-7y0" kind="custom" identifier="toInformations" customClass="SWRevealViewControllerSeguePushController" id="fac-kv-5de"/>
                         <segue destination="H9b-ur-1o4" kind="custom" identifier="toNews" customClass="SWRevealViewControllerSeguePushController" id="fbZ-gH-Lga"/>
+                        <segue destination="5Ih-yP-ISn" kind="custom" identifier="toChampionship" customClass="SWRevealViewControllerSeguePushController" id="3kM-O4-hjw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9l-oS-rqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -971,6 +972,132 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meK-JT-2bD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="832.79999999999995" y="-235.23238380809596"/>
+        </scene>
+        <!--Tabella-->
+        <scene sceneID="GFc-RY-Rws">
+            <objects>
+                <viewController id="SOs-So-JSy" customClass="StandingsVC" customModule="Barcza_GSC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pk6-dr-99H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPj-nN-tms">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vv3-k1-Dnb">
+                                        <rect key="frame" x="8" y="34" width="35" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="YDL-hZ-ULj"/>
+                                            <constraint firstAttribute="height" constant="20" id="s4b-FE-1Vj"/>
+                                        </constraints>
+                                        <state key="normal" image="sandwichmenu"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tabella" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCP-06-Pdq">
+                                        <rect key="frame" x="154.5" y="28" width="66" height="26"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.58039215690000001" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Vv3-k1-Dnb" firstAttribute="leading" secondItem="nPj-nN-tms" secondAttribute="leading" constant="8" id="Cgs-c9-KdZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="MCP-06-Pdq" secondAttribute="bottom" constant="10" id="K7z-6j-j4D"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vv3-k1-Dnb" secondAttribute="bottom" constant="10" id="Rp7-Gh-dOv"/>
+                                    <constraint firstAttribute="height" constant="64" id="aBe-wQ-OeN"/>
+                                    <constraint firstItem="MCP-06-Pdq" firstAttribute="centerX" secondItem="nPj-nN-tms" secondAttribute="centerX" id="jlP-6J-uYN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nPj-nN-tms" firstAttribute="trailing" secondItem="h7T-Vi-tYu" secondAttribute="trailing" id="3w8-zn-te4"/>
+                            <constraint firstItem="nPj-nN-tms" firstAttribute="leading" secondItem="h7T-Vi-tYu" secondAttribute="leading" id="Cew-0r-LV5"/>
+                            <constraint firstItem="nPj-nN-tms" firstAttribute="top" secondItem="Pk6-dr-99H" secondAttribute="top" id="DJe-7R-lCM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h7T-Vi-tYu"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tabella" id="vpV-aZ-eCx"/>
+                    <connections>
+                        <outlet property="menuBtn" destination="Vv3-k1-Dnb" id="POf-9b-KF4"/>
+                        <outlet property="navigationView" destination="nPj-nN-tms" id="e9M-Vu-cFg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ax7-nm-BER" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4466" y="-475"/>
+        </scene>
+        <!--Eredmények-->
+        <scene sceneID="Vwj-iI-19R">
+            <objects>
+                <viewController id="MDT-Vq-dQ8" customClass="ResultsVC" customModule="Barcza_GSC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gj6-n4-r2B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEG-gH-eJ2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="314-Jk-gCO">
+                                        <rect key="frame" x="8" y="34" width="35" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="Brz-z1-w0B"/>
+                                            <constraint firstAttribute="height" constant="20" id="O9X-1a-tOf"/>
+                                        </constraints>
+                                        <state key="normal" image="sandwichmenu"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eredmények" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzG-Xl-WwL">
+                                        <rect key="frame" x="129" y="28" width="117" height="26"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.58039215690000001" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="5oY-Eb-bBx"/>
+                                    <constraint firstItem="AzG-Xl-WwL" firstAttribute="centerX" secondItem="QEG-gH-eJ2" secondAttribute="centerX" id="Bg6-Z9-f8n"/>
+                                    <constraint firstAttribute="bottom" secondItem="AzG-Xl-WwL" secondAttribute="bottom" constant="10" id="DUP-u3-Kds"/>
+                                    <constraint firstItem="314-Jk-gCO" firstAttribute="leading" secondItem="QEG-gH-eJ2" secondAttribute="leading" constant="8" id="HGi-A3-hsU"/>
+                                    <constraint firstAttribute="bottom" secondItem="314-Jk-gCO" secondAttribute="bottom" constant="10" id="Xrf-bm-TLu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QEG-gH-eJ2" firstAttribute="trailing" secondItem="osI-mz-udt" secondAttribute="trailing" id="WXc-EH-2Wl"/>
+                            <constraint firstItem="QEG-gH-eJ2" firstAttribute="top" secondItem="Gj6-n4-r2B" secondAttribute="top" id="a5R-A2-a14"/>
+                            <constraint firstItem="QEG-gH-eJ2" firstAttribute="leading" secondItem="osI-mz-udt" secondAttribute="leading" id="oKj-iF-IYX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="osI-mz-udt"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Eredmények" id="cdL-ew-TSf"/>
+                    <connections>
+                        <outlet property="menuBtn" destination="314-Jk-gCO" id="Upm-9J-b4L"/>
+                        <outlet property="navigationView" destination="QEG-gH-eJ2" id="SXd-DO-kkp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2E-xF-g08" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3670" y="-1136"/>
+        </scene>
+        <!--Championship BaseVC-->
+        <scene sceneID="yj3-bB-ghz">
+            <objects>
+                <tabBarController id="5Ih-yP-ISn" customClass="ChampionshipBaseVC" customModule="Barcza_GSC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ebk-eI-qRe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MDT-Vq-dQ8" kind="relationship" relationship="viewControllers" id="aUA-p2-rkw"/>
+                        <segue destination="SOs-So-JSy" kind="relationship" relationship="viewControllers" id="Pyw-Bb-ODR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nke-Xe-y7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2748" y="46"/>
         </scene>
         <!--Calculator-->
         <scene sceneID="ASv-Ak-oDQ">
