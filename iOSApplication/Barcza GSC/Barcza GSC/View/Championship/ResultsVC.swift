@@ -17,6 +17,8 @@ class ResultsVC: UIViewController
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var resultsTableView: UITableView!
     
+    var allRounds = [Round]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,11 +32,18 @@ class ResultsVC: UIViewController
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
         SVProgressHUD.show()
         getAllTeams().then { (data) -> () in
-            log.info(data)
-            }.catch { (error) in
+            self.getRoundsWithMatches(teams: data).then(execute: { (rounds) -> () in
+                self.allRounds = rounds
+                self.resultsTableView.reloadData()
+                log.info("Rounds downloaded")
+            }).catch(execute: { (error) in
                 log.error(error)
-            }.always {
+            }).always {
                 SVProgressHUD.dismiss()
+            }
+        }.catch { (error) in
+            log.error(error)
+            SVProgressHUD.dismiss()
         }
     }
     

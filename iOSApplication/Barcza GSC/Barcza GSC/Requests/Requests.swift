@@ -145,6 +145,38 @@ extension GalleryVC{
 
 extension ResultsVC{
     
+    func getRoundsWithMatches(teams: [Team]) -> Promise<[Round]>{
+        return Promise<[Round]>{ fulfill, reject in
+            let roundURLString = Settings.rootURL + "/championship/rounds/all"
+            guard let roundURL = URL(string: roundURLString) else {
+                reject(NSError(domain:"Error: cannot create round URL",code: 100)); return
+            }
+            var roundURLRequest = URLRequest(url: roundURL)
+            roundURLRequest.allHTTPHeaderFields = Settings.headers
+            URLSession.shared.dataTask(with: roundURLRequest, completionHandler: { (data, response, error) in
+                
+                guard error == nil else {
+                    reject(NSError(domain:"Error getting response from rounds \(error!)",code: 101)); return
+                }
+                
+                guard let responseData = data else {
+                    reject(NSError(domain:"Did not receive rounds data",code: 102)); return
+                }
+                
+                guard let matches = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
+                    reject(NSError(domain: "Could not get JSON for rounds call", code: 103)); return
+                }
+                
+                for match in matches{
+                    print(matches)
+                }
+                
+                var rounds = [Round]()
+                fulfill(rounds)
+            }).resume()
+        }
+    }
+    
     func getAllTeams() -> Promise<[Team]>{
         return Promise<[Team]>{ fulfill, reject in
             log.info("Getting teams...")
