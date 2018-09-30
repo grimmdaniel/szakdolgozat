@@ -8,6 +8,26 @@
 
 import Foundation
 
+class TeamStandings: Team{
+    
+    private var _matchPoints: Int!
+    private var _playedMatchesCount: Int!
+    
+    init(id: Int, name: String, logo: String, points: Int, penaltyPoints: Int, matchPoints: Int, playedMatches: Int){
+        super.init(id: id, name: name, logo: logo, points: points, penaltyPoints: penaltyPoints)
+        _matchPoints = matchPoints
+        _playedMatchesCount = playedMatches
+    }
+    
+    var matchPoints: Int{
+        return _matchPoints
+    }
+    
+    var playedMatchesCount: Int{
+        return _playedMatchesCount
+    }
+}
+
 class Team{
     
     private var _id: Int!

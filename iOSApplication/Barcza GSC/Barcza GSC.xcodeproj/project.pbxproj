@@ -30,6 +30,7 @@
 		085122E5215F8A010078AB7B /* StandingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085122E4215F8A010078AB7B /* StandingsVC.swift */; };
 		085122E8215FCF9E0078AB7B /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085122E7215FCF9E0078AB7B /* ExpandableCell.swift */; };
 		085122EA215FD0120078AB7B /* ExpandableHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085122E9215FD0120078AB7B /* ExpandableHeaderViewDelegate.swift */; };
+		085DA7932160D81F00FB27F6 /* StandingsDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085DA7922160D81F00FB27F6 /* StandingsDataCell.swift */; };
 		0861B57F2138317F00D50ED3 /* PGNGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0861B57E2138317F00D50ED3 /* PGNGame.swift */; };
 		0864C8A620FB8E6900435EE3 /* GalleryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0864C8A520FB8E6900435EE3 /* GalleryData.swift */; };
 		0864C8A920FBBB5E00435EE3 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0864C8A820FBBB5E00435EE3 /* Requests.swift */; };
@@ -122,6 +123,7 @@
 		085122E4215F8A010078AB7B /* StandingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsVC.swift; sourceTree = "<group>"; };
 		085122E7215FCF9E0078AB7B /* ExpandableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCell.swift; sourceTree = "<group>"; };
 		085122E9215FD0120078AB7B /* ExpandableHeaderViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderViewDelegate.swift; sourceTree = "<group>"; };
+		085DA7922160D81F00FB27F6 /* StandingsDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsDataCell.swift; sourceTree = "<group>"; };
 		0861B57E2138317F00D50ED3 /* PGNGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNGame.swift; sourceTree = "<group>"; };
 		0864C8A520FB8E6900435EE3 /* GalleryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryData.swift; sourceTree = "<group>"; };
 		0864C8A820FBBB5E00435EE3 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				0867A440213AA8B00061B6DE /* PGNGameInfoCell.swift */,
 				0895DC4421539AC200663F12 /* NewsTableViewCell.swift */,
 				0895DC4A21540B3500663F12 /* NewsDataCell.swift */,
+				085DA7922160D81F00FB27F6 /* StandingsDataCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				085DA7932160D81F00FB27F6 /* StandingsDataCell.swift in Sources */,
 				08D402F220F125730005038B /* Main.swift in Sources */,
 				080CD05A2138149000E4361B /* DatabaseMenuCell.swift in Sources */,
 				080CD0602138247900E4361B /* LocalDatabaseVC.swift in Sources */,
