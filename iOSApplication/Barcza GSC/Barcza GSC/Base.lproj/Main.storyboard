@@ -1026,7 +1026,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drR-Aw-AiG">
-                                                    <rect key="frame" x="325" y="9" width="35" height="53.5"/>
+                                                    <rect key="frame" x="335" y="9" width="35" height="53.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="Vsx-mc-6GX"/>
                                                     </constraints>
@@ -1035,7 +1035,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TP1-6T-eB8">
-                                                    <rect key="frame" x="290" y="9" width="35" height="53.5"/>
+                                                    <rect key="frame" x="300" y="9" width="35" height="53.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="lby-QG-oJV"/>
                                                     </constraints>
@@ -1044,7 +1044,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiA-Ua-lTF">
-                                                    <rect key="frame" x="255" y="9" width="35" height="53.5"/>
+                                                    <rect key="frame" x="265" y="9" width="35" height="53.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="4Bz-1r-KLl"/>
                                                     </constraints>
@@ -1053,7 +1053,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Barcza GSC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="OkT-tO-fYQ">
-                                                    <rect key="frame" x="108.5" y="9" width="141.5" height="53.5"/>
+                                                    <rect key="frame" x="108.5" y="9" width="151.5" height="53.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1086,9 +1086,9 @@
                                                 <constraint firstItem="O2M-sF-g6v" firstAttribute="width" secondItem="YiA-Ua-lTF" secondAttribute="width" id="jVV-2O-qAi"/>
                                                 <constraint firstItem="Jca-fZ-smD" firstAttribute="height" secondItem="U7P-IO-b4X" secondAttribute="height" multiplier="0.75" id="jrM-VA-rXn"/>
                                                 <constraint firstItem="drR-Aw-AiG" firstAttribute="height" secondItem="U7P-IO-b4X" secondAttribute="height" multiplier="0.75" id="l0N-D2-Yf3"/>
+                                                <constraint firstAttribute="trailing" secondItem="drR-Aw-AiG" secondAttribute="trailing" constant="5" id="ox8-KG-i1L"/>
                                                 <constraint firstItem="TP1-6T-eB8" firstAttribute="height" secondItem="drR-Aw-AiG" secondAttribute="height" id="pkS-yd-xUA"/>
                                                 <constraint firstItem="drR-Aw-AiG" firstAttribute="centerY" secondItem="U7P-IO-b4X" secondAttribute="centerY" id="qLz-Ua-lgr"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="drR-Aw-AiG" secondAttribute="trailing" id="zGc-8w-BxP"/>
                                                 <constraint firstItem="YiA-Ua-lTF" firstAttribute="centerY" secondItem="U7P-IO-b4X" secondAttribute="centerY" id="zvQ-u5-fp4"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1120,6 +1120,7 @@
                     <connections>
                         <outlet property="menuBtn" destination="Vv3-k1-Dnb" id="POf-9b-KF4"/>
                         <outlet property="navigationView" destination="nPj-nN-tms" id="e9M-Vu-cFg"/>
+                        <outlet property="standingsTableView" destination="6K2-X5-I3z" id="1A4-Em-vgE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ax7-nm-BER" userLabel="First Responder" sceneMemberID="firstResponder"/>

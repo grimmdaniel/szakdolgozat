@@ -252,6 +252,59 @@ extension ResultsVC{
     }
 }
 
+extension StandingsVC{
+    
+    func getStandings() -> Promise<Void>{
+        return Promise<Void>{ fulfill, reject in
+            log.info("Getting standings...")
+            let teamsURLString = Settings.rootURL + "/championship/teams/all"
+            guard let teamsURL = URL(string: teamsURLString) else {
+                reject(NSError(domain:"Error: cannot create teams URL",code: 100)); return
+            }
+            var teamsURLRequest = URLRequest(url: teamsURL)
+            teamsURLRequest.allHTTPHeaderFields = Settings.headers
+            URLSession.shared.dataTask(with: teamsURLRequest, completionHandler: { (data, response, error) in
+                
+                guard error == nil else {
+                    reject(NSError(domain:"Error getting response from standings \(error!)",code: 101)); return
+                }
+                
+                guard let responseData = data else {
+                    reject(NSError(domain:"Did not receive standings data",code: 102)); return
+                }
+                
+                guard let teams = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
+                    reject(NSError(domain: "Could not get JSON for standings call", code: 103)); return
+                }
+                
+                var parsedStandings = [TeamStandings]()
+                for team in teams{
+                    if let id = team["id"] as? Int{
+                        let name = team["name"] as? String ?? "N/A"
+                        let logo = team["logo"] as? String ?? "placeholder.png"
+                        let matchPoints = team["points"] as? Int ?? 0
+                        let penaltyPoints = team["penalty_points"] as? Int ?? 0
+                        let tablePoints = team["table_points"] as? Int ?? 0
+                        let gamesPlayed = team["games_played"] as? Int ?? 0
+                        parsedStandings.append(TeamStandings(id: id, name: name, logo: logo, points: tablePoints, penaltyPoints: penaltyPoints, matchPoints: matchPoints, playedMatches: gamesPlayed))
+                    }
+                }
+                
+                self.standings = parsedStandings.sorted(by: { (lhs, rhs) -> Bool in
+                    if lhs.points - lhs.penaltyPoints != rhs.points - rhs.penaltyPoints{
+                        return lhs.points - lhs.penaltyPoints > rhs.points - rhs.penaltyPoints
+                    }else if lhs.matchPoints != rhs.matchPoints{
+                        return lhs.matchPoints > rhs.matchPoints
+                    }else{
+                        return lhs.name < rhs.name
+                    }
+                })
+                fulfill(())
+            }).resume()
+        }
+    }
+}
+
 extension PlayerFinderVC{
     
     func getAllHunPlayers() -> Promise<Void>{
