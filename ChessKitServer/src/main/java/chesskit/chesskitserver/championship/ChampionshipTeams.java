@@ -31,6 +31,10 @@ public class ChampionshipTeams {
     private int points;
     
     private int penalty_points;
+    
+    private int games_played;
+    
+    private int table_points;
 
     public int getId() {
         return id;
@@ -71,6 +75,22 @@ public class ChampionshipTeams {
     public void setPenalty_points(int penalty_points) {
         this.penalty_points = penalty_points;
     }
-    
+
+    public int getGames_played() {
+        return games_played;
+    }
+
+    public void setGames_played(int games_played) {
+        this.games_played = games_played;
+    }
+
+    public int getTable_points() {
+        return table_points;
+    }
+
+    public void setTable_points(int table_points) {
+        this.table_points = table_points;
+    }
+
     
 }
