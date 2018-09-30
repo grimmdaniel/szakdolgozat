@@ -20,7 +20,7 @@ class StandingsDataCell: UITableViewCell {
     func updateUI(row: Int, with data: TeamStandings){
         rankLabel.text = "\(row + 1)."
         teamNameLabel.text = data.name
-        tablePointsLabel.text = "\(data.points - data.penaltyPoints)p"
+        tablePointsLabel.text = "\((data.points - Double(data.penaltyPoints)).cleanValue)p"
         matchPointsLabel.text = "\(data.matchPoints)"
         playedGamesLabel.text = "\(data.playedMatchesCount)"
         if let url = URL(string: Settings.BGSC_ROOT_URL+"application/teams/"+data.logo){

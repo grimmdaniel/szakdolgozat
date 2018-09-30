@@ -172,8 +172,8 @@ extension ResultsVC{
                 for match in parsedMatches{
                     if let id = match["id"] as? Int{
                         let round = match["round"] as? Int ?? 0
-                        let homeResult = match["home_result"] as? Int ?? -1
-                        let awayResult = match["away_result"] as? Int ?? -1
+                        let homeResult = match["home_result"] as? Double ?? -1
+                        let awayResult = match["away_result"] as? Double ?? -1
                         let date = match["date"] as? String ?? ""
                         let homeTeam = self.getTeam(with: match["home"] as? Int ?? 0, from: teams)
                         let awayTeam = self.getTeam(with: match["away"] as? Int ?? 0, from: teams)
@@ -241,7 +241,7 @@ extension ResultsVC{
                     if let id = team["id"] as? Int{
                         let name = team["name"] as? String ?? "N/A"
                         let logo = team["logo"] as? String ?? "placeholder.png"
-                        let points = team["points"] as? Int ?? 0
+                        let points = team["table_points"] as? Double ?? 0
                         let penaltyPoints = team["penalty_points"] as? Int ?? 0
                         parsedTeams.append(Team(id: id, name: name, logo: logo, points: points, penaltyPoints: penaltyPoints))
                     }
@@ -284,15 +284,15 @@ extension StandingsVC{
                         let logo = team["logo"] as? String ?? "placeholder.png"
                         let matchPoints = team["points"] as? Int ?? 0
                         let penaltyPoints = team["penalty_points"] as? Int ?? 0
-                        let tablePoints = team["table_points"] as? Int ?? 0
+                        let tablePoints = team["table_points"] as? Double ?? 0.0
                         let gamesPlayed = team["games_played"] as? Int ?? 0
                         parsedStandings.append(TeamStandings(id: id, name: name, logo: logo, points: tablePoints, penaltyPoints: penaltyPoints, matchPoints: matchPoints, playedMatches: gamesPlayed))
                     }
                 }
                 
                 self.standings = parsedStandings.sorted(by: { (lhs, rhs) -> Bool in
-                    if lhs.points - lhs.penaltyPoints != rhs.points - rhs.penaltyPoints{
-                        return lhs.points - lhs.penaltyPoints > rhs.points - rhs.penaltyPoints
+                    if lhs.points - Double(lhs.penaltyPoints) != rhs.points - Double(rhs.penaltyPoints){
+                        return lhs.points - Double(lhs.penaltyPoints) > rhs.points - Double(rhs.penaltyPoints)
                     }else if lhs.matchPoints != rhs.matchPoints{
                         return lhs.matchPoints > rhs.matchPoints
                     }else{

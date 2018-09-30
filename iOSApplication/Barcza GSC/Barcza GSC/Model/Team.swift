@@ -13,7 +13,7 @@ class TeamStandings: Team{
     private var _matchPoints: Int!
     private var _playedMatchesCount: Int!
     
-    init(id: Int, name: String, logo: String, points: Int, penaltyPoints: Int, matchPoints: Int, playedMatches: Int){
+    init(id: Int, name: String, logo: String, points: Double, penaltyPoints: Int, matchPoints: Int, playedMatches: Int){
         super.init(id: id, name: name, logo: logo, points: points, penaltyPoints: penaltyPoints)
         _matchPoints = matchPoints
         _playedMatchesCount = playedMatches
@@ -33,10 +33,10 @@ class Team{
     private var _id: Int!
     private var _name: String!
     private var _logo: String!
-    private var _points: Int!
+    private var _points: Double!
     private var _penaltyPoints: Int!
     
-    init(id: Int, name: String, logo: String, points: Int, penaltyPoints: Int) {
+    init(id: Int, name: String, logo: String, points: Double, penaltyPoints: Int) {
         _id = id
         _name = name
         _logo = logo
@@ -56,7 +56,7 @@ class Team{
         return _logo
     }
     
-    var points: Int{
+    var points: Double{
         return _points
     }
     

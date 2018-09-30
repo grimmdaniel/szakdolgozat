@@ -30,9 +30,9 @@ public class ChampionshipRounds {
     
     private int away;
     
-    private int home_result;
+    private double home_result;
     
-    private int away_result;
+    private double away_result;
     
     private String date;
 
@@ -68,19 +68,19 @@ public class ChampionshipRounds {
         this.away = away;
     }
 
-    public int getHome_result() {
+    public double getHome_result() {
         return home_result;
     }
 
-    public void setHome_result(int home_result) {
+    public void setHome_result(double home_result) {
         this.home_result = home_result;
     }
 
-    public int getAway_result() {
+    public double getAway_result() {
         return away_result;
     }
 
-    public void setAway_result(int away_result) {
+    public void setAway_result(double away_result) {
         this.away_result = away_result;
     }
 

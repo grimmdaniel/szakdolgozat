@@ -34,7 +34,7 @@ public class ChampionshipTeams {
     
     private int games_played;
     
-    private int table_points;
+    private double table_points;
 
     public int getId() {
         return id;
@@ -84,7 +84,7 @@ public class ChampionshipTeams {
         this.games_played = games_played;
     }
 
-    public int getTable_points() {
+    public double getTable_points() {
         return table_points;
     }
 

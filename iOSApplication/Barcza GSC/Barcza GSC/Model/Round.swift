@@ -42,11 +42,11 @@ class Match{
     private var _round: Int!
     private var _homeTeam: Team!
     private var _awayTeam: Team!
-    private var _homeResult: Int!
-    private var _awayResult: Int!
+    private var _homeResult: Double!
+    private var _awayResult: Double!
     private var _date: String!
     
-    init(id: Int, round: Int, homeTeam: Team, awayTeam: Team, homeResult: Int, awayResult: Int, date: String) {
+    init(id: Int, round: Int, homeTeam: Team, awayTeam: Team, homeResult: Double, awayResult: Double, date: String) {
         
         _id = id
         _round = round
@@ -78,11 +78,11 @@ class Match{
         return _awayTeam
     }
     
-    var homeResult: Int{
+    var homeResult: Double{
         return _homeResult
     }
     
-    var awayResult: Int{
+    var awayResult: Double{
         return _awayResult
     }
     

@@ -1038,7 +1038,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPW-PM-kgz">
-                                                    <rect key="frame" x="314" y="9.5" width="28" height="25"/>
+                                                    <rect key="frame" x="304" y="9.5" width="28" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1050,7 +1050,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YT3-Mg-FcO">
-                                                    <rect key="frame" x="281" y="9.5" width="28" height="25"/>
+                                                    <rect key="frame" x="271" y="9.5" width="28" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1069,7 +1069,7 @@
                                                 <constraint firstItem="tgp-7h-peD" firstAttribute="centerY" secondItem="NAs-Ki-DoC" secondAttribute="centerY" id="n1E-RY-rMP"/>
                                                 <constraint firstItem="YT3-Mg-FcO" firstAttribute="centerY" secondItem="NAs-Ki-DoC" secondAttribute="centerY" id="pLO-pb-1Ig"/>
                                                 <constraint firstItem="XPW-PM-kgz" firstAttribute="centerY" secondItem="NAs-Ki-DoC" secondAttribute="centerY" id="pwV-c9-NHu"/>
-                                                <constraint firstItem="NcY-Ti-LAZ" firstAttribute="leading" secondItem="XPW-PM-kgz" secondAttribute="trailing" id="zee-yj-gZJ"/>
+                                                <constraint firstItem="NcY-Ti-LAZ" firstAttribute="leading" secondItem="XPW-PM-kgz" secondAttribute="trailing" constant="10" id="zee-yj-gZJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1096,7 +1096,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TP1-6T-eB8">
-                                                    <rect key="frame" x="300" y="9" width="35" height="53.5"/>
+                                                    <rect key="frame" x="290" y="9" width="35" height="53.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="lby-QG-oJV"/>
                                                     </constraints>
@@ -1105,7 +1105,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiA-Ua-lTF">
-                                                    <rect key="frame" x="265" y="9" width="35" height="53.5"/>
+                                                    <rect key="frame" x="255" y="9" width="35" height="53.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="4Bz-1r-KLl"/>
                                                     </constraints>
@@ -1114,7 +1114,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Barcza GSC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="OkT-tO-fYQ">
-                                                    <rect key="frame" x="108.5" y="9" width="151.5" height="53.5"/>
+                                                    <rect key="frame" x="108.5" y="9" width="141.5" height="53.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1132,7 +1132,7 @@
                                             <constraints>
                                                 <constraint firstItem="O2M-sF-g6v" firstAttribute="leading" secondItem="U7P-IO-b4X" secondAttribute="leading" constant="10" id="BYD-17-S2Q"/>
                                                 <constraint firstItem="YiA-Ua-lTF" firstAttribute="leading" secondItem="OkT-tO-fYQ" secondAttribute="trailing" constant="5" id="DTf-gf-Tfl"/>
-                                                <constraint firstItem="drR-Aw-AiG" firstAttribute="leading" secondItem="TP1-6T-eB8" secondAttribute="trailing" id="Eoe-Mj-bjZ"/>
+                                                <constraint firstItem="drR-Aw-AiG" firstAttribute="leading" secondItem="TP1-6T-eB8" secondAttribute="trailing" constant="10" id="Eoe-Mj-bjZ"/>
                                                 <constraint firstItem="OkT-tO-fYQ" firstAttribute="centerY" secondItem="U7P-IO-b4X" secondAttribute="centerY" id="HU7-HJ-Jke"/>
                                                 <constraint firstItem="O2M-sF-g6v" firstAttribute="height" secondItem="YiA-Ua-lTF" secondAttribute="height" id="IF2-Kb-YYi"/>
                                                 <constraint firstItem="OkT-tO-fYQ" firstAttribute="leading" secondItem="Jca-fZ-smD" secondAttribute="trailing" constant="5" id="MWg-rx-SFY"/>
@@ -1243,17 +1243,17 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lKH-dB-7zW">
                                                     <rect key="frame" x="319.5" y="7.5" width="45.5" height="45.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 - 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiG-67-Wxe">
-                                                    <rect key="frame" x="157.5" y="5" width="60" height="30.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.5 - 10.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiG-67-Wxe">
+                                                    <rect key="frame" x="145" y="5" width="85" height="30.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="gPx-mW-GPi"/>
+                                                        <constraint firstAttribute="width" constant="85" id="gPx-mW-GPi"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barcza GSC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gbf-tr-GoX">
-                                                    <rect key="frame" x="60.5" y="8.5" width="92" height="23.5"/>
+                                                    <rect key="frame" x="60.5" y="8.5" width="79.5" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1265,7 +1265,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vasas SC" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ybS-FV-PXc">
-                                                    <rect key="frame" x="222.5" y="8.5" width="92" height="23.5"/>
+                                                    <rect key="frame" x="235" y="8.5" width="79.5" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

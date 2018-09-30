@@ -23,7 +23,11 @@ class ExpandableCell: UITableViewCell {
         homeTeamNameLabel.text = data.homeTeam.name
         awayTeamNameLabel.text = data.awayTeam.name
         dateLabel.text = data.date.replacingOccurrences(of: ":00.0", with: "")
-        resultLabel.text = "\(data.homeResult) - \(data.awayResult)".replacingOccurrences(of: "-1", with: "*")
+        if data.homeResult == -1 || data.awayResult == -1{
+            resultLabel.text = "* - *"
+        }else{
+            resultLabel.text = "\(data.homeResult.cleanValue) - \(data.awayResult.cleanValue)"
+        }
         if let url = URL(string: Settings.BGSC_ROOT_URL+"application/teams/"+data.homeTeam.logo){
             homeTeamImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "teamLogoPlaceholder.png"))
         }else{
