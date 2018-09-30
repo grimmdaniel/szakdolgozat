@@ -12,7 +12,7 @@ class DocumentsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     @IBOutlet weak var documentsTableView: UITableView!
     
-    let documents: [DocumentType] = [("Bírósági kivonat","http://bgsc.hu/birosagi_kivonat_barcza.pdf") as DocumentType,("Alapszabály","http://bgsc.hu/BGSC_alapszabaly.pdf") as DocumentType,("Pénzügyi beszámoló 2016","http://bgsc.hu/penzugy_2016.pdf") as DocumentType]
+    let documents: [DocumentType] = [("Bírósági kivonat","http://bgsc.hu/birosagi_kivonat_barcza.pdf") as DocumentType,("Alapszabály","http://bgsc.hu/BGSC_alapszabaly.pdf") as DocumentType,("Pénzügyi beszámoló 2017","http://bgsc.hu/penzugy_2016.pdf") as DocumentType]
     
     override func viewDidLoad() {
         super.viewDidLoad()

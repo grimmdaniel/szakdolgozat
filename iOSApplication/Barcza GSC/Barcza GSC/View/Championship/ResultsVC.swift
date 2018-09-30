@@ -22,8 +22,6 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
 
         navigationView.backgroundColor = ColorTheme.barczaOrange
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
@@ -44,6 +42,11 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
             log.error(error)
             SVProgressHUD.dismiss()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
     
     override func viewWillDisappear(_ animated: Bool) {

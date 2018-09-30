@@ -77,8 +77,6 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
         self.revealViewController().delegate = self
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         menuBtn.addTarget(self, action: #selector(uiTapped), for: .touchDown)
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
         navigationView.backgroundColor = ColorTheme.barczaOrange
         
@@ -97,6 +95,11 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
         myEloTextField.addDoneButtonToKeyboard(myAction:  #selector(self.myEloTextField.resignFirstResponder))
         yourEloTextField.addDoneButtonToKeyboard(myAction:  #selector(self.yourEloTextField.resignFirstResponder))
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
     
     override func viewWillDisappear(_ animated: Bool) {

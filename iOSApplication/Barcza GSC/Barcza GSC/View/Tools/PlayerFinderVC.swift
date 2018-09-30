@@ -17,8 +17,6 @@ class PlayerFinderVC: UIViewController {
         super.viewDidLoad()
 
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     
         navigationView.backgroundColor = ColorTheme.barczaOrange
         
@@ -27,6 +25,9 @@ class PlayerFinderVC: UIViewController {
         }
     }
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    }
 
 }
