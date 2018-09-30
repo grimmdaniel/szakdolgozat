@@ -45,18 +45,28 @@ class StandingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return standings.count
+        return standings.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StandingsDataCell", for: indexPath) as! StandingsDataCell
-        cell.updateUI(row: indexPath.row, with: standings[indexPath.row])
-        cell.selectionStyle = .none
-        return cell
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StandingInfoCell", for: indexPath) as! StandingInfoCell
+            cell.selectionStyle = .none
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StandingsDataCell", for: indexPath) as! StandingsDataCell
+            cell.updateUI(row: indexPath.row - 1, with: standings[indexPath.row - 1])
+            cell.selectionStyle = .none
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55.0
+        if indexPath.row == 0{
+            return 40.0
+        }else{
+            return 55.0
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
