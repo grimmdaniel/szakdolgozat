@@ -19,19 +19,65 @@ class PGNGameTextParser{
         var moveSpace = MoveBorderComponent.number
         var movesToReturn = [String]()
         var tmpText = ""
+        let exceptionsNotToParse = Stack<String>()
         for element in text.components(separatedBy: " "){
-            switch moveSpace{
-            case .number:
-                tmpText.append(element + " ")
-                moveSpace = .white
-            case .white:
-                tmpText.append(element + " ")
-                moveSpace = .black
-            case .black:
-                tmpText.append(element)
-                movesToReturn.append(tmpText)
-                tmpText = ""
-                moveSpace = .number
+            if element.contains("$") && !element.contains(")") { continue }
+            
+            if element.contains("(") && element.contains("{"){
+                let countOf = element.count(of: "(") + element.count(of: "{")
+                for _ in 0..<countOf{
+                    exceptionsNotToParse.push(element)
+                }
+                continue
+            }
+            
+            if element.contains("("){
+                exceptionsNotToParse.push(element)
+                continue
+            }
+            
+            if element.contains("{"){
+                exceptionsNotToParse.push(element)
+                continue
+            }
+            
+            if element.contains(")") && element.contains("}"){
+                let countOf = element.count(of: ")") + element.count(of: "}")
+                for _ in 0..<countOf{
+                    _ = exceptionsNotToParse.pop()
+                }
+                continue
+            }
+            
+            if element.contains(")"){
+                let countOf = element.count(of: ")")
+                for _ in 0..<countOf{
+                    _ = exceptionsNotToParse.pop()
+                }
+                continue
+            }
+            
+            if element.contains("}"){
+                _ = exceptionsNotToParse.pop()
+                continue
+            }
+            
+            if element.contains("..."){ continue }
+            
+            if exceptionsNotToParse.isEmpty(){
+                switch moveSpace{
+                case .number:
+                    tmpText.append(element + " ")
+                    moveSpace = .white
+                case .white:
+                    tmpText.append(element + " ")
+                    moveSpace = .black
+                case .black:
+                    tmpText.append(element)
+                    movesToReturn.append(tmpText)
+                    tmpText = ""
+                    moveSpace = .number
+                }
             }
         }
         print(movesToReturn)

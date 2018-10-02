@@ -30,6 +30,14 @@ extension Double {
 }
 
 extension String {
+    func count(of needle: Character) -> Int {
+        return reduce(0) {
+            $1 == needle ? $0 + 1 : $0
+        }
+    }
+}
+
+extension String {
     var htmlToAttributedString: NSAttributedString? {
         guard let data = data(using: .utf16) else { return NSAttributedString() }
         do {
