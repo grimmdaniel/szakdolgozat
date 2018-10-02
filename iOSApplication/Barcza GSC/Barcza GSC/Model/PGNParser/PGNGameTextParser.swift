@@ -23,6 +23,18 @@ class PGNGameTextParser{
         for element in text.components(separatedBy: " "){
             if element.contains("$") && !element.contains(")") { continue }
             
+            if element.contains("(") || element.contains("{") && element.contains(")") || element.contains("}"){
+                let countOfIn = element.count(of: "(") + element.count(of: "{")
+                let countOfOut = element.count(of: ")") + element.count(of: "}")
+                for _ in 0..<countOfIn{
+                    exceptionsNotToParse.push(element)
+                }
+                for _ in 0..<countOfOut{
+                    _ = exceptionsNotToParse.pop()
+                }
+                continue
+            }
+            
             if element.contains("(") && element.contains("{"){
                 let countOf = element.count(of: "(") + element.count(of: "{")
                 for _ in 0..<countOf{
