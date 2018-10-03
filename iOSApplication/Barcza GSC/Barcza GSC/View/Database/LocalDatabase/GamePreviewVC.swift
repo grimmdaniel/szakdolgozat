@@ -13,6 +13,7 @@ import ChessBoardKit
 class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     
     @IBOutlet weak var chessBoard: ChessBoardView!
+    @IBOutlet weak var gamePreviewCollectionView: UICollectionView!
     var game: PGNGame!
     var parsedGame = [String]()
     var currentMoveIndex = 0
@@ -23,6 +24,9 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
         chessBoard.datasource = self
         chessBoard.delegate = self
         chessBoard.isMovementEnabled = false
+        
+        gamePreviewCollectionView.delegate = self
+        gamePreviewCollectionView.dataSource = self
         
         let parser = PGNGameTextParser.parser
         parsedGame = parser.parseGameText(from: game.gameText)
