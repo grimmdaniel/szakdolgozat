@@ -46,12 +46,11 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     }
     
     @IBAction func forwardBtnPressed(_ sender: UIButton) {
-        if parsedGame.count == currentMoveIndex { return }
-        
         if let move = nextMove{
             chessBoard.processNextMove(move: move, side: .black)
             nextMove = nil
         }else{
+            if parsedGame.count == currentMoveIndex { return }
             let chopped = parsedGame[currentMoveIndex].components(separatedBy: " ")
             if chopped.count != 3 { return }
             nextMove = chopped[2]
