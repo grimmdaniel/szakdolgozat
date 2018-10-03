@@ -20,75 +20,55 @@ class PGNGameTextParser{
         var movesToReturn = [String]()
         var tmpText = ""
         let exceptionsNotToParse = Stack<String>()
+        var isInCommentMode = false
         for element in text.components(separatedBy: " "){
-            if element.contains("$") && !element.contains(")") { continue }
-            
-            if element.contains("(") || element.contains("{") && element.contains(")") || element.contains("}"){
-                let countOfIn = element.count(of: "(") + element.count(of: "{")
-                let countOfOut = element.count(of: ")") + element.count(of: "}")
-                for _ in 0..<countOfIn{
-                    exceptionsNotToParse.push(element)
-                }
-                for _ in 0..<countOfOut{
-                    _ = exceptionsNotToParse.pop()
-                }
-                continue
-            }
-            
-            if element.contains("(") && element.contains("{"){
-                let countOf = element.count(of: "(") + element.count(of: "{")
-                for _ in 0..<countOf{
-                    exceptionsNotToParse.push(element)
-                }
-                continue
-            }
-            
-            if element.contains("("){
-                exceptionsNotToParse.push(element)
-                continue
-            }
-            
             if element.contains("{"){
-                exceptionsNotToParse.push(element)
-                continue
-            }
-            
-            if element.contains(")") && element.contains("}"){
-                let countOf = element.count(of: ")") + element.count(of: "}")
-                for _ in 0..<countOf{
-                    _ = exceptionsNotToParse.pop()
+                let choppedElement = element.components(separatedBy: "{")
+                if choppedElement[0].contains("("){
+                    exceptionsNotToParse.push("(")
                 }
+                isInCommentMode = true
+                if element.contains("}") { isInCommentMode = false}
                 continue
             }
-            
-            if element.contains(")"){
-                let countOf = element.count(of: ")")
-                for _ in 0..<countOf{
-                    _ = exceptionsNotToParse.pop()
-                }
-                continue
-            }
-            
             if element.contains("}"){
-                _ = exceptionsNotToParse.pop()
+                let choppedElement = element.components(separatedBy: "}")
+                if choppedElement[1].contains(")"){
+                    let countOfParentheses = element.count(of: ")")
+                    for _ in 0..<countOfParentheses{
+                        _ = exceptionsNotToParse.pop()
+                    }
+                }
+                isInCommentMode = false
                 continue
             }
-            
-            if element.contains("..."){ continue }
-            
-            if exceptionsNotToParse.isEmpty(){
-                switch moveSpace{
-                case .number:
-                    tmpText.append(element + " ")
-                    moveSpace = .white
-                case .white:
-                    tmpText.append(element + " ")
-                    moveSpace = .black
-                case .black:
-                    tmpText.append(element)
-                    movesToReturn.append(tmpText)
-                    tmpText = ""
-                    moveSpace = .number
+            if !isInCommentMode{
+                if element.contains("...") && !element.contains("(") && !element.contains(")") && !element.contains("{") && !element.contains("}") { continue }
+                if element.contains("$") && !element.contains("(") && !element.contains(")") && !element.contains("{") && !element.contains("}"){
+                    print("Single $ token found, moving on...")
+                }else if element.contains("("){
+                    exceptionsNotToParse.push("(")
+                }else if element.contains(")"){
+                    let countOfParentheses = element.count(of: ")")
+                    for _ in 0..<countOfParentheses{
+                        _ = exceptionsNotToParse.pop()
+                    }
+                }else{
+                    if exceptionsNotToParse.isEmpty(){
+                        switch moveSpace{
+                        case .number:
+                            tmpText.append(element + " ")
+                            moveSpace = .white
+                        case .white:
+                            tmpText.append(element + " ")
+                            moveSpace = .black
+                        case .black:
+                            tmpText.append(element)
+                            movesToReturn.append(tmpText)
+                            tmpText = ""
+                            moveSpace = .number
+                        }
+                    }
                 }
             }
         }
