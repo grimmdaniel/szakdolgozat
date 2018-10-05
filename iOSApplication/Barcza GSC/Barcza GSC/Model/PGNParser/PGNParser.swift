@@ -74,7 +74,9 @@ class PGNParser{
             }else if i == ""{ // empty row
                 if type == .gameText{
                     type = .token
-                    data.append(tmpGame)
+                    if tmpGame.event != "" && tmpGame.white != "" && tmpGame.black != ""{
+                        data.append(tmpGame)
+                    }
                     tmpGame = PGNGame()
                 }else{
                     type = .gameText
