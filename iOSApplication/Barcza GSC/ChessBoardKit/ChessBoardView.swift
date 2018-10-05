@@ -152,7 +152,9 @@ public class ChessBoardView: UIView {
                 }
                 
                 if boardModel.getPawnStatus() == .white{ // white pawn reached opposite side
-                    displayNewPieceView(piece: boardModel.selectedSquareSecond)
+                    if isMovementEnabled{
+                        displayNewPieceView(piece: boardModel.selectedSquareSecond)
+                    }
                 }
                 
                 if boardModel.selectedSquareSecond.pieceHere!.identifier != .pawn{
@@ -249,7 +251,9 @@ public class ChessBoardView: UIView {
                 }
                 
                 if boardModel.getPawnStatus() == .black{ // black pawn reached opposite side
-                    displayNewPieceView(piece: boardModel.selectedSquareSecond)
+                    if isMovementEnabled{
+                        displayNewPieceView(piece: boardModel.selectedSquareSecond)
+                    }
                 }
                 
                 if boardModel.selectedSquareSecond.pieceHere!.identifier != .pawn{
@@ -506,9 +510,30 @@ public class ChessBoardView: UIView {
         let sideDeterminer: Int = side == .white ? 1 : -1
         var pawnChopped = pawnChopped.replacingOccurrences(of: "+", with: "")
         pawnChopped = pawnChopped.replacingOccurrences(of: "#", with: "")
+        var pawnPromotion = false
+        var promotedFigurine: FigurineType? = nil
         
         if pawnChopped.contains("="){
-            print(pawnChopped)
+            pawnPromotion = true
+            let promotedChopped = pawnChopped.components(separatedBy: "=")
+            if promotedChopped.count == 2 {
+                if promotedChopped.last!.count == 1{
+                    switch promotedChopped.last{
+                    case "N":
+                        promotedFigurine = .knight
+                    case "B":
+                        promotedFigurine = .bishop
+                    case "R":
+                        promotedFigurine = .rook
+                    case "Q":
+                        promotedFigurine = .queen
+                    default:
+                        promotedFigurine = nil
+                        print("Fatal error piece identifier not found")
+                        return
+                    }
+                }
+            }
         }
         
         if pawnChopped.contains("x"){ //pawn capturing something
@@ -524,7 +549,8 @@ public class ChessBoardView: UIView {
                 performMove(coords: from)
                 performMove(coords: to)
             }
-        } else if pawnChopped.count == 2{
+        } else if pawnChopped.count == 2 || pawnChopped.count == 4{
+            if pawnChopped.count == 4 { pawnChopped.removeLast(2)}
             let file = String(pawnChopped.first!)
             guard var number = Int(String(pawnChopped.last!)) else {
                 print("Can't find rank number")
@@ -541,6 +567,30 @@ public class ChessBoardView: UIView {
                     // found piece
                     performMove(coords: bid1)
                     performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1))
+                    if pawnPromotion{
+                        print("promoting pawn")
+                        if let promotedPawn = boardModel.findPromotedPawn(){
+                            if let promoted = promotedFigurine{
+                                switch promoted{
+                                case .knight:
+                                    promotedPawn.pieceHere = Knight(position: promotedPawn.position, side: side)
+                                    promotedPawn.pieceHere?.delegate = boardModel
+                                case .bishop:
+                                    promotedPawn.pieceHere = Bishop(position: promotedPawn.position, side: side)
+                                    promotedPawn.pieceHere?.delegate = boardModel
+                                case .rook:
+                                    promotedPawn.pieceHere = Rook(position: promotedPawn.position, side: side)
+                                    promotedPawn.pieceHere?.delegate = boardModel
+                                case .queen:
+                                    promotedPawn.pieceHere = Queen(position: promotedPawn.position, side: side)
+                                    promotedPawn.pieceHere?.delegate = boardModel
+                                default:
+                                    return
+                                }
+                                refreshBoard()
+                            }
+                        }
+                    }
                     return
                 }
                 return
