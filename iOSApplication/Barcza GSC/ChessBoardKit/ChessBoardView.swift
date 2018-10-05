@@ -395,6 +395,7 @@ public class ChessBoardView: UIView {
     }
     
     public func processNextMove(move: String, side: SquarePieceOwner){
+        if move.isEmpty { return }
         let pieceNames = ["K","Q","R","B","N","O"]
         if (pieceNames.contains(String(move.first!))){ // Piece move, white
             moveFigurineFromPGN(move: move, with: side)
