@@ -70,3 +70,34 @@ extension GamePreviewVC: UICollectionViewDelegate, UICollectionViewDataSource,UI
         return size
     }
 }
+
+extension TrainingBaseVC: UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let currentIndex = trainings.index(of: viewController as! TrainingVC)!
+        let previousIndex = currentIndex > 0 ? currentIndex - 1 : trainings.count-1
+        return trainings[previousIndex]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let currentIndex = trainings.index(of: viewController as! TrainingVC)!
+        let nextIndex = abs((currentIndex + 1) % trainings.count)
+        return trainings[nextIndex]
+    }
+    
+}
+
+extension TrainingBaseVC: UIPageViewControllerDelegate {
+    func pageViewController(_ willTransitionTopageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        pendingIndex = trainings.index(of: pendingViewControllers.first! as! TrainingVC)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            currentIndex = pendingIndex
+            if let index = currentIndex {
+                pageControl.currentPage = index
+            }
+        }
+    }
+}

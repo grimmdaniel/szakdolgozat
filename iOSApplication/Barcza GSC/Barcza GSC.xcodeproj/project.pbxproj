@@ -40,6 +40,8 @@
 		0867A441213AA8B00061B6DE /* PGNGameInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867A440213AA8B00061B6DE /* PGNGameInfoCell.swift */; };
 		08690E482145AC4E0052201C /* ChessBoardKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08690E472145AC490052201C /* ChessBoardKit.framework */; };
 		08690E492145AC4E0052201C /* ChessBoardKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08690E472145AC490052201C /* ChessBoardKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		086CD50F216A4D0A002DD2B2 /* TrainingBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CD50E216A4D0A002DD2B2 /* TrainingBaseVC.swift */; };
+		086CD511216A4D5B002DD2B2 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CD510216A4D5B002DD2B2 /* TrainingVC.swift */; };
 		087621062143ECD100CE69C3 /* DatabaseBrowserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087621052143ECD100CE69C3 /* DatabaseBrowserVC.swift */; };
 		0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */; };
 		0890687420FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890687320FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift */; };
@@ -133,6 +135,8 @@
 		0864C8AD20FBCF2400435EE3 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		0867A440213AA8B00061B6DE /* PGNGameInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNGameInfoCell.swift; sourceTree = "<group>"; };
 		08690E422145AC490052201C /* ChessBoardKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ChessBoardKit.xcodeproj; sourceTree = "<group>"; };
+		086CD50E216A4D0A002DD2B2 /* TrainingBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingBaseVC.swift; sourceTree = "<group>"; };
+		086CD510216A4D5B002DD2B2 /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		087621052143ECD100CE69C3 /* DatabaseBrowserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseBrowserVC.swift; sourceTree = "<group>"; };
 		0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryVC.swift; sourceTree = "<group>"; };
 		0890687320FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -255,6 +259,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		086CD50D216A4CE0002DD2B2 /* Trainings */ = {
+			isa = PBXGroup;
+			children = (
+				086CD50E216A4D0A002DD2B2 /* TrainingBaseVC.swift */,
+				086CD510216A4D5B002DD2B2 /* TrainingVC.swift */,
+			);
+			path = Trainings;
+			sourceTree = "<group>";
+		};
 		0895DC412153996000663F12 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +280,7 @@
 		08A2941E20FCAFDE008BF214 /* Informations */ = {
 			isa = PBXGroup;
 			children = (
+				086CD50D216A4CE0002DD2B2 /* Trainings */,
 				08A2941F20FCAFFE008BF214 /* InformationsVC.swift */,
 				0895DC3A21526DBD00663F12 /* DocumentsVC.swift */,
 				0895DC3C2152728300663F12 /* PDFWebViewVC.swift */,
@@ -608,6 +622,7 @@
 				0895DC49215409D400663F12 /* DetailedNewsVC.swift in Sources */,
 				08D402F020F125730005038B /* AppDelegate.swift in Sources */,
 				0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */,
+				086CD511216A4D5B002DD2B2 /* TrainingVC.swift in Sources */,
 				0861B57F2138317F00D50ED3 /* PGNGame.swift in Sources */,
 				080CD058213812C500E4361B /* DatabaseMenuVC.swift in Sources */,
 				087621062143ECD100CE69C3 /* DatabaseBrowserVC.swift in Sources */,
@@ -619,6 +634,7 @@
 				0867A441213AA8B00061B6DE /* PGNGameInfoCell.swift in Sources */,
 				080CD05E2138240300E4361B /* PGNParser.swift in Sources */,
 				085122E1215F86E80078AB7B /* ChampionshipBaseVC.swift in Sources */,
+				086CD50F216A4D0A002DD2B2 /* TrainingBaseVC.swift in Sources */,
 				085122E5215F8A010078AB7B /* StandingsVC.swift in Sources */,
 				0864C8A920FBBB5E00435EE3 /* Requests.swift in Sources */,
 				0895DC3D2152728300663F12 /* PDFWebViewVC.swift in Sources */,

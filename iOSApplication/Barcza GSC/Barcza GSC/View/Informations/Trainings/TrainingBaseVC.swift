@@ -9,22 +9,41 @@
 import UIKit
 
 class TrainingBaseVC: UIPageViewController {
+    
+    var trainings = [TrainingVC]()
+    var currentIndex: Int?
+    var pendingIndex: Int?
+    var pageControl = UIPageControl()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = "Edzéseink"
+        self.delegate = self
+        self.dataSource = self
+        
+        setupPageControl()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
-    */
 
+    func setupPageControl(){
+        pageControl.currentPage = 0
+        pageControl.numberOfPages = trainings.count
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.currentPageIndicatorTintColor = ColorTheme.barczaOrange
+        pageControl.pageIndicatorTintColor = UIColor.lightGray.withAlphaComponent(0.8)
+        
+        let leading = NSLayoutConstraint(item: pageControl, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0)
+        let trailing = NSLayoutConstraint(item: pageControl, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: pageControl, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
+        
+        view.insertSubview(pageControl, at: 0)
+        view.bringSubviewToFront(pageControl)
+        view.addConstraints([leading, trailing, bottom])
+    }
 }

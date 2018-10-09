@@ -24,7 +24,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         menuTableView.delegate = self
         menuTableView.dataSource = self
         menuTableView.separatorStyle = .none
-        menuTableView.backgroundColor = ColorTheme.barczaOrange
+        menuTableView.backgroundColor = UIColor.clear
         view.backgroundColor = ColorTheme.barczaOrange
         logoPositionConstraint.constant = (self.view.frame.size.width - 100) / 2 - logoImageView.frame.size.width / 2
     }
@@ -46,7 +46,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell", for: indexPath) as! MenuTableViewCell
         cell.menuItemLabel.text = menuItems[indexPath.row]
         cell.selectionStyle = .none
-        cell.backgroundColor = ColorTheme.barczaOrange
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     
