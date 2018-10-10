@@ -98,6 +98,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		08B9AF94216E8E9300679630 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -460,6 +470,7 @@
 				08D402EA20F125730005038B /* Resources */,
 				08690E4C2145AC4F0052201C /* Embed Frameworks */,
 				D7B5DB73EB826DC8B091AB7D /* [CP] Embed Pods Frameworks */,
+				08B9AF94216E8E9300679630 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -477,7 +488,7 @@
 		08D402E420F125730005038B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = daniel.grimm;
 				TargetAttributes = {
@@ -485,6 +496,9 @@
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};

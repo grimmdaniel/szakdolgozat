@@ -15,7 +15,7 @@ class Settings {
     static var headers: Dictionary<String,String> {
         return ["Content-Type":"application/json","client":"\(client)","token":"\(token)"]
     }
-    static let rootURL = "http://172.20.10.4:8080"
+    static let rootURL = "http://10.10.22.187:8080"
     static let BGSC_ROOT_URL = "http://bgsc.hu/"
     static var email = ""
     static var language:String = ""

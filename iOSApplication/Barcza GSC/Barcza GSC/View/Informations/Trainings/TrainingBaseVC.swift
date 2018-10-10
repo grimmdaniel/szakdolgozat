@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class TrainingBaseVC: UIPageViewController {
     
@@ -25,6 +26,16 @@ class TrainingBaseVC: UIPageViewController {
         self.dataSource = self
         
         setupPageControl()
+        
+        SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
+        SVProgressHUD.show()
+        _ = getAllTrainings().then(execute: { (completed) -> () in
+            log.info("Successful trainings request")
+        }).catch(execute: { (error) in
+            log.error(error)
+        }).always {
+            SVProgressHUD.dismiss()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

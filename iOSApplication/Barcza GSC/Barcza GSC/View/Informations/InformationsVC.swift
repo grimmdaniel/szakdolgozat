@@ -57,6 +57,8 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
             performSegue(withIdentifier: "toDocumentsSegue", sender: nil)
+        }else if indexPath.row == 1{
+            performSegue(withIdentifier: "toTrainings", sender: nil)
         }
     }
 }
