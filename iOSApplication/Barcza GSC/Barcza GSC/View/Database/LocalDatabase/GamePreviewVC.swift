@@ -56,6 +56,8 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
             nextMove = chopped[2]
             chessBoard.processNextMove(move:chopped[1], side: .white)
             currentMoveIndex += 1
+            
+            self.gamePreviewCollectionView.scrollToItem(at: IndexPath(row: currentMoveIndex - 1, section: 0), at: UICollectionView.ScrollPosition.left, animated: true)
         }
     }
     
