@@ -12,6 +12,8 @@ import Firebase
 import FirebaseInstanceID
 import FirebaseMessaging
 import UserNotifications
+import RealmSwift
+import SVProgressHUD
 
 let log = SwiftyBeaver.self
 var FCMTOKEN = ""
@@ -53,6 +55,74 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         print(url)
+        let urlString = url.absoluteString
+        if urlString.hasSuffix(".pgn"){
+            let fileName = url.lastPathComponent == "" ? "temp_\(Date().timeIntervalSince1970).pgn" : url.lastPathComponent
+            
+            let realm = try! Realm()
+            if realm.object(ofType: PGNDatabaseMetadata.self, forPrimaryKey: fileName) == nil{
+                do {
+                    let fm = FileManager()
+                    let dataFromFile = fm.contents(atPath: url.path)
+                    var content = String(data: dataFromFile!,encoding: .utf8)
+                    if content == nil{
+                        content = String(data: dataFromFile!,encoding: .windowsCP1252)
+                    }
+                    if content == nil{
+                        let alertController = UIAlertController(title: "Error", message: "File encoding must be UTF-8, or Windows 1252", preferredStyle: .alert)
+                        // Create the actions
+                        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                        alertController.addAction(okAction)
+                        window!.rootViewController?.present(alertController, animated: true, completion: nil)
+                        return true
+                    }
+                    
+                    let date = Date()
+                    SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
+                    SVProgressHUD.show()
+                    
+                    var metaData: PGNDatabaseMetadata?
+                    var pgnDatabase: PGNDatabase?
+                    
+                    DispatchQueue.background(background: {
+                        // do something in background
+                        let parser = PGNParser.parser
+                        let data = parser.parsePGN(content ?? "")
+                        metaData = PGNDatabaseMetadata(name: fileName,creationTime: date)
+                        pgnDatabase = PGNDatabase(name: fileName,creationTime: date, database: data)
+                    }, completion:{
+                        // when background job finished, do something in main thread
+                        if let meta = metaData, let database = pgnDatabase{
+                            PGNParser.writePGNDatabaseToRealm(metadata: meta, database: database)
+                            SVProgressHUD.dismiss()
+                            let alertController = UIAlertController(title: "Success", message: "Database added successfully", preferredStyle: .alert)
+                            
+                            // Create the actions
+                            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                            alertController.addAction(okAction)
+                            self.window!.rootViewController?.present(alertController, animated: true, completion: nil)
+                        }
+                    })
+                }
+            }else{
+                //database already exists
+                let alertController = UIAlertController(title: "Error", message: "Database already exists", preferredStyle: .alert)
+                
+                // Create the actions
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                alertController.addAction(okAction)
+                window!.rootViewController?.present(alertController, animated: true, completion: nil)
+            }
+            
+        }else{
+            // file is not pgn
+            let alertController = UIAlertController(title: "Error", message: "File format must be pgn", preferredStyle: .alert)
+            
+            // Create the actions
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+            alertController.addAction(okAction)
+            window!.rootViewController?.present(alertController, animated: true, completion: nil)
+        }
         return true
     }
 
