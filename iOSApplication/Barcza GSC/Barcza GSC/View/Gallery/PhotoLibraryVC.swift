@@ -78,7 +78,7 @@ class PhotoLibraryVC: UIViewController, UICollectionViewDelegate,UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.bigImageView.sd_setImage(with: album[indexPath.row].image, placeholderImage: #imageLiteral(resourceName: "placeholder"),options: [.progressiveDownload])
+        self.bigImageView.sd_setImage(with: album[indexPath.row].image, placeholderImage: #imageLiteral(resourceName: "placeholder"),options: [.retryFailed])
         self.bigView.isHidden = false
         view.backgroundColor = UIColor.black
         navigationController?.navigationBar.isHidden = true
