@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class TrainingVC: UIViewController {
+class TrainingVC: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -26,6 +26,7 @@ class TrainingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationMap.delegate = self
         backgroundView.layer.cornerRadius = 10.0
         backgroundView.layer.shadowOpacity = 0.18
         backgroundView.layer.shadowOffset = CGSize(width: 0, height: 3)
@@ -42,6 +43,19 @@ class TrainingVC: UIViewController {
             timeLabel.text = data.trainingDescription
             placeLabel.text = data.place
         }
+        
+        setUPMap()
+    }
+    
+    private func setUPMap(){
+        let location = trainingData.coordinate
+        let regionRadius: CLLocationDistance = 800
+        centerMapOnLocation(location: location, radius: regionRadius)
+    }
+    
+    private func centerMapOnLocation(location: CLLocation, radius: CLLocationDistance) {
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,latitudinalMeters: radius,longitudinalMeters: radius)
+        locationMap.setRegion(coordinateRegion, animated: true)
     }
 
 }
