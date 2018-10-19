@@ -58,6 +58,13 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
         if indexPath.row == 0{
             performSegue(withIdentifier: "toDocumentsSegue", sender: nil)
         }else if indexPath.row == 1{
+            if Storage.traningStorage.isEmpty {
+                let infoAlert = UIAlertController(title: "Information", message: "No trainings are available yet", preferredStyle: .alert)
+                let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                infoAlert.addAction(confirmAction)
+                present(infoAlert, animated: true, completion: nil)
+                return
+            }
             performSegue(withIdentifier: "toTrainings", sender: nil)
         }
     }

@@ -15,6 +15,7 @@
 		0801785720F13556009A7982 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785620F13556009A7982 /* ColorTheme.swift */; };
 		0801785920F14CD7009A7982 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785820F14CD7009A7982 /* MenuVC.swift */; };
 		0801785B20F14EBD009A7982 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785A20F14EBD009A7982 /* MenuTableViewCell.swift */; };
+		0805F1522175DC42004341E1 /* StarterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805F1512175DC42004341E1 /* StarterVC.swift */; };
 		080CD058213812C500E4361B /* DatabaseMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD057213812C500E4361B /* DatabaseMenuVC.swift */; };
 		080CD05A2138149000E4361B /* DatabaseMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD0592138149000E4361B /* DatabaseMenuCell.swift */; };
 		080CD05E2138240300E4361B /* PGNParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD05D2138240300E4361B /* PGNParser.swift */; };
@@ -40,7 +41,6 @@
 		0867A441213AA8B00061B6DE /* PGNGameInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867A440213AA8B00061B6DE /* PGNGameInfoCell.swift */; };
 		08690E482145AC4E0052201C /* ChessBoardKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08690E472145AC490052201C /* ChessBoardKit.framework */; };
 		08690E492145AC4E0052201C /* ChessBoardKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08690E472145AC490052201C /* ChessBoardKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		086CD50F216A4D0A002DD2B2 /* TrainingBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CD50E216A4D0A002DD2B2 /* TrainingBaseVC.swift */; };
 		086CD511216A4D5B002DD2B2 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086CD510216A4D5B002DD2B2 /* TrainingVC.swift */; };
 		087621062143ECD100CE69C3 /* DatabaseBrowserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087621052143ECD100CE69C3 /* DatabaseBrowserVC.swift */; };
 		0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */; };
@@ -55,7 +55,10 @@
 		0895DC4B21540B3500663F12 /* NewsDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC4A21540B3500663F12 /* NewsDataCell.swift */; };
 		08A2942020FCAFFE008BF214 /* InformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2941F20FCAFFE008BF214 /* InformationsVC.swift */; };
 		08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */; };
+		08C27C5E2179E45F00335F04 /* TrainingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C27C5D2179E45F00335F04 /* TrainingListVC.swift */; };
 		08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */; };
+		08CFCE082175ED6300A93B79 /* TrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CFCE072175ED6300A93B79 /* TrainingModel.swift */; };
+		08CFCE0A2175F6EF00A93B79 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CFCE092175F6EF00A93B79 /* Storage.swift */; };
 		08D402F020F125730005038B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D402EF20F125730005038B /* AppDelegate.swift */; };
 		08D402F220F125730005038B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D402F120F125730005038B /* Main.swift */; };
 		08D402F520F125730005038B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08D402F320F125730005038B /* Main.storyboard */; };
@@ -121,6 +124,7 @@
 		0801785620F13556009A7982 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		0801785820F14CD7009A7982 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		0801785A20F14EBD009A7982 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		0805F1512175DC42004341E1 /* StarterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterVC.swift; sourceTree = "<group>"; };
 		080CD057213812C500E4361B /* DatabaseMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMenuVC.swift; sourceTree = "<group>"; };
 		080CD0592138149000E4361B /* DatabaseMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMenuCell.swift; sourceTree = "<group>"; };
 		080CD05D2138240300E4361B /* PGNParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNParser.swift; sourceTree = "<group>"; };
@@ -145,7 +149,6 @@
 		0864C8AD20FBCF2400435EE3 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		0867A440213AA8B00061B6DE /* PGNGameInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNGameInfoCell.swift; sourceTree = "<group>"; };
 		08690E422145AC490052201C /* ChessBoardKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ChessBoardKit.xcodeproj; sourceTree = "<group>"; };
-		086CD50E216A4D0A002DD2B2 /* TrainingBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingBaseVC.swift; sourceTree = "<group>"; };
 		086CD510216A4D5B002DD2B2 /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		087621052143ECD100CE69C3 /* DatabaseBrowserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseBrowserVC.swift; sourceTree = "<group>"; };
 		0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryVC.swift; sourceTree = "<group>"; };
@@ -161,7 +164,10 @@
 		0895DC4A21540B3500663F12 /* NewsDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataCell.swift; sourceTree = "<group>"; };
 		08A2941F20FCAFFE008BF214 /* InformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsVC.swift; sourceTree = "<group>"; };
 		08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNDatabase.swift; sourceTree = "<group>"; };
+		08C27C5D2179E45F00335F04 /* TrainingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingListVC.swift; sourceTree = "<group>"; };
 		08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessBoardVC.swift; sourceTree = "<group>"; };
+		08CFCE072175ED6300A93B79 /* TrainingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModel.swift; sourceTree = "<group>"; };
+		08CFCE092175F6EF00A93B79 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		08D402EC20F125730005038B /* Barcza GSC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barcza GSC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D402EF20F125730005038B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08D402F120F125730005038B /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
@@ -272,8 +278,8 @@
 		086CD50D216A4CE0002DD2B2 /* Trainings */ = {
 			isa = PBXGroup;
 			children = (
-				086CD50E216A4D0A002DD2B2 /* TrainingBaseVC.swift */,
 				086CD510216A4D5B002DD2B2 /* TrainingVC.swift */,
+				08C27C5D2179E45F00335F04 /* TrainingListVC.swift */,
 			);
 			path = Trainings;
 			sourceTree = "<group>";
@@ -357,6 +363,8 @@
 				0895DC462153A20C00663F12 /* NewsData.swift */,
 				082B521D215FF03F00F06273 /* Team.swift */,
 				082B521F215FF74C00F06273 /* Round.swift */,
+				08CFCE072175ED6300A93B79 /* TrainingModel.swift */,
+				08CFCE092175F6EF00A93B79 /* Storage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -379,6 +387,7 @@
 			children = (
 				08D402F120F125730005038B /* Main.swift */,
 				0801785820F14CD7009A7982 /* MenuVC.swift */,
+				0805F1512175DC42004341E1 /* StarterVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -633,11 +642,14 @@
 				082B521E215FF03F00F06273 /* Team.swift in Sources */,
 				085122E3215F89E70078AB7B /* ResultsVC.swift in Sources */,
 				0895DC3B21526DBD00663F12 /* DocumentsVC.swift in Sources */,
+				08CFCE082175ED6300A93B79 /* TrainingModel.swift in Sources */,
 				0895DC49215409D400663F12 /* DetailedNewsVC.swift in Sources */,
+				08C27C5E2179E45F00335F04 /* TrainingListVC.swift in Sources */,
 				08D402F020F125730005038B /* AppDelegate.swift in Sources */,
 				0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */,
 				086CD511216A4D5B002DD2B2 /* TrainingVC.swift in Sources */,
 				0861B57F2138317F00D50ED3 /* PGNGame.swift in Sources */,
+				0805F1522175DC42004341E1 /* StarterVC.swift in Sources */,
 				080CD058213812C500E4361B /* DatabaseMenuVC.swift in Sources */,
 				087621062143ECD100CE69C3 /* DatabaseBrowserVC.swift in Sources */,
 				0801785720F13556009A7982 /* ColorTheme.swift in Sources */,
@@ -648,10 +660,10 @@
 				0867A441213AA8B00061B6DE /* PGNGameInfoCell.swift in Sources */,
 				080CD05E2138240300E4361B /* PGNParser.swift in Sources */,
 				085122E1215F86E80078AB7B /* ChampionshipBaseVC.swift in Sources */,
-				086CD50F216A4D0A002DD2B2 /* TrainingBaseVC.swift in Sources */,
 				085122E5215F8A010078AB7B /* StandingsVC.swift in Sources */,
 				0864C8A920FBBB5E00435EE3 /* Requests.swift in Sources */,
 				0895DC3D2152728300663F12 /* PDFWebViewVC.swift in Sources */,
+				08CFCE0A2175F6EF00A93B79 /* Storage.swift in Sources */,
 				0895DC472153A20C00663F12 /* NewsData.swift in Sources */,
 				0801785120F13491009A7982 /* SWRevealViewController.m in Sources */,
 				0801785B20F14EBD009A7982 /* MenuTableViewCell.swift in Sources */,

@@ -252,6 +252,53 @@ extension ResultsVC{
     }
 }
 
+extension StarterVC{
+    func getTrainingsData() -> Promise<Void>{
+        return Promise<Void>{ fulfill, reject in
+            log.info("Getting trainings...")
+            let trainingsURLString = Settings.rootURL + "/trainings/all"
+            guard let trainingsURL = URL(string: trainingsURLString) else {
+                reject(NSError(domain:"Error: cannot create trainings URL",code: 100)); return
+            }
+            var trainingsURLRequest = URLRequest(url: trainingsURL)
+            trainingsURLRequest.allHTTPHeaderFields = Settings.headers
+            URLSession.shared.dataTask(with: trainingsURLRequest, completionHandler: { (data, response, error) in
+                
+                guard error == nil else {
+                    reject(NSError(domain:"Error getting response from trainings/all \(error!)",code: 101)); return
+                }
+                
+                guard let responseData = data else {
+                    reject(NSError(domain:"Did not receive trainings/all data",code: 102)); return
+                }
+                
+                guard let trainings = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
+                    reject(NSError(domain: "Could not get JSON for trainings/all call", code: 103)); return
+                }
+                
+                var trainingsData = [TrainingModel]()
+                
+                for training in trainings{
+                    
+                    let id = training["id"] as? Int ?? -1
+                    let name = training["trainer_name"] as? String ?? ""
+                    let email = training["trainer_email"] as? String ?? ""
+                    let place = training["training_place"] as? String ?? ""
+                    let trainingDescription = training["training_description"] as? String ?? ""
+                    let trainingCoordinates = training["training_coordinates"] as? String ?? ""
+                    let chopped = trainingCoordinates.components(separatedBy: ",")
+                    if chopped.count == 2{
+                        trainingsData.append(TrainingModel(id: id, name: name, email: email, trainingDescription: trainingDescription, place: place, coordinate: (chopped.first!,chopped.last!)))
+                    }
+                }
+                
+                Storage.traningStorage = trainingsData
+                fulfill(())
+            }).resume()
+        }
+    }
+}
+
 extension StandingsVC{
     
     func getStandings() -> Promise<Void>{
@@ -305,35 +352,6 @@ extension StandingsVC{
     }
 }
 
-extension TrainingBaseVC{
-    
-    func getAllTrainings() -> Promise<Void>{
-        return Promise<Void>{ fulffill, reject in
-            log.info("Getting trainings...")
-            let trainingURLString = Settings.rootURL + "/trainings/all"
-            guard let trainingURL = URL(string: trainingURLString) else {
-                reject(NSError(domain:"Error: cannot create trainings URL",code: 100));return
-            }
-            var trainingURLRequest = URLRequest(url: trainingURL)
-            trainingURLRequest.allHTTPHeaderFields = Settings.headers
-            URLSession.shared.dataTask(with: trainingURLRequest, completionHandler: { (data, response, error) in
-                guard error == nil else {
-                    reject(NSError(domain:"Error getting response from mytrainings \(error!)",code: 101)); return
-                }
-                guard let responseData = data else {
-                    reject(NSError(domain:"Did not receive my trainings data",code: 102)); return
-                }
-                guard let trainings = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
-                    reject(NSError(domain: "Could not get JSON for my trainings call", code: 103)); return
-                }
-                for training in trainings{
-                    print(training)
-                }
-                fulffill(())
-            }).resume()
-        }
-    }
-}
 
 extension PlayerFinderVC{
     

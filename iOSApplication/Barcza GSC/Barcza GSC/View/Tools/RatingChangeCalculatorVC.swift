@@ -79,6 +79,7 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
         menuBtn.addTarget(self, action: #selector(uiTapped), for: .touchDown)
         
         navigationView.backgroundColor = ColorTheme.barczaOrange
+        view.backgroundColor = ColorTheme.barczaOrange
         
         factorPicker.dataSource = self
         factorPicker.delegate = self
