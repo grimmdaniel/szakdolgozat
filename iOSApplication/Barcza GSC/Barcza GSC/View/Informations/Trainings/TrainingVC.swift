@@ -19,11 +19,21 @@ class TrainingVC: UIViewController {
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var locationMap: MKMapView!
     
-    
+    @IBOutlet weak var backgroundView: UIView!
+
     var trainingData: TrainingModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backgroundView.layer.cornerRadius = 10.0
+        backgroundView.layer.shadowOpacity = 0.18
+        backgroundView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        backgroundView.layer.shadowRadius = 3
+        backgroundView.layer.shadowColor = UIColor.black.cgColor
+        backgroundView.layer.masksToBounds = false
+        
+        locationMap.layer.cornerRadius = 10.0
         
         if let data = trainingData{
             nameLabel.text = data.name
@@ -32,7 +42,6 @@ class TrainingVC: UIViewController {
             timeLabel.text = data.trainingDescription
             placeLabel.text = data.place
         }
-
     }
 
 }

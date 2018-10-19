@@ -63,4 +63,20 @@ class TrainingListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return trainingNames[section] + " edzései"
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var trainings = Storage.traningStorage.filter({ (trainingModel) -> Bool in
+            trainingNames[indexPath.section] == trainingModel.name
+        })
+        performSegue(withIdentifier: "toDetailedTrainings", sender: trainings[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailedTrainings"{
+            let vc = segue.destination as! TrainingVC
+            if let sender = sender as? TrainingModel{
+                vc.trainingData = sender
+            }
+        }
+    }
 }
