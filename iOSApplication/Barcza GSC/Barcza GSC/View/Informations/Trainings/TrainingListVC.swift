@@ -68,6 +68,7 @@ class TrainingListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         var trainings = Storage.traningStorage.filter({ (trainingModel) -> Bool in
             trainingNames[indexPath.section] == trainingModel.name
         })
+        self.navigationItem.title = ""
         performSegue(withIdentifier: "toDetailedTrainings", sender: trainings[indexPath.row])
     }
     

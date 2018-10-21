@@ -9,8 +9,9 @@
 import UIKit
 import MapKit
 import CoreLocation
+import MessageUI
 
-class TrainingVC: UIViewController, MKMapViewDelegate {
+class TrainingVC: UIViewController, MKMapViewDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -44,13 +45,42 @@ class TrainingVC: UIViewController, MKMapViewDelegate {
             placeLabel.text = data.place
         }
         
+        self.navigationItem.title = trainingData.name
+        emailLabel.isUserInteractionEnabled = true
+        let ges = UITapGestureRecognizer(target: self, action: #selector(composeEmail))
+        emailLabel.addGestureRecognizer(ges)
         setUPMap()
+    }
+    
+    @objc private func composeEmail(){
+        if MFMailComposeViewController.canSendMail(){
+            let composeVC = MFMailComposeViewController()
+            composeVC.mailComposeDelegate = self
+            
+            // Configure the fields of the interface.
+            composeVC.setToRecipients([trainingData.email])
+            composeVC.setSubject("Sakkedzés")
+            composeVC.setMessageBody("", isHTML: false)
+            
+            // Present the view controller modally.
+            self.present(composeVC, animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
     
     private func setUPMap(){
         let location = trainingData.coordinate
         let regionRadius: CLLocationDistance = 800
         centerMapOnLocation(location: location, radius: regionRadius)
+        addAnnotationToMap()
+    }
+    
+    private func addAnnotationToMap(){
+        let annotation = Artwork(title: trainingData.place, locationName:"", coordinate: trainingData!.coordinate.coordinate)
+        locationMap.addAnnotation(annotation)
     }
     
     private func centerMapOnLocation(location: CLLocation, radius: CLLocationDistance) {
@@ -58,4 +88,22 @@ class TrainingVC: UIViewController, MKMapViewDelegate {
         locationMap.setRegion(coordinateRegion, animated: true)
     }
 
+}
+
+class Artwork: NSObject, MKAnnotation {
+    let title: String?
+    let locationName: String
+    let coordinate: CLLocationCoordinate2D
+    
+    init(title: String, locationName: String,coordinate: CLLocationCoordinate2D) {
+        self.title = title
+        self.locationName = locationName
+        self.coordinate = coordinate
+        
+        super.init()
+    }
+    
+    var subtitle: String? {
+        return locationName
+    }
 }

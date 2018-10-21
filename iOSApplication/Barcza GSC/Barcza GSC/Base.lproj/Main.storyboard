@@ -2308,6 +2308,7 @@
                                                     <color key="textColor" white="0.46565383669999999" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
