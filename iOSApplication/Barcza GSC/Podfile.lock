@@ -70,6 +70,7 @@ PODS:
   - Realm/Headers (3.9.0)
   - RealmSwift (3.9.0):
     - Realm (= 3.9.0)
+  - RevealingSplashView (0.5.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
@@ -82,6 +83,7 @@ DEPENDENCIES:
   - PromiseKit (~> 4.4)
   - PromiseKit/Foundation (~> 4.0)
   - RealmSwift
+  - RevealingSplashView
   - SDWebImage (~> 4.0)
   - SVProgressHUD
   - SwiftyBeaver
@@ -100,6 +102,7 @@ SPEC REPOS:
     - Protobuf
     - Realm
     - RealmSwift
+    - RevealingSplashView
     - SDWebImage
     - SVProgressHUD
     - SwiftyBeaver
@@ -117,10 +120,11 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   Realm: 3d36f208bf3aff8335dc3298742140182bde4edb
   RealmSwift: aa4d11917bfcfaa3ed51f219102a487ecd895447
+  RevealingSplashView: 0794eecad3a8983ac11a1fe474e9a9b51b926780
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyBeaver: e45759613e50b522b0e6f53b1f0f14389b45ca34
 
-PODFILE CHECKSUM: 9ae424573013679ac71b5c43445e5d93977c6c7f
+PODFILE CHECKSUM: b729ab3ce0c2d7cc6aff72bf4c8bedfee6663110
 
 COCOAPODS: 1.5.0

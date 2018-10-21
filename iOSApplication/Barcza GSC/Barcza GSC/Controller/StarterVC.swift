@@ -8,25 +8,28 @@
 
 import UIKit
 import PromiseKit
-import SVProgressHUD
+import RevealingSplashView
 
 class StarterVC: UIViewController {
+    
+    let revealingSplashView = RevealingSplashView(iconImage: #imageLiteral(resourceName: "logo.png"), iconInitialSize: CGSize(width: 123, height: 123), backgroundImage: #imageLiteral(resourceName: "background.png"))
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = ColorTheme.barczaOrange
+        revealingSplashView.animationType = .heartBeat
+        view.addSubview(revealingSplashView)
+        revealingSplashView.startAnimation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
-        SVProgressHUD.show()
         getTrainingsData().then { (completed) -> () in
             log.info("Successfully gathered trainings data")
         }.catch { (error) in
             log.error(error)
         }.always {
-            SVProgressHUD.dismiss()
+            self.revealingSplashView.finishHeartBeatAnimation()
             self.performSegue(withIdentifier: "startApplication", sender: nil)
         }
     }

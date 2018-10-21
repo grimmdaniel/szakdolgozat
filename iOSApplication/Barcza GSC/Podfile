@@ -14,5 +14,6 @@ target 'Barcza GSC' do
   pod "PromiseKit/Foundation", " ~> 4.0"
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'RevealingSplashView'
 
 end
