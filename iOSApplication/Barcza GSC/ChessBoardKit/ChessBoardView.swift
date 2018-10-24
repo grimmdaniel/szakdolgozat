@@ -69,7 +69,7 @@ public class ChessBoardView: UIView {
     
     public func getBoardEvaluation() -> Double{
         let calculator = Evaluation.calculate
-        return calculator.evaulatePosition(from: boardModel)
+        return calculator.evaluatePosition(from: boardModel)
     }
     
     @IBOutlet weak var chessBoardView: UIView!

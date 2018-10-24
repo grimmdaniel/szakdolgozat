@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Coords: Equatable{
+public struct Coords: Equatable, Hashable{
     
     private var _file: Int!
     private var _rank: Int!
