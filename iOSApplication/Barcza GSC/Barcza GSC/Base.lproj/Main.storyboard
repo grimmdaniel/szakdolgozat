@@ -583,6 +583,20 @@
                                                     <action selector="flipButtonPressed:" destination="Y0z-dT-SKX" eventType="touchUpInside" id="Jka-VN-J9u"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1my-y7-NhQ">
+                                                <rect key="frame" x="295" y="40" width="70" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="4I8-z7-dPj"/>
+                                                    <constraint firstAttribute="width" constant="70" id="mj3-T9-hO7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Evaluate">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="evaluateButtonPressed:" destination="Y0z-dT-SKX" eventType="touchUpInside" id="oV8-jG-PGF"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -597,7 +611,9 @@
                                             <constraint firstItem="0Ue-oS-1e5" firstAttribute="leading" secondItem="YNI-JU-x7E" secondAttribute="leading" id="OvI-Ls-ZIp"/>
                                             <constraint firstItem="y2f-yt-ZIO" firstAttribute="centerY" secondItem="YNI-JU-x7E" secondAttribute="centerY" id="ZuC-FJ-Ao3"/>
                                             <constraint firstItem="TUv-tq-MtY" firstAttribute="height" secondItem="y2f-yt-ZIO" secondAttribute="height" id="awP-tu-gOi"/>
+                                            <constraint firstItem="1my-y7-NhQ" firstAttribute="centerY" secondItem="YNI-JU-x7E" secondAttribute="centerY" id="iF1-aq-gGB"/>
                                             <constraint firstItem="Kt7-mo-XmY" firstAttribute="centerY" secondItem="YNI-JU-x7E" secondAttribute="centerY" id="tQ9-CW-pE7"/>
+                                            <constraint firstAttribute="trailing" secondItem="1my-y7-NhQ" secondAttribute="trailing" constant="10" id="ye1-du-tys"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -637,6 +653,7 @@
                     <connections>
                         <outlet property="backwardBtn" destination="y2f-yt-ZIO" id="SBX-1h-sab"/>
                         <outlet property="chessBoard" destination="Jfg-6N-F6t" id="MYX-hL-Bh8"/>
+                        <outlet property="evaluateButton" destination="1my-y7-NhQ" id="pT8-lE-FxB"/>
                         <outlet property="forwardBtn" destination="Kt7-mo-XmY" id="Ycq-bU-ths"/>
                         <outlet property="gamePreviewCollectionView" destination="ky8-1B-snV" id="uzl-nS-M0N"/>
                     </connections>

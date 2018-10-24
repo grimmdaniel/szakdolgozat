@@ -38,6 +38,7 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     
     @IBOutlet weak var forwardBtn: UIButton!
     @IBOutlet weak var backwardBtn: UIButton!
+    @IBOutlet weak var evaluateButton: UIButton!
     
     @IBAction func backwardBtnPressed(_ sender: UIButton) {
         if currentMoveIndex == 0 { return }
@@ -64,4 +65,9 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = game.white + " - " + game.black + " " + game.result
     }
+    
+    @IBAction func evaluateButtonPressed(_ sender: UIButton) {
+        print(chessBoard.getBoardEvaluation())
+    }
+    
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BoardModel: AccessToChessBoard{
+public class BoardModel: AccessToChessBoard{
     
     private var _board = [Spot]()
     private var _nextPlayer = SquarePieceOwner.white

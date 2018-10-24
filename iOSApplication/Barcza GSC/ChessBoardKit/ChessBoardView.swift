@@ -67,6 +67,11 @@ public class ChessBoardView: UIView {
         }
     }
     
+    public func getBoardEvaluation() -> Double{
+        let calculator = Evaluation.calculate
+        return calculator.evaulatePosition(from: boardModel)
+    }
+    
     @IBOutlet weak var chessBoardView: UIView!
     @IBOutlet var squaresStorage: [UIButton]!
     
