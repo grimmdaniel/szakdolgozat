@@ -892,32 +892,22 @@
                                 <rect key="frame" x="0.0" y="78" width="375" height="435.5"/>
                                 <color key="backgroundColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" rowHeight="102" id="vd6-fq-rp5" customClass="MenuTableViewCell" customModule="Barcza_GSC" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" textLabel="4PP-jN-sey" rowHeight="102" style="IBUITableViewCellStyleDefault" id="vd6-fq-rp5">
                                         <rect key="frame" x="0.0" y="28" width="375" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vd6-fq-rp5" id="7Jz-ca-5cD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="101.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDi-ac-fGx">
-                                                    <rect key="frame" x="20" y="31" width="335" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="c7L-FP-nCp"/>
-                                                    </constraints>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4PP-jN-sey">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="101.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ZDi-ac-fGx" firstAttribute="leading" secondItem="7Jz-ca-5cD" secondAttribute="leading" constant="20" id="fCw-kQ-HsP"/>
-                                                <constraint firstItem="ZDi-ac-fGx" firstAttribute="centerY" secondItem="7Jz-ca-5cD" secondAttribute="centerY" id="gEW-mz-QSQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZDi-ac-fGx" secondAttribute="trailing" constant="20" id="uHc-ji-miO"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="menuItemLabel" destination="ZDi-ac-fGx" id="QUa-DD-hPe"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -2377,6 +2367,6 @@
         <image name="training_time" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cFm-hb-m2Q"/>
+        <segue reference="m9S-nF-pDs"/>
     </inferredMetricsTieBreakers>
 </document>

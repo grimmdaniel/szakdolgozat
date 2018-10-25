@@ -11,12 +11,11 @@ import UIKit
 class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var menuTableView: UITableView!
-    
     @IBOutlet weak var logoPositionConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var logoImageView: UIImageView!
     
-    let menuItems = ["Főoldal","Hírek","Bajnokság","Galéria","Adatbázis","Eszközök","Információk","Beállítások"]
+    let menuItems: [(String,String)] = [("Főoldal","home.png"),("Hírek","news.png"),("Bajnokság","championship.png"),("Galéria","gallery.png"),("Adatbázis","database.png"),("Eszközök","configuration.png"),("Információk","information.png"),("Beállítások","settings.png")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,8 +42,9 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell", for: indexPath) as! MenuTableViewCell
-        cell.menuItemLabel.text = menuItems[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell")!
+        cell.textLabel?.text = menuItems[indexPath.row].0
+        cell.imageView?.image = UIImage(named: menuItems[indexPath.row].1)
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
         return cell
@@ -54,17 +54,17 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         //TODO menu navigation
         if indexPath.row == 0{
             performSegue(withIdentifier: "toMain", sender: nil)
-        }else if menuItems[indexPath.row] == "Hírek"{
+        }else if menuItems[indexPath.row].0 == "Hírek"{
             performSegue(withIdentifier: "toNews", sender: nil)
-        }else if menuItems[indexPath.row] == "Eszközök"{
+        }else if menuItems[indexPath.row].0 == "Eszközök"{
             performSegue(withIdentifier: "toTools", sender: nil)
-        }else if menuItems[indexPath.row] == "Adatbázis"{
+        }else if menuItems[indexPath.row].0 == "Adatbázis"{
             performSegue(withIdentifier: "toDatabase", sender: nil)
-        }else if menuItems[indexPath.row] == "Galéria"{
+        }else if menuItems[indexPath.row].0 == "Galéria"{
             performSegue(withIdentifier: "toGallery", sender: nil)
-        }else if menuItems[indexPath.row] == "Információk"{
+        }else if menuItems[indexPath.row].0 == "Információk"{
             performSegue(withIdentifier: "toInformations", sender: nil)
-        }else if menuItems[indexPath.row] == "Bajnokság"{
+        }else if menuItems[indexPath.row].0 == "Bajnokság"{
             performSegue(withIdentifier: "toChampionship", sender: nil)
         }
     }
