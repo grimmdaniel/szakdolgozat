@@ -38,12 +38,13 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     
     @IBOutlet weak var forwardBtn: UIButton!
     @IBOutlet weak var backwardBtn: UIButton!
-    @IBOutlet weak var evaluateButton: UIButton!
+    @IBOutlet weak var evaluateLabel: UILabel!
     
     @IBAction func backwardBtnPressed(_ sender: UIButton) {
         if currentMoveIndex == 0 { return }
         //TODO
         print("backward")
+        updateEvaluateLabel()
     }
     
     @IBAction func forwardBtnPressed(_ sender: UIButton) {
@@ -57,17 +58,18 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
             nextMove = chopped[2]
             chessBoard.processNextMove(move:chopped[1], side: .white)
             currentMoveIndex += 1
-            
             self.gamePreviewCollectionView.scrollToItem(at: IndexPath(row: currentMoveIndex - 1, section: 0), at: UICollectionView.ScrollPosition.left, animated: true)
         }
+        updateEvaluateLabel()
+    }
+    
+    private func updateEvaluateLabel(){
+        let evaluation = chessBoard.getBoardEvaluation()
+        evaluateLabel.text = evaluation >= 0 ? "+\(evaluation)" : "\(evaluation)"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = game.white + " - " + game.black + " " + game.result
     }
-    
-    @IBAction func evaluateButtonPressed(_ sender: UIButton) {
-        print(chessBoard.getBoardEvaluation())
-    }
-    
+
 }
