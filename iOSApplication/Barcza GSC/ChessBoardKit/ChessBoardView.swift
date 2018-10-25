@@ -67,6 +67,13 @@ public class ChessBoardView: UIView {
         }
     }
     
+    public func resetBoard(){
+        boardModel = BoardModel()
+        boardModel.initializeBoard()
+        nextTask = NextPlayer.whiteToMove
+        refreshBoard()
+    }
+    
     public func getBoardEvaluation() -> Double{
         let calculator = Evaluation.calculate
         return calculator.evaluatePosition(from: boardModel)
@@ -80,7 +87,7 @@ public class ChessBoardView: UIView {
         performMove(coords: coords, sender: sender)
     }
     
-    private func performMove(coords: Coords, sender: UIButton = UIButton()){
+    private func performMove(coords: Coords, sender: UIButton = UIButton(), inFreeMode: Bool = true){
         let coord = coords
         switch nextTask {
         case .whiteToMove:
@@ -88,26 +95,34 @@ public class ChessBoardView: UIView {
             if boardModel.selectedSquareFirst.isOccupied(){
                 if boardModel.selectedSquareFirst.pieceHere!.side == .black { return }
                 nextTask = .whiteIsMoving
-                switchBorderToButton(on: true, button: sender)
+                if inFreeMode{
+                    switchBorderToButton(on: true, button: sender)
+                }
             }
         case .blackToMove:
             boardModel.selectedSquareFirst = boardModel.getSpotFromCoord(coord: coord)
             if boardModel.selectedSquareFirst.isOccupied(){
                 if boardModel.selectedSquareFirst.pieceHere!.side == .white { return }
                 nextTask = .blackIsMoving
-                switchBorderToButton(on: true, button: sender)
+                if inFreeMode{
+                    switchBorderToButton(on: true, button: sender)
+                }
             }
         case .whiteIsMoving:
             boardModel.selectedSquareSecond = boardModel.getSpotFromCoord(coord: coord)
             if boardModel.selectedSquareFirst.position == boardModel.selectedSquareSecond.position { //same square selected
                 nextTask = .whiteToMove
-                turnAllButtonLayerOff()
+                if inFreeMode{
+                    turnAllButtonLayerOff()
+                }
                 return
             }
             if boardModel.selectedSquareSecond.pieceHere != nil && boardModel.selectedSquareFirst.pieceHere!.side == boardModel.selectedSquareSecond.pieceHere!.side { // same side of pieces
-                turnAllButtonLayerOff()
                 boardModel.selectedSquareFirst = boardModel.getSpotFromCoord(coord: coord)
-                switchBorderToButton(on: true, button: sender)
+                if inFreeMode{
+                    turnAllButtonLayerOff()
+                    switchBorderToButton(on: true, button: sender)
+                }
                 return
             }
             if boardModel.selectedSquareFirst.pieceHere!.isValidMove(from: boardModel.selectedSquareFirst.position, to: boardModel.selectedSquareSecond.position){
@@ -140,7 +155,9 @@ public class ChessBoardView: UIView {
                     }
                     
                     nextTask = .whiteToMove
-                    turnAllButtonLayerOff()
+                    if inFreeMode{
+                        turnAllButtonLayerOff()
+                    }
                     boardModel.setPawnStatus(with: .none)
                     return
                 }
@@ -194,19 +211,25 @@ public class ChessBoardView: UIView {
             }else{
                 nextTask = .whiteToMove
             }
-            turnAllButtonLayerOff()
+            if inFreeMode{
+                turnAllButtonLayerOff()
+            }
         case .blackIsMoving:
             
             boardModel.selectedSquareSecond = boardModel.getSpotFromCoord(coord: coord)
             if boardModel.selectedSquareFirst.position == boardModel.selectedSquareSecond.position { //same square selected
                 nextTask = .blackToMove
-                turnAllButtonLayerOff()
+                if inFreeMode{
+                    turnAllButtonLayerOff()
+                }
                 return
             }
             if boardModel.selectedSquareSecond.pieceHere != nil && boardModel.selectedSquareFirst.pieceHere!.side == boardModel.selectedSquareSecond.pieceHere!.side { // same side of pieces
-                turnAllButtonLayerOff()
                 boardModel.selectedSquareFirst = boardModel.getSpotFromCoord(coord: coord)
-                switchBorderToButton(on: true, button: sender)
+                if inFreeMode{
+                    turnAllButtonLayerOff()
+                    switchBorderToButton(on: true, button: sender)
+                }
                 return
             }
             if boardModel.selectedSquareFirst.pieceHere!.isValidMove(from: boardModel.selectedSquareFirst.position, to: boardModel.selectedSquareSecond.position){
@@ -240,7 +263,9 @@ public class ChessBoardView: UIView {
                     }
                     
                     nextTask = .blackToMove
-                    turnAllButtonLayerOff()
+                    if inFreeMode{
+                        turnAllButtonLayerOff()
+                    }
                     boardModel.setPawnStatus(with: .none)
                     return
                 }
@@ -299,9 +324,13 @@ public class ChessBoardView: UIView {
             }else{
                 nextTask = .blackToMove
             }
-            turnAllButtonLayerOff()
+            if inFreeMode{
+                turnAllButtonLayerOff()
+            }
         }
-        refreshBoard()
+        if inFreeMode{
+            refreshBoard()
+        }
     }
     
     private func displayNewPieceView(piece: Spot){
@@ -380,6 +409,7 @@ public class ChessBoardView: UIView {
     }
     
     private func refreshBoard(){
+        print("refreshBoardCalled")
         for i in boardModel.board{
             for j in squaresStorage{
                 if i.position == convertTagToCoords[j.tag]{
@@ -399,35 +429,35 @@ public class ChessBoardView: UIView {
         }
     }
     
-    public func processNextMove(move: String, side: SquarePieceOwner){
+    public func processNextMove(move: String, side: SquarePieceOwner, freeMode: Bool){
         if move.isEmpty { return }
         let pieceNames = ["K","Q","R","B","N","O"]
         if (pieceNames.contains(String(move.first!))){ // Piece move, white
-            moveFigurineFromPGN(move: move, with: side)
+            moveFigurineFromPGN(move: move, with: side, freeMode: freeMode)
         }else{ // pawn move
-            movePawnFromPGN(move: move, with: side)
+            movePawnFromPGN(move: move, with: side, freeMode: freeMode)
         }
     }
     
-    private func moveFigurineFromPGN(move: String, with side: SquarePieceOwner){
+    private func moveFigurineFromPGN(move: String, with side: SquarePieceOwner, freeMode: Bool){
         var move = move.replacingOccurrences(of: "+", with: "")
         move = move.replacingOccurrences(of: "#", with: "")
         if move.contains("O-O-O"){ // long castle
             if side == .white{
-                performMove(coords: Coords(rank: 7, file: 4))
-                performMove(coords: Coords(rank: 7, file: 2))
+                performMove(coords: Coords(rank: 7, file: 4), inFreeMode: freeMode)
+                performMove(coords: Coords(rank: 7, file: 2), inFreeMode: freeMode)
             }else{
-                performMove(coords: Coords(rank: 0, file: 4))
-                performMove(coords: Coords(rank: 0, file: 2))
+                performMove(coords: Coords(rank: 0, file: 4), inFreeMode: freeMode)
+                performMove(coords: Coords(rank: 0, file: 2), inFreeMode: freeMode)
             }
             return
         }else if move.contains("O-O"){ // short castle
             if side == .white{
-                performMove(coords: Coords(rank: 7, file: 4))
-                performMove(coords: Coords(rank: 7, file: 6))
+                performMove(coords: Coords(rank: 7, file: 4), inFreeMode: freeMode)
+                performMove(coords: Coords(rank: 7, file: 6), inFreeMode: freeMode)
             }else{
-                performMove(coords: Coords(rank: 0, file: 4))
-                performMove(coords: Coords(rank: 0, file: 6))
+                performMove(coords: Coords(rank: 0, file: 4), inFreeMode: freeMode)
+                performMove(coords: Coords(rank: 0, file: 6), inFreeMode: freeMode)
             }
             return
         }
@@ -468,8 +498,8 @@ public class ChessBoardView: UIView {
             if possibleStartingSquares.count == 0 { print("Can't find piece starting point"); return }
             let actualNextPlayer = nextTask
             for i in possibleStartingSquares{
-                performMove(coords: i)
-                performMove(coords: destination)
+                performMove(coords: i, inFreeMode: freeMode)
+                performMove(coords: destination, inFreeMode: freeMode)
                 if actualNextPlayer != nextTask { return }
             }
         }else if move.count == 3{ // like Nbd5 or N6d5
@@ -482,8 +512,8 @@ public class ChessBoardView: UIView {
                     coord.rank == rank
                 }
                 if possibleStartingPoint.count == 1{
-                    performMove(coords: possibleStartingPoint.first!)
-                    performMove(coords: Coords(rank: 8 - (rankTo ?? -1), file: convertFileLetterToIndex[fileStringTo] ?? -1))
+                    performMove(coords: possibleStartingPoint.first!, inFreeMode: freeMode)
+                    performMove(coords: Coords(rank: 8 - (rankTo ?? -1), file: convertFileLetterToIndex[fileStringTo] ?? -1), inFreeMode: freeMode)
                 }
                 
             }else{ // it must be a letter
@@ -496,8 +526,8 @@ public class ChessBoardView: UIView {
                 }
                 
                 if possibleStartingPoint.count == 1{
-                    performMove(coords: possibleStartingPoint.first!)
-                    performMove(coords: Coords(rank: 8 - (rankTo ?? -1), file: convertFileLetterToIndex[fileStringTo] ?? -1))
+                    performMove(coords: possibleStartingPoint.first!, inFreeMode: freeMode)
+                    performMove(coords: Coords(rank: 8 - (rankTo ?? -1), file: convertFileLetterToIndex[fileStringTo] ?? -1), inFreeMode: freeMode)
                 }
             }
         }else if move.count == 4{ //like Nb6d5
@@ -506,13 +536,13 @@ public class ChessBoardView: UIView {
             let fileStringTo = String(move[move.index(move.startIndex, offsetBy: 2)])
             let rankTo = Int(String(move.last!))
             if let rankFrom = rankFrom, let rankTo = rankTo{
-                performMove(coords: Coords(rank: 8 - rankFrom, file: convertFileLetterToIndex[fileStringFrom] ?? -1))
-                performMove(coords: Coords(rank: 8 - rankTo, file: convertFileLetterToIndex[fileStringTo] ?? -1))
+                performMove(coords: Coords(rank: 8 - rankFrom, file: convertFileLetterToIndex[fileStringFrom] ?? -1), inFreeMode: freeMode)
+                performMove(coords: Coords(rank: 8 - rankTo, file: convertFileLetterToIndex[fileStringTo] ?? -1), inFreeMode: freeMode)
             }
         }
     }
     
-    private func movePawnFromPGN(move pawnChopped: String, with side: SquarePieceOwner){
+    private func movePawnFromPGN(move pawnChopped: String, with side: SquarePieceOwner, freeMode: Bool){
         let sideDeterminer: Int = side == .white ? 1 : -1
         var pawnChopped = pawnChopped.replacingOccurrences(of: "+", with: "")
         pawnChopped = pawnChopped.replacingOccurrences(of: "#", with: "")
@@ -552,8 +582,8 @@ public class ChessBoardView: UIView {
                 }
                 let from = Coords(rank: 8 - number, file: convertFileLetterToIndex[withCapture[0]] ?? -1)
                 let to = Coords(rank: 8 - destinationRank, file: convertFileLetterToIndex[String(withCapture[1].first!)] ?? -1)
-                performMove(coords: from)
-                performMove(coords: to)
+                performMove(coords: from, inFreeMode: freeMode)
+                performMove(coords: to, inFreeMode: freeMode)
             }
         } else if pawnChopped.count == 2 || pawnChopped.count == 4{
             if pawnChopped.count == 4 { pawnChopped.removeLast(2)}
@@ -571,8 +601,8 @@ public class ChessBoardView: UIView {
             if let piece = piece1.pieceHere{
                 if piece.side == side && piece.identifier == .pawn{
                     // found piece
-                    performMove(coords: bid1)
-                    performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1))
+                    performMove(coords: bid1, inFreeMode: freeMode)
+                    performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1), inFreeMode: freeMode)
                     if pawnPromotion{
                         print("promoting pawn")
                         if let promotedPawn = boardModel.findPromotedPawn(){
@@ -605,8 +635,8 @@ public class ChessBoardView: UIView {
             if let piece = piece2.pieceHere{
                 if piece.side == side && piece.identifier == .pawn{
                     // found piece
-                    performMove(coords: bid2)
-                    performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1))
+                    performMove(coords: bid2, inFreeMode: freeMode)
+                    performMove(coords: Coords(rank: number, file: convertFileLetterToIndex[file] ?? -1), inFreeMode: freeMode)
                     return
                 }
                 return
