@@ -14,7 +14,6 @@
 		0801785520F13531009A7982 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785420F13531009A7982 /* Utils.swift */; };
 		0801785720F13556009A7982 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785620F13556009A7982 /* ColorTheme.swift */; };
 		0801785920F14CD7009A7982 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785820F14CD7009A7982 /* MenuVC.swift */; };
-		0801785B20F14EBD009A7982 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785A20F14EBD009A7982 /* MenuTableViewCell.swift */; };
 		0805F1522175DC42004341E1 /* StarterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805F1512175DC42004341E1 /* StarterVC.swift */; };
 		080CD058213812C500E4361B /* DatabaseMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD057213812C500E4361B /* DatabaseMenuVC.swift */; };
 		080CD05A2138149000E4361B /* DatabaseMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD0592138149000E4361B /* DatabaseMenuCell.swift */; };
@@ -123,7 +122,6 @@
 		0801785420F13531009A7982 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0801785620F13556009A7982 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		0801785820F14CD7009A7982 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
-		0801785A20F14EBD009A7982 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		0805F1512175DC42004341E1 /* StarterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterVC.swift; sourceTree = "<group>"; };
 		080CD057213812C500E4361B /* DatabaseMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMenuVC.swift; sourceTree = "<group>"; };
 		080CD0592138149000E4361B /* DatabaseMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMenuCell.swift; sourceTree = "<group>"; };
@@ -418,7 +416,6 @@
 		08D4030720F130DD0005038B /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				0801785A20F14EBD009A7982 /* MenuTableViewCell.swift */,
 				0867A440213AA8B00061B6DE /* PGNGameInfoCell.swift */,
 				0895DC4421539AC200663F12 /* NewsTableViewCell.swift */,
 				0895DC4A21540B3500663F12 /* NewsDataCell.swift */,
@@ -668,7 +665,6 @@
 				08CFCE0A2175F6EF00A93B79 /* Storage.swift in Sources */,
 				0895DC472153A20C00663F12 /* NewsData.swift in Sources */,
 				0801785120F13491009A7982 /* SWRevealViewController.m in Sources */,
-				0801785B20F14EBD009A7982 /* MenuTableViewCell.swift in Sources */,
 				0801785920F14CD7009A7982 /* MenuVC.swift in Sources */,
 				08006EFE214FBA7500035698 /* GamePreviewVC.swift in Sources */,
 				0864C8A620FB8E6900435EE3 /* GalleryData.swift in Sources */,
@@ -846,7 +842,10 @@
 				DEVELOPMENT_TEAM = H5N8DHC85Z;
 				INFOPLIST_FILE = "Barcza GSC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.grimm.barcza.gsc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -870,7 +869,10 @@
 				DEVELOPMENT_TEAM = H5N8DHC85Z;
 				INFOPLIST_FILE = "Barcza GSC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.grimm.barcza.gsc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
