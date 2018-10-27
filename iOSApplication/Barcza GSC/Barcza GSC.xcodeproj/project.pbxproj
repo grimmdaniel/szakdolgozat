@@ -24,6 +24,8 @@
 		082B521E215FF03F00F06273 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B521D215FF03F00F06273 /* Team.swift */; };
 		082B5220215FF74C00F06273 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B521F215FF74C00F06273 /* Round.swift */; };
 		082F8C2C21162F7800A52D7F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F8C2B21162F7800A52D7F /* Stack.swift */; };
+		08400B4E2184858500D09E28 /* Barcza_GSCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08400B4D2184858500D09E28 /* Barcza_GSCTests.swift */; };
+		08400B562184867700D09E28 /* TestPawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08400B552184867700D09E28 /* TestPawn.swift */; };
 		084EB3D7215234B800D28CB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 084EB3D6215234B800D28CB6 /* GoogleService-Info.plist */; };
 		085122E1215F86E80078AB7B /* ChampionshipBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085122E0215F86E80078AB7B /* ChampionshipBaseVC.swift */; };
 		085122E3215F89E70078AB7B /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085122E2215F89E70078AB7B /* ResultsVC.swift */; };
@@ -72,6 +74,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		08400B502184858500D09E28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08D402E420F125730005038B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08D402EB20F125730005038B;
+			remoteInfo = "Barcza GSC";
+		};
 		08690E462145AC490052201C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08690E422145AC490052201C /* ChessBoardKit.xcodeproj */;
@@ -132,6 +141,10 @@
 		082B521D215FF03F00F06273 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		082B521F215FF74C00F06273 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		082F8C2B21162F7800A52D7F /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		08400B4B2184858500D09E28 /* Barcza GSCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barcza GSCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08400B4D2184858500D09E28 /* Barcza_GSCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcza_GSCTests.swift; sourceTree = "<group>"; };
+		08400B4F2184858500D09E28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08400B552184867700D09E28 /* TestPawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPawn.swift; sourceTree = "<group>"; };
 		084EB3D6215234B800D28CB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		085122E0215F86E80078AB7B /* ChampionshipBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionshipBaseVC.swift; sourceTree = "<group>"; };
 		085122E2215F89E70078AB7B /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
@@ -184,6 +197,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		08400B482184858500D09E28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08D402E920F125730005038B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,6 +256,16 @@
 				0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */,
 			);
 			path = Gallery;
+			sourceTree = "<group>";
+		};
+		08400B4C2184858500D09E28 /* Barcza GSCTests */ = {
+			isa = PBXGroup;
+			children = (
+				08400B4D2184858500D09E28 /* Barcza_GSCTests.swift */,
+				08400B4F2184858500D09E28 /* Info.plist */,
+				08400B552184867700D09E28 /* TestPawn.swift */,
+			);
+			path = "Barcza GSCTests";
 			sourceTree = "<group>";
 		};
 		085122DF215F86C70078AB7B /* Championship */ = {
@@ -307,6 +337,7 @@
 			children = (
 				08690E422145AC490052201C /* ChessBoardKit.xcodeproj */,
 				08D402EE20F125730005038B /* Barcza GSC */,
+				08400B4C2184858500D09E28 /* Barcza GSCTests */,
 				08D402ED20F125730005038B /* Products */,
 				A630E6069CBF7CB91F97DC8B /* Frameworks */,
 				42CC06398DF194B1E05B3B4D /* Pods */,
@@ -317,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				08D402EC20F125730005038B /* Barcza GSC.app */,
+				08400B4B2184858500D09E28 /* Barcza GSCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -466,6 +498,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		08400B4A2184858500D09E28 /* Barcza GSCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08400B542184858500D09E28 /* Build configuration list for PBXNativeTarget "Barcza GSCTests" */;
+			buildPhases = (
+				08400B472184858500D09E28 /* Sources */,
+				08400B482184858500D09E28 /* Frameworks */,
+				08400B492184858500D09E28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08400B512184858500D09E28 /* PBXTargetDependency */,
+			);
+			name = "Barcza GSCTests";
+			productName = "Barcza GSCTests";
+			productReference = 08400B4B2184858500D09E28 /* Barcza GSCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		08D402EB20F125730005038B /* Barcza GSC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08D402FE20F125740005038B /* Build configuration list for PBXNativeTarget "Barcza GSC" */;
@@ -498,6 +548,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = daniel.grimm;
 				TargetAttributes = {
+					08400B4A2184858500D09E28 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 08D402EB20F125730005038B;
+					};
 					08D402EB20F125730005038B = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
@@ -538,6 +592,7 @@
 			projectRoot = "";
 			targets = (
 				08D402EB20F125730005038B /* Barcza GSC */,
+				08400B4A2184858500D09E28 /* Barcza GSCTests */,
 			);
 		};
 /* End PBXProject section */
@@ -553,6 +608,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		08400B492184858500D09E28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08D402EA20F125730005038B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -624,6 +686,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		08400B472184858500D09E28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08400B4E2184858500D09E28 /* Barcza_GSCTests.swift in Sources */,
+				08400B562184867700D09E28 /* TestPawn.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08D402E820F125730005038B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -688,6 +759,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		08400B512184858500D09E28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08D402EB20F125730005038B /* Barcza GSC */;
+			targetProxy = 08400B502184858500D09E28 /* PBXContainerItemProxy */;
+		};
 		08690E4B2145AC4E0052201C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ChessBoardKit;
@@ -715,6 +791,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		08400B522184858500D09E28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5N8DHC85Z;
+				INFOPLIST_FILE = "Barcza GSCTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "grimmdaniel.Barcza-GSCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barcza GSC.app/Barcza GSC";
+			};
+			name = Debug;
+		};
+		08400B532184858500D09E28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5N8DHC85Z;
+				INFOPLIST_FILE = "Barcza GSCTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "grimmdaniel.Barcza-GSCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barcza GSC.app/Barcza GSC";
+			};
+			name = Release;
+		};
 		08D402FC20F125740005038B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -885,6 +1006,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		08400B542184858500D09E28 /* Build configuration list for PBXNativeTarget "Barcza GSCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08400B522184858500D09E28 /* Debug */,
+				08400B532184858500D09E28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		08D402E720F125730005038B /* Build configuration list for PBXProject "Barcza GSC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -153,6 +153,17 @@ public class BoardModel: AccessToChessBoard{
         }
     }
     
+    func initializeEmptyBoardForTesting(){
+        _board.removeAll()
+        _moveCounter = 1
+        _nextPlayer = .white
+        for i in 0..<8{
+            for j in 0..<8{
+                _board.append(Spot(position: Coords(rank: i, file: j), pieceHere: nil))
+            }
+        }
+    }
+    
     func initializeBoardFromPosition(){
         print("Not implemented yet")
     }
