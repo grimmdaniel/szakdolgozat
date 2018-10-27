@@ -50,27 +50,27 @@ class TestPawn: XCTestCase {
     }
     
     func testPawnMoveFromDefaultPositionByMoreThanTwoWhite() {
-        XCTAssert(whitePawn.isValidMove(from: whiteStartingPosition, to: Coords(rank: whiteStartingPosition.rank - 3, file: whiteStartingPosition.file)) == false)
+        XCTAssertFalse(whitePawn.isValidMove(from: whiteStartingPosition, to: Coords(rank: whiteStartingPosition.rank - 3, file: whiteStartingPosition.file)))
     }
     
     func testPawnMoveFromDefaultPositionByMoreThanTwoBlack(){
-        XCTAssert(blackPawn.isValidMove(from: blackStartingPosition, to: Coords(rank: blackStartingPosition.rank + 3, file: blackStartingPosition.file)) == false)
+        XCTAssertFalse(blackPawn.isValidMove(from: blackStartingPosition, to: Coords(rank: blackStartingPosition.rank + 3, file: blackStartingPosition.file)))
     }
     
     func testPawnLeftCaptureAtBoardLeftSideWhite(){
-        XCTAssert(whitePawn.isValidMove(from: Coords(rank: 6, file: 0), to: Coords(rank: 6, file: -1)) == false)
+        XCTAssertFalse(whitePawn.isValidMove(from: Coords(rank: 6, file: 0), to: Coords(rank: 6, file: -1)))
     }
     
     func testPawnRightCaptureAtBoardRightSideWhite(){
-        XCTAssert(whitePawn.isValidMove(from: Coords(rank: 6, file: 7), to: Coords(rank: 6, file: 8)) == false)
+        XCTAssertFalse(whitePawn.isValidMove(from: Coords(rank: 6, file: 7), to: Coords(rank: 6, file: 8)))
     }
     
     func testPawnRightCaptureAtBoardRightSideBlack(){
-        XCTAssert(blackPawn.isValidMove(from: Coords(rank: 1, file: 0), to: Coords(rank: 1, file: -1)) == false)
+        XCTAssertFalse(blackPawn.isValidMove(from: Coords(rank: 1, file: 0), to: Coords(rank: 1, file: -1)))
     }
     
     func testPawnLeftCaptureAtBoardLeftSideBlack(){
-        XCTAssert(blackPawn.isValidMove(from: Coords(rank: 1, file: 7), to: Coords(rank: 1, file: 8)) == false)
+        XCTAssertFalse(blackPawn.isValidMove(from: Coords(rank: 1, file: 7), to: Coords(rank: 1, file: 8)))
     }
     
     func testPawnRightCaptureAtBoardLeftSideWhite(){
@@ -139,7 +139,7 @@ class TestPawn: XCTestCase {
         let pawn2 = Pawn(position: square2.position, side: .black)
         pawn2.delegate = boardmodel
         square2.occupySpot(with: pawn2)
-        XCTAssert(square.pieceHere?.isValidMove(from: square.position, to: square2.position) == false)
+        XCTAssertFalse((square.pieceHere?.isValidMove(from: square.position, to: square2.position))!)
     }
     
 }

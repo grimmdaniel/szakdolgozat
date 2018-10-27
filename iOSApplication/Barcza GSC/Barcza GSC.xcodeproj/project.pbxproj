@@ -26,6 +26,7 @@
 		082F8C2C21162F7800A52D7F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F8C2B21162F7800A52D7F /* Stack.swift */; };
 		08400B4E2184858500D09E28 /* Barcza_GSCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08400B4D2184858500D09E28 /* Barcza_GSCTests.swift */; };
 		08400B562184867700D09E28 /* TestPawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08400B552184867700D09E28 /* TestPawn.swift */; };
+		08400B582184D9AD00D09E28 /* TestKnight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08400B572184D9AD00D09E28 /* TestKnight.swift */; };
 		084EB3D7215234B800D28CB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 084EB3D6215234B800D28CB6 /* GoogleService-Info.plist */; };
 		085122E1215F86E80078AB7B /* ChampionshipBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085122E0215F86E80078AB7B /* ChampionshipBaseVC.swift */; };
 		085122E3215F89E70078AB7B /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085122E2215F89E70078AB7B /* ResultsVC.swift */; };
@@ -145,6 +146,7 @@
 		08400B4D2184858500D09E28 /* Barcza_GSCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcza_GSCTests.swift; sourceTree = "<group>"; };
 		08400B4F2184858500D09E28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08400B552184867700D09E28 /* TestPawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPawn.swift; sourceTree = "<group>"; };
+		08400B572184D9AD00D09E28 /* TestKnight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKnight.swift; sourceTree = "<group>"; };
 		084EB3D6215234B800D28CB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		085122E0215F86E80078AB7B /* ChampionshipBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionshipBaseVC.swift; sourceTree = "<group>"; };
 		085122E2215F89E70078AB7B /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				08400B4D2184858500D09E28 /* Barcza_GSCTests.swift */,
 				08400B4F2184858500D09E28 /* Info.plist */,
 				08400B552184867700D09E28 /* TestPawn.swift */,
+				08400B572184D9AD00D09E28 /* TestKnight.swift */,
 			);
 			path = "Barcza GSCTests";
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08400B4E2184858500D09E28 /* Barcza_GSCTests.swift in Sources */,
+				08400B582184D9AD00D09E28 /* TestKnight.swift in Sources */,
 				08400B562184867700D09E28 /* TestPawn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
