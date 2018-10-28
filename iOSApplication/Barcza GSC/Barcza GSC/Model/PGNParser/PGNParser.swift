@@ -51,7 +51,7 @@ class PGNParser{
         
         var tmpGame = PGNGame()
         for i in rawData{
-            if i.starts(with: "["){ //token found
+            if i.starts(with: "[") && !i.contains("[%"){ //token found
                 if i.contains("[Event "){
                     tmpGame.event = chopTagData(tag: "Event", data: i)
                 }else if i.contains("[Site "){
