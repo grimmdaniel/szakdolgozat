@@ -34,13 +34,33 @@ class TestKnight: XCTestCase{
                       Coords(rank: 3, file: 6),
                       Coords(rank: 5, file: 6),
                       ]
-        coords.forEach { (coord) in
-            XCTAssert(knight.isValidMove(from: Coords(rank: 4, file: 4), to: coord))
+        for i in 0...7{
+            for j in 0...7{
+                let coord = Coords(rank: i, file: j)
+                if coords.contains(coord){
+                    XCTAssert(knight.isValidMove(from: Coords(rank: 4, file: 4), to: coord))
+                }else{
+                    XCTAssertFalse(knight.isValidMove(from: Coords(rank: 4, file: 4), to: coord))
+                }
+            }
         }
     }
     
     func testKnightInCorner(){
         let knight = Knight(position: Coords(rank: 0, file: 0), side: .white)
         XCTAssert(knight.isValidMove(from: Coords(rank: 0, file: 0), to:  Coords(rank: 1, file: 2)))
+        XCTAssert(knight.isValidMove(from: Coords(rank: 0, file: 0), to:  Coords(rank: 2, file: 1)))
+    }
+    
+    func testKnightCapture(){
+        let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 4))
+        let knight = Knight(position: Coords(rank: 4, file: 4), side: .white)
+        knight.delegate = boardmodel
+        square.occupySpot(with: knight)
+        let square2 = boardmodel.getSpotFromCoord(coord: Coords(rank: 3, file: 2))
+        let opponentsFigure = Bishop(position: Coords(rank: 3, file: 2), side: .black)
+        opponentsFigure.delegate = boardmodel
+        square2.occupySpot(with: opponentsFigure)
+        XCTAssert(square.pieceHere!.isValidMove(from: square.position, to: square2.position))
     }
 }
