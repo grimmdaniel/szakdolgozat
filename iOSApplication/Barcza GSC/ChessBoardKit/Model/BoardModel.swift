@@ -26,10 +26,10 @@ public class BoardModel: AccessToChessBoard{
     private var _threatsForBlackKing = [Coords]()
     private var _threatsForWhiteKing = [Coords]()
     
-    func getSpotFromCoord(coord: Coords) -> Spot{
+    func getSpotFromCoord(coord: Coords) -> Spot?{
         return _board.filter({ (spot) -> Bool in
             spot.position == coord
-        }).first!
+        }).first
     }
     
     static func getPieceFromBoard(board: [Spot],coord: Coords) -> Piece?{

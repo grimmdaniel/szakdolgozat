@@ -146,7 +146,9 @@ public class ChessBoardView: UIView {
                     }
                     
                     if boardModel.enPassantSquare != nil{
-                        let piecePlace = boardModel.getSpotFromCoord(coord: Coords(rank: boardModel.enPassantSquare!.rank + 1, file: boardModel.enPassantSquare!.file))
+                        guard let piecePlace = boardModel.getSpotFromCoord(coord: Coords(rank: boardModel.enPassantSquare!.rank + 1, file: boardModel.enPassantSquare!.file)) else {
+                            return
+                        }
                         if !piecePlace.isOccupied(){
                             let newPawn = Pawn(position: piecePlace.position, side: .black)
                             newPawn.delegate = boardModel
@@ -164,12 +166,22 @@ public class ChessBoardView: UIView {
                 
                 //              castle, put rook next to king
                 if boardModel.castleModeForThisMove == .whiteLong{
-                    let tmp = boardModel.getSpotFromCoord(coord: Coords(rank: 7, file: 0))
-                    boardModel.getSpotFromCoord(coord: Coords(rank: 7, file: 3)).occupySpot(with: tmp.pieceHere!)
+                    guard let tmp = boardModel.getSpotFromCoord(coord: Coords(rank: 7, file: 0)) else {
+                        return
+                    }
+                    guard let tmp2 = boardModel.getSpotFromCoord(coord: Coords(rank: 7, file: 3)) else {
+                        return
+                    }
+                    tmp2.occupySpot(with: tmp.pieceHere!)
                     tmp.releaseSpot()
                 }else if boardModel.castleModeForThisMove == .whiteShort{
-                    let tmp = boardModel.getSpotFromCoord(coord: Coords(rank: 7, file: 7))
-                    boardModel.getSpotFromCoord(coord: Coords(rank: 7, file: 5)).occupySpot(with: tmp.pieceHere!)
+                    guard let tmp = boardModel.getSpotFromCoord(coord: Coords(rank: 7, file: 7)) else{
+                        return
+                    }
+                    guard let tmp2 = boardModel.getSpotFromCoord(coord: Coords(rank: 7, file: 5)) else {
+                        return
+                    }
+                    tmp2.occupySpot(with: tmp.pieceHere!)
                     tmp.releaseSpot()
                 }
                 
@@ -254,7 +266,9 @@ public class ChessBoardView: UIView {
                     }
                     
                     if boardModel.enPassantSquare != nil{
-                        let piecePlace = boardModel.getSpotFromCoord(coord: Coords(rank: boardModel.enPassantSquare!.rank - 1, file: boardModel.enPassantSquare!.file))
+                        guard let piecePlace = boardModel.getSpotFromCoord(coord: Coords(rank: boardModel.enPassantSquare!.rank - 1, file: boardModel.enPassantSquare!.file)) else {
+                            return
+                        }
                         if !piecePlace.isOccupied(){
                             let newPawn = Pawn(position: piecePlace.position, side: .white)
                             newPawn.delegate = boardModel
@@ -271,12 +285,22 @@ public class ChessBoardView: UIView {
                 }
                 //              castle, put rook next to king
                 if boardModel.castleModeForThisMove == .blackLong{
-                    let tmp = boardModel.getSpotFromCoord(coord: Coords(rank: 0, file: 0))
-                    boardModel.getSpotFromCoord(coord: Coords(rank: 0, file: 3)).occupySpot(with: tmp.pieceHere!)
+                    guard let tmp = boardModel.getSpotFromCoord(coord: Coords(rank: 0, file: 0)) else{
+                        return
+                    }
+                    guard let tmp2 = boardModel.getSpotFromCoord(coord: Coords(rank: 0, file: 3)) else {
+                        return
+                    }
+                    tmp2.occupySpot(with: tmp.pieceHere!)
                     tmp.releaseSpot()
                 }else if boardModel.castleModeForThisMove == .blackShort{
-                    let tmp = boardModel.getSpotFromCoord(coord: Coords(rank: 0, file: 7))
-                    boardModel.getSpotFromCoord(coord: Coords(rank: 0, file: 5)).occupySpot(with: tmp.pieceHere!)
+                    guard let tmp = boardModel.getSpotFromCoord(coord: Coords(rank: 0, file: 7)) else{
+                        return
+                    }
+                    guard let tmp2 = boardModel.getSpotFromCoord(coord: Coords(rank: 0, file: 5)) else {
+                        return
+                    }
+                    tmp2.occupySpot(with: tmp.pieceHere!)
                     tmp.releaseSpot()
                 }
                 
@@ -597,7 +621,9 @@ public class ChessBoardView: UIView {
             
             let bid1 = Coords(rank: number + 1 * sideDeterminer, file: convertFileLetterToIndex[file] ?? -1)
             let bid2 = Coords(rank: number + 2 * sideDeterminer, file: convertFileLetterToIndex[file] ?? -1)
-            let piece1 = boardModel.getSpotFromCoord(coord: bid1)
+            guard let piece1 = boardModel.getSpotFromCoord(coord: bid1) else{
+                return
+            }
             if let piece = piece1.pieceHere{
                 if piece.side == side && piece.identifier == .pawn{
                     // found piece
@@ -631,7 +657,9 @@ public class ChessBoardView: UIView {
                 }
                 return
             }
-            let piece2 = boardModel.getSpotFromCoord(coord: bid2)
+            guard let piece2 = boardModel.getSpotFromCoord(coord: bid2) else{
+                return
+            }
             if let piece = piece2.pieceHere{
                 if piece.side == side && piece.identifier == .pawn{
                     // found piece

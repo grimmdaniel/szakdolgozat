@@ -75,28 +75,40 @@ class TestPawn: XCTestCase {
     
     func testPawnRightCaptureAtBoardLeftSideWhite(){
         //adding opponents test piece
-        let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 5, file: 1))
+        guard let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 5, file: 1)) else {
+            XCTFail()
+            return
+        }
         square.occupySpot(with: Knight(position: Coords(rank: 5, file: 1), side: .black))
         XCTAssert(whitePawn.isValidMove(from: Coords(rank: 6, file: 0), to: Coords(rank: 5, file: 1)))
     }
     
     func testPawnLeftCaptureAtBoardRightSideWhite(){
         //adding opponents test piece
-        let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 5, file: 6))
+        guard let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 5, file: 6)) else {
+            XCTFail()
+            return
+        }
         square.occupySpot(with: Knight(position: Coords(rank: 5, file: 6), side: .black))
         XCTAssert(whitePawn.isValidMove(from: Coords(rank: 6, file: 7), to: Coords(rank: 5, file: 6)))
     }
     
     func testPawnLeftCaptureAtBoardRightSideBlack(){
         //adding opponents test piece
-        let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 1))
+        guard let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 1)) else{
+            XCTFail()
+            return
+        }
         square.occupySpot(with: Knight(position: Coords(rank: 4, file: 1), side: .white))
         XCTAssert(blackPawn.isValidMove(from: Coords(rank: 3, file: 0), to: Coords(rank: 4, file: 1)))
     }
     
     func testPawnRightCaptureAtBoardLeftSideBlack(){
         //adding opponents test piece
-        let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 6))
+        guard let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 6)) else {
+            XCTFail()
+            return
+        }
         square.occupySpot(with: Knight(position: Coords(rank: 4, file: 6), side: .white))
         XCTAssert(blackPawn.isValidMove(from: Coords(rank: 3, file: 7), to: Coords(rank: 4, file: 6)))
     }
@@ -105,11 +117,17 @@ class TestPawn: XCTestCase {
     func testingEnPassantForWhitePawn(){
         //adding opponents test piece
         boardmodel.enPassantSquare = Coords(rank: 2, file: 3)
-        let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 3, file: 2))
+        guard let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 3, file: 2)) else{
+            XCTFail()
+            return
+        }
         let pawn = Pawn(position: Coords(rank: 3, file: 2), side: .white)
         pawn.delegate = boardmodel
         square.occupySpot(with: pawn)
-        let square2 = boardmodel.getSpotFromCoord(coord: Coords(rank: 3, file: 3))
+        guard let square2 = boardmodel.getSpotFromCoord(coord: Coords(rank: 3, file: 3)) else{
+            XCTFail()
+            return
+        }
         let pawn2 = Pawn(position: Coords(rank: 3, file: 3), side: .black)
         pawn2.delegate = boardmodel
         square2.occupySpot(with: pawn2)
@@ -119,11 +137,17 @@ class TestPawn: XCTestCase {
     func testingEnpassantForBlackPawn(){
         //adding opponents test piece
         boardmodel.enPassantSquare = Coords(rank: 5, file: 3)
-        let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 3))
+        guard let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 3)) else{
+            XCTFail()
+            return
+        }
         let pawn = Pawn(position: Coords(rank: 4, file: 3), side: .white)
         pawn.delegate = boardmodel
         square.occupySpot(with: pawn)
-        let square2 = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 2))
+        guard let square2 = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 2)) else{
+            XCTFail()
+            return
+        }
         let pawn2 = Pawn(position: Coords(rank: 4, file: 2), side: .black)
         pawn2.delegate = boardmodel
         square2.occupySpot(with: pawn2)
@@ -131,11 +155,17 @@ class TestPawn: XCTestCase {
     }
     
     func testingAppMoveForwardWhenOpponentsPawnIsAhead(){
-        let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 4))
+        guard let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 4)) else{
+            XCTFail()
+            return
+        }
         let pawn = Pawn(position: square.position, side: .white)
         pawn.delegate = boardmodel
         square.occupySpot(with: pawn)
-        let square2 = boardmodel.getSpotFromCoord(coord: Coords(rank: 3, file: 4))
+        guard let square2 = boardmodel.getSpotFromCoord(coord: Coords(rank: 3, file: 4)) else{
+            XCTFail()
+            return
+        }
         let pawn2 = Pawn(position: square2.position, side: .black)
         pawn2.delegate = boardmodel
         square2.occupySpot(with: pawn2)

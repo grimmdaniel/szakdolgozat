@@ -53,11 +53,17 @@ class TestKnight: XCTestCase{
     }
     
     func testKnightCapture(){
-        let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 4))
+        guard let square = boardmodel.getSpotFromCoord(coord: Coords(rank: 4, file: 4)) else{
+            XCTFail()
+            return
+        }
         let knight = Knight(position: Coords(rank: 4, file: 4), side: .white)
         knight.delegate = boardmodel
         square.occupySpot(with: knight)
-        let square2 = boardmodel.getSpotFromCoord(coord: Coords(rank: 3, file: 2))
+        guard let square2 = boardmodel.getSpotFromCoord(coord: Coords(rank: 3, file: 2)) else {
+            XCTFail()
+            return
+        }
         let opponentsFigure = Bishop(position: Coords(rank: 3, file: 2), side: .black)
         opponentsFigure.delegate = boardmodel
         square2.occupySpot(with: opponentsFigure)
