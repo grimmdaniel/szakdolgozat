@@ -189,48 +189,10 @@
                     <view key="view" contentMode="scaleToFill" id="snT-H7-y4o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yc-LT-Jc7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfR-hU-6qR">
-                                        <rect key="frame" x="8" y="34" width="35" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="MUb-Uw-Mbv"/>
-                                            <constraint firstAttribute="height" constant="20" id="dGf-8u-tzy"/>
-                                        </constraints>
-                                        <state key="normal" image="sandwichmenu"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barcza GSC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LZ-rn-aGe">
-                                        <rect key="frame" x="135.5" y="28" width="104.5" height="26"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="19"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="bfR-hU-6qR" firstAttribute="leading" secondItem="0yc-LT-Jc7" secondAttribute="leading" constant="8" id="8ra-1r-BQA"/>
-                                    <constraint firstItem="7LZ-rn-aGe" firstAttribute="centerX" secondItem="0yc-LT-Jc7" secondAttribute="centerX" id="AUJ-cv-Qrw"/>
-                                    <constraint firstAttribute="bottom" secondItem="bfR-hU-6qR" secondAttribute="bottom" constant="10" id="Q6x-zM-lyj"/>
-                                    <constraint firstAttribute="bottom" secondItem="7LZ-rn-aGe" secondAttribute="bottom" constant="10" id="sFF-6R-Bkj"/>
-                                    <constraint firstAttribute="height" constant="64" id="u09-qM-8Re"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="0yc-LT-Jc7" firstAttribute="leading" secondItem="0Po-4a-GaZ" secondAttribute="leading" id="1xm-ox-ZTx"/>
-                            <constraint firstAttribute="trailing" secondItem="0yc-LT-Jc7" secondAttribute="trailing" id="SKj-ee-rJF"/>
-                            <constraint firstItem="0yc-LT-Jc7" firstAttribute="top" secondItem="snT-H7-y4o" secondAttribute="top" id="Yw2-cX-qXZ"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0Po-4a-GaZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="vqF-z6-bfA"/>
-                    <connections>
-                        <outlet property="menuBtn" destination="bfR-hU-6qR" id="NcJ-4y-C9X"/>
-                        <outlet property="navigationView" destination="0yc-LT-Jc7" id="NQG-Mr-mLn"/>
-                        <outlet property="titleLabel" destination="7LZ-rn-aGe" id="X9e-xj-sfd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yq4-MC-waR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2361,7 +2323,7 @@
         <image name="misc" width="42" height="11"/>
         <image name="placeholder" width="300" height="169"/>
         <image name="rightArrow" width="100" height="100"/>
-        <image name="sandwichmenu" width="75" height="75"/>
+        <image name="sandwichmenu" width="40" height="40"/>
         <image name="training_info" width="40" height="40"/>
         <image name="training_location" width="16" height="20"/>
         <image name="training_time" width="22" height="22"/>

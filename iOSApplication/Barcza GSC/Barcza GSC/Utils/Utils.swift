@@ -15,7 +15,7 @@ class Utils{
         let navigationBarImage = UIImage.makeImageWithColorAndSize(color: ColorTheme.barczaOrange, size: CGSize(width: (navbar.navigationBar.frame.width),height: (navbar.navigationBar.frame.height)))
         navbar.navigationBar.setBackgroundImage(navigationBarImage, for: UIBarMetrics.default)
         navbar.navigationBar.tintColor = .white
-        navbar.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navbar.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "Helvetica-Bold", size: 17)!]
     }
 }
 
