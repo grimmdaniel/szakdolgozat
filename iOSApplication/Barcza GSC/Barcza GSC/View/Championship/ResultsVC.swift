@@ -11,21 +11,20 @@ import SVProgressHUD
 
 class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,ExpendableHeaderViewDelegate{
     
-    @IBOutlet weak var navigationView: UIView!
-    @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var resultsTableView: UITableView!
     
     var allRounds = [Round]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationView.backgroundColor = ColorTheme.barczaOrange
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
         resultsTableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        self.navigationItem.title = "Eredmények"
+        Utils.setUpNavbarColorAndSpecs(navigationController!)
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
         SVProgressHUD.show()
         getAllTeams().then { (data) -> () in

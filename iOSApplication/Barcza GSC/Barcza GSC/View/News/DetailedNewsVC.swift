@@ -26,11 +26,6 @@ class DetailedNewsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         detailedNewsTableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
-
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -63,6 +58,4 @@ class DetailedNewsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return cell
     }
-
-    
 }

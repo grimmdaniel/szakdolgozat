@@ -10,10 +10,6 @@ import UIKit
 
 class DatabaseMenuVC: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
-    
-    @IBOutlet weak var navigationView: UIView!
-    @IBOutlet weak var menuBtn: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
     var menu: [UIImage] = [#imageLiteral(resourceName: "menu1"),#imageLiteral(resourceName: "menu2"),#imageLiteral(resourceName: "menu3")]
@@ -21,23 +17,15 @@ class DatabaseMenuVC: UIViewController,UICollectionViewDelegate, UICollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         Utils.setUpNavbarColorAndSpecs(navigationController!)
         
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
-        navigationController?.navigationBar.isHidden = true
-        navigationView.backgroundColor = ColorTheme.barczaOrange
-        
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
         
-        titleLabel.text = "Database"
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = ""
-        self.navigationController?.navigationBar.isHidden = true
+        self.navigationItem.title = "Database"
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

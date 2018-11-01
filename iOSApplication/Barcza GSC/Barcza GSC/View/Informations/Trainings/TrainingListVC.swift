@@ -22,12 +22,6 @@ class TrainingListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         trainingListTableView.dataSource = self
         trainingListTableView.tableFooterView = UIView(frame: CGRect.zero)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.title = "Edzések"
-        self.navigationController?.navigationBar.isHidden = false
-    }
-    
 
     private func getUniqueTrainerNames(from data: [TrainingModel]) -> [String]{
         var namesToReturn = [String]()

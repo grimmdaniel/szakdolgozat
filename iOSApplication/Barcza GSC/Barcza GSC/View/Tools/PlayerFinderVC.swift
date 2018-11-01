@@ -9,16 +9,14 @@
 import UIKit
 
 class PlayerFinderVC: UIViewController {
-
-    @IBOutlet weak var navigationView: UIView!
-    @IBOutlet weak var menuBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
-    
-        navigationView.backgroundColor = ColorTheme.barczaOrange
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
+        
+        Utils.setUpNavbarColorAndSpecs(navigationController!)
+        navigationItem.title = "Player Finder"
         
         _ = getAllHunPlayers().then { (completed) -> () in
             log.info("Players downloaded succesfully")

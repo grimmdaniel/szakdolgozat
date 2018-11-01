@@ -11,9 +11,6 @@ import SDWebImage
 import SVProgressHUD
 
 class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var navigationView: UIView!
-    @IBOutlet weak var menuBtn: UIButton!
     
     var photos = [String:[GalleryData]]()
     var albumNames = [String]()
@@ -24,19 +21,17 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationView.backgroundColor = ColorTheme.barczaOrange
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
-        navigationController?.navigationBar.isHidden = true
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
         SVProgressHUD.show()
         galleryTableView.delegate = self
         galleryTableView.dataSource = self
         galleryTableView.isHidden = true
         
-        self.navigationItem.title = ""
+        self.navigationItem.title = "Galéria"
         
         view.backgroundColor = UIColor.hexStringToUIColor(hex: "f5f5f5")
         Utils.setUpNavbarColorAndSpecs(navigationController!)
@@ -48,10 +43,6 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }.always {
                 SVProgressHUD.dismiss()
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {

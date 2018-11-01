@@ -10,8 +10,6 @@ import UIKit
 
 class PhotoLibraryVC: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var helperView: UIView!
-    
     @IBOutlet weak var bigView: UIView!
     
     @IBOutlet weak var zoomScrollView: UIScrollView!
@@ -20,7 +18,6 @@ class PhotoLibraryVC: UIViewController, UICollectionViewDelegate,UICollectionVie
     @IBOutlet weak var exitBtn: UIButton!
     
     @IBAction func exitButton(_ sender: UIButton) {
-        navigationController?.navigationBar.isHidden = false
         zoomScrollView.zoomScale = 1.0
         bigView.isHidden = true
         view.backgroundColor = UIColor.white
@@ -43,14 +40,8 @@ class PhotoLibraryVC: UIViewController, UICollectionViewDelegate,UICollectionVie
         bigView.isUserInteractionEnabled = true
         self.navigationItem.title = album.first?.album ?? "N/A"
         bigView.isHidden = true
-        helperView.backgroundColor = UIColor.black
     }
 
-
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
-    }
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

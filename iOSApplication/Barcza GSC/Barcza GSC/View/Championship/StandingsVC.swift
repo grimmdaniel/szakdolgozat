@@ -11,8 +11,6 @@ import SVProgressHUD
 
 class StandingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var navigationView: UIView!
-    @IBOutlet weak var menuBtn: UIButton!
     
     @IBOutlet weak var standingsTableView: UITableView!
     var standings = [TeamStandings]()
@@ -20,13 +18,14 @@ class StandingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationView.backgroundColor = ColorTheme.barczaOrange
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
         
         standingsTableView.tableFooterView = UIView(frame: CGRect.zero)
         standingsTableView.delegate = self
         standingsTableView.dataSource = self
         
+        self.navigationItem.title = "Tabella"
+        Utils.setUpNavbarColorAndSpecs(navigationController!)
         
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
         SVProgressHUD.show()

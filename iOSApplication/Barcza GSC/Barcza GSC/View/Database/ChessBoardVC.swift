@@ -55,7 +55,6 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
 
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.title = "Enter new game"
-        navigationController?.navigationBar.isHidden = false
     }
     
     override func viewDidLoad() {
@@ -66,7 +65,6 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
         
         chessBoardView.datasource = self
         chessBoardView.delegate = self
-        navigationController?.navigationBar.isHidden = false
         moveCounterLabel.text = "Move count: 1"
     }
     

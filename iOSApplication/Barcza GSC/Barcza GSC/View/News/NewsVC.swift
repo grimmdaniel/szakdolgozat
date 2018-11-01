@@ -12,9 +12,6 @@ import PromiseKit
 
 class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
-    @IBOutlet weak var navigationView: UIView!
-    @IBOutlet weak var menuBtn: UIButton!
-    
     @IBOutlet weak var newsTableView: UITableView!
     
     var news = [NewsData]()
@@ -22,8 +19,7 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationView.backgroundColor = ColorTheme.barczaOrange
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
@@ -32,9 +28,9 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         newsTableView.tableFooterView = UIView(frame: CGRect.zero)
         newsTableView.backgroundColor = UIColor.hexStringToUIColor(hex: "E3E3E3")
         newsTableView.isHidden = true
-        
-        navigationController?.navigationBar.isHidden = true
         Utils.setUpNavbarColorAndSpecs(navigationController!)
+        self.navigationItem.title = "Hírek"
+        self.view.backgroundColor = UIColor.hexStringToUIColor(hex: "E3E3E3")
         
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
         SVProgressHUD.show()
@@ -51,11 +47,6 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
             }.always {
                 SVProgressHUD.dismiss()
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = ""
-        self.navigationController?.navigationBar.isHidden = true
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

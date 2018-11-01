@@ -9,10 +9,6 @@
 import UIKit
 
 class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegate {
-
-    @IBOutlet weak var navigationView: UIView!
-    
-    @IBOutlet weak var menuBtn: UIButton!
     
     @IBOutlet weak var informationsTableView: UITableView!
     
@@ -21,8 +17,7 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationView.backgroundColor = ColorTheme.barczaOrange
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
@@ -30,13 +25,8 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
         informationsTableView.dataSource = self
         informationsTableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        navigationController?.navigationBar.isHidden = true
+        self.navigationItem.title = "Informations"
         Utils.setUpNavbarColorAndSpecs(navigationController!)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = ""
-        self.navigationController?.navigationBar.isHidden = true
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

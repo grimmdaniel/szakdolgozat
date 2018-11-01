@@ -23,11 +23,6 @@ class DocumentsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         documentsTableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.title = "Dokumentumok"
-        self.navigationController?.navigationBar.isHidden = false
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

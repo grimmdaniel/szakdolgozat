@@ -10,10 +10,6 @@ import UIKit
 
 class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,SWRevealViewControllerDelegate{
     
-    @IBOutlet weak var navigationView: UIView!
-    @IBOutlet weak var menuBtn: UIButton!
-    
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -43,17 +39,11 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
     
     var myElo = 0.0
     var opponentElo = 0.0
+    
     @IBOutlet weak var myEloTextField: UITextField!
-    
-    
     @IBOutlet weak var yourEloTextField: UITextField!
-    
-    
     @IBOutlet weak var factorPicker: UIPickerView!
-    
     @IBOutlet weak var resultPicker: UIPickerView!
-    
-    
     @IBAction func calculateEloChangeButton(_ sender: UIButton) {
         if calculateNow{
             getData()
@@ -63,22 +53,18 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     @IBOutlet weak var calculateEloChangeBtn: UIButton!
-    
     @IBOutlet weak var resultLabel: UILabel!
-    
-    
     @IBOutlet weak var kfactorLabel: UILabel!
-    
     @IBOutlet weak var resultLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.revealViewController().delegate = self
-        menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
-        menuBtn.addTarget(self, action: #selector(uiTapped), for: .touchDown)
         
-        navigationView.backgroundColor = ColorTheme.barczaOrange
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
+        
+        Utils.setUpNavbarColorAndSpecs(navigationController!)
         view.backgroundColor = ColorTheme.barczaOrange
         
         factorPicker.dataSource = self

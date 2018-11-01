@@ -36,13 +36,11 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
         databasesCollectionView.delegate = self
         databasesCollectionView.dataSource = self
         documentController.delegate = self
-        navigationController?.navigationBar.isHidden = false
     }
 
     override func viewDidAppear(_ animated: Bool) {
         navigationItem.title = "My Databases"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteDatabases))
-        navigationController?.navigationBar.isHidden = false
     }
     
     @objc func deleteDatabases(){
