@@ -155,7 +155,7 @@
         <scene sceneID="pw9-CD-vCL">
             <objects>
                 <viewController id="eR7-Cr-YwO" customClass="Main" customModule="Barcza_GSC" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="snT-H7-y4o">
+                    <view key="view" contentMode="scaleToFill" id="snT-H7-y4o" customClass="GradientView" customModule="Barcza_GSC" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -186,7 +186,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmB-vh-Rwr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="68.5" height="68.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbL-d3-tD7">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbL-d3-tD7">
                                                                         <rect key="frame" x="0.0" y="10.5" width="68.5" height="47.5"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -224,7 +224,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MER-UV-fb6">
                                                                 <rect key="frame" x="0.0" y="0.0" width="68.5" height="68.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMj-MR-5Ny">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMj-MR-5Ny">
                                                                         <rect key="frame" x="0.0" y="10.5" width="68.5" height="47.5"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -262,7 +262,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cy8-rv-3x5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="68.5" height="68.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-s6-aIj">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-s6-aIj">
                                                                         <rect key="frame" x="0.0" y="10.5" width="68.5" height="47.5"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -300,7 +300,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yew-sj-OTP">
                                                                 <rect key="frame" x="0.0" y="0.0" width="68.5" height="68.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLu-Rj-CEw">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLu-Rj-CEw">
                                                                         <rect key="frame" x="0.0" y="10.5" width="68.5" height="47.5"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="40"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -466,8 +466,35 @@
                             <constraint firstItem="jVX-vR-ypa" firstAttribute="top" secondItem="0Po-4a-GaZ" secondAttribute="top" constant="15" id="wWn-hg-Hcm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Po-4a-GaZ"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.96862745098039216" green="0.41960784313725491" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.8784313725490196" green="0.58039215686274503" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="vqF-z6-bfA"/>
+                    <connections>
+                        <outlet property="awayTeamLogoImageView" destination="O7U-PM-fvW" id="I5d-5G-qd8"/>
+                        <outlet property="awayTeamNameLabel" destination="2Kx-cA-FeI" id="5gt-lb-Pwk"/>
+                        <outlet property="dayBackgroundView" destination="9kb-yR-WT4" id="TGC-nY-vRo"/>
+                        <outlet property="dayNameLabel" destination="ajm-Mg-2v3" id="uGb-Fw-PoV"/>
+                        <outlet property="dayValueLabel" destination="GbL-d3-tD7" id="PSL-BP-gVx"/>
+                        <outlet property="homeTeamLogoImageView" destination="KGP-1q-wzQ" id="Ae7-fu-bf7"/>
+                        <outlet property="homeTeamNameLabel" destination="zTT-n4-HW6" id="zTr-MC-QoH"/>
+                        <outlet property="hourBackgroundView" destination="w0b-C4-oVB" id="PdP-ji-Yf3"/>
+                        <outlet property="hourNameLabel" destination="EJ3-EV-sB8" id="YCR-YD-9gm"/>
+                        <outlet property="hourValueLabel" destination="aMj-MR-5Ny" id="l3q-A9-T7k"/>
+                        <outlet property="matchDateLabel" destination="Msm-ps-Bsg" id="eDo-qP-RX2"/>
+                        <outlet property="minuteBackgroundView" destination="O9n-mx-h6r" id="7Rq-aK-57V"/>
+                        <outlet property="minuteNameLabel" destination="tTX-7J-sP0" id="wgj-cG-RSY"/>
+                        <outlet property="minuteValueLabel" destination="Ecz-s6-aIj" id="cjO-Rw-xL0"/>
+                        <outlet property="secondsBackgroundView" destination="buS-Zk-bdZ" id="NIQ-Y1-CeQ"/>
+                        <outlet property="secondsNameLabel" destination="Klm-VX-2VK" id="eGN-Le-a2D"/>
+                        <outlet property="secondsValueLabel" destination="CLu-Rj-CEw" id="Dta-Ab-nX5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yq4-MC-waR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
