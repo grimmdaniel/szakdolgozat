@@ -18,7 +18,11 @@ class Main: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         view.backgroundColor = UIColor.lightGray
         self.navigationItem.title = "Barcza GSC"
-        Utils.setUpNavbarColorAndSpecs(navigationController!)
+        
+        let navigationBarImage = UIImage.makeImageWithColorAndSize(color: UIColor.clear, size: CGSize(width: (navigationController!.navigationBar.frame.width),height: (navigationController!.navigationBar.frame.height)))
+        navigationController!.navigationBar.setBackgroundImage(navigationBarImage, for: UIBarMetrics.default)
+        navigationController!.navigationBar.tintColor = .black
+        navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont(name: "Helvetica-Bold", size: 17)!]
     }
 }
 
