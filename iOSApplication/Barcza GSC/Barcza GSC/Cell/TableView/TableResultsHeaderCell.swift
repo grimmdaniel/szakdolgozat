@@ -53,6 +53,10 @@ class TableResultsValueCell: UITableViewCell {
         awayTitleLabel.text = "\(data.awayElo) " + data.awayTitle
         if data.homeResult == 0.5 || data.awayResult == 0.5{
             resultLabel.text = "1/2 - 1/2"
+        }else if data.homeResult == 2 && data.awayResult == 3{
+            resultLabel.text = "+-"
+        }else if data.homeResult == 3 && data.homeResult == 2{
+            resultLabel.text = "-+"
         }else{
             resultLabel.text = "\(data.homeResult.cleanValue) - \(data.awayResult.cleanValue)"
         }
