@@ -67,6 +67,10 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toTableResults", sender: nil)
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
     }

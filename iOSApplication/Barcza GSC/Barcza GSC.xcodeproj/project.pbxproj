@@ -14,6 +14,8 @@
 		0801785520F13531009A7982 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785420F13531009A7982 /* Utils.swift */; };
 		0801785720F13556009A7982 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785620F13556009A7982 /* ColorTheme.swift */; };
 		0801785920F14CD7009A7982 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801785820F14CD7009A7982 /* MenuVC.swift */; };
+		0802EEDD218DF5C5007DD9E3 /* TableResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802EEDC218DF5C5007DD9E3 /* TableResultsVC.swift */; };
+		0802EEDF218DF611007DD9E3 /* TableResultsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802EEDE218DF611007DD9E3 /* TableResultsHeaderCell.swift */; };
 		0805F1522175DC42004341E1 /* StarterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805F1512175DC42004341E1 /* StarterVC.swift */; };
 		080CD058213812C500E4361B /* DatabaseMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD057213812C500E4361B /* DatabaseMenuVC.swift */; };
 		080CD05A2138149000E4361B /* DatabaseMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD0592138149000E4361B /* DatabaseMenuCell.swift */; };
@@ -132,6 +134,8 @@
 		0801785420F13531009A7982 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0801785620F13556009A7982 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		0801785820F14CD7009A7982 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		0802EEDC218DF5C5007DD9E3 /* TableResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableResultsVC.swift; sourceTree = "<group>"; };
+		0802EEDE218DF611007DD9E3 /* TableResultsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableResultsHeaderCell.swift; sourceTree = "<group>"; };
 		0805F1512175DC42004341E1 /* StarterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterVC.swift; sourceTree = "<group>"; };
 		080CD057213812C500E4361B /* DatabaseMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMenuVC.swift; sourceTree = "<group>"; };
 		080CD0592138149000E4361B /* DatabaseMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMenuCell.swift; sourceTree = "<group>"; };
@@ -277,6 +281,7 @@
 				085122E0215F86E80078AB7B /* ChampionshipBaseVC.swift */,
 				085122E2215F89E70078AB7B /* ResultsVC.swift */,
 				085122E4215F8A010078AB7B /* StandingsVC.swift */,
+				0802EEDC218DF5C5007DD9E3 /* TableResultsVC.swift */,
 			);
 			path = Championship;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				0895DC4A21540B3500663F12 /* NewsDataCell.swift */,
 				085DA7922160D81F00FB27F6 /* StandingsDataCell.swift */,
 				085DA7942160FAAF00FB27F6 /* StandingInfoCell.swift */,
+				0802EEDE218DF611007DD9E3 /* TableResultsHeaderCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 				0801785720F13556009A7982 /* ColorTheme.swift in Sources */,
 				08D4030A20F131020005038B /* GradientView.swift in Sources */,
 				0890687420FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift in Sources */,
+				0802EEDF218DF611007DD9E3 /* TableResultsHeaderCell.swift in Sources */,
 				08F4129C20F22BA800166F98 /* ToolsTabBarVC.swift in Sources */,
 				0895DC4521539AC200663F12 /* NewsTableViewCell.swift in Sources */,
 				0867A441213AA8B00061B6DE /* PGNGameInfoCell.swift in Sources */,
@@ -745,6 +752,7 @@
 				0864C8A620FB8E6900435EE3 /* GalleryData.swift in Sources */,
 				08A2942020FCAFFE008BF214 /* InformationsVC.swift in Sources */,
 				08F4129520F2173700166F98 /* RatingChangeCalculatorVC.swift in Sources */,
+				0802EEDD218DF5C5007DD9E3 /* TableResultsVC.swift in Sources */,
 				0895DC4B21540B3500663F12 /* NewsDataCell.swift in Sources */,
 				085122EA215FD0120078AB7B /* ExpandableHeaderViewDelegate.swift in Sources */,
 				0801785320F13525009A7982 /* Settings.swift in Sources */,
