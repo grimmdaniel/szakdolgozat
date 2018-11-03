@@ -68,7 +68,18 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toTableResults", sender: nil)
+        let currentMatch = allRounds[indexPath.section].matches[indexPath.row]
+        let currentMatchIDs = (currentMatch.homeTeam,currentMatch.awayTeam,"\(currentMatch.homeResult) - \(currentMatch.awayResult)")
+        performSegue(withIdentifier: "toTableResults", sender: currentMatchIDs)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTableResults"{
+            let vc = segue.destination as! TableResultsVC
+            if let sender = sender as? (Team,Team,String){
+                vc.currentMatch = sender
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
