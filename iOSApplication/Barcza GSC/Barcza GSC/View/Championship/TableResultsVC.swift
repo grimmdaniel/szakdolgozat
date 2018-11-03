@@ -10,14 +10,21 @@ import UIKit
 import PromiseKit
 import SVProgressHUD
 
-class TableResultsVC: UIViewController {
+class TableResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableResultsTableView: UITableView!
+    
     var currentMatch: (homeTeam: Team,awayTeam: Team, result: String)!
+    var matchesStorage = [BoardResultModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableResultsTableView.delegate = self
+        tableResultsTableView.dataSource = self
+        tableResultsTableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableResultsTableView.separatorStyle = .none
+        
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
         SVProgressHUD.show()
         getAllResults(homeTeamID: currentMatch.0.id, awayTeamID: currentMatch.1.id).then { (completed) -> () in
@@ -30,32 +37,31 @@ class TableResultsVC: UIViewController {
         }
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return matchesStorage.count + 1
+    }
     
-    func getAllResults(homeTeamID id1: Int, awayTeamID id2: Int) -> Promise<Void> {
-        return Promise<Void>{ fulfill, reject in
-            let resultsURLString = Settings.rootURL + "/tableresults/result/\(id1)/\(id2)"
-            guard let resultsURL = URL(string: resultsURLString) else {
-                reject(NSError(domain:"Error constructing URL from my board results call",code: 101)); return
-            }
-            var request = URLRequest(url: resultsURL)
-            request.allHTTPHeaderFields = Settings.headers
-            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-                guard error == nil else {
-                    reject(NSError(domain:"Error getting response from table results call \(error!)",code: 101)); return
-                }
-                guard let responseData = data else {
-                    reject(NSError(domain:"Did not receive table results call data",code: 102)); return
-                }
-                
-                guard let boardResults = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
-                    reject(NSError(domain: "Could not get JSON for table results call", code: 103)); return
-                }
-                
-                for boardResult in boardResults{
-                    print(boardResult)
-                }
-                fulfill(())
-            }).resume()
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TableResultsHeaderCell", for: indexPath) as! TableResultsHeaderCell
+            cell.selectionStyle = .none
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TableResultsValueCell", for: indexPath) as! TableResultsValueCell
+            cell.updateUI(with: matchesStorage[indexPath.section - 1])
+            cell.selectionStyle = .none
+            return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0{
+            return 120
+        }
+        return 110
     }
 }

@@ -252,6 +252,54 @@ extension ResultsVC{
     }
 }
 
+extension TableResultsVC{
+    
+    func getAllResults(homeTeamID id1: Int, awayTeamID id2: Int) -> Promise<Void> {
+        return Promise<Void>{ fulfill, reject in
+            let resultsURLString = Settings.rootURL + "/tableresults/result/\(id1)/\(id2)"
+            guard let resultsURL = URL(string: resultsURLString) else {
+                reject(NSError(domain:"Error constructing URL from my board results call",code: 101)); return
+            }
+            var request = URLRequest(url: resultsURL)
+            request.allHTTPHeaderFields = Settings.headers
+            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                guard error == nil else {
+                    reject(NSError(domain:"Error getting response from table results call \(error!)",code: 101)); return
+                }
+                guard let responseData = data else {
+                    reject(NSError(domain:"Did not receive table results call data",code: 102)); return
+                }
+                
+                guard let boardResults = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
+                    reject(NSError(domain: "Could not get JSON for table results call", code: 103)); return
+                }
+                
+                var matchesStorage = [BoardResultModel]()
+                
+                for boardResult in boardResults{
+                    let id = boardResult["id"] as? Int ?? 0
+                    let round = boardResult["round"] as? Int ?? 0
+                    let boardNumber = boardResult["tableNumber"] as? Int ?? 0
+                    let homePlayerName = boardResult["homePlayerName"] as? String ?? "N/A"
+                    let awayPlayerName = boardResult["awayPlayerName"] as? String ?? "N/A"
+                    let homeElo = boardResult["homeElo"] as? Int ?? 0
+                    let awayElo = boardResult["awayElo"] as? Int ?? 0
+                    let homeResult = boardResult["homeResult"] as? Double ?? 0.0
+                    let awayResult = boardResult["awayResult"] as? Double ?? 0.0
+                    let homeTitle = boardResult["homeTitle"] as? String ?? ""
+                    let awayTitle = boardResult["awayTitle"] as? String ?? ""
+                    matchesStorage.append(BoardResultModel(id: id, round: round, boardNumber: boardNumber, homePlayerName: homePlayerName, homeElo: homeElo, awayPlayerName: awayPlayerName, awayElo: awayElo, homeResult: homeResult, awayResult: awayResult, homeTitle: homeTitle, awayTitle: awayTitle))
+                }
+                
+                self.matchesStorage = matchesStorage.sorted(by: { (lhs, rhs) -> Bool in
+                    lhs.boardNumber < rhs.boardNumber
+                })
+                fulfill(())
+            }).resume()
+        }
+    }
+}
+
 extension StarterVC{
     func getTrainingsData() -> Promise<Void>{
         return Promise<Void>{ fulfill, reject in

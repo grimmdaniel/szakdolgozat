@@ -1730,10 +1730,12 @@
                                         <connections>
                                             <outlet property="awayNameLabel" destination="LmX-C6-oCB" id="PqW-xE-fIm"/>
                                             <outlet property="awaySideColorView" destination="fPO-NK-CYM" id="Icb-Fw-L4X"/>
-                                            <outlet property="awayTitleLabel" destination="2qe-eY-zg9" id="YbA-1t-ETW"/>
+                                            <outlet property="awayTitleLabel" destination="UJf-ez-SPl" id="16A-Ha-XE4"/>
+                                            <outlet property="backView" destination="npa-1P-AT8" id="fwL-HV-X5y"/>
                                             <outlet property="boardNumberLabel" destination="X2n-ti-qiX" id="s9g-oU-sf2"/>
                                             <outlet property="homeNameLabel" destination="fhC-jd-U20" id="15p-Un-vIP"/>
                                             <outlet property="homeSideColorView" destination="AhU-mg-kng" id="yma-Zf-QsD"/>
+                                            <outlet property="homeTitleLabel" destination="2qe-eY-zg9" id="YbA-1t-ETW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -25,6 +25,39 @@ class TableResultsValueCell: UITableViewCell {
     @IBOutlet weak var boardNumberLabel: UILabel!
     @IBOutlet weak var homeNameLabel: UILabel!
     @IBOutlet weak var awayNameLabel: UILabel!
+    @IBOutlet weak var homeTitleLabel: UILabel!
     @IBOutlet weak var awayTitleLabel: UILabel!
+    @IBOutlet weak var backView: UIView!
+    
+    
+    func updateUI(with data: BoardResultModel){
+        if data.boardNumber % 2 == 0{
+            awaySideColorView.backgroundColor = UIColor.black
+            awaySideColorView.layer.borderWidth = 1.0
+            awaySideColorView.layer.borderColor = UIColor.black.cgColor
+            homeSideColorView.backgroundColor = UIColor.white
+            homeSideColorView.layer.borderWidth = 1.0
+            homeSideColorView.layer.borderColor = UIColor.black.cgColor
+        }else{
+            homeSideColorView.backgroundColor = UIColor.black
+            homeSideColorView.layer.borderWidth = 1.0
+            homeSideColorView.layer.borderColor = UIColor.black.cgColor
+            awaySideColorView.backgroundColor = UIColor.white
+            awaySideColorView.layer.borderWidth = 1.0
+            awaySideColorView.layer.borderColor = UIColor.black.cgColor
+        }
+        boardNumberLabel.text = "\(data.boardNumber). tábla"
+        homeNameLabel.text = data.homePlayerName
+        awayNameLabel.text = data.awayPlayerName
+        homeTitleLabel.text = data.homeTitle + " \(data.homeElo)"
+        awayTitleLabel.text = "\(data.awayElo) " + data.awayTitle
+        
+        backView.layer.shadowOpacity = 0.18
+        backView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        backView.layer.shadowRadius = 2
+        backView.layer.shadowColor = UIColor.black.cgColor
+        backView.layer.masksToBounds = false
+        self.layer.cornerRadius = 3.0
+    }
     
 }
