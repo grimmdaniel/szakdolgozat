@@ -9,6 +9,7 @@
 import UIKit
 import PromiseKit
 import SVProgressHUD
+import SDWebImage
 
 class TableResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -19,6 +20,8 @@ class TableResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "Táblánkénti eredmények"
 
         tableResultsTableView.delegate = self
         tableResultsTableView.dataSource = self
@@ -48,6 +51,21 @@ class TableResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TableResultsHeaderCell", for: indexPath) as! TableResultsHeaderCell
+            cell.homeTeamNameLabel.text = currentMatch.0.name
+            cell.awayTeamNameLabel.text = currentMatch.1.name
+            cell.resultLabel.text = currentMatch.2
+            if let logoURL = URL(string: Settings.BGSC_ROOT_URL+"application/teams/"+currentMatch.0.logo){
+                cell.homeTeamLogo.sd_setImage(with: logoURL, placeholderImage: #imageLiteral(resourceName: "teamLogoPlaceholder.png"))
+            }else{
+                cell.homeTeamLogo.image = #imageLiteral(resourceName: "teamLogoPlaceholder.png")
+            }
+            
+            if let logoURL = URL(string: Settings.BGSC_ROOT_URL+"application/teams/"+currentMatch.1.logo){
+                cell.awayTeamLogo.sd_setImage(with: logoURL, placeholderImage: #imageLiteral(resourceName: "teamLogoPlaceholder.png"))
+            }else{
+                cell.awayTeamLogo.image = #imageLiteral(resourceName: "teamLogoPlaceholder.png")
+            }
+            
             cell.selectionStyle = .none
             return cell
         }else{

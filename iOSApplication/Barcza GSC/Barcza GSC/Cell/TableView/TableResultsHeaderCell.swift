@@ -28,7 +28,7 @@ class TableResultsValueCell: UITableViewCell {
     @IBOutlet weak var homeTitleLabel: UILabel!
     @IBOutlet weak var awayTitleLabel: UILabel!
     @IBOutlet weak var backView: UIView!
-    
+    @IBOutlet weak var resultLabel: UILabel!
     
     func updateUI(with data: BoardResultModel){
         if data.boardNumber % 2 == 0{
@@ -51,13 +51,18 @@ class TableResultsValueCell: UITableViewCell {
         awayNameLabel.text = data.awayPlayerName
         homeTitleLabel.text = data.homeTitle + " \(data.homeElo)"
         awayTitleLabel.text = "\(data.awayElo) " + data.awayTitle
+        if data.homeResult == 0.5 || data.awayResult == 0.5{
+            resultLabel.text = "1/2 - 1/2"
+        }else{
+            resultLabel.text = "\(data.homeResult.cleanValue) - \(data.awayResult.cleanValue)"
+        }
         
         backView.layer.shadowOpacity = 0.18
         backView.layer.shadowOffset = CGSize(width: 0, height: 2)
         backView.layer.shadowRadius = 2
         backView.layer.shadowColor = UIColor.black.cgColor
         backView.layer.masksToBounds = false
-        self.layer.cornerRadius = 3.0
+        backView.layer.cornerRadius = 5.0
     }
     
 }

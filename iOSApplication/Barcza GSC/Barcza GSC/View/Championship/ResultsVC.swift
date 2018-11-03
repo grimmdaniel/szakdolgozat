@@ -44,6 +44,7 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "Eredmények"
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
@@ -69,12 +70,14 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentMatch = allRounds[indexPath.section].matches[indexPath.row]
-        let currentMatchIDs = (currentMatch.homeTeam,currentMatch.awayTeam,"\(currentMatch.homeResult) - \(currentMatch.awayResult)")
+        if currentMatch.homeResult == -1 || currentMatch.awayResult == -1 { return }
+        let currentMatchIDs = (currentMatch.homeTeam,currentMatch.awayTeam,"\(currentMatch.homeResult.cleanValue) - \(currentMatch.awayResult.cleanValue)")
         performSegue(withIdentifier: "toTableResults", sender: currentMatchIDs)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTableResults"{
+            self.navigationItem.title = ""
             let vc = segue.destination as! TableResultsVC
             if let sender = sender as? (Team,Team,String){
                 vc.currentMatch = sender
