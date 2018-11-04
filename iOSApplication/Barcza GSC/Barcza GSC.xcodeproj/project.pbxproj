@@ -70,6 +70,9 @@
 		08D402F720F125740005038B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08D402F620F125740005038B /* Assets.xcassets */; };
 		08D402FA20F125740005038B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08D402F820F125740005038B /* LaunchScreen.storyboard */; };
 		08D4030A20F131020005038B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D4030920F131020005038B /* GradientView.swift */; };
+		08DFF312218EFBDB0069B713 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DFF311218EFBDB0069B713 /* SettingsVC.swift */; };
+		08DFF314218EFFD30069B713 /* OpenSourceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DFF313218EFFD30069B713 /* OpenSourceVC.swift */; };
+		08DFF316218F02C30069B713 /* DetailedOpenSourceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DFF315218F02C30069B713 /* DetailedOpenSourceVC.swift */; };
 		08F4129520F2173700166F98 /* RatingChangeCalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4129420F2173700166F98 /* RatingChangeCalculatorVC.swift */; };
 		08F4129720F218D200166F98 /* RatingChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4129620F218D200166F98 /* RatingChange.swift */; };
 		08F4129920F21D3E00166F98 /* PlayerFinderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4129820F21D3E00166F98 /* PlayerFinderVC.swift */; };
@@ -195,6 +198,9 @@
 		08D402F920F125740005038B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08D402FB20F125740005038B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08D4030920F131020005038B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		08DFF311218EFBDB0069B713 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		08DFF313218EFFD30069B713 /* OpenSourceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceVC.swift; sourceTree = "<group>"; };
+		08DFF315218F02C30069B713 /* DetailedOpenSourceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedOpenSourceVC.swift; sourceTree = "<group>"; };
 		08F4129420F2173700166F98 /* RatingChangeCalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingChangeCalculatorVC.swift; sourceTree = "<group>"; };
 		08F4129620F218D200166F98 /* RatingChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingChange.swift; sourceTree = "<group>"; };
 		08F4129820F21D3E00166F98 /* PlayerFinderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFinderVC.swift; sourceTree = "<group>"; };
@@ -413,6 +419,7 @@
 		08D4030320F130C00005038B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				08DFF310218EFBB80069B713 /* Settings */,
 				085122DF215F86C70078AB7B /* Championship */,
 				0895DC412153996000663F12 /* News */,
 				08A2941E20FCAFDE008BF214 /* Informations */,
@@ -477,6 +484,16 @@
 				080CD0592138149000E4361B /* DatabaseMenuCell.swift */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		08DFF310218EFBB80069B713 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				08DFF311218EFBDB0069B713 /* SettingsVC.swift */,
+				08DFF313218EFFD30069B713 /* OpenSourceVC.swift */,
+				08DFF315218F02C30069B713 /* DetailedOpenSourceVC.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		08F4129A20F21D4300166F98 /* Tools */ = {
@@ -717,6 +734,7 @@
 				080CD05A2138149000E4361B /* DatabaseMenuCell.swift in Sources */,
 				080CD0602138247900E4361B /* LocalDatabaseVC.swift in Sources */,
 				08006F00214FC36F00035698 /* PGNGameTextParser.swift in Sources */,
+				08DFF316218F02C30069B713 /* DetailedOpenSourceVC.swift in Sources */,
 				081C7BD72118B936004B107B /* MoveNameCollectionViewCell.swift in Sources */,
 				0864C8AE20FBCF2400435EE3 /* AlbumCell.swift in Sources */,
 				08F4129920F21D3E00166F98 /* PlayerFinderVC.swift in Sources */,
@@ -744,6 +762,7 @@
 				0867A441213AA8B00061B6DE /* PGNGameInfoCell.swift in Sources */,
 				080CD05E2138240300E4361B /* PGNParser.swift in Sources */,
 				0802EEE1218E00E0007DD9E3 /* BoardResultModel.swift in Sources */,
+				08DFF314218EFFD30069B713 /* OpenSourceVC.swift in Sources */,
 				085122E1215F86E80078AB7B /* ChampionshipBaseVC.swift in Sources */,
 				085122E5215F8A010078AB7B /* StandingsVC.swift in Sources */,
 				0864C8A920FBBB5E00435EE3 /* Requests.swift in Sources */,
@@ -767,6 +786,7 @@
 				081C7BD52118B7EC004B107B /* Extensions.swift in Sources */,
 				0801785520F13531009A7982 /* Utils.swift in Sources */,
 				0895DC432153997000663F12 /* NewsVC.swift in Sources */,
+				08DFF312218EFBDB0069B713 /* SettingsVC.swift in Sources */,
 				082B5220215FF74C00F06273 /* Round.swift in Sources */,
 				085122E8215FCF9E0078AB7B /* ExpandableCell.swift in Sources */,
 			);
