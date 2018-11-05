@@ -18,6 +18,8 @@ class PhotoLibraryVC: UIViewController, UICollectionViewDelegate,UICollectionVie
     @IBOutlet weak var exitBtn: UIButton!
     
     @IBAction func exitButton(_ sender: UIButton) {
+        Utils.setUpNavbarColorAndSpecs(navigationController!)
+        navigationItem.hidesBackButton = false
         zoomScrollView.zoomScale = 1.0
         bigView.isHidden = true
         view.backgroundColor = UIColor.white
@@ -72,7 +74,11 @@ class PhotoLibraryVC: UIViewController, UICollectionViewDelegate,UICollectionVie
         self.bigImageView.sd_setImage(with: album[indexPath.row].image, placeholderImage: #imageLiteral(resourceName: "placeholder"),options: [.retryFailed])
         self.bigView.isHidden = false
         view.backgroundColor = UIColor.black
-        navigationController?.navigationBar.isHidden = true
+        navigationItem.hidesBackButton = true
+        let navigationBarImage = UIImage.makeImageWithColorAndSize(color: UIColor.black, size: CGSize(width: (navigationController!.navigationBar.frame.width),height: (navigationController!.navigationBar.frame.height)))
+        navigationController!.navigationBar.setBackgroundImage(navigationBarImage, for: UIBarMetrics.default)
+        navigationController!.navigationBar.tintColor = UIColor.black
+        navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "Helvetica-Bold", size: 17)!]
     }
 }
 

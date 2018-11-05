@@ -44,7 +44,9 @@ class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 2{
+        if indexPath.row == 1{
+            performSegue(withIdentifier: "terms", sender: nil)
+        }else if indexPath.row == 2{
             performSegue(withIdentifier: "toOpenSource", sender: nil)
         }
     }
