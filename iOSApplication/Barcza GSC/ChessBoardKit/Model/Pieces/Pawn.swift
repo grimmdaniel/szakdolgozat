@@ -27,6 +27,10 @@ class Pawn: Piece {
         }
     }
     
+    override func getPGNPieceName() -> String{
+        return ""
+    }
+    
     override func isValidMove(from: Coords, to: Coords) -> Bool {
         if let delegate = delegate{
             let board = delegate.accessToBoard()

@@ -27,6 +27,10 @@ class Knight: Piece{
         }
     }
     
+    override func getPGNPieceName() -> String{
+        return "N"
+    }
+    
     override func isValidMove(from: Coords,to: Coords) -> Bool {
         if super.isValidMove(from: from,to: to) == false { return false }
         

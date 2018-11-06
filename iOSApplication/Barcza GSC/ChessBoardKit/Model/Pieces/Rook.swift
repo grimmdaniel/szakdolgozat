@@ -29,6 +29,10 @@ class Rook: Piece{
         }
     }
     
+    override func getPGNPieceName() -> String{
+        return "R"
+    }
+    
     override func isValidMove(from: Coords,to: Coords) -> Bool {
         if super.isValidMove(from: from,to: to) == false { return false }
         if let delegate = delegate{

@@ -27,6 +27,10 @@ class Bishop: Piece{
         }
     }
     
+    override func getPGNPieceName() -> String{
+        return "B"
+    }
+    
     override func isValidMove(from: Coords, to: Coords) -> Bool {
         if super.isValidMove(from: from,to: to) == false { return false }
         if to.file == to.rank + from.file - from.rank || to.file == -to.rank + from.file + from.rank{

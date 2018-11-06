@@ -46,4 +46,8 @@ class Piece: PieceMovement, FENGeneration{
     func getPieceFEN() -> String {
         return "empty"
     }
+    
+    func getPGNPieceName() -> String{
+        return ""
+    }
 }

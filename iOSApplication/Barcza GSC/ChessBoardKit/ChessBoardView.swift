@@ -17,6 +17,7 @@ public class ChessBoardView: UIView {
     var draggedMoveCoords: (from: Coords?,to: Coords?)
     var boardModel = BoardModel()
     var convertTagToCoords = [Int:Coords]()
+    var storePGNMoveTexts = [String]()
     
     public var datasource: UIViewController?
     public var delegate: ChessBoardViewDelegate?
@@ -220,6 +221,11 @@ public class ChessBoardView: UIView {
                     }
                 }
                 
+                //pgn text creating
+                if isMovementEnabled{
+                    storePGNMoveTexts.append(generateMoveText(from: firstTMP, to: secondTMP))
+                }
+                
             }else{
                 nextTask = .whiteToMove
             }
@@ -345,6 +351,10 @@ public class ChessBoardView: UIView {
                     }
                 }
                 
+                //pgn text creating
+                if isMovementEnabled{
+                    storePGNMoveTexts.append(generateMoveText(from: firstTMP, to: secondTMP))
+                }
             }else{
                 nextTask = .blackToMove
             }
@@ -355,6 +365,46 @@ public class ChessBoardView: UIView {
         if inFreeMode{
             refreshBoard()
         }
+    }
+    
+    private func generateMoveText(from: Spot, to: Spot) -> String{
+        guard let piece = from.pieceHere else {
+            return ""
+        }
+        
+        var moveString = ""
+        if piece is King && abs(from.position.file - to.position.file) == 2{
+            if to.position.file == 2{
+                moveString = "O-O-O"
+            }else if to.position.file == 6{
+                moveString = "O-O"
+            }
+        }else{
+            moveString = piece.getPGNPieceName()
+            convertFileLetterToIndex.forEach({
+                if $0.value == from.position.file{
+                    moveString.append($0.key+"\(8 - from.position.rank)")
+                    return
+                }
+            })
+            
+            if to.pieceHere != nil{
+                moveString.append("x")
+            }else{
+                if piece is Pawn && from.position.file != to.position.file{
+                    moveString.append("x")
+                }
+            }
+            
+            convertFileLetterToIndex.forEach({
+                if $0.value == to.position.file{
+                    moveString.append($0.key+"\(8 - to.position.rank)")
+                    return
+                }
+            })
+        }
+        print(moveString)
+        return moveString
     }
     
     private func displayNewPieceView(piece: Spot){

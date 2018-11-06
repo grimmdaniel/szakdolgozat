@@ -31,6 +31,10 @@ class King: Piece{
         }
     }
     
+    override func getPGNPieceName() -> String{
+        return "K"
+    }
+    
     func getCastlingAvailabilityFEN() -> String{
         if side == .white{
             if isLongCastleAllowed && isShortCastleAllowed{

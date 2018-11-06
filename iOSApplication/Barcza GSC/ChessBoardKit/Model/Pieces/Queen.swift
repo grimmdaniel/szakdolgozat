@@ -27,6 +27,10 @@ class Queen: Piece{
         }
     }
     
+    override func getPGNPieceName() -> String{
+        return "Q"
+    }
+    
     override func isValidMove(from: Coords, to: Coords) -> Bool {
         if super.isValidMove(from: from,to: to) == false { return false }
         if let delegate = delegate{

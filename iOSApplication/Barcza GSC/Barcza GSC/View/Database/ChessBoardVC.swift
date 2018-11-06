@@ -66,6 +66,12 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
         chessBoardView.datasource = self
         chessBoardView.delegate = self
         moveCounterLabel.text = "Move count: 1"
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(savePGN))
+    }
+    
+    @objc func savePGN(){
+        
     }
     
     func chessBoardView(_ chessBoardView: ChessBoardView, numberOfMove: String) {
