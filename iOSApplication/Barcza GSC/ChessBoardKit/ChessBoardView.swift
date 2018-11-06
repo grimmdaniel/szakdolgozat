@@ -403,6 +403,11 @@ public class ChessBoardView: UIView {
                 }
             })
         }
+        
+        if !boardModel.threatsForWhiteKing.isEmpty || !boardModel.threatsForBlackKing.isEmpty{
+                moveString.append("+")
+        }
+        
         print(moveString)
         return moveString
     }
