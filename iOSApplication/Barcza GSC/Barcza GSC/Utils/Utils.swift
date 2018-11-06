@@ -29,6 +29,18 @@ extension Double {
     }
 }
 
+extension UITableView {
+    
+    func scrollToBottom(){
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(
+                row: self.numberOfRows(inSection:  self.numberOfSections - 1) - 1,
+                section: self.numberOfSections - 1)
+            self.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
+    }
+}
+
 extension String {
     func count(of needle: Character) -> Int {
         return reduce(0) {

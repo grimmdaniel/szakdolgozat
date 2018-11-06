@@ -63,6 +63,8 @@
 		08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */; };
 		08C27C5E2179E45F00335F04 /* TrainingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C27C5D2179E45F00335F04 /* TrainingListVC.swift */; };
 		08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */; };
+		08CCA2092192129000184611 /* SaveGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CCA2082192129000184611 /* SaveGameVC.swift */; };
+		08CCA20B219220D600184611 /* SaveGameInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CCA20A219220D600184611 /* SaveGameInfoCell.swift */; };
 		08CFCE082175ED6300A93B79 /* TrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CFCE072175ED6300A93B79 /* TrainingModel.swift */; };
 		08CFCE0A2175F6EF00A93B79 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CFCE092175F6EF00A93B79 /* Storage.swift */; };
 		08D402F020F125730005038B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D402EF20F125730005038B /* AppDelegate.swift */; };
@@ -191,6 +193,8 @@
 		08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNDatabase.swift; sourceTree = "<group>"; };
 		08C27C5D2179E45F00335F04 /* TrainingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingListVC.swift; sourceTree = "<group>"; };
 		08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessBoardVC.swift; sourceTree = "<group>"; };
+		08CCA2082192129000184611 /* SaveGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGameVC.swift; sourceTree = "<group>"; };
+		08CCA20A219220D600184611 /* SaveGameInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGameInfoCell.swift; sourceTree = "<group>"; };
 		08CFCE072175ED6300A93B79 /* TrainingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModel.swift; sourceTree = "<group>"; };
 		08CFCE092175F6EF00A93B79 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		08D402EC20F125730005038B /* Barcza GSC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barcza GSC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +255,7 @@
 				080CD05F2138247900E4361B /* LocalDatabaseVC.swift */,
 				087621052143ECD100CE69C3 /* DatabaseBrowserVC.swift */,
 				08006EFD214FBA7500035698 /* GamePreviewVC.swift */,
+				08CCA2082192129000184611 /* SaveGameVC.swift */,
 			);
 			path = LocalDatabase;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				085DA7922160D81F00FB27F6 /* StandingsDataCell.swift */,
 				085DA7942160FAAF00FB27F6 /* StandingInfoCell.swift */,
 				0802EEDE218DF611007DD9E3 /* TableResultsHeaderCell.swift */,
+				08CCA20A219220D600184611 /* SaveGameInfoCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -762,6 +768,7 @@
 				087621062143ECD100CE69C3 /* DatabaseBrowserVC.swift in Sources */,
 				0801785720F13556009A7982 /* ColorTheme.swift in Sources */,
 				08D4030A20F131020005038B /* GradientView.swift in Sources */,
+				08CCA20B219220D600184611 /* SaveGameInfoCell.swift in Sources */,
 				0890687420FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift in Sources */,
 				0802EEDF218DF611007DD9E3 /* TableResultsHeaderCell.swift in Sources */,
 				08F4129C20F22BA800166F98 /* ToolsTabBarVC.swift in Sources */,
@@ -769,6 +776,7 @@
 				0867A441213AA8B00061B6DE /* PGNGameInfoCell.swift in Sources */,
 				080CD05E2138240300E4361B /* PGNParser.swift in Sources */,
 				0802EEE1218E00E0007DD9E3 /* BoardResultModel.swift in Sources */,
+				08CCA2092192129000184611 /* SaveGameVC.swift in Sources */,
 				08DFF314218EFFD30069B713 /* OpenSourceVC.swift in Sources */,
 				085122E1215F86E80078AB7B /* ChampionshipBaseVC.swift in Sources */,
 				085122E5215F8A010078AB7B /* StandingsVC.swift in Sources */,

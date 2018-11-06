@@ -71,7 +71,8 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
     }
     
     @objc func savePGN(){
-        
+        self.navigationItem.title = ""
+        performSegue(withIdentifier: "toGameSaver", sender: nil)
     }
     
     func chessBoardView(_ chessBoardView: ChessBoardView, numberOfMove: String) {
