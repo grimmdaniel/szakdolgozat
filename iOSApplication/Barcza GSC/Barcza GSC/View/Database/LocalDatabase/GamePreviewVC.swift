@@ -74,6 +74,21 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
         moveForward()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         chessBoard.resetBoard()
+        currentMoveIndex = 0
+        if indexPath.row == 0{
+            moveForward(freeMode: true)
+        }else{
+            for _ in 0..<indexPath.row{
+                moveForward(freeMode: false)
+            }
+            moveForward()
+        }
+        self.gamePreviewCollectionView.scrollToItem(at: IndexPath(row: currentMoveIndex - 1, section: 0), at: UICollectionView.ScrollPosition.left, animated: true)
+        updateEvaluateLabel()
+    }
+    
     private func moveForward(freeMode: Bool = true){
         if moves.count == currentMoveIndex { return }
         if currentMoveIndex % 2 == 0{ // white to move
