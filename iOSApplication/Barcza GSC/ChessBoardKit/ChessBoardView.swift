@@ -418,6 +418,24 @@ public class ChessBoardView: UIView {
         return moveString
     }
     
+    private func pgnTextHelper(figurine: String){
+        var tmp = self.storePGNMoveTexts.removeLast()
+        tmp.append("="+figurine)
+        if let whiteKing = boardModel.findKingPosition(withSide: .white){
+            if let blackKing = boardModel.findKingPosition(withSide: .black){
+                let whiteKingThreats = boardModel.searchAttackingFigurines(victim: whiteKing)
+                let blackKingTheats = boardModel.searchAttackingFigurines(victim: blackKing)
+                if !whiteKingThreats.isEmpty || !blackKingTheats.isEmpty{
+                    tmp.append("+")
+                }
+            }
+        }
+        storePGNMoveTexts.append(tmp)
+        if let delegate = delegate{
+            delegate.chessBoardView?(self, pgnMoveText: storePGNMoveTexts)
+        }
+    }
+    
     private func displayNewPieceView(piece: Spot){
         let actionSheet = UIAlertController(title: "Pawn promotion", message: nil, preferredStyle: .actionSheet)
         
@@ -429,6 +447,7 @@ public class ChessBoardView: UIView {
             if let piece = self.boardModel.findPromotedPawn(){
                 piece.pieceHere = Queen(position: piece.position, side: piece.pieceHere!.side)
                 piece.pieceHere!.delegate = self.boardModel
+                self.pgnTextHelper(figurine: "Q")
             }
             print("promoted to queen")
             self.refreshBoard()
@@ -438,6 +457,7 @@ public class ChessBoardView: UIView {
             if let piece = self.boardModel.findPromotedPawn(){
                 piece.pieceHere = Rook(position: piece.position, side: piece.pieceHere!.side)
                 piece.pieceHere!.delegate = self.boardModel
+                self.pgnTextHelper(figurine: "R")
             }
             print("promoted to rook")
             self.refreshBoard()
@@ -447,6 +467,7 @@ public class ChessBoardView: UIView {
             if let piece = self.boardModel.findPromotedPawn(){
                 piece.pieceHere = Bishop(position: piece.position, side: piece.pieceHere!.side)
                 piece.pieceHere!.delegate = self.boardModel
+                self.pgnTextHelper(figurine: "B")
             }
             print("promoted to bishop")
             self.refreshBoard()
@@ -456,6 +477,7 @@ public class ChessBoardView: UIView {
             if let piece = self.boardModel.findPromotedPawn(){
                 piece.pieceHere = Knight(position: piece.position, side: piece.pieceHere!.side)
                 piece.pieceHere!.delegate = self.boardModel
+                self.pgnTextHelper(figurine: "N")
             }
             print("promoted to knight")
             self.refreshBoard()
@@ -466,6 +488,7 @@ public class ChessBoardView: UIView {
                 if let piece = self.boardModel.findPromotedPawn(){
                     piece.pieceHere = Queen(position: piece.position, side: piece.pieceHere!.side)
                     piece.pieceHere!.delegate = self.boardModel
+                    self.pgnTextHelper(figurine: "Q")
                 }
                 print("promoted to queen")
                 self.refreshBoard()
