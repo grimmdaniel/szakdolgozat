@@ -32,6 +32,21 @@ class TestPawn: XCTestCase {
         whitePawn = nil
     }
     
+    func testWhiteFEN(){
+        let pawn = Pawn(position: Coords(rank: 3, file: 3), side: .white)
+        XCTAssertEqual(pawn.getPieceFEN(),"P")
+    }
+    
+    func testBlackFEN(){
+        let pawn = Pawn(position: Coords(rank: 3, file: 3), side: .black)
+        XCTAssertEqual(pawn.getPieceFEN(),"p")
+    }
+    
+    func testPGNText(){
+        let pawn = Pawn(position: Coords(rank: 3, file: 3), side: .white)
+        XCTAssertEqual(pawn.getPGNPieceName(),"")
+    }
+    
     
     func testPawnMoveFromDefaultPositionByOneWhite() {
         XCTAssert(whitePawn.isValidMove(from: whiteStartingPosition, to: Coords(rank: whiteStartingPosition.rank - 1, file: whiteStartingPosition.file)))

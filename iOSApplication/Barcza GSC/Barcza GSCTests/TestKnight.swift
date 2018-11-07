@@ -23,6 +23,21 @@ class TestKnight: XCTestCase{
         super.tearDown()
     }
     
+    func testWhiteFEN(){
+        let knight = Knight(position: Coords(rank: 4, file: 4), side: .white)
+        XCTAssertEqual(knight.getPieceFEN(),"N")
+    }
+    
+    func testBlackFEN(){
+        let knight = Knight(position: Coords(rank: 4, file: 4), side: .black)
+        XCTAssertEqual(knight.getPieceFEN(),"n")
+    }
+    
+    func testPGNText(){
+        let knight = Knight(position: Coords(rank: 4, file: 4), side: .white)
+        XCTAssertEqual(knight.getPGNPieceName(),"N")
+    }
+    
     func testKnightInMiddleOfBoard(){
         let knight = Knight(position: Coords(rank: 4, file: 4), side: .white)
         let coords = [Coords(rank: 2, file: 3),

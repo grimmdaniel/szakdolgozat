@@ -21,6 +21,21 @@ class BishopTest: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testWhiteFEN(){
+        let bishop = Bishop(position: Coords(rank: 4, file: 4), side: .white)
+        XCTAssertEqual(bishop.getPieceFEN(),"B")
+    }
+    
+    func testBlackFEN(){
+        let bishop = Bishop(position: Coords(rank: 4, file: 4), side: .black)
+        XCTAssertEqual(bishop.getPieceFEN(),"b")
+    }
+    
+    func testPGNText(){
+        let bishop = Bishop(position: Coords(rank: 4, file: 4), side: .white)
+        XCTAssertEqual(bishop.getPGNPieceName(),"B")
+    }
 
     func testBishopMoveOnDiagonalEmptyBoardNorthWestFromCenter(){
         let bishop = Bishop(position: Coords(rank: 4, file: 4), side: .white)
