@@ -32,9 +32,12 @@ extension ChessBoardVC: UICollectionViewDelegate, UICollectionViewDataSource,UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = 70
-        let height = 40
-        return CGSize(width: width, height: height)
+        var size = CGSize.zero
+        let text = moves[indexPath.row]
+        size = text.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0)])
+        size.height = 40
+        size.width += 15
+        return size
     }
 }
 

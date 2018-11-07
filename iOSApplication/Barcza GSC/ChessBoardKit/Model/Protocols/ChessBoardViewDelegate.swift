@@ -12,4 +12,5 @@ import Foundation
     
     @objc optional func chessBoardView(_ chessBoardView: ChessBoardView,numberOfMove: String)
     @objc optional func chessBoardView(_ chessBoardView: ChessBoardView,FENCode code: String)
+    @objc optional func chessBoardView(_ chessBoardView: ChessBoardView,pgnMoveText: [String])
 }

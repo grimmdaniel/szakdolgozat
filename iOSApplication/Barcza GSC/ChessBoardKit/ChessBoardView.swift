@@ -224,6 +224,9 @@ public class ChessBoardView: UIView {
                 //pgn text creating
                 if isMovementEnabled{
                     storePGNMoveTexts.append(generateMoveText(from: firstTMP, to: secondTMP))
+                    if let delegate = delegate{
+                        delegate.chessBoardView?(self, pgnMoveText: storePGNMoveTexts)
+                    }
                 }
                 
             }else{
@@ -354,6 +357,9 @@ public class ChessBoardView: UIView {
                 //pgn text creating
                 if isMovementEnabled{
                     storePGNMoveTexts.append(generateMoveText(from: firstTMP, to: secondTMP))
+                    if let delegate = delegate{
+                        delegate.chessBoardView?(self, pgnMoveText: storePGNMoveTexts)
+                    }
                 }
             }else{
                 nextTask = .blackToMove

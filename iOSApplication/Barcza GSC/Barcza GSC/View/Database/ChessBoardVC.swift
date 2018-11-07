@@ -11,7 +11,7 @@ import ChessBoardKit
 
 class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
     
-    var moves = ["1. e4","c5","2. Hf3","d6","3. d4","cxd4","4. Hxd4","Hf6","5. Hc3", "a6"]
+    var moves = [String]()
     
     @IBOutlet weak var moveCollectionView: UICollectionView!
     @IBOutlet weak var chessBoardView: ChessBoardView!
@@ -79,4 +79,17 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
         moveCounterLabel.text = "Move count: " + numberOfMove
     }
     
+    func chessBoardView(_ chessBoardView: ChessBoardView, pgnMoveText: [String]) {
+        moves.removeAll()
+        for i in 0..<pgnMoveText.count{
+            if i % 2 == 0{
+                moves.append("\(i / 2 + 1).\(pgnMoveText[i])")
+            }else{
+                moves.append(pgnMoveText[i])
+            }
+        }
+        moveCollectionView.reloadData()
+        let indexPath: IndexPath = IndexPath.init(item: moves.count - 1, section: 0)
+        self.moveCollectionView.scrollToItem(at: indexPath, at: .right, animated: false)
+    }
 }
