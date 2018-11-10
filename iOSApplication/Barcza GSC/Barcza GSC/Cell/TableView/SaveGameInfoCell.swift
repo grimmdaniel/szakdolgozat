@@ -14,7 +14,6 @@ class SaveGameInfoCell: UITableViewCell {
     @IBOutlet weak var formNameLabel: UILabel!
     @IBOutlet weak var formView: UIView!
     @IBOutlet weak var formTextField: UITextField!
-    @IBOutlet weak var helperButton: UIButton!
     
     func setUPView(){
         formView.layer.borderWidth = 1.0
