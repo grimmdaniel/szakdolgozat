@@ -706,8 +706,19 @@ public class ChessBoardView: UIView {
                 performMove(coords: from, inFreeMode: freeMode)
                 performMove(coords: to, inFreeMode: freeMode)
             }
-        } else if pawnChopped.count == 2 || pawnChopped.count == 4{
-            if pawnChopped.count == 4 { pawnChopped.removeLast(2)}
+        } else if pawnChopped.count == 2 || pawnChopped.count == 4 || pawnChopped.count == 6{
+            if pawnChopped.count == 6{
+                pawnChopped.removeLast(2)
+            }
+            
+            if pawnChopped.count == 4 {
+                if !pawnChopped.contains("="){
+                    pawnChopped.removeFirst(2)
+                }else{
+                    pawnChopped.removeLast(2)
+                }
+            }
+            
             let file = String(pawnChopped.first!)
             guard var number = Int(String(pawnChopped.last!)) else {
                 print("Can't find rank number")
