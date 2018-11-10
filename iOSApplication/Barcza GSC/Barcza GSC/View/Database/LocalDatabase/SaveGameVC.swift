@@ -129,7 +129,7 @@ class SaveGameVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let white = tags[4].value == "" ? "?" : tags[4].value
         let black = tags[5].value == "" ? "?" : tags[5].value
         let result = tags[6].value == "" ? "*" : tags[6].value
-        return PGNGame(event: event, site: site, date: date, round: round, white: white, black: black, result: PGNResult(rawValue: result) ?? PGNResult.inProgress, gameText: pgnMoveText, eco: "A00")
+        return PGNGame(event: event, site: site, date: date, round: round, white: white, black: black, result: PGNResult(rawValue: result) ?? PGNResult.inProgress, gameText: pgnMoveText + " \(result)", eco: "A00")
     }
     
     private func saveGameToDatabase(game: PGNGame){

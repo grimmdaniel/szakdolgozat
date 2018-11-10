@@ -42,7 +42,7 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
             !move.contains(".") && move != ""
         })
         
-        if moves.last == "1/2-1/2" || moves.last == "1-0" || moves.last == "0-1"{
+        if moves.last == "1/2-1/2" || moves.last == "1-0" || moves.last == "0-1" || moves.last == "*"{
             moves.removeLast()
         }
         gamePreviewCollectionView.reloadData()

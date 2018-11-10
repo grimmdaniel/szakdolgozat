@@ -198,7 +198,8 @@ extension DatabaseBrowserVC{
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         let urlString = url.absoluteString
         if urlString.hasSuffix(".pgn"){
-            let fileName = url.lastPathComponent == "" ? "temp_\(Date().timeIntervalSince1970).pgn" : url.lastPathComponent
+            let fileNameTmp = url.lastPathComponent == "" ? "temp_\(Date().timeIntervalSince1970).pgn" : url.lastPathComponent
+            let fileName = fileNameTmp == Settings.MY_GAMES_DB ? fileNameTmp + "_1" : fileNameTmp
             
             let realm = try! Realm()
             if realm.object(ofType: PGNDatabaseMetadata.self, forPrimaryKey: fileName) == nil{
