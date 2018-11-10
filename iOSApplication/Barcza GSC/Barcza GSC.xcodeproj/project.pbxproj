@@ -18,7 +18,6 @@
 		0802EEDF218DF611007DD9E3 /* TableResultsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802EEDE218DF611007DD9E3 /* TableResultsHeaderCell.swift */; };
 		0802EEE1218E00E0007DD9E3 /* BoardResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802EEE0218E00E0007DD9E3 /* BoardResultModel.swift */; };
 		0805F1522175DC42004341E1 /* StarterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805F1512175DC42004341E1 /* StarterVC.swift */; };
-		080CD058213812C500E4361B /* DatabaseMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD057213812C500E4361B /* DatabaseMenuVC.swift */; };
 		080CD05A2138149000E4361B /* DatabaseMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD0592138149000E4361B /* DatabaseMenuCell.swift */; };
 		080CD05E2138240300E4361B /* PGNParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD05D2138240300E4361B /* PGNParser.swift */; };
 		080CD0602138247900E4361B /* LocalDatabaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD05F2138247900E4361B /* LocalDatabaseVC.swift */; };
@@ -149,7 +148,6 @@
 		0802EEDE218DF611007DD9E3 /* TableResultsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableResultsHeaderCell.swift; sourceTree = "<group>"; };
 		0802EEE0218E00E0007DD9E3 /* BoardResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardResultModel.swift; sourceTree = "<group>"; };
 		0805F1512175DC42004341E1 /* StarterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterVC.swift; sourceTree = "<group>"; };
-		080CD057213812C500E4361B /* DatabaseMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMenuVC.swift; sourceTree = "<group>"; };
 		080CD0592138149000E4361B /* DatabaseMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMenuCell.swift; sourceTree = "<group>"; };
 		080CD05D2138240300E4361B /* PGNParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNParser.swift; sourceTree = "<group>"; };
 		080CD05F2138247900E4361B /* LocalDatabaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseVC.swift; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 			children = (
 				08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */,
 				080CD05B213823DC00E4361B /* LocalDatabase */,
-				080CD057213812C500E4361B /* DatabaseMenuVC.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -792,7 +789,6 @@
 				086CD511216A4D5B002DD2B2 /* TrainingVC.swift in Sources */,
 				0861B57F2138317F00D50ED3 /* PGNGame.swift in Sources */,
 				0805F1522175DC42004341E1 /* StarterVC.swift in Sources */,
-				080CD058213812C500E4361B /* DatabaseMenuVC.swift in Sources */,
 				087621062143ECD100CE69C3 /* DatabaseBrowserVC.swift in Sources */,
 				0801785720F13556009A7982 /* ColorTheme.swift in Sources */,
 				08D4030A20F131020005038B /* GradientView.swift in Sources */,

@@ -30,6 +30,12 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        Utils.setUpNavbarColorAndSpecs(navigationController!)
+        
         let realm = try! Realm()
         databases = Array(realm.objects(PGNDatabaseMetadata.self))
         

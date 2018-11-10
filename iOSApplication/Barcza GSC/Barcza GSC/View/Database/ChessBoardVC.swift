@@ -60,6 +60,11 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        Utils.setUpNavbarColorAndSpecs(navigationController!)
+        
         moveCollectionView.delegate = self
         moveCollectionView.dataSource = self
         

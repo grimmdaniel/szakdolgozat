@@ -502,69 +502,6 @@
             </objects>
             <point key="canvasLocation" x="1753" y="-223"/>
         </scene>
-        <!--Database MenuVC-->
-        <scene sceneID="Jxn-P3-Tbg">
-            <objects>
-                <viewController id="39I-DL-Fgp" customClass="DatabaseMenuVC" customModule="Barcza_GSC" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="As8-jf-yFb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ceZ-Lt-eMV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="3lx-kd-CZ8">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DatabaseMenuCell" id="9kv-n6-FpB" customClass="DatabaseMenuCell" customModule="Barcza_GSC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e1U-7U-pmF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="e1U-7U-pmF" secondAttribute="bottom" id="0rA-IK-G8n"/>
-                                            <constraint firstAttribute="trailing" secondItem="e1U-7U-pmF" secondAttribute="trailing" id="dOR-ox-Ydq"/>
-                                            <constraint firstItem="e1U-7U-pmF" firstAttribute="top" secondItem="9kv-n6-FpB" secondAttribute="top" id="kqA-3M-hbs"/>
-                                            <constraint firstItem="e1U-7U-pmF" firstAttribute="leading" secondItem="9kv-n6-FpB" secondAttribute="leading" id="oVc-Q7-oqe"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="menuItemImageView" destination="e1U-7U-pmF" id="rEN-zN-Z4x"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ceZ-Lt-eMV" firstAttribute="trailing" secondItem="EeZ-Rt-zba" secondAttribute="trailing" id="OHa-uM-uHy"/>
-                            <constraint firstItem="ceZ-Lt-eMV" firstAttribute="bottom" secondItem="EeZ-Rt-zba" secondAttribute="bottom" id="gXW-9a-BQ9"/>
-                            <constraint firstItem="ceZ-Lt-eMV" firstAttribute="top" secondItem="EeZ-Rt-zba" secondAttribute="top" id="ouH-e9-mxZ"/>
-                            <constraint firstItem="ceZ-Lt-eMV" firstAttribute="leading" secondItem="EeZ-Rt-zba" secondAttribute="leading" id="phm-kl-pWc"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="EeZ-Rt-zba"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="3I9-mC-zrQ"/>
-                    <connections>
-                        <outlet property="menuCollectionView" destination="ceZ-Lt-eMV" id="vfV-bt-eWQ"/>
-                        <segue destination="n00-Wh-KQp" kind="show" identifier="toChessBoard" id="VVM-g5-gRL"/>
-                        <segue destination="pqI-gr-msL" kind="show" identifier="toLocalDatabase" id="waB-mx-KwB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ase-yq-cWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4688.8000000000002" y="2048.7256371814096"/>
-        </scene>
         <!--Local DatabaseVC-->
         <scene sceneID="ApS-uO-lpA">
             <objects>
@@ -966,6 +903,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cf7-w0-UX5"/>
                     </view>
+                    <navigationItem key="navigationItem" id="BfF-wO-7PT"/>
                     <connections>
                         <outlet property="databasesCollectionView" destination="eyr-2i-Tbh" id="Axa-KN-0AY"/>
                         <segue destination="yCn-Sh-nd5" kind="show" identifier="openDatabase" id="xpM-Zw-NQO"/>
@@ -1100,7 +1038,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vR-5V-ubp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5524" y="2038.8305847076463"/>
+            <point key="canvasLocation" x="6362" y="2177"/>
         </scene>
         <!--Save GameVC-->
         <scene sceneID="7p7-ge-Zug">
@@ -1258,7 +1196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Raj-nB-gO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6260" y="2038.8305847076463"/>
+            <point key="canvasLocation" x="7524" y="2196"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="BLS-3L-AAd">
@@ -1339,6 +1277,7 @@
                         <segue destination="H9b-ur-1o4" kind="custom" identifier="toNews" customClass="SWRevealViewControllerSeguePushController" id="fbZ-gH-Lga"/>
                         <segue destination="5Ih-yP-ISn" kind="custom" identifier="toChampionship" customClass="SWRevealViewControllerSeguePushController" id="3kM-O4-hjw"/>
                         <segue destination="Kl2-ay-fRP" kind="custom" identifier="toSettings" customClass="SWRevealViewControllerSeguePushController" id="qJx-iV-WGh"/>
+                        <segue destination="9O2-3u-We5" kind="custom" identifier="toNewGame" customClass="SWRevealViewControllerSeguePushController" id="umQ-M6-YJa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9l-oS-rqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2070,7 +2009,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="39I-DL-Fgp" kind="relationship" relationship="rootViewController" id="mFB-Vt-DrK"/>
+                        <segue destination="pqI-gr-msL" kind="relationship" relationship="rootViewController" id="DWg-xE-Z3V"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiE-aK-GqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3052,6 +2991,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tv1-Yd-bKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2842" y="1459"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w9C-wW-3Hw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9O2-3u-We5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hHZ-bX-Gr3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="n00-Wh-KQp" kind="relationship" relationship="rootViewController" id="oym-2W-jJ5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YzV-VV-hgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5089" y="1910"/>
         </scene>
     </scenes>
     <resources>

@@ -14,7 +14,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var logoPositionConstraint: NSLayoutConstraint!
     @IBOutlet weak var logoImageView: UIImageView!
     
-    let menuItems: [(String,String)] = [("Főoldal","home.png"),("Hírek","news.png"),("Bajnokság","championship.png"),("Galéria","gallery.png"),("Adatbázis","database.png"),("Eszközök","configuration.png"),("Információk","information.png"),("Beállítások","settings.png")]
+    let menuItems: [(Menu,String)] = [(.home,"home.png"),(.news,"news.png"),(.championship,"championship.png"),(.gallery,"gallery.png"),(.new_game,"database.png"),(.database,"database.png"),(.tools,"configuration.png"),(.informations,"information.png"),(.settings,"settings.png")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell")!
-        cell.textLabel?.text = menuItems[indexPath.row].0
+        cell.textLabel?.text = menuItems[indexPath.row].0.rawValue
         cell.imageView?.image = UIImage(named: menuItems[indexPath.row].1)
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
@@ -51,27 +51,42 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO menu navigation
-        if indexPath.row == 0{
+        switch menuItems[indexPath.row].0{
+        case .home:
             performSegue(withIdentifier: "toMain", sender: nil)
-        }else if menuItems[indexPath.row].0 == "Hírek"{
+        case .news:
             performSegue(withIdentifier: "toNews", sender: nil)
-        }else if menuItems[indexPath.row].0 == "Eszközök"{
-            performSegue(withIdentifier: "toTools", sender: nil)
-        }else if menuItems[indexPath.row].0 == "Adatbázis"{
-            performSegue(withIdentifier: "toDatabase", sender: nil)
-        }else if menuItems[indexPath.row].0 == "Galéria"{
-            performSegue(withIdentifier: "toGallery", sender: nil)
-        }else if menuItems[indexPath.row].0 == "Információk"{
-            performSegue(withIdentifier: "toInformations", sender: nil)
-        }else if menuItems[indexPath.row].0 == "Bajnokság"{
+        case .championship:
             performSegue(withIdentifier: "toChampionship", sender: nil)
-        }else if menuItems[indexPath.row].0 == "Beállítások"{
+        case .gallery:
+            performSegue(withIdentifier: "toGallery", sender: nil)
+        case .new_game:
+            performSegue(withIdentifier: "toNewGame", sender: nil)
+        case .database:
+            performSegue(withIdentifier: "toDatabase", sender: nil)
+        case .tools:
+            performSegue(withIdentifier: "toTools", sender: nil)
+        case .informations:
+            performSegue(withIdentifier: "toInformations", sender: nil)
+        case .settings:
             performSegue(withIdentifier: "toSettings", sender: nil)
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
+    }
+    
+    enum Menu: String{
+        
+        case home = "Főoldal",
+        news = "Hírek",
+        championship = "Bajnokság",
+        gallery = "Galéria",
+        new_game = "Új játszma",
+        database = "Adatbázis",
+        tools = "Eszközök",
+        informations = "Információk",
+        settings = "Beállítások"
     }
 }
