@@ -14,7 +14,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var logoPositionConstraint: NSLayoutConstraint!
     @IBOutlet weak var logoImageView: UIImageView!
     
-    let menuItems: [(Menu,String)] = [(.home,"home.png"),(.news,"news.png"),(.championship,"championship.png"),(.gallery,"gallery.png"),(.new_game,"database.png"),(.database,"database.png"),(.tools,"configuration.png"),(.informations,"information.png"),(.settings,"settings.png")]
+    let menuItems: [(Menu,String)] = [(.home,"home.png"),(.news,"news.png"),(.championship,"championship.png"),(.gallery,"gallery.png"),(.new_game,"newGame.png"),(.database,"database.png"),(.tools,"configuration.png"),(.informations,"information.png"),(.settings,"settings.png")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

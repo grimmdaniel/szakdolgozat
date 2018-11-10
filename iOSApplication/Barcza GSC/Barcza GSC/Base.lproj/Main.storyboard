@@ -855,7 +855,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MdF-CX-fvd">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jr4-Wx-kQn">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="jr4-Wx-kQn">
                                                     <rect key="frame" x="0.0" y="15" width="50" height="35"/>
                                                     <color key="backgroundColor" red="0.94117647058823528" green="0.58039215686274503" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>

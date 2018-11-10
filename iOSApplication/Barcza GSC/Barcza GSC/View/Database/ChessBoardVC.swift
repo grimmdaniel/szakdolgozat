@@ -76,6 +76,7 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
     }
     
     @objc func savePGN(){
+        print(chessBoardView.currentPGNMoveText().joined(separator: " "))
         self.navigationItem.title = ""
         performSegue(withIdentifier: "toGameSaver", sender: nil)
     }
@@ -85,14 +86,7 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
     }
     
     func chessBoardView(_ chessBoardView: ChessBoardView, pgnMoveText: [String]) {
-        moves.removeAll()
-        for i in 0..<pgnMoveText.count{
-            if i % 2 == 0{
-                moves.append("\(i / 2 + 1).\(pgnMoveText[i])")
-            }else{
-                moves.append(pgnMoveText[i])
-            }
-        }
+        moves = pgnMoveText
         moveCollectionView.reloadData()
         let indexPath: IndexPath = IndexPath.init(item: moves.count - 1, section: 0)
         self.moveCollectionView.scrollToItem(at: indexPath, at: .right, animated: false)

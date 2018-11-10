@@ -225,7 +225,7 @@ public class ChessBoardView: UIView {
                 if isMovementEnabled{
                     storePGNMoveTexts.append(generateMoveText(from: firstTMP, to: secondTMP))
                     if let delegate = delegate{
-                        delegate.chessBoardView?(self, pgnMoveText: storePGNMoveTexts)
+                        delegate.chessBoardView?(self, pgnMoveText: currentPGNMoveText())
                     }
                 }
                 
@@ -358,7 +358,7 @@ public class ChessBoardView: UIView {
                 if isMovementEnabled{
                     storePGNMoveTexts.append(generateMoveText(from: firstTMP, to: secondTMP))
                     if let delegate = delegate{
-                        delegate.chessBoardView?(self, pgnMoveText: storePGNMoveTexts)
+                        delegate.chessBoardView?(self, pgnMoveText: currentPGNMoveText())
                     }
                 }
             }else{
@@ -432,8 +432,21 @@ public class ChessBoardView: UIView {
         }
         storePGNMoveTexts.append(tmp)
         if let delegate = delegate{
-            delegate.chessBoardView?(self, pgnMoveText: storePGNMoveTexts)
+            delegate.chessBoardView?(self, pgnMoveText: currentPGNMoveText())
         }
+    }
+    
+    public func currentPGNMoveText() -> [String]{
+        if storePGNMoveTexts.isEmpty { return [] }
+        var generated = [String]()
+        for index in 0..<storePGNMoveTexts.count{
+            if index % 2 == 0{
+                generated.append("\(index / 2 + 1). \(storePGNMoveTexts[index])")
+            }else{
+                generated.append(storePGNMoveTexts[index])
+            }
+        }
+        return generated
     }
     
     private func displayNewPieceView(piece: Spot){
