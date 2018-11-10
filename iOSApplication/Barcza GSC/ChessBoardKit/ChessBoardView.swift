@@ -697,6 +697,9 @@ public class ChessBoardView: UIView {
             var withCapture = pawnChopped.components(separatedBy: "x")
             if withCapture.count != 2 { return }
             if let number = getNumberFromDestination(withCapture[1], side: side){
+                if withCapture[1].count == 4{
+                    withCapture[1].removeLast(2)
+                }
                 if withCapture[1].count != 2 { return }
                 guard let destinationRank = Int(String(withCapture[1].last!)) else{
                     print("Error, rank is not an integer"); return
@@ -708,6 +711,31 @@ public class ChessBoardView: UIView {
                 let to = Coords(rank: 8 - destinationRank, file: convertFileLetterToIndex[String(withCapture[1].first!)] ?? -1)
                 performMove(coords: from, inFreeMode: freeMode)
                 performMove(coords: to, inFreeMode: freeMode)
+                
+                if pawnPromotion{
+                    print("promoting pawn")
+                    if let promotedPawn = boardModel.findPromotedPawn(){
+                        if let promoted = promotedFigurine{
+                            switch promoted{
+                            case .knight:
+                                promotedPawn.pieceHere = Knight(position: promotedPawn.position, side: side)
+                                promotedPawn.pieceHere?.delegate = boardModel
+                            case .bishop:
+                                promotedPawn.pieceHere = Bishop(position: promotedPawn.position, side: side)
+                                promotedPawn.pieceHere?.delegate = boardModel
+                            case .rook:
+                                promotedPawn.pieceHere = Rook(position: promotedPawn.position, side: side)
+                                promotedPawn.pieceHere?.delegate = boardModel
+                            case .queen:
+                                promotedPawn.pieceHere = Queen(position: promotedPawn.position, side: side)
+                                promotedPawn.pieceHere?.delegate = boardModel
+                            default:
+                                return
+                            }
+                            refreshBoard()
+                        }
+                    }
+                }
             }
         } else if pawnChopped.count == 2 || pawnChopped.count == 4 || pawnChopped.count == 6{
             if pawnChopped.count == 6{
