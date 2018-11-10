@@ -17,6 +17,7 @@ class Settings {
     }
     static let rootURL = "http://10.10.22.187:8080"
     static let BGSC_ROOT_URL = "http://bgsc.hu/"
+    static let MY_GAMES_DB = "clipboard_db"
     static var email = ""
     static var language:String = ""
     static let device = UIDevice().model + " , " + UIDevice().systemName + " " + UIDevice().systemVersion

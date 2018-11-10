@@ -14,7 +14,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var logoPositionConstraint: NSLayoutConstraint!
     @IBOutlet weak var logoImageView: UIImageView!
     
-    let menuItems: [(Menu,String)] = [(.home,"home.png"),(.news,"news.png"),(.championship,"championship.png"),(.gallery,"gallery.png"),(.new_game,"newGame.png"),(.database,"database.png"),(.tools,"configuration.png"),(.informations,"information.png"),(.settings,"settings.png")]
+    let menuItems: [(Menu,String)] = [(.home,"home.png"),(.news,"news.png"),(.championship,"championship.png"),(.gallery,"gallery.png"),(.new_game,"newGame.png"),(.my_saved_games,"newGame.png"),(.database,"database.png"),(.tools,"configuration.png"),(.informations,"information.png"),(.settings,"settings.png")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +62,8 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             performSegue(withIdentifier: "toGallery", sender: nil)
         case .new_game:
             performSegue(withIdentifier: "toNewGame", sender: nil)
+        case .my_saved_games:
+            performSegue(withIdentifier: "to_my_games", sender: nil)
         case .database:
             performSegue(withIdentifier: "toDatabase", sender: nil)
         case .tools:
@@ -84,6 +86,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         championship = "Bajnokság",
         gallery = "Galéria",
         new_game = "Új játszma",
+        my_saved_games = "Játszmáim",
         database = "Adatbázis",
         tools = "Eszközök",
         informations = "Információk",

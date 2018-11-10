@@ -1,0 +1,73 @@
+//
+//  MyGamesVC.swift
+//  Barcza GSC
+//
+//  Created by Grimm Dániel on 2018. 11. 10..
+//  Copyright © 2018. daniel.grimm. All rights reserved.
+//
+
+import UIKit
+import RealmSwift
+
+class MyGamesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
+    
+    var games = List<PGNGame>()
+    
+    @IBOutlet weak var myGamesTableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        Utils.setUpNavbarColorAndSpecs(navigationController!)
+        
+        myGamesTableView.delegate = self
+        myGamesTableView.dataSource = self
+        myGamesTableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        let realm = try! Realm()
+        let database = realm.object(ofType: PGNDatabase.self, forPrimaryKey: Settings.MY_GAMES_DB)
+        if let database = database{
+            games.append(objectsIn: database.database)
+            if games.isEmpty{
+                myGamesTableView.isHidden = true
+            }
+        }else{
+            myGamesTableView.isHidden = true
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationItem.title = "My saved games"
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return games.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyGameInfoCell", for: indexPath) as! PGNGameInfoCell
+        cell.selectionStyle = .none
+        cell.updateUI(with: games[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "seeMyGame", sender: games[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "seeMyGame"{
+            let vc = segue.destination as! GamePreviewVC
+            if let game = sender as? PGNGame{
+                vc.game = game
+            }
+        }
+    }
+}

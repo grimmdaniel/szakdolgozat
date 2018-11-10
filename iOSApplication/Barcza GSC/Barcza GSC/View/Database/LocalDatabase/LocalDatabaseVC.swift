@@ -13,7 +13,6 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     var games: PGNDatabase!
     var filteredGames = [PGNGame]()
     @IBOutlet weak var databaseTableView: UITableView!
-    
     @IBOutlet weak var searchView: UIView!
     
     var searchController: UISearchController!
@@ -25,8 +24,6 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         databaseTableView.delegate = self
         databaseTableView.dataSource = self
         databaseTableView.tableFooterView = UIView(frame: CGRect.zero)
-
-        navigationController?.navigationBar.isHidden = false
         
         self.definesPresentationContext = true
         configureSearchController()
@@ -34,7 +31,6 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.title = games.name + " (\(games.database.count) games)"
-        navigationController?.navigationBar.isHidden = false
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
