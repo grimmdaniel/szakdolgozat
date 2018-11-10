@@ -29,10 +29,13 @@ class MyGamesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         
         let realm = try! Realm()
         let database = realm.object(ofType: PGNDatabase.self, forPrimaryKey: Settings.MY_GAMES_DB)
+        
         if let database = database{
             games.append(objectsIn: database.database)
             if games.isEmpty{
                 myGamesTableView.isHidden = true
+            }else{
+                myGamesTableView.reloadData()
             }
         }else{
             myGamesTableView.isHidden = true

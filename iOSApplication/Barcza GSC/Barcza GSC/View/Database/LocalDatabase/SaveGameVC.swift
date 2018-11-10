@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SaveGameVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
 
@@ -44,11 +45,13 @@ class SaveGameVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     
     @IBAction func donePressedForResults(_ sender: UIButton) {
-        let text = pickerView(resultPicker, titleForRow: resultPicker.selectedRow(inComponent: 0), forComponent: 0)
+        guard let text = pickerView(resultPicker, titleForRow: resultPicker.selectedRow(inComponent: 0), forComponent: 0) else{
+            return
+        }
         
         for i in 0..<tags.count{
             if tags[i].type == .result{
-                tags[i].value = text ?? ""
+                tags[i].value = text
                 
                 gameInfoTableView.reloadRows(at: [IndexPath(row: 0, section: i)], with: .fade)
                 
@@ -103,10 +106,10 @@ class SaveGameVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @objc func saveGame(){
         for i in tags{
             if i.value == ""{
-                let infoAlert = UIAlertController(title: "Warning", message: "Some information hasn't been added, are you sure want to continue", preferredStyle: .alert)
+                let infoAlert = UIAlertController(title: "Warning", message: "Some information hasn't been added, are you sure want to continue?", preferredStyle: .alert)
                 let confirmAction = UIAlertAction(title: "Yes", style: .default, handler: {
                     action in
-                    self.createPGNText()
+                    self.saveGameToDatabase(game: self.createPGNText())
                 })
                 let rejectAction = UIAlertAction(title: "No", style: .default, handler: nil)
                 infoAlert.addAction(confirmAction)
@@ -115,17 +118,38 @@ class SaveGameVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                 return
             }
         }
+        self.saveGameToDatabase(game: self.createPGNText())
     }
     
     private func createPGNText() -> PGNGame{
-        let event = "[Event \"\(tags[0].value == "" ? "?" : tags[0].value)\"]"
-        let site = "[Site \"\(tags[1].value == "" ? "?" : tags[1].value)\"]"
-        let date = "[Date \"\(tags[2].value == "" ? "??.??.??" : tags[2].value)\"]"
-        let round = "[Round \"\(tags[3].value == "" ? "?" : tags[3].value)\"]"
-        let white = "[White \"\(tags[4].value == "" ? "?" : tags[4].value)\"]"
-        let black = "[Black \"\(tags[5].value == "" ? "?" : tags[5].value)\"]"
-        let result = "[Result \"\(tags[6].value == "" ? "*" : tags[6].value)\"]"
+        let event = tags[0].value == "" ? "?" : tags[0].value
+        let site = tags[1].value == "" ? "?" : tags[1].value
+        let date = tags[2].value == "" ? "??.??.??" : tags[2].value
+        let round = tags[3].value == "" ? "?" : tags[3].value
+        let white = tags[4].value == "" ? "?" : tags[4].value
+        let black = tags[5].value == "" ? "?" : tags[5].value
+        let result = tags[6].value == "" ? "*" : tags[6].value
         return PGNGame(event: event, site: site, date: date, round: round, white: white, black: black, result: PGNResult(rawValue: result) ?? PGNResult.inProgress, gameText: pgnMoveText, eco: "A00")
+    }
+    
+    private func saveGameToDatabase(game: PGNGame){
+        let realm = try! Realm()
+        let database = realm.object(ofType: PGNDatabase.self, forPrimaryKey: Settings.MY_GAMES_DB)
+        
+        if let database = database{
+            try! realm.write {
+                database.database.append(game)
+                realm.add(database, update: true)
+            }
+        }else{
+            //database does not exist yet, create a new one
+            let date = Date()
+            let newPGNDatabase = PGNDatabase(name: Settings.MY_GAMES_DB, creationTime: date, database: [game])
+            try! realm.write {
+                realm.add(newPGNDatabase)
+            }
+        }
+        navigationController?.popViewController(animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
