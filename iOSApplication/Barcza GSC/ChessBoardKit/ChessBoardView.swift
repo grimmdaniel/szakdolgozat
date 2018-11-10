@@ -694,12 +694,15 @@ public class ChessBoardView: UIView {
         }
         
         if pawnChopped.contains("x"){ //pawn capturing something
-            let withCapture = pawnChopped.components(separatedBy: "x")
+            var withCapture = pawnChopped.components(separatedBy: "x")
             if withCapture.count != 2 { return }
             if let number = getNumberFromDestination(withCapture[1], side: side){
                 if withCapture[1].count != 2 { return }
                 guard let destinationRank = Int(String(withCapture[1].last!)) else{
                     print("Error, rank is not an integer"); return
+                }
+                if withCapture[0].count > 1{
+                    withCapture[0] = String(withCapture[0].first!)
                 }
                 let from = Coords(rank: 8 - number, file: convertFileLetterToIndex[withCapture[0]] ?? -1)
                 let to = Coords(rank: 8 - destinationRank, file: convertFileLetterToIndex[String(withCapture[1].first!)] ?? -1)
