@@ -65,6 +65,43 @@ class MyGamesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         performSegue(withIdentifier: "seeMyGame", sender: games[indexPath.row])
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            delete(indexPath)
+        }
+    }
+    
+    private func delete(_ indexPath: IndexPath){
+        let infoAlert = UIAlertController(title: "Warning", message: "Are you sure want to delete this game? This operation cannot be undone.", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Delete", style: .destructive, handler: {
+            action in
+            
+            let realm = try! Realm()
+            let database = realm.object(ofType: PGNDatabase.self, forPrimaryKey: Settings.MY_GAMES_DB)
+            if let database = database{
+                self.games = database.database
+                try! realm.write {
+                    database.database.remove(at: indexPath.row)
+                    realm.add(database, update: true)
+                    self.myGamesTableView.deleteRows(at: [indexPath], with: .fade)
+                    
+                    if self.games.isEmpty{
+                        self.myGamesTableView.isHidden = true
+                    }
+                }
+            }
+        })
+        let rejectAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        infoAlert.addAction(rejectAction)
+        infoAlert.addAction(confirmAction)
+        present(infoAlert, animated: true, completion: nil)
+        return
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "seeMyGame"{
             let vc = segue.destination as! GamePreviewVC
