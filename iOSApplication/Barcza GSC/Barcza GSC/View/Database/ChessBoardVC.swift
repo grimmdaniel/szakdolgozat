@@ -76,9 +76,17 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
     }
     
     @objc func savePGN(){
-        print(chessBoardView.currentPGNMoveText().joined(separator: " "))
         self.navigationItem.title = ""
-        performSegue(withIdentifier: "toGameSaver", sender: nil)
+        performSegue(withIdentifier: "toGameSaver", sender: chessBoardView.currentPGNMoveText().joined(separator: " "))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toGameSaver"{
+            let vc = segue.destination as! SaveGameVC
+            if let sender = sender as? String{
+                vc.pgnMoveText = sender
+            }
+        }
     }
     
     func chessBoardView(_ chessBoardView: ChessBoardView, numberOfMove: String) {

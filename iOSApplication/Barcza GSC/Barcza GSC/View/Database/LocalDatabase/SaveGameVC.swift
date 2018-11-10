@@ -18,6 +18,8 @@ class SaveGameVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBOutlet weak var resultPicker: UIPickerView!
     @IBOutlet weak var resultBgView: UIView!
     
+    var pgnMoveText: String!
+    
     @IBAction func doneDatePressed(_ sender: UIButton) {
         let chosenDate = datePicker.date
         let calendar = Calendar.current
@@ -99,7 +101,31 @@ class SaveGameVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     @objc func saveGame(){
-        
+        for i in tags{
+            if i.value == ""{
+                let infoAlert = UIAlertController(title: "Warning", message: "Some information hasn't been added, are you sure want to continue", preferredStyle: .alert)
+                let confirmAction = UIAlertAction(title: "Yes", style: .default, handler: {
+                    action in
+                    self.createPGNText()
+                })
+                let rejectAction = UIAlertAction(title: "No", style: .default, handler: nil)
+                infoAlert.addAction(confirmAction)
+                infoAlert.addAction(rejectAction)
+                present(infoAlert, animated: true, completion: nil)
+                return
+            }
+        }
+    }
+    
+    private func createPGNText() -> PGNGame{
+        let event = "[Event \"\(tags[0].value == "" ? "?" : tags[0].value)\"]"
+        let site = "[Site \"\(tags[1].value == "" ? "?" : tags[1].value)\"]"
+        let date = "[Date \"\(tags[2].value == "" ? "??.??.??" : tags[2].value)\"]"
+        let round = "[Round \"\(tags[3].value == "" ? "?" : tags[3].value)\"]"
+        let white = "[White \"\(tags[4].value == "" ? "?" : tags[4].value)\"]"
+        let black = "[Black \"\(tags[5].value == "" ? "?" : tags[5].value)\"]"
+        let result = "[Result \"\(tags[6].value == "" ? "*" : tags[6].value)\"]"
+        return PGNGame(event: event, site: site, date: date, round: round, white: white, black: black, result: PGNResult(rawValue: result) ?? PGNResult.inProgress, gameText: pgnMoveText, eco: "A00")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
