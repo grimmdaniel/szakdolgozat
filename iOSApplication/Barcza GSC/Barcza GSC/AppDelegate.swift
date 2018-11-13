@@ -129,7 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     }
     
     private func setUpRealm(){
-        let cachesDirectoryPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
+        let cachesDirectoryPath = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
         let cachesDirectoryURL = NSURL(fileURLWithPath: cachesDirectoryPath)
         let fileURL = cachesDirectoryURL.appendingPathComponent("Default.realm")
         

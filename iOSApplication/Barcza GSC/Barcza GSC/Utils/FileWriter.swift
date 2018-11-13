@@ -15,7 +15,7 @@ class FileWriter{
     static let writer = FileWriter()
     
     func writeDataToPGNFile(fileName: String, content: String){
-        let fileName = fileName + ".txt"
+        let fileName = fileName + ".pgn"
         var filePath = ""
         let dirs : [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
         

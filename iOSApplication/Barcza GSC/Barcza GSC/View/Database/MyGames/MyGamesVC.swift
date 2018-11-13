@@ -49,23 +49,29 @@ class MyGamesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         self.navigationItem.title = "My saved games"
     }
     
-    @objc func saveDataToFile(){
+    private func createPGNTextForExport() -> String{
+        var textToReturn = ""
         
-        let testData = """
-        [Event "International Open Slovak Championship"]
-        [Site "?"]
-        [Date "2012.07.07"]
-        [Round "?"]
-        [White "Markos, Jan"]
-        [Black "Mrva, Vladimir"]
-        [ECO "A46"]
-        [WhiteElo "2540"]
-        [BlackElo "2140"]
-        [Result "1-0"]
-
-        1. e2e4 d7d5 2. e4xd5 Qd8xd5 3. Nb1c3 Qd5d6 4. d2d4 Ng8f6 5. Ng1f3 g7g6 6. Bf1c4 Bf8g7 7. O-O Nb8c6 8. Bc1g5 Bc8e6 9. Bc4xe6 Qd6xe6 10. Rf1e1 Qe6d7 11. d4d5 Nc6b4 12. Nf3e5 Qd7d6 13. Nc3b5 Qd6b6 14. c2c4 a7a6 15. Nb5c3 a6a5 16. a2a3 Nb4a6 17. Qd1d2 O-O-O 18. Ne5xf7 Nf6g4 19. Nf7xd8 Rh8xd8 20. Bg5xe7 Rd8e8 21. h2h4 h7h6 22. c4c5 Na6xc5 23. Be7xc5 Re8xe1+ 24. Ra1xe1 Qb6xc5 25. d5d6 Qc5xf2+ 26. Qd2xf2 Ng4xf2 27. Kg1xf2 Bg7xc3 28. b2xc3 c7c6 29. Re1e6 g6g5 30. h4xg5 h6xg5 31. Re6g6 Kc8b8 32. Rg6g8+ Kb8a7 33. d6d7 c6c5 34. d7d8=Q g5g4 35. Qd8xa5+
-        1-0
-        """
+        games.forEach { (pgnGame) in
+            textToReturn.append("[Event \""+pgnGame.event.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")+"\"]\n")
+            textToReturn.append("[Site \""+pgnGame.site.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")+"\"]\n")
+            textToReturn.append("[Date \""+pgnGame.date.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")+"\"]\n")
+            textToReturn.append("[Round \""+pgnGame.round.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")+"\"]\n")
+            textToReturn.append("[White \""+pgnGame.white.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")+"\"]\n")
+            textToReturn.append("[Black \""+pgnGame.black.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")+"\"]\n")
+            textToReturn.append("[Result \""+pgnGame.result.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")+"\"]\n")
+            
+            textToReturn.append("\n")
+            textToReturn.append(pgnGame.gameText)
+            textToReturn.append("\n")
+        }
+        
+        return textToReturn
+    }
+    
+    @objc func saveDataToFile(){
+        if games.count == 0 { return }
+        let testData = createPGNTextForExport()
         let writer = FileWriter.writer
         writer.writeDataToPGNFile(fileName: "export", content: testData)
     }
