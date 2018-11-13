@@ -63,6 +63,7 @@
 		0895DC49215409D400663F12 /* DetailedNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC48215409D400663F12 /* DetailedNewsVC.swift */; };
 		0895DC4B21540B3500663F12 /* NewsDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC4A21540B3500663F12 /* NewsDataCell.swift */; };
 		08A2942020FCAFFE008BF214 /* InformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2941F20FCAFFE008BF214 /* InformationsVC.swift */; };
+		08B048AE219AE1C000ABAB1C /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B048AD219AE1C000ABAB1C /* FileWriter.swift */; };
 		08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */; };
 		08C27C5E2179E45F00335F04 /* TrainingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C27C5D2179E45F00335F04 /* TrainingListVC.swift */; };
 		08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */; };
@@ -196,6 +197,7 @@
 		0895DC48215409D400663F12 /* DetailedNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedNewsVC.swift; sourceTree = "<group>"; };
 		0895DC4A21540B3500663F12 /* NewsDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataCell.swift; sourceTree = "<group>"; };
 		08A2941F20FCAFFE008BF214 /* InformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsVC.swift; sourceTree = "<group>"; };
+		08B048AD219AE1C000ABAB1C /* FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
 		08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNDatabase.swift; sourceTree = "<group>"; };
 		08C27C5D2179E45F00335F04 /* TrainingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingListVC.swift; sourceTree = "<group>"; };
 		08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessBoardVC.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				0801785620F13556009A7982 /* ColorTheme.swift */,
 				082F8C2B21162F7800A52D7F /* Stack.swift */,
 				081C7BD42118B7EC004B107B /* Extensions.swift */,
+				08B048AD219AE1C000ABAB1C /* FileWriter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				085122E5215F8A010078AB7B /* StandingsVC.swift in Sources */,
 				0864C8A920FBBB5E00435EE3 /* Requests.swift in Sources */,
 				0895DC3D2152728300663F12 /* PDFWebViewVC.swift in Sources */,
+				08B048AE219AE1C000ABAB1C /* FileWriter.swift in Sources */,
 				08CFCE0A2175F6EF00A93B79 /* Storage.swift in Sources */,
 				0895DC472153A20C00663F12 /* NewsData.swift in Sources */,
 				0801785120F13491009A7982 /* SWRevealViewController.m in Sources */,
@@ -1050,7 +1054,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5N8DHC85Z;
 				INFOPLIST_FILE = "Barcza GSC/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1077,7 +1081,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5N8DHC85Z;
 				INFOPLIST_FILE = "Barcza GSC/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

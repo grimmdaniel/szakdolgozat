@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         log.addDestination(console)
         log.info("Application started")
         FirebaseApp.configure()
+
+        setUpRealm()
         
         if #available(iOS 10.0, *) {
             
@@ -124,6 +126,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             window!.rootViewController?.present(alertController, animated: true, completion: nil)
         }
         return true
+    }
+    
+    private func setUpRealm(){
+        let cachesDirectoryPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
+        let cachesDirectoryURL = NSURL(fileURLWithPath: cachesDirectoryPath)
+        let fileURL = cachesDirectoryURL.appendingPathComponent("Default.realm")
+        
+        let config = Realm.Configuration(fileURL: fileURL)
+        Realm.Configuration.defaultConfiguration = config
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
