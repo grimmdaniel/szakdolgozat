@@ -12,7 +12,7 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     @IBOutlet weak var informationsTableView: UITableView!
     
-    var categories = ["Dokumentumok","Edzések","Névadónk","Kapcsolat"]
+    var categories = ["Dokumentumok","Edzések","Névadónk"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,12 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
         informationsTableView.dataSource = self
         informationsTableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        self.navigationItem.title = "Informations"
+        self.navigationItem.title = "Információk"
         Utils.setUpNavbarColorAndSpecs(navigationController!)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = "Informations"
+        self.navigationItem.title = "Információk"
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
