@@ -399,34 +399,3 @@ extension StandingsVC{
         }
     }
 }
-
-
-extension PlayerFinderVC{
-    
-    func getAllHunPlayers() -> Promise<Void>{
-        return Promise<Void>{ fulfill, reject in
-            log.info("Getting hun players...")
-            let myHunPlayersURLString = Settings.rootURL + "/hun/all"
-            guard let myHunPlayersURL = URL(string: myHunPlayersURLString) else {
-                reject(NSError(domain:"Error: cannot create HunPlayers URL",code: 100)); return
-            }
-            var myHunPlayersURLRequest = URLRequest(url: myHunPlayersURL)
-            myHunPlayersURLRequest.allHTTPHeaderFields = Settings.headers
-            URLSession.shared.dataTask(with: myHunPlayersURLRequest, completionHandler: { (data, response, error) in
-                guard error == nil else {
-                    reject(NSError(domain:"Error getting response from my HunPlayers groups \(error!)",code: 101)); return
-                }
-                guard let responseData = data else {
-                    reject(NSError(domain:"Did not receive my HunPlayers data",code: 102)); return
-                }
-                guard let players = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
-                    reject(NSError(domain: "Could not get JSON for my HunPlayers call", code: 103)); return
-                }
-                for player in players{
-                    print(player)
-                }
-                fulfill(())
-            }).resume()
-        }
-    }
-}
