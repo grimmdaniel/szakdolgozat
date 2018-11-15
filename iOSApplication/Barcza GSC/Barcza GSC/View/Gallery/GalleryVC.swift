@@ -17,6 +17,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var galleryTableView: UITableView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +34,20 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         self.navigationItem.title = "Galéria"
         
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f5f5f5")
+        self.view.backgroundColor = ColorTheme.barczaLightGray
         Utils.setUpNavbarColorAndSpecs(navigationController!)
         
         _ = getGalleryPhotos().then { (completed) -> Void in
             log.info("Photos downloaded successfully")
             self.galleryTableView.reloadData()
             self.galleryTableView.isHidden = false
-            }.always {
-                SVProgressHUD.dismiss()
+            self.errorLabel.isHidden = true
+        }.catch(execute: { (error) in
+            log.error(error)
+            self.galleryTableView.isHidden = true
+            self.errorLabel.isHidden = false
+        }).always {
+            SVProgressHUD.dismiss()
         }
     }
     
@@ -77,7 +83,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f5f5f5")
+        view.backgroundColor = ColorTheme.barczaLightGray
         return view
     }
     

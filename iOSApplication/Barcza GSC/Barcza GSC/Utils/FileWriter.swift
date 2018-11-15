@@ -35,14 +35,5 @@ class FileWriter{
         catch let error as NSError {
             print("An error took place: \(error)")
         }
-        
-        do {
-            // Read file content
-            let contentFromFile = try NSString(contentsOfFile: filePath, encoding: String.Encoding.utf8.rawValue)
-            print(contentFromFile)
-        }
-        catch let error as NSError {
-            print("An error took place: \(error)")
-        }
     }
 }

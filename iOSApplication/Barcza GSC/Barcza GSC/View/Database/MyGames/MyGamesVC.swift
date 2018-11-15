@@ -62,8 +62,7 @@ class MyGamesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
             textToReturn.append("[Result \""+pgnGame.result.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")+"\"]\n")
             
             textToReturn.append("\n")
-            textToReturn.append(pgnGame.gameText)
-            textToReturn.append("\n")
+            textToReturn.append(pgnGame.gameText+"\n\n")
         }
         
         return textToReturn

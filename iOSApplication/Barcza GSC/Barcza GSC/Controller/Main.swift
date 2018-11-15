@@ -50,7 +50,7 @@ class Main: UIViewController {
         
         setUPViewsUI(views: [dayBackgroundView,hourBackgroundView,minuteBackgroundView,secondsBackgroundView])
         
-        timeUntilNextMatch = 1542103200 - NSDate().timeIntervalSince1970
+        timeUntilNextMatch = 1542173200 - NSDate().timeIntervalSince1970 
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateCountdown)), userInfo: nil, repeats: true)
     }
     

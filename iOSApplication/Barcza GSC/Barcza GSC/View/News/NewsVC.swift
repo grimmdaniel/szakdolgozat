@@ -13,6 +13,7 @@ import PromiseKit
 class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     @IBOutlet weak var newsTableView: UITableView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var news = [NewsData]()
     
@@ -26,11 +27,11 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         newsTableView.delegate = self
         newsTableView.dataSource = self
         newsTableView.tableFooterView = UIView(frame: CGRect.zero)
-        newsTableView.backgroundColor = UIColor.hexStringToUIColor(hex: "E3E3E3")
+        newsTableView.backgroundColor = ColorTheme.barczaLightGray
         newsTableView.isHidden = true
         Utils.setUpNavbarColorAndSpecs(navigationController!)
         self.navigationItem.title = "Hírek"
-        self.view.backgroundColor = UIColor.hexStringToUIColor(hex: "E3E3E3")
+        self.view.backgroundColor = ColorTheme.barczaLightGray
         
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
         SVProgressHUD.show()
@@ -42,10 +43,13 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
             })
             self.newsTableView.reloadData()
             self.newsTableView.isHidden = false
-            }.catch { (error) in
-                log.error(error)
-            }.always {
-                SVProgressHUD.dismiss()
+            self.errorLabel.isHidden = true
+        }.catch { (error) in
+            log.error(error)
+            self.newsTableView.isHidden = true
+            self.errorLabel.isHidden = false
+        }.always {
+            SVProgressHUD.dismiss()
         }
     }
     
@@ -60,7 +64,7 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
         cell.selectionStyle = .none
-        cell.backgroundColor = UIColor.hexStringToUIColor(hex: "E3E3E3")
+        cell.backgroundColor = ColorTheme.barczaLightGray
         cell.corneredView.layer.cornerRadius = 10.0
         cell.newsImageView.layer.cornerRadius = 10.0
         cell.updateUI(data: news[indexPath.section])

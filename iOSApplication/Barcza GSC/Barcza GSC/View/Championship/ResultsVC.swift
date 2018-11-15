@@ -12,6 +12,7 @@ import SVProgressHUD
 class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,ExpendableHeaderViewDelegate{
     
     @IBOutlet weak var resultsTableView: UITableView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var allRounds = [Round]()
     
@@ -24,6 +25,7 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
         resultsTableView.tableFooterView = UIView(frame: CGRect.zero)
         
         self.navigationItem.title = "Eredmények"
+        self.view.backgroundColor = ColorTheme.barczaLightGray
         Utils.setUpNavbarColorAndSpecs(navigationController!)
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
         SVProgressHUD.show()
@@ -32,6 +34,8 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
                 self.allRounds = rounds
                 self.resultsTableView.reloadData()
                 log.info("Rounds downloaded")
+                self.resultsTableView.isHidden = false
+                self.errorLabel.isHidden = true
             }).catch(execute: { (error) in
                 log.error(error)
             }).always {
@@ -39,6 +43,8 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
             }
         }.catch { (error) in
             log.error(error)
+            self.resultsTableView.isHidden = true
+            self.errorLabel.isHidden = false
             SVProgressHUD.dismiss()
         }
     }

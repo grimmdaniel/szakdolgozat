@@ -11,6 +11,7 @@ import UIKit
 class ColorTheme{
     
     static let barczaOrange: UIColor = UIColor.hexStringToUIColor(hex: "F0941E")
+    static let barczaLightGray: UIColor = UIColor.hexStringToUIColor(hex: "E3E3E3")
 }
 
 extension UIColor{

@@ -18,6 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ooops, something went wrong :( Please try again later!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csC-sa-uNo">
+                                <rect key="frame" x="46.5" y="308.5" width="282" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="T4v-Tn-VZ0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IMi-S9-bWw">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,7 +107,9 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="IMi-S9-bWw" firstAttribute="trailing" secondItem="nRr-5s-znx" secondAttribute="trailing" id="DCO-Rq-1Hm"/>
+                            <constraint firstItem="csC-sa-uNo" firstAttribute="centerX" secondItem="ePJ-Au-yVP" secondAttribute="centerX" id="GOc-XH-LL1"/>
                             <constraint firstItem="IMi-S9-bWw" firstAttribute="top" secondItem="nRr-5s-znx" secondAttribute="top" id="KLc-Gg-TCz"/>
+                            <constraint firstItem="csC-sa-uNo" firstAttribute="centerY" secondItem="ePJ-Au-yVP" secondAttribute="centerY" id="mKV-HX-Aqb"/>
                             <constraint firstItem="IMi-S9-bWw" firstAttribute="leading" secondItem="nRr-5s-znx" secondAttribute="leading" id="pMQ-S2-dQ6"/>
                             <constraint firstItem="IMi-S9-bWw" firstAttribute="bottom" secondItem="nRr-5s-znx" secondAttribute="bottom" id="xEx-Zy-mqZ"/>
                         </constraints>
@@ -106,6 +117,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vhE-Tr-HQI"/>
                     <connections>
+                        <outlet property="errorLabel" destination="csC-sa-uNo" id="zNz-te-Pms"/>
                         <outlet property="newsTableView" destination="IMi-S9-bWw" id="B9Y-go-aAE"/>
                         <segue destination="a1t-KV-xPd" kind="show" identifier="toDetailedNews" id="W2x-Tr-xFS"/>
                     </connections>
@@ -1526,6 +1538,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ooops, something went wrong :( Please try again later!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xzG-Vd-m77">
+                                <rect key="frame" x="46.5" y="308.5" width="282" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="49y-gq-mdM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6K2-X5-I3z">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1686,13 +1707,16 @@
                         <constraints>
                             <constraint firstItem="6K2-X5-I3z" firstAttribute="leading" secondItem="h7T-Vi-tYu" secondAttribute="leading" id="2hI-zO-gM8"/>
                             <constraint firstItem="6K2-X5-I3z" firstAttribute="top" secondItem="h7T-Vi-tYu" secondAttribute="top" id="Dyu-ny-gh2"/>
+                            <constraint firstItem="xzG-Vd-m77" firstAttribute="centerX" secondItem="Pk6-dr-99H" secondAttribute="centerX" id="UGi-KO-RIm"/>
                             <constraint firstItem="6K2-X5-I3z" firstAttribute="bottom" secondItem="h7T-Vi-tYu" secondAttribute="bottom" id="hqs-VG-c0U"/>
                             <constraint firstItem="6K2-X5-I3z" firstAttribute="trailing" secondItem="h7T-Vi-tYu" secondAttribute="trailing" id="ke7-Db-7Uo"/>
+                            <constraint firstItem="xzG-Vd-m77" firstAttribute="centerY" secondItem="Pk6-dr-99H" secondAttribute="centerY" id="ujh-Il-uV6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h7T-Vi-tYu"/>
                     </view>
                     <navigationItem key="navigationItem" id="4n6-d1-Nb7"/>
                     <connections>
+                        <outlet property="errorLabel" destination="xzG-Vd-m77" id="Uto-eu-TyP"/>
                         <outlet property="standingsTableView" destination="6K2-X5-I3z" id="1A4-Em-vgE"/>
                     </connections>
                 </viewController>
@@ -1708,6 +1732,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ooops, something went wrong :( Please try again later!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qP3-5C-dk5">
+                                <rect key="frame" x="46.5" y="308.5" width="282" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0Af-e3-hRs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="urr-Va-aQn">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1792,6 +1825,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="qP3-5C-dk5" firstAttribute="centerX" secondItem="Gj6-n4-r2B" secondAttribute="centerX" id="Ejf-SU-QIn"/>
+                            <constraint firstItem="qP3-5C-dk5" firstAttribute="centerY" secondItem="Gj6-n4-r2B" secondAttribute="centerY" id="GP4-sA-bSy"/>
                             <constraint firstAttribute="bottom" secondItem="urr-Va-aQn" secondAttribute="bottom" id="P9B-YX-tL7"/>
                             <constraint firstItem="urr-Va-aQn" firstAttribute="leading" secondItem="osI-mz-udt" secondAttribute="leading" id="SvX-fd-ozL"/>
                             <constraint firstItem="urr-Va-aQn" firstAttribute="top" secondItem="osI-mz-udt" secondAttribute="top" id="frd-T7-usA"/>
@@ -1801,6 +1836,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="IpI-Am-pZG"/>
                     <connections>
+                        <outlet property="errorLabel" destination="qP3-5C-dk5" id="hQk-v3-BX4"/>
                         <outlet property="resultsTableView" destination="urr-Va-aQn" id="A25-1q-wxW"/>
                         <segue destination="fKM-Va-u5c" kind="show" identifier="toTableResults" id="U8l-sE-VVO"/>
                     </connections>
@@ -2206,6 +2242,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ooops, something went wrong :( Please try again later!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgP-5V-FST">
+                                <rect key="frame" x="46.5" y="308.5" width="282" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wqf-6t-XDH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nFN-aC-M8D">
                                 <rect key="frame" x="10" y="64" width="355" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2294,14 +2339,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nFN-aC-M8D" firstAttribute="top" secondItem="VUA-zC-cvP" secondAttribute="top" id="AO8-sa-fSY"/>
+                            <constraint firstItem="RgP-5V-FST" firstAttribute="centerX" secondItem="Xiv-KQ-koE" secondAttribute="centerX" id="AsZ-Ba-ynq"/>
                             <constraint firstItem="nFN-aC-M8D" firstAttribute="leading" secondItem="VUA-zC-cvP" secondAttribute="leading" constant="10" id="J9A-MZ-swj"/>
                             <constraint firstItem="nFN-aC-M8D" firstAttribute="bottom" secondItem="VUA-zC-cvP" secondAttribute="bottom" id="NYW-zx-xvM"/>
                             <constraint firstItem="nFN-aC-M8D" firstAttribute="trailing" secondItem="VUA-zC-cvP" secondAttribute="trailing" constant="-10" id="fZj-qo-UHZ"/>
+                            <constraint firstItem="RgP-5V-FST" firstAttribute="centerY" secondItem="Xiv-KQ-koE" secondAttribute="centerY" id="sDy-15-csh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUA-zC-cvP"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Ka-Gu-ymz"/>
                     <connections>
+                        <outlet property="errorLabel" destination="RgP-5V-FST" id="k1c-3A-o1m"/>
                         <outlet property="galleryTableView" destination="nFN-aC-M8D" id="uDq-Jf-pCg"/>
                         <segue destination="Lxu-NN-n0g" kind="show" identifier="toPhotoLibrary" id="bex-eV-CNA"/>
                     </connections>

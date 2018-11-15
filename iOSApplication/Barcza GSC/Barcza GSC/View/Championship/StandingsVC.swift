@@ -14,6 +14,7 @@ class StandingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     @IBOutlet weak var standingsTableView: UITableView!
     var standings = [TeamStandings]()
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class StandingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         standingsTableView.dataSource = self
         
         self.navigationItem.title = "Tabella"
+        self.view.backgroundColor = ColorTheme.barczaLightGray
         Utils.setUpNavbarColorAndSpecs(navigationController!)
         
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
@@ -32,8 +34,12 @@ class StandingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         getStandings().then { (completed) -> () in
             log.info("Successfully grabbed standings data")
             self.standingsTableView.reloadData()
+            self.standingsTableView.isHidden = false
+            self.errorLabel.isHidden = true
         }.catch { (error) in
             log.error(error)
+            self.standingsTableView.isHidden = true
+            self.errorLabel.isHidden = false
         }.always {
             SVProgressHUD.dismiss()
         }
