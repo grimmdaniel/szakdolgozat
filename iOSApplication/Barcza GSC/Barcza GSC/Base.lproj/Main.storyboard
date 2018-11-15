@@ -2444,6 +2444,49 @@
             </objects>
             <point key="canvasLocation" x="1893.5999999999999" y="2705.3973013493255"/>
         </scene>
+        <!--Barcza Gedeon-->
+        <scene sceneID="P85-M7-Hmc">
+            <objects>
+                <viewController id="mUU-Od-TbW" customClass="BarczaGedeon" customModule="Barcza_GSC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uSa-DN-VR0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barcza" translatesAutoresizingMaskIntoConstraints="NO" id="olj-Pc-HeS">
+                                <rect key="frame" x="122" y="84" width="131" height="131.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="olj-Pc-HeS" secondAttribute="height" id="Hgx-L1-WRK"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c9N-Mb-cGw">
+                                <rect key="frame" x="15" y="235.5" width="345" height="411.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zX3-jL-ZDy" firstAttribute="trailing" secondItem="c9N-Mb-cGw" secondAttribute="trailing" constant="15" id="FcB-pP-rQU"/>
+                            <constraint firstItem="c9N-Mb-cGw" firstAttribute="leading" secondItem="zX3-jL-ZDy" secondAttribute="leading" constant="15" id="S6c-K2-TL6"/>
+                            <constraint firstItem="olj-Pc-HeS" firstAttribute="top" secondItem="zX3-jL-ZDy" secondAttribute="top" constant="20" id="Sn7-S9-u9G"/>
+                            <constraint firstItem="zX3-jL-ZDy" firstAttribute="bottom" secondItem="c9N-Mb-cGw" secondAttribute="bottom" constant="20" id="UCy-Ib-fIM"/>
+                            <constraint firstItem="olj-Pc-HeS" firstAttribute="centerX" secondItem="uSa-DN-VR0" secondAttribute="centerX" id="gLY-wh-Po2"/>
+                            <constraint firstItem="c9N-Mb-cGw" firstAttribute="top" secondItem="olj-Pc-HeS" secondAttribute="bottom" constant="20" id="pG2-cj-LmR"/>
+                            <constraint firstItem="olj-Pc-HeS" firstAttribute="width" secondItem="uSa-DN-VR0" secondAttribute="width" multiplier="0.35" id="pRY-W9-7jk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zX3-jL-ZDy"/>
+                    </view>
+                    <connections>
+                        <outlet property="barczaImageView" destination="olj-Pc-HeS" id="A08-ad-gfr"/>
+                        <outlet property="historyTextView" destination="c9N-Mb-cGw" id="feY-Tn-J4e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jrd-2c-xpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2092" y="2800.7496251874063"/>
+        </scene>
         <!--InformationsVC-->
         <scene sceneID="sje-1r-HEA">
             <objects>
@@ -2490,6 +2533,7 @@
                         <outlet property="informationsTableView" destination="gLE-to-gA3" id="TSJ-u5-Pda"/>
                         <segue destination="Q4L-6l-b3S" kind="show" identifier="toDocumentsSegue" id="leE-4Y-QMV"/>
                         <segue destination="rcX-FI-JMT" kind="show" identifier="toTrainings" id="ZZC-ST-ozV"/>
+                        <segue destination="mUU-Od-TbW" kind="show" identifier="toBarcza" id="b85-Pi-3Zl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5t-M1-B3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2753,7 +2797,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eO-W4-SYL">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4eO-W4-SYL">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
@@ -3208,6 +3252,7 @@
     </scenes>
     <resources>
         <image name="backward" width="400" height="400"/>
+        <image name="barcza" width="133" height="133"/>
         <image name="exit" width="390" height="390"/>
         <image name="forward" width="400" height="400"/>
         <image name="logo" width="400" height="400"/>

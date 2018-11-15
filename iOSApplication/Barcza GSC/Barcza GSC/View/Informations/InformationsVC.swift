@@ -12,7 +12,7 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     @IBOutlet weak var informationsTableView: UITableView!
     
-    var categories = ["Dokumentumok","Edzések","Büszkeségeink","Névadónk","Kapcsolat","Támogatók","Nemzetközi kapcsolataink"]
+    var categories = ["Dokumentumok","Edzések","Névadónk","Kapcsolat"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,10 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
         
         self.navigationItem.title = "Informations"
         Utils.setUpNavbarColorAndSpecs(navigationController!)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationItem.title = "Informations"
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,8 +50,10 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
+            self.navigationItem.title = ""
             performSegue(withIdentifier: "toDocumentsSegue", sender: nil)
         }else if indexPath.row == 1{
+            self.navigationItem.title = ""
             if Storage.traningStorage.isEmpty {
                 let infoAlert = UIAlertController(title: "Information", message: "No trainings are available yet", preferredStyle: .alert)
                 let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -56,6 +62,9 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
                 return
             }
             performSegue(withIdentifier: "toTrainings", sender: nil)
+        }else if indexPath.row == 2{
+            self.navigationItem.title = ""
+            performSegue(withIdentifier: "toBarcza", sender: nil)
         }
     }
 }

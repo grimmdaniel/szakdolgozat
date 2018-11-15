@@ -62,6 +62,7 @@
 		0895DC472153A20C00663F12 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC462153A20C00663F12 /* NewsData.swift */; };
 		0895DC49215409D400663F12 /* DetailedNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC48215409D400663F12 /* DetailedNewsVC.swift */; };
 		0895DC4B21540B3500663F12 /* NewsDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC4A21540B3500663F12 /* NewsDataCell.swift */; };
+		08986262219E162400EBCB3E /* BarczaGedeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08986261219E162400EBCB3E /* BarczaGedeon.swift */; };
 		08A2942020FCAFFE008BF214 /* InformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2941F20FCAFFE008BF214 /* InformationsVC.swift */; };
 		08B048AE219AE1C000ABAB1C /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B048AD219AE1C000ABAB1C /* FileWriter.swift */; };
 		08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */; };
@@ -194,6 +195,7 @@
 		0895DC462153A20C00663F12 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		0895DC48215409D400663F12 /* DetailedNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedNewsVC.swift; sourceTree = "<group>"; };
 		0895DC4A21540B3500663F12 /* NewsDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataCell.swift; sourceTree = "<group>"; };
+		08986261219E162400EBCB3E /* BarczaGedeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarczaGedeon.swift; sourceTree = "<group>"; };
 		08A2941F20FCAFFE008BF214 /* InformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsVC.swift; sourceTree = "<group>"; };
 		08B048AD219AE1C000ABAB1C /* FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
 		08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNDatabase.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				08A2941F20FCAFFE008BF214 /* InformationsVC.swift */,
 				0895DC3A21526DBD00663F12 /* DocumentsVC.swift */,
 				0895DC3C2152728300663F12 /* PDFWebViewVC.swift */,
+				08986261219E162400EBCB3E /* BarczaGedeon.swift */,
 			);
 			path = Informations;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				08CFCE082175ED6300A93B79 /* TrainingModel.swift in Sources */,
 				0895DC49215409D400663F12 /* DetailedNewsVC.swift in Sources */,
 				08C27C5E2179E45F00335F04 /* TrainingListVC.swift in Sources */,
+				08986262219E162400EBCB3E /* BarczaGedeon.swift in Sources */,
 				08D402F020F125730005038B /* AppDelegate.swift in Sources */,
 				0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */,
 				086CD511216A4D5B002DD2B2 /* TrainingVC.swift in Sources */,
