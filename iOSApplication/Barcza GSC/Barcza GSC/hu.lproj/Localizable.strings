@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  Barcza GSC
+
+  Created by Grimm Dániel on 2018. 11. 16..
+  Copyright © 2018. daniel.grimm. All rights reserved.
+*/
+
+"News" = "Hírek";
+"Results" = "Eredmények";
+"Standings" = "Tabella";
+"Team" = "Csapat";
+"PM" = "LM";
+"Round" = "forduló";
+"Board results" = "Táblánkénti eredmények";
+"Board" = "tábla";
+"Gallery" = "Galéria";
+"New game" = "Új játszma";
+"Flip board" = "Tábla megfordítása";
+"FEN copy" = "FEN kód másolása a vágólapra";
+"Share board" = "Állás megosztása képként";
+"Cancel" = "Mégsem";
+"Save game" = "Játszma mentése";
+"My saved games" = "Mentett játszmáim";
+"Export" = "Export";
+"Warning" = "Figyelmeztetés";
+"Delete" = "Törlés";
+"Confirmation1" = "Biztosan törölni szeretné ez a játszmát? Ez a művelet nem visszavonható.";
+"Confirmation2" = "Néhány információ nem lett megadva, biztosan el akarod menteni a játszmát?";
+"Yes" = "Igen";
+"No" = "Nem";
+"My Databases" = "Adatbázisaim";
+
+"HomeMenu" = "Főoldal";
+"NewsMenu" = "Hírek";
+"ChampionshipMenu" = "Bajnokság";
+"GalleryMenu" = "Galéria";
+"NewGameMenu" = "Új játszma";
+"MySavedGames" = "Játszmáim";
+"DatabaseMenu" = "Adatbázis";
+"ToolsMenu" = "Eszközök";
+"InformationMenu" = "Információk";
+"SettingsMenu" = "Beállítások";
+
+"DAY" = "Nap";
+"HOUR" = "Óra";
+"MINUTE" = "Perc";
+"SECONDS" = "Másodperc";
+
+"YourElo" = "Élőd";
+"OpponentElo" = "Ellenfél élője";
+"Kfactor" = "Szorzód";
+"Result" = "Eredmény";
+"Calculate" = "Számolj!";
+"RatingChangeTitle" = "ÉLŐ-pontszám kalkulátor";
+"Error" = "Hiba";
+"EloError1" = "Élő mező nincs kitöltve";
+"EloError2" = "Az élő pontszámnak 1000 és 3500 között kell lennie!";
+"NewCalc" = "Új kalkuláció";

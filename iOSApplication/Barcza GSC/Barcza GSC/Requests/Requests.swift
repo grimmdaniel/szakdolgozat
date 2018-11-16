@@ -192,7 +192,7 @@ extension ResultsVC{
                         }
                     }
                     for round in roundNumbers{
-                        rounds.append(Round(name: "\(round). forduló", matches: matches.filter({ (match) -> Bool in
+                        rounds.append(Round(name: "\(round). ", matches: matches.filter({ (match) -> Bool in
                             match.round == round
                         })))
                     }

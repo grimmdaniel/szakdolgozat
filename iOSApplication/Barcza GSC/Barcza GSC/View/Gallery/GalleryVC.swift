@@ -32,7 +32,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         galleryTableView.dataSource = self
         galleryTableView.isHidden = true
         
-        self.navigationItem.title = "Galéria"
+        self.navigationItem.title = "Gallery".localized
         
         self.view.backgroundColor = ColorTheme.barczaLightGray
         Utils.setUpNavbarColorAndSpecs(navigationController!)

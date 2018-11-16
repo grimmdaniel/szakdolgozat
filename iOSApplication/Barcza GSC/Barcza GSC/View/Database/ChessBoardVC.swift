@@ -26,15 +26,15 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
             presenter.sourceRect = sender.bounds
         }
         
-        actionSheet.addAction(UIAlertAction(title: "Flip board", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "Flip board".localized, style: .default, handler: { (alert:UIAlertAction!) -> Void in
             self.chessBoardView.flipChessBoard()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Copy FEN to clipboard", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "FEN copy".localized, style: .default, handler: { (alert:UIAlertAction!) -> Void in
             UIPasteboard.general.string = self.chessBoardView.generateFENFromBoard()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Share position as image", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+        actionSheet.addAction(UIAlertAction(title: "Share board".localized, style: .default, handler: { (alert:UIAlertAction!) -> Void in
             let photo = self.chessBoardView.snapshot()
             let objectsToShare = [photo ?? UIImage()]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -48,13 +48,13 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
             }
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = "Enter new game"
+        self.navigationItem.title = "New game".localized
     }
     
     override func viewDidLoad() {

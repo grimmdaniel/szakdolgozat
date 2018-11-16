@@ -61,7 +61,12 @@ extension String {
     var htmlToString: String {
         return htmlToAttributedString?.string ?? ""
     }
+    
+    var localized: String{
+        return NSLocalizedString(self, comment: "")
+    }
 }
+
 
 extension UIImage {
     static func makeImageWithColorAndSize(color: UIColor, size: CGSize) -> UIImage {

@@ -25,7 +25,7 @@ class StandingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         standingsTableView.delegate = self
         standingsTableView.dataSource = self
         
-        self.navigationItem.title = "Tabella"
+        self.navigationItem.title = "Standings".localized
         self.view.backgroundColor = ColorTheme.barczaLightGray
         Utils.setUpNavbarColorAndSpecs(navigationController!)
         
@@ -57,6 +57,8 @@ class StandingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "StandingInfoCell", for: indexPath) as! StandingInfoCell
             cell.selectionStyle = .none
+            cell.teamNameLabel.text = "Team".localized
+            cell.playedMatchesLabel.text = "PM".localized
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "StandingsDataCell", for: indexPath) as! StandingsDataCell
@@ -75,6 +77,7 @@ class StandingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "Standings".localized
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }

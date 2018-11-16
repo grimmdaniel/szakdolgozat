@@ -45,7 +45,7 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        navigationItem.title = "My Databases"
+        navigationItem.title = "My Databases".localized
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteDatabases))
     }
     

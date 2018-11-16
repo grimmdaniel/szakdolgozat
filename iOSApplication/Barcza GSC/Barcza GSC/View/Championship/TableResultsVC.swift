@@ -21,7 +21,7 @@ class TableResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Táblánkénti eredmények"
+        self.navigationItem.title = "Board results".localized
 
         tableResultsTableView.delegate = self
         tableResultsTableView.dataSource = self

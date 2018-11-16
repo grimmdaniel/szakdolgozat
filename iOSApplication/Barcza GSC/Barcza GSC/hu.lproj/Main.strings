@@ -1,0 +1,264 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1AZ-WI-bJh"; */
+"1AZ-WI-bJh.text" = "Label";
+
+/* Class = "UILabel"; text = "Barcza GSC"; ObjectID = "2Kx-cA-FeI"; */
+"2Kx-cA-FeI.text" = "Barcza GSC";
+
+/* Class = "UILabel"; text = "FM"; ObjectID = "2qe-eY-zg9"; */
+"2qe-eY-zg9.text" = "FM";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "4Kh-9e-d3X"; */
+"4Kh-9e-d3X.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "4PP-jN-sey"; */
+"4PP-jN-sey.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Calculate"; ObjectID = "6eR-ue-axm"; */
+"6eR-ue-axm.normalTitle" = "Calculate";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6nA-ZV-e5v"; */
+"6nA-ZV-e5v.text" = "Label";
+
+/* Class = "UILabel"; text = "1/2 - 1/2"; ObjectID = "79G-RV-aKn"; */
+"79G-RV-aKn.text" = "1/2 - 1/2";
+
+/* Class = "UILabel"; text = "10-18 évesek számára"; ObjectID = "7M8-mL-y9R"; */
+"7M8-mL-y9R.text" = "10-18 évesek számára";
+
+/* Class = "UITextField"; placeholder = "Opponent's elo"; ObjectID = "7NQ-zl-flJ"; */
+"7NQ-zl-flJ.placeholder" = "Opponent's elo";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "BTa-5Y-a8c"; */
+"BTa-5Y-a8c.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "10.5 - 10.5"; ObjectID = "BiG-67-Wxe"; */
+"BiG-67-Wxe.text" = "10.5 - 10.5";
+
+/* Class = "UITabBarItem"; title = "Calculator"; ObjectID = "C9r-ti-vBn"; */
+"C9r-ti-vBn.title" = "Calculator";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "CLu-Rj-CEw"; */
+"CLu-Rj-CEw.text" = "00";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CuW-hx-yCP"; */
+"CuW-hx-yCP.text" = "Label";
+
+/* Class = "UILabel"; text = "Óra"; ObjectID = "EJ3-EV-sB8"; */
+"EJ3-EV-sB8.text" = "Óra";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "Ecz-s6-aIj"; */
+"Ecz-s6-aIj.text" = "00";
+
+/* Class = "UILabel"; text = "Barcza GSC"; ObjectID = "Eeg-dV-RT8"; */
+"Eeg-dV-RT8.text" = "Barcza GSC";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Epb-p3-978"; */
+"Epb-p3-978.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "GF8-Uf-nb4"; */
+"GF8-Uf-nb4.text" = "Title";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "GbL-d3-tD7"; */
+"GbL-d3-tD7.text" = "00";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "GjJ-5Q-BvC"; */
+"GjJ-5Q-BvC.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "GwY-Lz-I7Z"; */
+"GwY-Lz-I7Z.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "E99"; ObjectID = "Ika-bL-His"; */
+"Ika-bL-His.text" = "E99";
+
+/* Class = "UILabel"; text = "Másodperc"; ObjectID = "Klm-VX-2VK"; */
+"Klm-VX-2VK.text" = "Másodperc";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "KtV-fA-cCE"; */
+"KtV-fA-cCE.text" = "Label";
+
+/* Class = "UILabel"; text = "E99"; ObjectID = "LmT-Bb-HyW"; */
+"LmT-Bb-HyW.text" = "E99";
+
+/* Class = "UILabel"; text = "Deep Blue (2301)"; ObjectID = "LmX-C6-oCB"; */
+"LmX-C6-oCB.text" = "Deep Blue (2301)";
+
+/* Class = "UILabel"; text = "Magnus Carlsen edzései"; ObjectID = "Mk3-n9-6Pu"; */
+"Mk3-n9-6Pu.text" = "Magnus Carlsen edzései";
+
+/* Class = "UILabel"; text = "2018. 11. 13. 10:00"; ObjectID = "Msm-ps-Bsg"; */
+"Msm-ps-Bsg.text" = "2018. 11. 13. 10:00";
+
+/* Class = "UILabel"; text = "TP"; ObjectID = "NcY-Ti-LAZ"; */
+"NcY-Ti-LAZ.text" = "TP";
+
+/* Class = "UILabel"; text = "99."; ObjectID = "O2M-sF-g6v"; */
+"O2M-sF-g6v.text" = "99.";
+
+/* Class = "UILabel"; text = "Barcza GSC"; ObjectID = "OkT-tO-fYQ"; */
+"OkT-tO-fYQ.text" = "Barcza GSC";
+
+/* Class = "UILabel"; text = "10 - 2"; ObjectID = "PGL-wW-QJx"; */
+"PGL-wW-QJx.text" = "10 - 2";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Plc-c0-602"; */
+"Plc-c0-602.text" = "Title";
+
+/* Class = "UILabel"; text = "Barcza GSC"; ObjectID = "QVW-X5-L8G"; */
+"QVW-X5-L8G.text" = "Barcza GSC";
+
+/* Class = "UILabel"; text = "Details"; ObjectID = "QXX-XY-oso"; */
+"QXX-XY-oso.text" = "Details";
+
+/* Class = "UILabel"; text = "Ooops, something went wrong :( Please try again later!"; ObjectID = "RgP-5V-FST"; */
+"RgP-5V-FST.text" = "Ooops, something went wrong :( Please try again later!";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SDa-my-2fN"; */
+"SDa-my-2fN.text" = "Label";
+
+/* Class = "UILabel"; text = "10-18 évesek számára"; ObjectID = "Sl4-gx-6bJ"; */
+"Sl4-gx-6bJ.text" = "10-18 évesek számára";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "TP1-6T-eB8"; */
+"TP1-6T-eB8.text" = "100";
+
+/* Class = "UIButton"; normalTitle = "Flip"; ObjectID = "TUv-tq-MtY"; */
+"TUv-tq-MtY.normalTitle" = "Flip";
+
+/* Class = "UILabel"; text = "ACM"; ObjectID = "UJf-ez-SPl"; */
+"UJf-ez-SPl.text" = "ACM";
+
+/* Class = "UILabel"; text = "Csapat"; ObjectID = "UMj-pQ-HH2"; */
+"UMj-pQ-HH2.text" = "Csapat";
+
+/* Class = "UILabel"; text = "Result"; ObjectID = "Vl6-mo-K02"; */
+"Vl6-mo-K02.text" = "Result";
+
+/* Class = "UILabel"; text = "1. tábla"; ObjectID = "X2n-ti-qiX"; */
+"X2n-ti-qiX.text" = "1. tábla";
+
+/* Class = "UILabel"; text = "MP"; ObjectID = "XPW-PM-kgz"; */
+"XPW-PM-kgz.text" = "MP";
+
+/* Class = "UILabel"; text = "LM"; ObjectID = "YT3-Mg-FcO"; */
+"YT3-Mg-FcO.text" = "LM";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "YiA-Ua-lTF"; */
+"YiA-Ua-lTF.text" = "100";
+
+/* Class = "UILabel"; text = "No games found"; ObjectID = "Ypz-vE-eIl"; */
+"Ypz-vE-eIl.text" = "No games found";
+
+/* Class = "UITextField"; placeholder = "Your elo"; ObjectID = "aCg-L6-sF1"; */
+"aCg-L6-sF1.placeholder" = "Your elo";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "aMj-MR-5Ny"; */
+"aMj-MR-5Ny.text" = "00";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aQf-UK-Zsn"; */
+"aQf-UK-Zsn.text" = "Label";
+
+/* Class = "UILabel"; text = "Nap"; ObjectID = "ajm-Mg-2v3"; */
+"ajm-Mg-2v3.text" = "Nap";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bU0-jK-Obx"; */
+"bU0-jK-Obx.text" = "Label";
+
+/* Class = "UILabel"; text = "Event"; ObjectID = "bXu-2l-E50"; */
+"bXu-2l-E50.text" = "Event";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "c9N-Mb-cGw"; */
+"c9N-Mb-cGw.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cH1-bh-OEr"; */
+"cH1-bh-OEr.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Eredmények"; ObjectID = "cdL-ew-TSf"; */
+"cdL-ew-TSf.title" = "Eredmények";
+
+/* Class = "UILabel"; text = "Ooops, something went wrong :( Please try again later!"; ObjectID = "csC-sa-uNo"; */
+"csC-sa-uNo.text" = "Ooops, something went wrong :( Please try again later!";
+
+/* Class = "UILabel"; text = "K factor"; ObjectID = "dAR-tA-xm1"; */
+"dAR-tA-xm1.text" = "K factor";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "drR-Aw-AiG"; */
+"drR-Aw-AiG.text" = "100";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "eT6-ED-8O4"; */
+"eT6-ED-8O4.text" = "Title";
+
+/* Class = "UILabel"; text = "Barcza GSC"; ObjectID = "enD-2E-Xzj"; */
+"enD-2E-Xzj.text" = "Barcza GSC";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fPS-Q4-Kpl"; */
+"fPS-Q4-Kpl.text" = "Label";
+
+/* Class = "UILabel"; text = "John Doe (2201)"; ObjectID = "fhC-jd-U20"; */
+"fhC-jd-U20.text" = "John Doe (2201)";
+
+/* Class = "UILabel"; text = "Details"; ObjectID = "gNq-sr-FXd"; */
+"gNq-sr-FXd.text" = "Details";
+
+/* Class = "UILabel"; text = "Barcza GSC"; ObjectID = "gbf-tr-GoX"; */
+"gbf-tr-GoX.text" = "Barcza GSC";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hyi-Z8-RMJ"; */
+"hyi-Z8-RMJ.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "jTM-t9-vdB"; */
+"jTM-t9-vdB.text" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jr4-Wx-kQn"; */
+"jr4-Wx-kQn.text" = "Label";
+
+/* Class = "UILabel"; text = "Ooops, something went wrong :( Please try again later!"; ObjectID = "qP3-5C-dk5"; */
+"qP3-5C-dk5.text" = "Ooops, something went wrong :( Please try again later!";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "qtE-Mr-d0e"; */
+"qtE-Mr-d0e.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "rPQ-sT-fjk"; */
+"rPQ-sT-fjk.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Perc"; ObjectID = "tTX-7J-sP0"; */
+"tTX-7J-sP0.text" = "Perc";
+
+/* Class = "UILabel"; text = "10-18 évesek számára"; ObjectID = "tbM-rX-eTG"; */
+"tbM-rX-eTG.text" = "10-18 évesek számára";
+
+/* Class = "UILabel"; text = "#"; ObjectID = "tgp-7h-peD"; */
+"tgp-7h-peD.text" = "#";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ueg-e9-M0d"; */
+"ueg-e9-M0d.text" = "Label";
+
+/* Class = "UILabel"; text = "carlsen.magnus@gmail.com"; ObjectID = "vcG-U1-8u8"; */
+"vcG-U1-8u8.text" = "carlsen.magnus@gmail.com";
+
+/* Class = "UITabBarItem"; title = "Tabella"; ObjectID = "vpV-aZ-eCx"; */
+"vpV-aZ-eCx.title" = "Tabella";
+
+/* Class = "UILabel"; text = "0.0"; ObjectID = "xxM-KO-GbM"; */
+"xxM-KO-GbM.text" = "0.0";
+
+/* Class = "UILabel"; text = "Ooops, something went wrong :( Please try again later!"; ObjectID = "xzG-Vd-m77"; */
+"xzG-Vd-m77.text" = "Ooops, something went wrong :( Please try again later!";
+
+/* Class = "UILabel"; text = "Move count: 1"; ObjectID = "yFh-i2-B2T"; */
+"yFh-i2-B2T.text" = "Move count: 1";
+
+/* Class = "UILabel"; text = "Vasas SC"; ObjectID = "ybS-FV-PXc"; */
+"ybS-FV-PXc.text" = "Vasas SC";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yeZ-OB-1ix"; */
+"yeZ-OB-1ix.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ypl-XN-2vK"; */
+"ypl-XN-2vK.text" = "Label";
+
+/* Class = "UILabel"; text = "2018.12.29 10:00"; ObjectID = "yyU-Mr-obJ"; */
+"yyU-Mr-obJ.text" = "2018.12.29 10:00";
+
+/* Class = "UILabel"; text = "Barcza GSC"; ObjectID = "zTT-n4-HW6"; */
+"zTT-n4-HW6.text" = "Barcza GSC";

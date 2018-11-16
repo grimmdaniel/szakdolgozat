@@ -20,6 +20,8 @@ class ChampionshipBaseVC: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)], for: .normal)
         if let tabBarItems = self.tabBar.items {
+            tabBarItems[0].title = "Results".localized
+            tabBarItems[1].title = "Standings".localized
             for tabBarItem in tabBarItems {
                 tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -self.tabBar.frame.height/4)
             }

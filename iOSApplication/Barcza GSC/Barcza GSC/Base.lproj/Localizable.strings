@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  Barcza GSC
+
+  Created by Grimm Dániel on 2018. 11. 16..
+  Copyright © 2018. daniel.grimm. All rights reserved.
+*/
+
+"News" = "News";
+"Results" = "Results";
+"Standings" = "Standings";
+"Team" = "Team";
+"PM" = "PM";
+"Round" = "round";
+"Board results" = "Board results";
+"Board" = "board";
+"Gallery" = "Gallery";
+"New game" = "Enter new game";
+"Flip board" = "Flip board";
+"FEN copy" = "Copy FEN to clipboard";
+"Share board" = "Share position as image";
+"Cancel" = "Cancel";
+"Save game" = "Save game";
+"My saved games" = "My saved games";
+"Warning" = "Warning";
+"Delete" = "Delete";
+"Confirmation1" = "Are you sure want to delete this game? This operation cannot be undone.";
+"Confirmation2" = "Some information hasn't been added, are you sure want to continue?";
+"Yes" = "Yes";
+"No" = "No";
+"My Databases" = "My Databases";
+
+
+"HomeMenu" = "Home";
+"NewsMenu" = "News";
+"ChampionshipMenu" = "Championship";
+"GalleryMenu" = "Gallery";
+"NewGameMenu" = "New game";
+"MySavedGames" = "My games";
+"DatabaseMenu" = "Database";
+"ToolsMenu" = "Tools";
+"InformationMenu" = "Informations";
+"SettingsMenu" = "Settings";
+
+"DAY" = "Day";
+"HOUR" = "Hour";
+"MINUTE" = "Minute";
+"SECONDS" = "Seconds";
+
+"YourElo" = "Your elo";
+"OpponentElo" = "Opponent's elo";
+"Kfactor" = "K factor";
+"Result" = "Result";
+"Calculate" = "Calculate";
+"RatingChangeTitle" = "Rating Change Calculator";
+"Error" = "Error";
+"EloError1" = "Elo field is empty!";
+"EloError2" = "Elo points must be between 1000 and 3500!";
+"NewCalc" = "New calculation";

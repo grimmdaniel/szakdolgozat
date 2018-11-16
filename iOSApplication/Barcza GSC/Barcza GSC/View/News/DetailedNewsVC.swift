@@ -19,7 +19,7 @@ class DetailedNewsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         detailedNewsTableView.estimatedRowHeight = 70
         detailedNewsTableView.rowHeight = UITableView.automaticDimension
         
-        self.navigationItem.title = "Hírek"
+        self.navigationItem.title = "News".localized
         detailedNewsTableView.delegate = self
         detailedNewsTableView.dataSource = self
         detailedNewsTableView.separatorStyle = .none

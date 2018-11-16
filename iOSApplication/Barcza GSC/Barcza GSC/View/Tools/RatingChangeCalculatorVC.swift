@@ -77,7 +77,11 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
         yourEloTextField.delegate = self
         
         calculateEloChangeBtn.layer.cornerRadius = 15.0
-        navigationItem.title = "Rating Change Calculator"
+        navigationItem.title = "RatingChangeTitle".localized
+        resultLbl.text = "Result".localized
+        kfactorLabel.text = "Kfactor".localized
+        myEloTextField.placeholder = "YourElo".localized
+        yourEloTextField.placeholder = "OpponentElo".localized
         
         myEloTextField.addDoneButtonToKeyboard(myAction:  #selector(self.myEloTextField.resignFirstResponder))
         yourEloTextField.addDoneButtonToKeyboard(myAction:  #selector(self.yourEloTextField.resignFirstResponder))
@@ -99,7 +103,7 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
         resultPicker.isHidden = false
         myEloTextField.isHidden = false
         yourEloTextField.isHidden = false
-        calculateEloChangeBtn.setTitle("Calculate", for: .normal)
+        calculateEloChangeBtn.setTitle("Calculate".localized, for: .normal)
         kfactorLabel.isHidden = false
         resultLbl.isHidden = false
         calculateNow = true
@@ -118,7 +122,7 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
     func getData(){
         
         if myEloTextField.text == "" || yourEloTextField.text == ""{
-            let ac = UIAlertController(title: "Error!", message: "Elo field is empty!", preferredStyle: .alert)
+            let ac = UIAlertController(title: "Error".localized, message: "EloError1".localized, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
             return
@@ -128,7 +132,7 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
         opponentElo = (yourEloTextField.text! as NSString).doubleValue
         
         if myElo < 1000 || myElo > 3500 || opponentElo < 1000 || opponentElo > 3500 {
-            let ac = UIAlertController(title: "Error!", message: "Elo must be between 1000 and 3500!", preferredStyle: .alert)
+            let ac = UIAlertController(title: "Error".localized, message: "EloError2".localized, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
             return
@@ -158,7 +162,7 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
         yourEloTextField.isHidden = true
         kfactorLabel.isHidden = true
         resultLbl.isHidden = true
-        calculateEloChangeBtn.setTitle("New calculation", for: .normal)
+        calculateEloChangeBtn.setTitle("NewCalc".localized, for: .normal)
         calculateNow = false
         myEloTextField.text = ""
         yourEloTextField.text = ""

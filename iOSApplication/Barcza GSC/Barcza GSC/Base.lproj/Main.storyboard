@@ -1577,6 +1577,10 @@
                                                 <constraint firstItem="NcY-Ti-LAZ" firstAttribute="leading" secondItem="XPW-PM-kgz" secondAttribute="trailing" constant="10" id="zee-yj-gZJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playedMatchesLabel" destination="YT3-Mg-FcO" id="Xkz-bt-5at"/>
+                                            <outlet property="teamNameLabel" destination="UMj-pQ-HH2" id="K6W-Ri-uAf"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StandingsDataCell" rowHeight="72" id="H6o-Im-acE" customClass="StandingsDataCell" customModule="Barcza_GSC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="72"/>

@@ -48,6 +48,12 @@ class Main: UIViewController {
         navigationController!.navigationBar.tintColor = .black
         navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont(name: "Helvetica-Bold", size: 17)!]
         
+        
+        dayNameLabel.text = "DAY".localized
+        hourNameLabel.text = "HOUR".localized
+        minuteNameLabel.text = "MINUTE".localized
+        secondsNameLabel.text = "SECONDS".localized
+        
         setUPViewsUI(views: [dayBackgroundView,hourBackgroundView,minuteBackgroundView,secondsBackgroundView])
         
         timeUntilNextMatch = 1542173200 - NSDate().timeIntervalSince1970 

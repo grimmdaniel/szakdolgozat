@@ -43,7 +43,7 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell")!
-        cell.textLabel?.text = menuItems[indexPath.row].0.rawValue
+        cell.textLabel?.text = Menu.getTitle(for: menuItems[indexPath.row].0.rawValue)
         cell.imageView?.image = UIImage(named: menuItems[indexPath.row].1)
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
@@ -81,15 +81,19 @@ class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     enum Menu: String{
         
-        case home = "Főoldal",
-        news = "Hírek",
-        championship = "Bajnokság",
-        gallery = "Galéria",
-        new_game = "Új játszma",
-        my_saved_games = "Játszmáim",
-        database = "Adatbázis",
-        tools = "Eszközök",
-        informations = "Információk",
-        settings = "Beállítások"
+        case home = "HomeMenu",
+        news = "NewsMenu",
+        championship = "ChampionshipMenu",
+        gallery = "GalleryMenu",
+        new_game = "NewGameMenu",
+        my_saved_games = "MySavedGames",
+        database = "DatabaseMenu",
+        tools = "ToolsMenu",
+        informations = "InformationMenu",
+        settings = "SettingsMenu"
+        
+        static func getTitle(for string: String) -> String{
+            return string.localized
+        }
     }
 }

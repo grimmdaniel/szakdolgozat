@@ -24,7 +24,7 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
         resultsTableView.dataSource = self
         resultsTableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        self.navigationItem.title = "Eredmények"
+        self.navigationItem.title = "Results".localized
         self.view.backgroundColor = ColorTheme.barczaLightGray
         Utils.setUpNavbarColorAndSpecs(navigationController!)
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
@@ -50,7 +50,7 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.title = "Eredmények"
+        self.navigationItem.title = "Results".localized
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
@@ -109,7 +109,7 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Ex
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = ExpendableHeaderView()
-        header.customInit(title: allRounds[section].name, section: section, delegate: self)
+        header.customInit(title: allRounds[section].name + "\("Round".localized)", section: section, delegate: self)
         return header
     }
     

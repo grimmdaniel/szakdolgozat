@@ -10,4 +10,7 @@ import UIKit
 
 class StandingInfoCell: UITableViewCell {
 
+    
+    @IBOutlet weak var teamNameLabel: UILabel!
+    @IBOutlet weak var playedMatchesLabel: UILabel!
 }

@@ -46,7 +46,7 @@ class TableResultsValueCell: UITableViewCell {
             awaySideColorView.layer.borderWidth = 1.0
             awaySideColorView.layer.borderColor = UIColor.black.cgColor
         }
-        boardNumberLabel.text = "\(data.boardNumber). tábla"
+        boardNumberLabel.text = "\(data.boardNumber). \("Board".localized)"
         homeNameLabel.text = data.homePlayerName
         awayNameLabel.text = data.awayPlayerName
         homeTitleLabel.text = data.homeTitle + " \(data.homeElo)"

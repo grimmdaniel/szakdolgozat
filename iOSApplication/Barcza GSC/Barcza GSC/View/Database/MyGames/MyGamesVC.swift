@@ -20,7 +20,7 @@ class MyGamesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Export", style: .plain, target: self, action: #selector(saveDataToFile))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Export".localized, style: .plain, target: self, action: #selector(saveDataToFile))
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
@@ -46,7 +46,7 @@ class MyGamesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = "My saved games"
+        self.navigationItem.title = "My saved games".localized
     }
     
     private func createPGNTextForExport() -> String{
@@ -101,8 +101,8 @@ class MyGamesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
     }
     
     private func delete(_ indexPath: IndexPath){
-        let infoAlert = UIAlertController(title: "Warning", message: "Are you sure want to delete this game? This operation cannot be undone.", preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Delete", style: .destructive, handler: {
+        let infoAlert = UIAlertController(title: "Warning".localized, message: "Confirmation1".localized, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Delete".localized, style: .destructive, handler: {
             action in
             
             let realm = try! Realm()
@@ -120,7 +120,7 @@ class MyGamesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
                 }
             }
         })
-        let rejectAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let rejectAction = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         infoAlert.addAction(rejectAction)
         infoAlert.addAction(confirmAction)
         present(infoAlert, animated: true, completion: nil)

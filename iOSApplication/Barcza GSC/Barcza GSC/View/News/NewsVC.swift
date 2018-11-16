@@ -30,7 +30,7 @@ class NewsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         newsTableView.backgroundColor = ColorTheme.barczaLightGray
         newsTableView.isHidden = true
         Utils.setUpNavbarColorAndSpecs(navigationController!)
-        self.navigationItem.title = "Hírek"
+        self.navigationItem.title = "News".localized
         self.view.backgroundColor = ColorTheme.barczaLightGray
         
         SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)

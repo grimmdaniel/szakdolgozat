@@ -78,7 +78,7 @@ class SaveGameVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Save game"
+        self.navigationItem.title = "Save game".localized
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveGame))
 
         resultPicker.delegate = self
@@ -106,12 +106,12 @@ class SaveGameVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @objc func saveGame(){
         for i in tags{
             if i.value == ""{
-                let infoAlert = UIAlertController(title: "Warning", message: "Some information hasn't been added, are you sure want to continue?", preferredStyle: .alert)
-                let confirmAction = UIAlertAction(title: "Yes", style: .default, handler: {
+                let infoAlert = UIAlertController(title: "Warning".localized, message: "Confirmation2".localized, preferredStyle: .alert)
+                let confirmAction = UIAlertAction(title: "Yes".localized, style: .default, handler: {
                     action in
                     self.saveGameToDatabase(game: self.createPGNText())
                 })
-                let rejectAction = UIAlertAction(title: "No", style: .default, handler: nil)
+                let rejectAction = UIAlertAction(title: "No".localized, style: .default, handler: nil)
                 infoAlert.addAction(confirmAction)
                 infoAlert.addAction(rejectAction)
                 present(infoAlert, animated: true, completion: nil)
