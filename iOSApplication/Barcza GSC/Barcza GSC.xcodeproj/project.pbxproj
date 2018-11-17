@@ -26,6 +26,7 @@
 		082B521E215FF03F00F06273 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B521D215FF03F00F06273 /* Team.swift */; };
 		082B5220215FF74C00F06273 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B521F215FF74C00F06273 /* Round.swift */; };
 		082F8C2C21162F7800A52D7F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F8C2B21162F7800A52D7F /* Stack.swift */; };
+		0839F52621A0505700BA2547 /* NextMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0839F52521A0505700BA2547 /* NextMatch.swift */; };
 		08400B562184867700D09E28 /* TestPawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08400B552184867700D09E28 /* TestPawn.swift */; };
 		08400B582184D9AD00D09E28 /* TestKnight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08400B572184D9AD00D09E28 /* TestKnight.swift */; };
 		08419A3F219353B800258823 /* QueenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08419A3E219353B800258823 /* QueenTest.swift */; };
@@ -158,6 +159,7 @@
 		082B521D215FF03F00F06273 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		082B521F215FF74C00F06273 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		082F8C2B21162F7800A52D7F /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		0839F52521A0505700BA2547 /* NextMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextMatch.swift; sourceTree = "<group>"; };
 		08400B4B2184858500D09E28 /* Barcza GSCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barcza GSCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08400B4F2184858500D09E28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08400B552184867700D09E28 /* TestPawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPawn.swift; sourceTree = "<group>"; };
@@ -462,6 +464,7 @@
 				08CFCE072175ED6300A93B79 /* TrainingModel.swift */,
 				08CFCE092175F6EF00A93B79 /* Storage.swift */,
 				0802EEE0218E00E0007DD9E3 /* BoardResultModel.swift */,
+				0839F52521A0505700BA2547 /* NextMatch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -840,6 +843,7 @@
 				0801785320F13525009A7982 /* Settings.swift in Sources */,
 				082F8C2C21162F7800A52D7F /* Stack.swift in Sources */,
 				08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */,
+				0839F52621A0505700BA2547 /* NextMatch.swift in Sources */,
 				08DFF318218F13DA0069B713 /* TermsAndConditions.swift in Sources */,
 				08F4129720F218D200166F98 /* RatingChange.swift in Sources */,
 				0864C8AB20FBBC8800435EE3 /* GalleryVC.swift in Sources */,

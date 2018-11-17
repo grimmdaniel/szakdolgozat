@@ -57,3 +57,4 @@
 "EloError1" = "Élő mező nincs kitöltve";
 "EloError2" = "Az élő pontszámnak 1000 és 3500 között kell lennie!";
 "NewCalc" = "Új kalkuláció";
+"nextmatch" = "Jelenleg nincs következő mérkőzés!";

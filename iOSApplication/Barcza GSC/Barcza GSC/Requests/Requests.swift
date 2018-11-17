@@ -321,11 +321,32 @@ extension StarterVC{
                     reject(NSError(domain:"Did not receive nextMatch/all data",code: 102)); return
                 }
                 
-                guard let nextMatches = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
+                guard let matches = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
                     reject(NSError(domain: "Could not get JSON for nextMatch/all call", code: 103)); return
                 }
                 
-                print(nextMatches)
+                
+                var matchesToSave = [NextMatch]()
+                
+                for match in matches{
+                    
+                    let id = match["id"] as? Int ?? -1
+                    let homeName = match["home_name"] as? String ?? "N/A"
+                    let awayName = match["away_name"] as? String ?? "N/A"
+                    let homeLogo = match["home_logo"] as? String
+                    let awayLogo = match["away_logo"] as? String
+                    let date = match["date"] as? String ?? ""
+                    
+                    if let nextMatch = NextMatch.createMatchFactory(id: id, homeTeamName: homeName, awayTeamName: awayName, homeTeamLogo: homeLogo, awayTeamLogo: awayLogo, date: date){
+                        if nextMatch.matchDate.timeIntervalSinceNow.sign == .plus{
+                            // future match
+                            matchesToSave.append(nextMatch)
+                        }
+                    }
+                }
+                Storage.nextMatchesStorage = matchesToSave.sorted(by: { (lhs, rhs) -> Bool in
+                    lhs.matchDate < rhs.matchDate
+                })
                 fulfill(())
             }).resume()
         }

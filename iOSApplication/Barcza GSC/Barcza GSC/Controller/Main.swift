@@ -54,12 +54,9 @@ class Main: UIViewController {
         minuteNameLabel.text = "MINUTE".localized
         secondsNameLabel.text = "SECONDS".localized
         
-        matchDateLabel.text = "2018. 12. 31. 23:59"
-        
+        setUpView()
         setUPViewsUI(views: [dayBackgroundView,hourBackgroundView,minuteBackgroundView,secondsBackgroundView])
         
-        timeUntilNextMatch = 1546300799 - NSDate().timeIntervalSince1970
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateCountdown)), userInfo: nil, repeats: true)
     }
     
     @objc func updateCountdown(){
@@ -69,6 +66,46 @@ class Main: UIViewController {
             timeUntilNextMatch -= 1.0
             timeString(time: timeUntilNextMatch)
             self.view.setNeedsDisplay()
+        }
+    }
+    
+    
+    private func convertBackDateToString(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy.MM.dd hh:mm"
+        return dateFormatter.string(from: date)
+    }
+    
+    private func setUpView(){
+        if !Storage.nextMatchesStorage.isEmpty{
+            let nextMatch = Storage.nextMatchesStorage.first!
+            
+            homeTeamNameLabel.text = nextMatch.homeTeamName
+            awayTeamNameLabel.text = nextMatch.awayTeamName
+            
+            if let homeURL = nextMatch.homeTeamLogo{
+                homeTeamLogoImageView.sd_setImage(with: homeURL, placeholderImage: #imageLiteral(resourceName: "teamLogoPlaceholder"))
+            }else{
+                homeTeamLogoImageView.image = #imageLiteral(resourceName: "teamLogoPlaceholder")
+            }
+            
+            if let awayURL = nextMatch.awayTeamLogo{
+                awayTeamLogoImageView.sd_setImage(with: awayURL, placeholderImage: #imageLiteral(resourceName: "teamLogoPlaceholder"))
+            }else{
+                awayTeamLogoImageView.image = #imageLiteral(resourceName: "teamLogoPlaceholder")
+            }
+            
+            matchDateLabel.text = convertBackDateToString(date: nextMatch.matchDate)
+            timeUntilNextMatch = nextMatch.matchDate.timeIntervalSinceNow
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateCountdown)), userInfo: nil, repeats: true)
+        }else{
+            homeTeamNameLabel.text = "N/A"
+            awayTeamNameLabel.text = "N/A"
+            matchDateLabel.text = "nextmatch".localized
+            homeTeamLogoImageView.image = #imageLiteral(resourceName: "teamLogoPlaceholder")
+            awayTeamLogoImageView.image = #imageLiteral(resourceName: "teamLogoPlaceholder")
+            setTimeLabels(day: 0, hour: 0, minute: 0, sec: 0)
         }
     }
     

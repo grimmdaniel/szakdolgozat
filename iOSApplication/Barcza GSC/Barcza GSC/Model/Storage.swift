@@ -11,4 +11,5 @@ import Foundation
 class Storage{
     
     static var traningStorage = [TrainingModel]()
+    static var nextMatchesStorage = [NextMatch]()
 }

@@ -57,3 +57,4 @@
 "EloError1" = "Elo field is empty!";
 "EloError2" = "Elo points must be between 1000 and 3500!";
 "NewCalc" = "New calculation";
+"nextmatch" = "No next match available yet!";
