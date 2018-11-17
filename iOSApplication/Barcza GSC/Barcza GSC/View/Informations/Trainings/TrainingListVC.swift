@@ -17,10 +17,14 @@ class TrainingListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         trainingNames = getUniqueTrainerNames(from: Storage.traningStorage)
 
-        self.navigationItem.title = "Edzések"
+        self.navigationItem.title = "trainings".localized
         trainingListTableView.delegate = self
         trainingListTableView.dataSource = self
         trainingListTableView.tableFooterView = UIView(frame: CGRect.zero)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationItem.title = "trainings".localized
     }
 
     private func getUniqueTrainerNames(from data: [TrainingModel]) -> [String]{
@@ -55,7 +59,7 @@ class TrainingListVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return trainingNames[section] + " edzései"
+        return trainingNames[section] + " "+"trainingsof".localized
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

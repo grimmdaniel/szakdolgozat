@@ -3263,9 +3263,9 @@
         <image name="misc" width="42" height="11"/>
         <image name="placeholder" width="300" height="169"/>
         <image name="rightArrow" width="100" height="100"/>
-        <image name="training_info" width="40" height="40"/>
-        <image name="training_location" width="16" height="20"/>
-        <image name="training_time" width="22" height="22"/>
+        <image name="training_info" width="20" height="20"/>
+        <image name="training_location" width="20" height="20"/>
+        <image name="training_time" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="m9S-nF-pDs"/>

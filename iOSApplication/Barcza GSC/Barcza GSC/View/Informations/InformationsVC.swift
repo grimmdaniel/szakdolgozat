@@ -12,7 +12,7 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     @IBOutlet weak var informationsTableView: UITableView!
     
-    var categories = ["Dokumentumok","Edzések","Névadónk"]
+    var categories = ["documents".localized,"trainings".localized,"history".localized]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,12 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
         informationsTableView.dataSource = self
         informationsTableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        self.navigationItem.title = "Információk"
+        self.navigationItem.title = "informations".localized
         Utils.setUpNavbarColorAndSpecs(navigationController!)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = "Információk"
+        self.navigationItem.title = "informations".localized
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,7 +55,7 @@ class InformationsVC: UIViewController, UITableViewDataSource,UITableViewDelegat
         }else if indexPath.row == 1{
             self.navigationItem.title = ""
             if Storage.traningStorage.isEmpty {
-                let infoAlert = UIAlertController(title: "Information", message: "No trainings are available yet", preferredStyle: .alert)
+                let infoAlert = UIAlertController(title: "informations".localized, message: "trainingmessage".localized, preferredStyle: .alert)
                 let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
                 infoAlert.addAction(confirmAction)
                 present(infoAlert, animated: true, completion: nil)

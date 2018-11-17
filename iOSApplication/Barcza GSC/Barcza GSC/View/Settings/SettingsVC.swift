@@ -12,7 +12,8 @@ class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var settingsTableView: UITableView!
     
-    let settings = ["Nyelv","Felhasználási feltételek","Open Source","About"]
+    let settings = [ "terms".localized,"privacy".localized,"opensource".localized,"about".localized]
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,8 +25,12 @@ class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "sandwichmenu.png"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-        self.navigationItem.title = "Beállítások"
+        self.navigationItem.title = "settings".localized
         Utils.setUpNavbarColorAndSpecs(navigationController!)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationItem.title = "settings".localized
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,6 +49,7 @@ class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationItem.title = ""
         if indexPath.row == 1{
             performSegue(withIdentifier: "terms", sender: nil)
         }else if indexPath.row == 2{

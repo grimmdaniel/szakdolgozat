@@ -58,3 +58,16 @@
 "EloError2" = "Az élő pontszámnak 1000 és 3500 között kell lennie!";
 "NewCalc" = "Új kalkuláció";
 "nextmatch" = "Jelenleg nincs következő mérkőzés!";
+
+"documents" = "Dokumentumok";
+"trainings" = "Edzések";
+"trainingsof" = "edzései";
+"history" = "Névadónk";
+"informations" = "Információk";
+"trainingmessage" = "Jelenleg az edzések nem elérhetők.";
+
+"terms" = "Felhasználási feltételek";
+"privacy" = "Adatvédelem";
+"opensource" = "Nyílt forráskód licenszek";
+"about" = "Névjegy";
+"settings" = "Beállítások";
