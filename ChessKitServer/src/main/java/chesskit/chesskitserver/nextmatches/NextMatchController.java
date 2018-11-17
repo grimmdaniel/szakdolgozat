@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chesskit.chesskitserver.tableresults;
+package chesskit.chesskitserver.nextmatches;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,26 +19,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 
 @Controller
-@RequestMapping(path="/tableresults")
-public class TableResultsController {
+@RequestMapping(path="/nextmatch")
+public class NextMatchController {
     
     @Autowired
-    private TableResultsRepository repository;
+    private NextMatchRepository repository;
     
     @GetMapping("/{id}")
-    public ResponseEntity<TableResults> getOne(@PathVariable Integer id) {
-        TableResults result = repository.findOne(id);
-        return ResponseEntity.ok(result);
+    public ResponseEntity<NextMatch> getOne(@PathVariable Integer id) {
+        NextMatch match = repository.findOne(id);
+        return ResponseEntity.ok(match);
     }
     
     @GetMapping("/all")
-    public @ResponseBody Iterable<TableResults> getAllTableResults(){
+    public @ResponseBody Iterable<NextMatch> getAllNews(){
         return repository.findAll();
     }
-    
-    @GetMapping("/result/{home}/{away}")
-    public @ResponseBody Iterable<TableResults> getFilteredMatchResults(@PathVariable Integer home, @PathVariable Integer away){
-        return repository.find(home, away);
-    }
-    
 }
