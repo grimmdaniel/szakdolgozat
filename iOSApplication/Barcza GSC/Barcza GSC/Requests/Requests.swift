@@ -301,6 +301,36 @@ extension TableResultsVC{
 }
 
 extension StarterVC{
+    
+    func getNextMatchData() -> Promise<Void>{
+        return Promise<Void>{ fulfill, reject in
+            log.info("Getting next matches")
+            let nextMatchURLString = Settings.rootURL + "/nextmatch/all"
+            guard let nextMatchURL = URL(string: nextMatchURLString) else {
+                reject(NSError(domain: "Error: cannot create nextmatch URL", code: 100, userInfo: nil));return
+            }
+            var nextMatchURLRequest = URLRequest(url: nextMatchURL)
+            nextMatchURLRequest.allHTTPHeaderFields = Settings.headers
+            URLSession.shared.dataTask(with: nextMatchURLRequest, completionHandler: { (data, response, error) in
+                
+                guard error == nil else {
+                    reject(NSError(domain:"Error getting response from nextMatch/all \(error!)",code: 101)); return
+                }
+                
+                guard let responseData = data else {
+                    reject(NSError(domain:"Did not receive nextMatch/all data",code: 102)); return
+                }
+                
+                guard let nextMatches = (try? JSONSerialization.jsonObject(with: responseData)) as? [[String:Any]] else {
+                    reject(NSError(domain: "Could not get JSON for nextMatch/all call", code: 103)); return
+                }
+                
+                print(nextMatches)
+                fulfill(())
+            }).resume()
+        }
+    }
+    
     func getTrainingsData() -> Promise<Void>{
         return Promise<Void>{ fulfill, reject in
             log.info("Getting trainings...")

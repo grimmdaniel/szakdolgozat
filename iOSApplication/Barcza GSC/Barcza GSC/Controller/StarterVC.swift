@@ -24,14 +24,19 @@ class StarterVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        getTrainingsData().then { (completed) -> () in
-            log.info("Successfully gathered trainings data")
-        }.catch { (error) in
+        getNextMatchData().then(execute: { (completed) -> () in
+            log.info("Successfully gathered nextmatch data")
+        }).catch(execute: { (error) in
             log.error(error)
-        }.always {
-            self.revealingSplashView.finishHeartBeatAnimation()
-            self.performSegue(withIdentifier: "startApplication", sender: nil)
+        }).always {
+            self.getTrainingsData().then { (completed) -> () in
+                log.info("Successfully gathered trainings data")
+            }.catch { (error) in
+                log.error(error)
+            }.always {
+                self.revealingSplashView.finishHeartBeatAnimation()
+                self.performSegue(withIdentifier: "startApplication", sender: nil)
+            }
         }
     }
-    
 }

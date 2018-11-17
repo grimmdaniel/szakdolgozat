@@ -54,9 +54,11 @@ class Main: UIViewController {
         minuteNameLabel.text = "MINUTE".localized
         secondsNameLabel.text = "SECONDS".localized
         
+        matchDateLabel.text = "2018. 12. 31. 23:59"
+        
         setUPViewsUI(views: [dayBackgroundView,hourBackgroundView,minuteBackgroundView,secondsBackgroundView])
         
-        timeUntilNextMatch = 1542173200 - NSDate().timeIntervalSince1970 
+        timeUntilNextMatch = 1546300799 - NSDate().timeIntervalSince1970
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateCountdown)), userInfo: nil, repeats: true)
     }
     
