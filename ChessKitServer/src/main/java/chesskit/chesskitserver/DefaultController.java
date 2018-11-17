@@ -5,7 +5,6 @@
  */
 package chesskit.chesskitserver;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DefaultController {
     @RequestMapping("/")
     public String index() {
-        return "Hello world!";
+        return "Official server for Barcza GSC application. All rights reserved. 2018.";
     }
     //@GetMapping("")
     //public String player()

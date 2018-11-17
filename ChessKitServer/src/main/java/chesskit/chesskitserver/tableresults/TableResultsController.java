@@ -5,7 +5,7 @@
  */
 package chesskit.chesskitserver.tableresults;
 
-import chesskit.chesskitserver.BgscNews;
+import chesskit.chesskitserver.news.BgscNews;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
