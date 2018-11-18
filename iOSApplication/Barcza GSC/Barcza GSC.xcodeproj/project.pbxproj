@@ -68,6 +68,7 @@
 		08B048AE219AE1C000ABAB1C /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B048AD219AE1C000ABAB1C /* FileWriter.swift */; };
 		08B80864219ECD0000904526 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08B80862219ECD0000904526 /* Localizable.strings */; };
 		08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */; };
+		08BDA87321A1D88000435079 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BDA87221A1D88000435079 /* AboutVC.swift */; };
 		08C27C5E2179E45F00335F04 /* TrainingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C27C5D2179E45F00335F04 /* TrainingListVC.swift */; };
 		08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */; };
 		08CCA2092192129000184611 /* SaveGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CCA2082192129000184611 /* SaveGameVC.swift */; };
@@ -206,6 +207,7 @@
 		08B80863219ECD0000904526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		08B80867219ECD5E00904526 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
 		08BC3332214CF9DF0059CBA0 /* PGNDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNDatabase.swift; sourceTree = "<group>"; };
+		08BDA87221A1D88000435079 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		08C27C5D2179E45F00335F04 /* TrainingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingListVC.swift; sourceTree = "<group>"; };
 		08C4EB6C2145A2C7002ACD23 /* ChessBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessBoardVC.swift; sourceTree = "<group>"; };
 		08CCA2082192129000184611 /* SaveGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGameVC.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 				08DFF311218EFBDB0069B713 /* SettingsVC.swift */,
 				08DFF313218EFFD30069B713 /* OpenSourceVC.swift */,
 				08DFF315218F02C30069B713 /* DetailedOpenSourceVC.swift */,
+				08BDA87221A1D88000435079 /* AboutVC.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -820,6 +823,7 @@
 				0895DC4521539AC200663F12 /* NewsTableViewCell.swift in Sources */,
 				0867A441213AA8B00061B6DE /* PGNGameInfoCell.swift in Sources */,
 				080CD05E2138240300E4361B /* PGNParser.swift in Sources */,
+				08BDA87321A1D88000435079 /* AboutVC.swift in Sources */,
 				0802EEE1218E00E0007DD9E3 /* BoardResultModel.swift in Sources */,
 				08CCA2092192129000184611 /* SaveGameVC.swift in Sources */,
 				08DFF314218EFFD30069B713 /* OpenSourceVC.swift in Sources */,

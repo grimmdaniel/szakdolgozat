@@ -2887,6 +2887,7 @@
                         <outlet property="settingsTableView" destination="wsW-3d-ZPr" id="VGc-r7-Par"/>
                         <segue destination="qfZ-2D-tbl" kind="show" identifier="toOpenSource" id="GFh-WN-gJe"/>
                         <segue destination="5q1-n1-cRy" kind="show" identifier="terms" id="eNl-Nc-THB"/>
+                        <segue destination="ryf-op-9hb" kind="show" identifier="toAbout" id="LQT-Wu-pPP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y56-mR-70S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3176,6 +3177,40 @@
             </objects>
             <point key="canvasLocation" x="-3745" y="1945"/>
         </scene>
+        <!--AboutVC-->
+        <scene sceneID="iVP-3k-F54">
+            <objects>
+                <viewController id="ryf-op-9hb" customClass="AboutVC" customModule="Barcza_GSC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Uy-cP-MTf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="o0N-Ue-Xzv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o0N-Ue-Xzv" firstAttribute="bottom" secondItem="y6U-os-Cax" secondAttribute="bottom" id="9HY-28-oS8"/>
+                            <constraint firstItem="o0N-Ue-Xzv" firstAttribute="leading" secondItem="y6U-os-Cax" secondAttribute="leading" id="L3k-Gk-qX8"/>
+                            <constraint firstItem="o0N-Ue-Xzv" firstAttribute="top" secondItem="y6U-os-Cax" secondAttribute="top" id="nL2-7m-DwB"/>
+                            <constraint firstItem="o0N-Ue-Xzv" firstAttribute="trailing" secondItem="y6U-os-Cax" secondAttribute="trailing" id="ugX-93-7iT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y6U-os-Cax"/>
+                    </view>
+                    <connections>
+                        <outlet property="aboutTextView" destination="o0N-Ue-Xzv" id="xYA-vD-wF8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="728-oY-OhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3623" y="1200"/>
+        </scene>
         <!--Terms And Conditions-->
         <scene sceneID="SxR-iT-5LQ">
             <objects>
@@ -3215,7 +3250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tv1-Yd-bKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2842" y="1459"/>
+            <point key="canvasLocation" x="-2815" y="1100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w9C-wW-3Hw">
