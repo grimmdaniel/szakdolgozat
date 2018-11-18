@@ -74,10 +74,21 @@ class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         controller.dismiss(animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "terms"{
+            let vc = segue.destination as! TermsAndConditions
+            if let sender = sender as? Bool{
+                vc.termsOrNot = sender
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.navigationItem.title = ""
-        if indexPath.row == 1{
-            performSegue(withIdentifier: "terms", sender: nil)
+        if indexPath.row == 0{
+            performSegue(withIdentifier: "terms", sender: true)
+        }else if indexPath.row == 1{
+            performSegue(withIdentifier: "terms", sender: false)
         }else if indexPath.row == 2{
             performSegue(withIdentifier: "toOpenSource", sender: nil)
         }else if indexPath.row == 3{
