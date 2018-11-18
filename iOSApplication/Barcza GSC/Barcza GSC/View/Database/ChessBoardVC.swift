@@ -15,7 +15,6 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
     
     @IBOutlet weak var moveCollectionView: UICollectionView!
     @IBOutlet weak var chessBoardView: ChessBoardView!
-    @IBOutlet weak var moveCounterLabel: UILabel!
     
     @IBAction func boardMenuButtonPressed(_ sender: UIButton) {
         print(chessBoardView.generateFENFromBoard())
@@ -70,7 +69,6 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
         
         chessBoardView.datasource = self
         chessBoardView.delegate = self
-        moveCounterLabel.text = "Move count: 1"
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(savePGN))
     }
@@ -87,10 +85,6 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
                 vc.pgnMoveText = sender
             }
         }
-    }
-    
-    func chessBoardView(_ chessBoardView: ChessBoardView, numberOfMove: String) {
-        moveCounterLabel.text = "Move count: " + numberOfMove
     }
     
     func chessBoardView(_ chessBoardView: ChessBoardView, pgnMoveText: [String]) {
