@@ -72,3 +72,6 @@
 "about" = "Névjegy";
 "settings" = "Beállítások";
 "bug" = "Hiba jelzése a fejlesztőnek";
+
+"export" = "Sikeres adatbázis export!";
+"Inf" = "Információ";

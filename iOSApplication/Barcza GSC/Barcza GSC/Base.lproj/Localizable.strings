@@ -72,3 +72,6 @@
 "about" = "About";
 "settings" = "Settings";
 "bug" = "Bug report";
+
+"export" = "Database exported successfully";
+"Inf" = "Information";

@@ -62,15 +62,15 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         let resultIndex = resultSegmentedControl.selectedSegmentIndex
         let result = resultIndex == 0 ? "" : resultSegmentedControl.titleForSegment(at: resultIndex)!
         currentSearchData = SearchExpressionsData(white: white, black: black, eco: eco, result: result, year: year, month: month, day: day)
-        
         if white == "" && black == "" && eco == "" && year == "" && month == "" && day == "" && result == ""{
             shouldShowSearchResults = false
         }else{
             shouldShowSearchResults = true
+            updateSearchResults()
         }
+        databaseTableView.reloadData()
         hideDisplayPicker(hide: true)
         displayAdvancedSearch()
-        databaseTableView.reloadData()
     }
     
     
@@ -196,6 +196,11 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         for i in 1900..<2100{
             years.append("\(i)")
         }
+    }
+    
+    private func updateSearchResults(){
+        filteredGames.removeAll()
+        //TODO
     }
 }
 

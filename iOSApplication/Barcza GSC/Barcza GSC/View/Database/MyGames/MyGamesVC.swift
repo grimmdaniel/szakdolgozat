@@ -73,6 +73,10 @@ class MyGamesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         let testData = createPGNTextForExport()
         let writer = FileWriter.writer
         writer.writeDataToPGNFile(fileName: "export", content: testData)
+        
+        let controller = UIAlertController(title: "Inf".localized, message: "export".localized, preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(controller, animated: true, completion: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
