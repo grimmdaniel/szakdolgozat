@@ -27,7 +27,21 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     @IBOutlet weak var pickerBackView: UIView!
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
+        guard let text = pickerView(formPickerView, titleForRow: formPickerView.selectedRow(inComponent: 0), forComponent: 0) else{
+            return
+        }
         
+        switch actualFormType {
+        case .year:
+            yearTextField.text = text
+        case .month:
+            monthTextField.text = text
+        case .day:
+            dayTextField.text = text
+        case .eco:
+            ecoTextField.text = text
+        }
+        hideDisplayPicker(hide: true)
     }
     
     
@@ -46,17 +60,23 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     var games: PGNDatabase!
     var filteredGames = [PGNGame]()
+    var shouldShowAdvancedSearchPanel = true
+    var actualFormType: SearchType = .year
+    
+    var eco = [String]()
+    var years = [String]()
+    let months = ["1","2","3","4","5","6","7","8","9","10","11","12"]
+    let days = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
     
     
     @IBOutlet weak var databaseTableView: UITableView!
-    
-    var searchController: UISearchController!
-    var shouldShowAdvancedSearchPanel = true
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpTextFields(textfields: [ecoTextField,yearTextField,monthTextField,dayTextField])
+        setUpArrays()
         
         databaseTableView.delegate = self
         databaseTableView.dataSource = self
@@ -64,6 +84,8 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         advancedSearchBackGroundView.layer.borderWidth = 1.0
         advancedSearchBackGroundView.layer.borderColor = UIColor.lightGray.cgColor
         pickerBackView.isHidden = true
+        formPickerView.delegate = self
+        formPickerView.dataSource = self
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(displayAdvancedSearch))
     }
@@ -136,6 +158,23 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
             self.pickerBackView.isHidden = hide
         })
     }
+    
+    private func setUpArrays(){
+        let ecoCodes = ["A","B","C","D","E"]
+        for ecoCode in ecoCodes{
+            for i in 0..<100{
+                if i < 10{
+                    eco.append(ecoCode+"0\(i)")
+                }else{
+                    eco.append(ecoCode+"\(i)")
+                }
+            }
+        }
+        
+        for i in 1900..<2100{
+            years.append("\(i)")
+        }
+    }
 }
 
 enum SearchType{
@@ -155,10 +194,24 @@ struct SearchExpressionsData{
 
 extension LocalDatabaseVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField != whiteTextField && textField != blackTextField{
-            hideDisplayPicker(hide: false)
-        }else{
+        if textField == whiteTextField || textField == blackTextField{
             hideDisplayPicker(hide: true)
+        }else if textField == yearTextField{
+            hideDisplayPicker(hide: false)
+            actualFormType = .year
+            formPickerView.reloadAllComponents()
+        }else if textField == monthTextField{
+            hideDisplayPicker(hide: false)
+            actualFormType = .month
+            formPickerView.reloadAllComponents()
+        }else if textField == dayTextField{
+            hideDisplayPicker(hide: false)
+            actualFormType = .day
+            formPickerView.reloadAllComponents()
+        }else if textField == ecoTextField{
+            hideDisplayPicker(hide: false)
+            actualFormType = .eco
+            formPickerView.reloadAllComponents()
         }
     }
 }
@@ -177,6 +230,40 @@ extension LocalDatabaseVC{
             self.view.layoutIfNeeded()
         }
     }
+}
+
+extension LocalDatabaseVC: UIPickerViewDelegate, UIPickerViewDataSource{
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch actualFormType {
+        case .year:
+            return years.count
+        case .month:
+            return months.count
+        case .day:
+            return days.count
+        case .eco:
+            return eco.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch actualFormType {
+        case .year:
+            return years[row]
+        case .month:
+            return months[row]
+        case .day:
+            return days[row]
+        case .eco:
+            return eco[row]
+        }
+    }
+
 }
 
 //extension LocalDatabaseVC: UISearchResultsUpdating,UISearchBarDelegate{
