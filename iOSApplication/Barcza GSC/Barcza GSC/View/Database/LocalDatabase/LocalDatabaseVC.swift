@@ -47,11 +47,30 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     @IBAction func resetFilterButtonPressed(_ sender: UIButton) {
         resetFilter()
+        currentSearchData = SearchExpressionsData()
+        filteredGames.removeAll()
     }
     
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
+        let white = (whiteTextField.text ?? "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let black = (blackTextField.text ?? "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let eco = ecoTextField.text ?? ""
+        let year = yearTextField.text ?? ""
+        let month = monthTextField.text ?? ""
+        let day = dayTextField.text ?? ""
+        let resultIndex = resultSegmentedControl.selectedSegmentIndex
+        let result = resultIndex == 0 ? "" : resultSegmentedControl.titleForSegment(at: resultIndex)!
+        currentSearchData = SearchExpressionsData(white: white, black: black, eco: eco, result: result, year: year, month: month, day: day)
         
+        if white == "" && black == "" && eco == "" && year == "" && month == "" && day == "" && result == ""{
+            shouldShowSearchResults = false
+        }else{
+            shouldShowSearchResults = true
+        }
+        hideDisplayPicker(hide: true)
+        displayAdvancedSearch()
+        databaseTableView.reloadData()
     }
     
     
@@ -61,7 +80,9 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     var games: PGNDatabase!
     var filteredGames = [PGNGame]()
     var shouldShowAdvancedSearchPanel = true
+    var shouldShowSearchResults = false
     var actualFormType: SearchType = .year
+    var currentSearchData = SearchExpressionsData()
     
     var eco = [String]()
     var years = [String]()
@@ -99,32 +120,31 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if shouldShowSearchResults{
-//            return filteredGames.count
-//        }else{
-//            return games.database.count
-//        }
-        return games.database.count
+        if shouldShowSearchResults{
+            return filteredGames.count
+        }else{
+            return games.database.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PGNGameInfoCell", for: indexPath) as! PGNGameInfoCell
         cell.selectionStyle = .none
-//        if shouldShowSearchResults{
-//            cell.updateUI(with: filteredGames[indexPath.row])
-//        }else{
+        if shouldShowSearchResults{
+            cell.updateUI(with: filteredGames[indexPath.row])
+        }else{
             cell.updateUI(with: games.database[indexPath.row])
-//        }
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.navigationItem.title = ""
-//        if shouldShowSearchResults{
-//            performSegue(withIdentifier: "toGamePreview", sender: filteredGames[indexPath.row])
-//        }else{
+        if shouldShowSearchResults{
+            performSegue(withIdentifier: "toGamePreview", sender: filteredGames[indexPath.row])
+        }else{
             performSegue(withIdentifier: "toGamePreview", sender: games.database[indexPath.row])
-//        }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -151,6 +171,8 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         monthTextField.text = ""
         dayTextField.text = ""
         resultSegmentedControl.selectedSegmentIndex = 0
+        shouldShowSearchResults = false
+        databaseTableView.reloadData()
     }
     
     private func hideDisplayPicker(hide: Bool){
@@ -266,22 +288,7 @@ extension LocalDatabaseVC: UIPickerViewDelegate, UIPickerViewDataSource{
 
 }
 
-//extension LocalDatabaseVC: UISearchResultsUpdating,UISearchBarDelegate{
-//
-//    func configureSearchController() {
-//        searchController = UISearchController(searchResultsController: nil)
-//        searchController.hidesNavigationBarDuringPresentation = false
-//        searchController.searchResultsUpdater = self
-//        searchController.dimsBackgroundDuringPresentation = false
-//        searchController.searchBar.placeholder = "Search among games..."
-//        searchController.searchBar.delegate = self
-//        searchController.searchBar.sizeToFit()
-//        searchController.searchBar.tintColor = UIColor.white
-//        searchController.searchBar.searchBarStyle = .minimal
-////        databaseTableView.tableHeaderView = searchController.searchBar
-//        searchView.addSubview(searchController.searchBar)
-//    }
-//
+
 //    func updateSearchResults(for searchController: UISearchController) {
 //        let searchString = searchController.searchBar.text
 //        if searchString  == ""{
@@ -296,35 +303,4 @@ extension LocalDatabaseVC: UIPickerViewDelegate, UIPickerViewDataSource{
 //        }
 //        databaseTableView.reloadData()
 //    }
-//
-//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        searchBar.setShowsCancelButton(true, animated: true)
-//        for ob: UIView in ((searchBar.subviews[0] )).subviews {
-//
-//            if let z = ob as? UIButton {
-//                let btn: UIButton = z
-//                btn.setTitleColor(ColorTheme.barczaOrange, for: .normal)
-//            }
-//        }
-//    }
-//    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-//        shouldShowSearchResults = true
-//        databaseTableView.reloadData()
-//    }
-//
-//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        shouldShowSearchResults = false
-//        databaseTableView.reloadData()
-//    }
-//
-//
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        if !shouldShowSearchResults {
-//            shouldShowSearchResults = true
-//            databaseTableView.reloadData()
-//        }
-//
-//        searchController.searchBar.resignFirstResponder()
-//    }
-//}
 //
