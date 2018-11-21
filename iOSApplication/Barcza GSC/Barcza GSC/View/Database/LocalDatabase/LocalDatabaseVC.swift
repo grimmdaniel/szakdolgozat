@@ -107,6 +107,17 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         setUpTextFields(textfields: [ecoTextField,yearTextField,monthTextField,dayTextField])
         setUpArrays()
         
+        whiteTextField.placeholder = "searchWhite".localized
+        blackTextField.placeholder = "searchBlack".localized
+        yearTextField.placeholder = "searchYear".localized
+        monthTextField.placeholder = "searchMonth".localized
+        dayTextField.placeholder = "searchDay".localized
+        ecoTextField.placeholder = "searchECO".localized
+        
+        resultSegmentedControl.setTitle("searchAll".localized, forSegmentAt: 0)
+        resetFilterButton.setTitle("searchReset".localized, for: .normal)
+        searchButton.setTitle("search".localized, for: .normal)
+        
         databaseTableView.delegate = self
         databaseTableView.dataSource = self
         databaseTableView.tableFooterView = UIView(frame: CGRect.zero)

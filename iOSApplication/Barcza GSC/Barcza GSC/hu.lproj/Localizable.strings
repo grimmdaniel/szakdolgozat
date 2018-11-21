@@ -75,3 +75,13 @@
 
 "export" = "Sikeres adatbázis export!";
 "Inf" = "Információ";
+
+"searchWhite" = "Világos";
+"searchBlack" = "Sötét";
+"searchYear" = "Év";
+"searchMonth" = "Hónap";
+"searchDay" = "Nap";
+"searchECO" = "ECO";
+"searchAll" = "Mind";
+"searchReset" = "Alaphelyzet";
+"search" = "Keresés";

@@ -75,3 +75,13 @@
 
 "export" = "Database exported successfully";
 "Inf" = "Information";
+
+"searchWhite" = "White";
+"searchBlack" = "Black";
+"searchYear" = "Year";
+"searchMonth" = "Month";
+"searchDay" = "Day";
+"searchECO" = "ECO";
+"searchAll" = "All";
+"searchReset" = "Reset filter";
+"search" = "Search";
