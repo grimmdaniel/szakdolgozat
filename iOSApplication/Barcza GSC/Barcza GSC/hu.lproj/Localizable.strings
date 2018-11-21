@@ -86,3 +86,4 @@
 "searchReset" = "Alaphelyzet";
 "search" = "Keresés";
 "icloud_warning" = "iCloud fájletöltés folyamatban, kérlek próbáld újra később!";
+"gamesnotfound" = "A keresés sikertelen. Filter törlése";

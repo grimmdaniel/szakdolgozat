@@ -10,6 +10,14 @@ import UIKit
 
 class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
+    
+    @IBOutlet weak var noGamesFoundView: UIView!
+    
+    @IBOutlet weak var tryAgainButton: UIButton!
+    @IBAction func tryAgainButtonPressed(_ sender: UIButton) {
+        noGamesFoundView.isHidden = true
+        resetFilterButtonPressed(UIButton())
+    }
     //search view outlets
     @IBOutlet weak var whiteTextField: UITextField!
     @IBOutlet weak var blackTextField: UITextField!
@@ -50,6 +58,7 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         resetFilter()
         currentSearchData = SearchExpressionsData()
         filteredGames.removeAll()
+        noGamesFoundView.isHidden = true
     }
     
     
@@ -72,9 +81,15 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         currentSearchData = SearchExpressionsData(white: white, black: black, eco: eco, result: result, year: year, month: month, day: day)
         if white == "" && black == "" && eco == "" && year == "" && month == "" && day == "" && result == ""{
             shouldShowSearchResults = false
+            noGamesFoundView.isHidden = true
         }else{
             shouldShowSearchResults = true
             updateSearchResults(with: currentSearchData)
+            if filteredGames.isEmpty{
+                noGamesFoundView.isHidden = false
+            }else{
+                noGamesFoundView.isHidden = true
+            }
         }
         databaseTableView.reloadData()
         hideDisplayPicker(hide: true)
@@ -126,6 +141,7 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         pickerBackView.isHidden = true
         formPickerView.delegate = self
         formPickerView.dataSource = self
+        tryAgainButton.setTitle("gamesnotfound".localized, for: .normal)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(displayAdvancedSearch))
     }
