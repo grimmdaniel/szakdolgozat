@@ -65,6 +65,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             if realm.object(ofType: PGNDatabaseMetadata.self, forPrimaryKey: fileName) == nil{
                 do {
                     let fm = FileManager()
+                    print(fm.fileExists(atPath: url.path))
+                    print(url.startAccessingSecurityScopedResource())
+                    if (!fm.fileExists(atPath: url.path)){
+                        if fm.isUbiquitousItem(at: url) {
+                            print("downloadfrom icloud")
+                            do {
+                                try fm.startDownloadingUbiquitousItem(at: url)
+                                _ = url.startAccessingSecurityScopedResource()
+                            } catch{
+                                print("Error while loading Backup File \(error)")
+                            }
+                            if !fm.fileExists(atPath: url.path){
+                                return false
+                            }
+                        }else{
+                            print("cant reach file")
+                        }
+                    }
                     let dataFromFile = fm.contents(atPath: url.path)
                     var content = String(data: dataFromFile!,encoding: .utf8)
                     if content == nil{
@@ -76,8 +94,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
                         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
                         alertController.addAction(okAction)
                         window!.rootViewController?.present(alertController, animated: true, completion: nil)
+                        url.stopAccessingSecurityScopedResource()
                         return true
                     }
+                    
+                    url.stopAccessingSecurityScopedResource()
                     
                     let date = Date()
                     SVProgressHUD.setForegroundColor(ColorTheme.barczaOrange)
@@ -100,6 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
                             let alertController = UIAlertController(title: "Success", message: "Database added successfully", preferredStyle: .alert)
                             
                             // Create the actions
+                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload"), object: nil)
                             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
                             alertController.addAction(okAction)
                             self.window!.rootViewController?.present(alertController, animated: true, completion: nil)

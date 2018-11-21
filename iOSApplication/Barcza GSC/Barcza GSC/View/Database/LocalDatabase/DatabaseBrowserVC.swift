@@ -43,10 +43,22 @@ class DatabaseBrowserVC: UIViewController,UICollectionViewDelegate, UICollection
         databasesCollectionView.dataSource = self
         documentController.delegate = self
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshDatabases), name: NSNotification.Name(rawValue: "reload"), object: nil)
         navigationItem.title = "My Databases".localized
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteDatabases))
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func refreshDatabases(){
+        log.debug("Notification arrived")
+        let realm = try! Realm()
+        databases = Array(realm.objects(PGNDatabaseMetadata.self))
+        self.databasesCollectionView.reloadData()
     }
     
     @objc func deleteDatabases(){

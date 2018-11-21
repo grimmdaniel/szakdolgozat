@@ -55,7 +55,6 @@
 		087621062143ECD100CE69C3 /* DatabaseBrowserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087621052143ECD100CE69C3 /* DatabaseBrowserVC.swift */; };
 		0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */; };
 		0890687420FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890687320FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift */; };
-		0895DC392152474300663F12 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0895DC382152474300663F12 /* CloudKit.framework */; };
 		0895DC3B21526DBD00663F12 /* DocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC3A21526DBD00663F12 /* DocumentsVC.swift */; };
 		0895DC3D2152728300663F12 /* PDFWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC3C2152728300663F12 /* PDFWebViewVC.swift */; };
 		0895DC432153997000663F12 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC422153997000663F12 /* NewsVC.swift */; };
@@ -191,7 +190,6 @@
 		0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryVC.swift; sourceTree = "<group>"; };
 		0890687320FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
 		0895DC372152469D00663F12 /* Barcza GSC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Barcza GSC.entitlements"; sourceTree = "<group>"; };
-		0895DC382152474300663F12 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		0895DC3A21526DBD00663F12 /* DocumentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsVC.swift; sourceTree = "<group>"; };
 		0895DC3C2152728300663F12 /* PDFWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFWebViewVC.swift; sourceTree = "<group>"; };
 		0895DC422153997000663F12 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0895DC392152474300663F12 /* CloudKit.framework in Frameworks */,
 				08690E482145AC4E0052201C /* ChessBoardKit.framework in Frameworks */,
 				6FF771CF346B894512A38E04 /* Pods_Barcza_GSC.framework in Frameworks */,
 			);
@@ -575,7 +572,6 @@
 		A630E6069CBF7CB91F97DC8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0895DC382152474300663F12 /* CloudKit.framework */,
 				86C243E2540EDF9684EDE679 /* Pods_Barcza_GSC.framework */,
 			);
 			name = Frameworks;

@@ -85,3 +85,4 @@
 "searchAll" = "All";
 "searchReset" = "Reset filter";
 "search" = "Search";
+"icloud_warning" = "Please wait until iCloud download the file, and try again!";
