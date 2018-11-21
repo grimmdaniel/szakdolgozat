@@ -46,6 +46,7 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     
     @IBAction func resetFilterButtonPressed(_ sender: UIButton) {
+        self.view.endEditing(true)
         resetFilter()
         currentSearchData = SearchExpressionsData()
         filteredGames.removeAll()
@@ -53,12 +54,19 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
+        self.view.endEditing(true)
         let white = (whiteTextField.text ?? "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let black = (blackTextField.text ?? "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let eco = ecoTextField.text ?? ""
         let year = yearTextField.text ?? ""
-        let month = monthTextField.text ?? ""
-        let day = dayTextField.text ?? ""
+        var month = monthTextField.text ?? ""
+        var day = dayTextField.text ?? ""
+        if month.count == 1{
+            month = "0"+month
+        }
+        if day.count == 1{
+            day = "0"+day
+        }
         let resultIndex = resultSegmentedControl.selectedSegmentIndex
         let result = resultIndex == 0 ? "" : resultSegmentedControl.titleForSegment(at: resultIndex)!
         currentSearchData = SearchExpressionsData(white: white, black: black, eco: eco, result: result, year: year, month: month, day: day)
@@ -66,7 +74,7 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
             shouldShowSearchResults = false
         }else{
             shouldShowSearchResults = true
-            updateSearchResults()
+            updateSearchResults(with: currentSearchData)
         }
         databaseTableView.reloadData()
         hideDisplayPicker(hide: true)
@@ -198,9 +206,24 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         }
     }
     
-    private func updateSearchResults(){
+    private func updateSearchResults(with data: SearchExpressionsData){
         filteredGames.removeAll()
-        //TODO
+        filteredGames = games.database.filter({ (game) -> Bool in
+            evaluateExpression(pgnGame: game, searchExpression: data)
+        })
+    }
+    
+    private func evaluateExpression(pgnGame: PGNGame, searchExpression: SearchExpressionsData) -> Bool{
+        let whiteString: NSString = pgnGame.white as NSString
+        let blackString: NSString = pgnGame.black as NSString
+        let white: Bool = searchExpression.white == "" ? true : (whiteString.range(of: searchExpression.white, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+        let black: Bool = searchExpression.black == "" ? true :  (blackString.range(of: searchExpression.black, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+        let eco: Bool = searchExpression.eco == "" ? true :  pgnGame.eco == searchExpression.eco
+        let result: Bool = searchExpression.result == "" ? true : pgnGame.result == searchExpression.result
+        let year: Bool = searchExpression.year == "" ? true : pgnGame.date.components(separatedBy: ".").first == searchExpression.year
+        let month: Bool = searchExpression.month == "" ? true : pgnGame.date.components(separatedBy: ".")[1] == searchExpression.month
+        let day: Bool = searchExpression.day == "" ? true : pgnGame.date.components(separatedBy: ".").last == searchExpression.day
+        return white && black && eco && result && year && month && day
     }
 }
 
@@ -253,6 +276,7 @@ extension LocalDatabaseVC{
             }else{
                 self.advancedSearchHeightConstraint.constant = 0
                 self.shouldShowAdvancedSearchPanel = true
+                self.view.endEditing(true)
             }
             self.view.layoutIfNeeded()
         }
@@ -290,22 +314,4 @@ extension LocalDatabaseVC: UIPickerViewDelegate, UIPickerViewDataSource{
             return eco[row]
         }
     }
-
 }
-
-
-//    func updateSearchResults(for searchController: UISearchController) {
-//        let searchString = searchController.searchBar.text
-//        if searchString  == ""{
-//            shouldShowSearchResults = false
-//        }else{
-//            filteredGames = games.database.filter({ (game) -> Bool in
-//                let white: NSString = game.white as NSString
-//                let black: NSString = game.black as NSString
-//                return ((white.range(of: searchString!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound) || ((black.range(of: searchString!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound)
-//            })
-//            shouldShowSearchResults = true
-//        }
-//        databaseTableView.reloadData()
-//    }
-//
