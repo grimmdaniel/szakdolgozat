@@ -147,7 +147,7 @@ class LocalDatabaseVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = games.name + " (\(games.database.count) games)"
+        self.navigationItem.title = games.name + " (\(games.database.count) \("games".localized))"
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
