@@ -82,6 +82,7 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
         kfactorLabel.text = "Kfactor".localized
         myEloTextField.placeholder = "YourElo".localized
         yourEloTextField.placeholder = "OpponentElo".localized
+        calculateEloChangeBtn.setTitle("Calculate".localized, for: .normal)
         
         myEloTextField.addDoneButtonToKeyboard(myAction:  #selector(self.myEloTextField.resignFirstResponder))
         yourEloTextField.addDoneButtonToKeyboard(myAction:  #selector(self.yourEloTextField.resignFirstResponder))
