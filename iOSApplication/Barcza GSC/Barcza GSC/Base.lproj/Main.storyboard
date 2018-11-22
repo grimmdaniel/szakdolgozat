@@ -944,7 +944,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="TUv-tq-MtY" secondAttribute="height" multiplier="1:1" id="PRE-vX-4n4"/>
                                                 </constraints>
-                                                <state key="normal" title="Flip"/>
+                                                <state key="normal" image="rotate"/>
                                                 <connections>
                                                     <action selector="flipButtonPressed:" destination="Y0z-dT-SKX" eventType="touchUpInside" id="Jka-VN-J9u"/>
                                                 </connections>
@@ -1015,6 +1015,7 @@
                         <outlet property="backwardBtn" destination="y2f-yt-ZIO" id="SBX-1h-sab"/>
                         <outlet property="chessBoard" destination="Jfg-6N-F6t" id="MYX-hL-Bh8"/>
                         <outlet property="evaluateLabel" destination="xxM-KO-GbM" id="SJt-IX-srD"/>
+                        <outlet property="flipButton" destination="TUv-tq-MtY" id="cmx-l6-t6d"/>
                         <outlet property="forwardBtn" destination="Kt7-mo-XmY" id="Ycq-bU-ths"/>
                         <outlet property="gamePreviewCollectionView" destination="ky8-1B-snV" id="uzl-nS-M0N"/>
                     </connections>
@@ -3468,6 +3469,7 @@
         <image name="misc" width="42" height="11"/>
         <image name="placeholder" width="300" height="169"/>
         <image name="rightArrow" width="100" height="100"/>
+        <image name="rotate" width="51.200000762939453" height="51.200000762939453"/>
         <image name="training_info" width="20" height="20"/>
         <image name="training_location" width="20" height="20"/>
         <image name="training_time" width="20" height="20"/>

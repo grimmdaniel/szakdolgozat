@@ -28,6 +28,8 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
         gamePreviewCollectionView.delegate = self
         gamePreviewCollectionView.dataSource = self
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareBoard))
+        
         let parser = PGNGameTextParser.parser
         parsedGame = parser.parseGameText(from: game.gameText)
         
@@ -55,6 +57,7 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     @IBOutlet weak var forwardBtn: UIButton!
     @IBOutlet weak var backwardBtn: UIButton!
     @IBOutlet weak var evaluateLabel: UILabel!
+    @IBOutlet weak var flipButton: UIButton!
     
     @IBAction func backwardBtnPressed(_ sender: UIButton) {
         if currentMoveIndex == 0 { return }
@@ -72,6 +75,37 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     
     @IBAction func forwardBtnPressed(_ sender: UIButton) {
         moveForward()
+    }
+    
+    @objc func shareBoard(){
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        if let presenter = actionSheet.popoverPresentationController{
+            presenter.sourceView = view
+            presenter.sourceRect = view.bounds
+        }
+    
+        actionSheet.addAction(UIAlertAction(title: "FEN copy".localized, style: .default, handler: { (alert:UIAlertAction!) -> Void in
+            UIPasteboard.general.string = self.chessBoard.generateFENFromBoard()
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Share board".localized, style: .default, handler: { (alert:UIAlertAction!) -> Void in
+            let photo = self.chessBoard.snapshot()
+            let objectsToShare = [photo ?? UIImage()]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            self.present(activityVC, animated: true) { () -> Void in
+                print("Sharing position...")
+            }
+            if let popOver = activityVC.popoverPresentationController {
+                popOver.sourceView = self.view
+                popOver.sourceRect = self.view.bounds
+                //popOver.barButtonItem
+            }
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
