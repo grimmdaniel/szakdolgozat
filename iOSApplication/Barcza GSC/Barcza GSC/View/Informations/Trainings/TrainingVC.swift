@@ -40,7 +40,7 @@ class TrainingVC: UIViewController, MKMapViewDelegate, MFMailComposeViewControll
         if let data = trainingData{
             nameLabel.text = data.name
             emailLabel.text = data.email
-            infoLabel.text = data.trainingDescription
+            infoLabel.text = "group".localized
             timeLabel.text = data.trainingDescription
             placeLabel.text = data.place
         }

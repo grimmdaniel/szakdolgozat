@@ -55,6 +55,7 @@
 		087621062143ECD100CE69C3 /* DatabaseBrowserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087621052143ECD100CE69C3 /* DatabaseBrowserVC.swift */; };
 		0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */; };
 		0890687420FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890687320FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift */; };
+		089162E621A9778A00D43CE3 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089162E521A9778A00D43CE3 /* EndPoints.swift */; };
 		0895DC3B21526DBD00663F12 /* DocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC3A21526DBD00663F12 /* DocumentsVC.swift */; };
 		0895DC3D2152728300663F12 /* PDFWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC3C2152728300663F12 /* PDFWebViewVC.swift */; };
 		0895DC432153997000663F12 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895DC422153997000663F12 /* NewsVC.swift */; };
@@ -189,6 +190,7 @@
 		087621052143ECD100CE69C3 /* DatabaseBrowserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseBrowserVC.swift; sourceTree = "<group>"; };
 		0890687120FCCF31004AD118 /* PhotoLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryVC.swift; sourceTree = "<group>"; };
 		0890687320FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
+		089162E521A9778A00D43CE3 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		0895DC372152469D00663F12 /* Barcza GSC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Barcza GSC.entitlements"; sourceTree = "<group>"; };
 		0895DC3A21526DBD00663F12 /* DocumentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsVC.swift; sourceTree = "<group>"; };
 		0895DC3C2152728300663F12 /* PDFWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFWebViewVC.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 				082F8C2B21162F7800A52D7F /* Stack.swift */,
 				081C7BD42118B7EC004B107B /* Extensions.swift */,
 				08B048AD219AE1C000ABAB1C /* FileWriter.swift */,
+				089162E521A9778A00D43CE3 /* EndPoints.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				0864C8AE20FBCF2400435EE3 /* AlbumCell.swift in Sources */,
 				08BC3333214CF9DF0059CBA0 /* PGNDatabase.swift in Sources */,
 				085DA7952160FAAF00FB27F6 /* StandingInfoCell.swift in Sources */,
+				089162E621A9778A00D43CE3 /* EndPoints.swift in Sources */,
 				082B521E215FF03F00F06273 /* Team.swift in Sources */,
 				085122E3215F89E70078AB7B /* ResultsVC.swift in Sources */,
 				0895DC3B21526DBD00663F12 /* DocumentsVC.swift in Sources */,

@@ -14,7 +14,7 @@ extension NewsVC{
     func getAllNews() -> Promise<Void>{
         return Promise<Void>{ fulfill, reject in
             log.info("Getting news...")
-            let myNewsURLString = Settings.rootURL + "/news/all"
+            let myNewsURLString = Settings.rootURL + EndPoints.news_all.rawValue
             guard let myNewsURL = URL(string: myNewsURLString) else{
                 reject(NSError(domain:"Error: cannot create gallery URL",code: 100)); return
             }
@@ -83,7 +83,7 @@ extension GalleryVC{
     func getGalleryPhotos() -> Promise<Void>{
         return Promise<Void>{ fulfill, reject in
             log.info("Getting photos...")
-            let myGalleryURLString = Settings.rootURL + "/gallery/all"
+            let myGalleryURLString = Settings.rootURL + EndPoints.gallery_all.rawValue
             guard let myGalleryURL = URL(string: myGalleryURLString) else {
                 reject(NSError(domain:"Error: cannot create gallery URL",code: 100)); return
             }
@@ -147,7 +147,7 @@ extension ResultsVC{
     
     func getRoundsWithMatches(teams: [Team]) -> Promise<[Round]>{
         return Promise<[Round]>{ fulfill, reject in
-            let roundURLString = Settings.rootURL + "/championship/rounds/all"
+            let roundURLString = Settings.rootURL + EndPoints.championship_rounds_all.rawValue
             guard let roundURL = URL(string: roundURLString) else {
                 reject(NSError(domain:"Error: cannot create round URL",code: 100)); return
             }
@@ -216,7 +216,7 @@ extension ResultsVC{
     func getAllTeams() -> Promise<[Team]>{
         return Promise<[Team]>{ fulfill, reject in
             log.info("Getting teams...")
-            let teamsURLString = Settings.rootURL + "/championship/teams/all"
+            let teamsURLString = Settings.rootURL + EndPoints.championship_teams_all.rawValue
             guard let teamsURL = URL(string: teamsURLString) else {
                 reject(NSError(domain:"Error: cannot create teams URL",code: 100)); return
             }
@@ -256,7 +256,7 @@ extension TableResultsVC{
     
     func getAllResults(homeTeamID id1: Int, awayTeamID id2: Int) -> Promise<Void> {
         return Promise<Void>{ fulfill, reject in
-            let resultsURLString = Settings.rootURL + "/tableresults/result/\(id1)/\(id2)"
+            let resultsURLString = Settings.rootURL + EndPoints.tableResults.rawValue + "\(id1)/\(id2)"
             guard let resultsURL = URL(string: resultsURLString) else {
                 reject(NSError(domain:"Error constructing URL from my board results call",code: 101)); return
             }
@@ -305,7 +305,7 @@ extension StarterVC{
     func getNextMatchData() -> Promise<Void>{
         return Promise<Void>{ fulfill, reject in
             log.info("Getting next matches")
-            let nextMatchURLString = Settings.rootURL + "/nextmatch/all"
+            let nextMatchURLString = Settings.rootURL + EndPoints.initApp.rawValue
             guard let nextMatchURL = URL(string: nextMatchURLString) else {
                 reject(NSError(domain: "Error: cannot create nextmatch URL", code: 100, userInfo: nil));return
             }
@@ -355,7 +355,7 @@ extension StarterVC{
     func getTrainingsData() -> Promise<Void>{
         return Promise<Void>{ fulfill, reject in
             log.info("Getting trainings...")
-            let trainingsURLString = Settings.rootURL + "/trainings/all"
+            let trainingsURLString = Settings.rootURL + EndPoints.trainings_all.rawValue
             guard let trainingsURL = URL(string: trainingsURLString) else {
                 reject(NSError(domain:"Error: cannot create trainings URL",code: 100)); return
             }
@@ -403,7 +403,7 @@ extension StandingsVC{
     func getStandings() -> Promise<Void>{
         return Promise<Void>{ fulfill, reject in
             log.info("Getting standings...")
-            let teamsURLString = Settings.rootURL + "/championship/teams/all"
+            let teamsURLString = Settings.rootURL + EndPoints.championship_teams_all.rawValue
             guard let teamsURL = URL(string: teamsURLString) else {
                 reject(NSError(domain:"Error: cannot create teams URL",code: 100)); return
             }
