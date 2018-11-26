@@ -19,8 +19,10 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
     var moves = [String]()
     var currentMoveIndex = 0
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.lightGray
+        
         chessBoard.datasource = self
         chessBoard.delegate = self
         chessBoard.isMovementEnabled = false
@@ -50,16 +52,13 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
         gamePreviewCollectionView.reloadData()
     }
     
-    @IBAction func flipButtonPressed(_ sender: UIButton) {
+    @IBAction func flipBoard(_ sender: UIBarButtonItem) {
         chessBoard.flipChessBoard()
     }
     
-    @IBOutlet weak var forwardBtn: UIButton!
-    @IBOutlet weak var backwardBtn: UIButton!
     @IBOutlet weak var evaluateLabel: UILabel!
-    @IBOutlet weak var flipButton: UIButton!
     
-    @IBAction func backwardBtnPressed(_ sender: UIButton) {
+    @IBAction func backwardPressed(_ sender: UIBarButtonItem) {
         if currentMoveIndex == 0 { return }
         let previousIndex = currentMoveIndex - 1
         chessBoard.resetBoard()
@@ -73,7 +72,8 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
         updateEvaluateLabel()
     }
     
-    @IBAction func forwardBtnPressed(_ sender: UIButton) {
+    
+    @IBAction func forwardPressed(_ sender: UIBarButtonItem) {
         moveForward()
     }
     
