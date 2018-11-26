@@ -21,6 +21,7 @@
 		080CD05A2138149000E4361B /* DatabaseMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD0592138149000E4361B /* DatabaseMenuCell.swift */; };
 		080CD05E2138240300E4361B /* PGNParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD05D2138240300E4361B /* PGNParser.swift */; };
 		080CD0602138247900E4361B /* LocalDatabaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CD05F2138247900E4361B /* LocalDatabaseVC.swift */; };
+		080DC93C21ACA62B00E0308C /* Coords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080DC93B21ACA62B00E0308C /* Coords.swift */; };
 		081C7BD52118B7EC004B107B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C7BD42118B7EC004B107B /* Extensions.swift */; };
 		081C7BD72118B936004B107B /* MoveNameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C7BD62118B936004B107B /* MoveNameCollectionViewCell.swift */; };
 		082B521E215FF03F00F06273 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B521D215FF03F00F06273 /* Team.swift */; };
@@ -155,6 +156,7 @@
 		080CD0592138149000E4361B /* DatabaseMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseMenuCell.swift; sourceTree = "<group>"; };
 		080CD05D2138240300E4361B /* PGNParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNParser.swift; sourceTree = "<group>"; };
 		080CD05F2138247900E4361B /* LocalDatabaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseVC.swift; sourceTree = "<group>"; };
+		080DC93B21ACA62B00E0308C /* Coords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coords.swift; sourceTree = "<group>"; };
 		081C7BD42118B7EC004B107B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		081C7BD62118B936004B107B /* MoveNameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveNameCollectionViewCell.swift; sourceTree = "<group>"; };
 		082B521D215FF03F00F06273 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -285,6 +287,13 @@
 			path = PGNParser;
 			sourceTree = "<group>";
 		};
+		080DC93A21ACA47A00E0308C /* VCS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VCS;
+			sourceTree = "<group>";
+		};
 		0819208420FBF08C0071590C /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +307,7 @@
 		08400B4C2184858500D09E28 /* Barcza GSCTests */ = {
 			isa = PBXGroup;
 			children = (
+				080DC93A21ACA47A00E0308C /* VCS */,
 				08419A432193611800258823 /* Board */,
 				08419A42219360D600258823 /* Piece */,
 				08400B4F2184858500D09E28 /* Info.plist */,
@@ -322,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				08419A442193612D00258823 /* BoardModelTest.swift */,
+				080DC93B21ACA62B00E0308C /* Coords.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -778,6 +789,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0854B8B0219190B60017789D /* TestRook.swift in Sources */,
+				080DC93C21ACA62B00E0308C /* Coords.swift in Sources */,
 				08400B582184D9AD00D09E28 /* TestKnight.swift in Sources */,
 				08419A4121935B8100258823 /* KingTest.swift in Sources */,
 				0854B8AD2190AC6F0017789D /* BishopTest.swift in Sources */,
