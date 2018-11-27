@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyBeaver
-import Firebase
+import FirebaseCore
 import FirebaseInstanceID
 import FirebaseMessaging
 import UserNotifications

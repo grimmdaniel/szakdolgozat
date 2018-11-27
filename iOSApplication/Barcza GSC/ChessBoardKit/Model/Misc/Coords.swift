@@ -23,7 +23,6 @@ public struct Coords: Equatable, Hashable{
         self._rank = rank
     }
     
-    //    copy ctor
     init(coords: Coords){
         self._file = coords._file
         self._rank = coords._rank

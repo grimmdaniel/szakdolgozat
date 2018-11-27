@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NextMatch{
+open class NextMatch{
     private var _id: Int!
     private var _homeTeamName: String!
     private var _awayTeamName: String!
@@ -36,7 +36,7 @@ class NextMatch{
         self._date = date
     }
     
-    private static func convertStringToDate(dateString: String) -> Date?{
+    fileprivate static func convertStringToDate(dateString: String) -> Date?{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         dateFormatter.locale = Locale(identifier: "hu_HU")

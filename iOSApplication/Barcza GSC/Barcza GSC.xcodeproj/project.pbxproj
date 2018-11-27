@@ -86,6 +86,8 @@
 		08DFF314218EFFD30069B713 /* OpenSourceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DFF313218EFFD30069B713 /* OpenSourceVC.swift */; };
 		08DFF316218F02C30069B713 /* DetailedOpenSourceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DFF315218F02C30069B713 /* DetailedOpenSourceVC.swift */; };
 		08DFF318218F13DA0069B713 /* TermsAndConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DFF317218F13DA0069B713 /* TermsAndConditions.swift */; };
+		08E789ED21ADCF470076C565 /* TestNextMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E789EC21ADCF470076C565 /* TestNextMatch.swift */; };
+		08E789F021ADD8AA0076C565 /* TestPGNParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E789EF21ADD8AA0076C565 /* TestPGNParser.swift */; };
 		08F4129520F2173700166F98 /* RatingChangeCalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4129420F2173700166F98 /* RatingChangeCalculatorVC.swift */; };
 		08F4129720F218D200166F98 /* RatingChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4129620F218D200166F98 /* RatingChange.swift */; };
 		6FF771CF346B894512A38E04 /* Pods_Barcza_GSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C243E2540EDF9684EDE679 /* Pods_Barcza_GSC.framework */; };
@@ -228,6 +230,8 @@
 		08DFF313218EFFD30069B713 /* OpenSourceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceVC.swift; sourceTree = "<group>"; };
 		08DFF315218F02C30069B713 /* DetailedOpenSourceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedOpenSourceVC.swift; sourceTree = "<group>"; };
 		08DFF317218F13DA0069B713 /* TermsAndConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditions.swift; sourceTree = "<group>"; };
+		08E789EC21ADCF470076C565 /* TestNextMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNextMatch.swift; sourceTree = "<group>"; };
+		08E789EF21ADD8AA0076C565 /* TestPGNParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPGNParser.swift; sourceTree = "<group>"; };
 		08F4129420F2173700166F98 /* RatingChangeCalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingChangeCalculatorVC.swift; sourceTree = "<group>"; };
 		08F4129620F218D200166F98 /* RatingChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingChange.swift; sourceTree = "<group>"; };
 		3B9F00D086466FC1559B5B37 /* Pods-Barcza GSC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barcza GSC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barcza GSC/Pods-Barcza GSC.release.xcconfig"; sourceTree = "<group>"; };
@@ -307,6 +311,8 @@
 		08400B4C2184858500D09E28 /* Barcza GSCTests */ = {
 			isa = PBXGroup;
 			children = (
+				08E789EE21ADD87E0076C565 /* PGNParser */,
+				08E789EB21ADCF330076C565 /* Model */,
 				080DC93A21ACA47A00E0308C /* VCS */,
 				08419A432193611800258823 /* Board */,
 				08419A42219360D600258823 /* Piece */,
@@ -566,6 +572,22 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		08E789EB21ADCF330076C565 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				08E789EC21ADCF470076C565 /* TestNextMatch.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		08E789EE21ADD87E0076C565 /* PGNParser */ = {
+			isa = PBXGroup;
+			children = (
+				08E789EF21ADD8AA0076C565 /* TestPGNParser.swift */,
+			);
+			path = PGNParser;
+			sourceTree = "<group>";
+		};
 		08F4129A20F21D4300166F98 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -788,6 +810,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E789F021ADD8AA0076C565 /* TestPGNParser.swift in Sources */,
+				08E789ED21ADCF470076C565 /* TestNextMatch.swift in Sources */,
 				0854B8B0219190B60017789D /* TestRook.swift in Sources */,
 				080DC93C21ACA62B00E0308C /* Coords.swift in Sources */,
 				08400B582184D9AD00D09E28 /* TestKnight.swift in Sources */,
@@ -924,6 +948,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5N8DHC85Z;
+				HEADER_SEARCH_PATHS = " $(SRCROOT)/Pods/**";
 				INFOPLIST_FILE = "Barcza GSCTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -947,6 +972,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H5N8DHC85Z;
+				HEADER_SEARCH_PATHS = " $(SRCROOT)/Pods/**";
 				INFOPLIST_FILE = "Barcza GSCTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

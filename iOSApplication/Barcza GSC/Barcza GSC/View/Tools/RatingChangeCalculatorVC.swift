@@ -147,10 +147,10 @@ class RatingChangeCalculatorVC: UIViewController, UIPickerViewDelegate, UIPicker
         
         if result > 0 {
             resultLabel.text = "+\(result)"
-            resultLabel.textColor = UIColor().hexStringToUIColor(hex: "008F00")
+            resultLabel.textColor = UIColor.hexStringToUIColor(hex: "008F00")
         }else if result < 0{
             resultLabel.text = "\(result)"
-            resultLabel.textColor = UIColor().hexStringToUIColor(hex: "FF2600")
+            resultLabel.textColor = UIColor.hexStringToUIColor(hex: "FF2600")
         }else{
             resultLabel.text = "+/-\(result)"
             resultLabel.textColor = UIColor.darkGray
@@ -208,30 +208,6 @@ extension RatingChangeCalculatorVC: UITextFieldDelegate{
     }
     
     
-}
-
-extension UIColor {
-    func hexStringToUIColor (hex:String) -> UIColor {
-        var colorString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        
-        if (colorString.hasPrefix("#")) {
-            colorString.remove(at: colorString.startIndex)
-        }
-        
-        if (colorString.count != 6) {
-            return UIColor.gray
-        }
-        
-        var rgbValue:UInt32 = 0
-        Scanner(string: colorString).scanHexInt32(&rgbValue)
-        
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
 }
 
 extension UITextField{
