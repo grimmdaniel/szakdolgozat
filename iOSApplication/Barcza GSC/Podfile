@@ -15,5 +15,12 @@ target 'Barcza GSC' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'RevealingSplashView'
+  
+  target 'Barcza GSCTests' do
+    inherit! :search_paths
+    
+    pod "PromiseKit", "~> 4.4"
+    pod "PromiseKit/Foundation", " ~> 4.0"
+  end
 
 end
