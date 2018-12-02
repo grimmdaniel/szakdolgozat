@@ -125,15 +125,66 @@ public class Evaluation{
     }
     
     private func evaluateIsolatedPawns(from model: BoardModel) -> Double{
-        //TODO
-        return 0.0
+        var whitePawnPositions = [Int]()
+        var blackPawnPositions = [Int]()
+        model.board.forEach { (square) in
+            if let piece = square.pieceHere{
+                if piece is Pawn{
+                    let pawn = piece as! Pawn
+                    if pawn.side == .white{
+                        whitePawnPositions.append(square.position.file)
+                    }else{
+                        blackPawnPositions.append(square.position.file)
+                    }
+                }
+            }
+        }
+        let whiteVal = calculateIsolatedPawns(pawns: whitePawnPositions)
+        let blackVal = calculateIsolatedPawns(pawns: blackPawnPositions)
+        return Double(-whiteVal) * 0.1 + Double(blackVal) * 0.1
     }
     
     private func evaluateDoubledPawns(from model: BoardModel) -> Double{
-        //TODO
-        return 0.0
+        var whitePawnPositions = [Int]()
+        var blackPawnPositions = [Int]()
+        model.board.forEach { (square) in
+            if let piece = square.pieceHere{
+                if piece is Pawn{
+                    let pawn = piece as! Pawn
+                    if pawn.side == .white{
+                        whitePawnPositions.append(square.position.file)
+                    }else{
+                        blackPawnPositions.append(square.position.file)
+                    }
+                }
+            }
+        }
+        let whiteVal = calculateNumberOfDoublePawns(pawns: whitePawnPositions)
+        let blackVal = calculateNumberOfDoublePawns(pawns: blackPawnPositions)
+        return Double(-whiteVal) * 0.1 + Double(blackVal) * 0.1
     }
     
+    private func calculateIsolatedPawns(pawns: [Int]) -> Int{
+        var sum = 0
+        pawns.forEach { (actual) in
+            if !pawns.contains(actual - 1) && !pawns.contains(actual + 1){
+                sum += 1
+            }
+        }
+        return sum
+    }
+    
+    private func calculateNumberOfDoublePawns(pawns: [Int]) -> Int{
+        var sum = 0
+        var acc = [Int]()
+        pawns.forEach { (actual) in
+            if acc.contains(actual){
+                sum += 1
+            }
+            acc.append(actual)
+        }
+        return sum
+    }
     
     private static let figurineValues: [FigurineType:Int] = [.pawn:248,.knight:832,.bishop:890,.rook:1371,.queen:2648,.king:10000]
     
