@@ -42,9 +42,9 @@ extension UITableView {
 }
 
 extension String {
-    func count(of needle: Character) -> Int {
+    func count(of character: Character) -> Int {
         return reduce(0) {
-            $1 == needle ? $0 + 1 : $0
+            $1 == character ? $0 + 1 : $0
         }
     }
 }
