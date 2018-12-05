@@ -311,8 +311,15 @@ public class BoardModel: AccessToChessBoard{
         }else{
             fen.append(" " + whiteCastling + blackCastling)
         }
-        fen.append(" - 0 ") //TODO 50move rule, en passant
+        if let enPassant = enPassantSquare{
+            fen.append(" \(convertFiles[enPassant.file] ?? "a")\(8 - enPassant.rank)")
+        }else{
+            fen.append(" -")
+        }
+        fen.append(" 0 ") //TODO 50move rule
         fen.append("\(_moveCounter)")
         return fen
     }
+    
+    let convertFiles = [0:"a",1:"b",2:"c",3:"d",4:"e",5:"f",6:"g",7:"h"]
 }

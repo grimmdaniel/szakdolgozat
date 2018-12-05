@@ -59,7 +59,7 @@ class TestRequests: XCTestCase {
         }
     }
     
-    func testNewsResuest(){
+    func testNewsRequest(){
         let urlExpectation = expectation(description: "NEWS TEST")
         let newsVC = NewsVC()
         newsVC.getAllNews().then { (completed) -> () in
