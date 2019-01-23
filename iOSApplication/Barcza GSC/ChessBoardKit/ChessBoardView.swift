@@ -221,6 +221,13 @@ public class ChessBoardView: UIView {
                     }
                 }
                 
+                //is king moved
+                if boardModel.selectedSquareSecond.pieceHere!.identifier == .king{
+                    if let king = boardModel.selectedSquareSecond.pieceHere as? King{
+                        king.isMoved = true
+                    }
+                }
+                
                 //pgn text creating
                 if isMovementEnabled{
                     storePGNMoveTexts.append(generateMoveText(from: firstTMP, to: secondTMP))
@@ -265,6 +272,7 @@ public class ChessBoardView: UIView {
                 
                 boardModel.threatsForBlackKing = boardModel.searchAttackingFigurines(victim: boardModel.findKingPosition(withSide: .black)!)
                 if boardModel.threatsForBlackKing.count != 0{
+                    boardModel.castleModeForThisMove = .noCastle
                     if let tmp = firstTMP.pieceHere{
                         boardModel.selectedSquareFirst.occupySpot(with: tmp)
                     }
@@ -354,6 +362,12 @@ public class ChessBoardView: UIView {
                     }
                 }
                 
+                //is king moved
+                if boardModel.selectedSquareSecond.pieceHere!.identifier == .king{
+                    if let king = boardModel.selectedSquareSecond.pieceHere as? King{
+                        king.isMoved = true
+                    }
+                }
                 //pgn text creating
                 if isMovementEnabled{
                     storePGNMoveTexts.append(generateMoveText(from: firstTMP, to: secondTMP))

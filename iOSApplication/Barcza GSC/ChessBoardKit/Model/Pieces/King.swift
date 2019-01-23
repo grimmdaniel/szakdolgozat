@@ -13,6 +13,7 @@ class King: Piece{
     var isShortCastleAllowed = true
     var isLongCastleAllowed = true
     var isInCheckNow = false
+    var isMoved = false
     
     init(position: Coords,side: SquarePieceOwner) {
         switch side {
@@ -70,6 +71,10 @@ class King: Piece{
                 if from.rank == 7{ // white king{
                     if to.file == 6 && to.rank == 7{ // short castle
                         if isInCheckNow { return false }
+                        if isMoved {
+                            print("King already moved, castling is illegal")
+                            return false
+                        }
                         if BoardModel.getPieceFromBoard(board: board, coord: to) != nil { return false}
                         if BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: 7, file: 5)) != nil { return false }
                         if let piece = BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: 7, file: 7)){
@@ -89,6 +94,10 @@ class King: Piece{
                         }
                     }else if to.file == 2 && to.rank == 7{ //long castle
                         if isInCheckNow { return false }
+                        if isMoved {
+                            print("King already moved, castling is illegal")
+                            return false
+                        }
                         if BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: to.rank, file: to.file - 1)) != nil { return false}
                         if BoardModel.getPieceFromBoard(board: board, coord: to) != nil { return false}
                         if BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: 7, file: 3)) != nil { return false }
@@ -111,6 +120,10 @@ class King: Piece{
                 }else if from.rank == 0{ //black king
                     if to.file == 6 && to.rank == 0{ // short castle
                         if isInCheckNow { return false }
+                        if isMoved {
+                            print("King already moved, castling is illegal")
+                            return false
+                        }
                         if BoardModel.getPieceFromBoard(board: board, coord: to) != nil { return false}
                         if BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: 0, file: 5)) != nil { return false }
                         if let piece = BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: 0, file: 7)){
@@ -130,6 +143,10 @@ class King: Piece{
                         }
                     }else if to.file == 2 && to.rank == 0{ //long castle
                         if isInCheckNow { return false }
+                        if isMoved {
+                            print("King already moved, castling is illegal")
+                            return false
+                        }
                         if BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: to.rank, file: to.file - 1)) != nil { return false}
                         if BoardModel.getPieceFromBoard(board: board, coord: to) != nil { return false}
                         if BoardModel.getPieceFromBoard(board: board, coord: Coords(rank: 0, file: 3)) != nil { return false }
