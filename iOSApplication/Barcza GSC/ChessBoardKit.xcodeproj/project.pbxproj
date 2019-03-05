@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0834D03B222F154000B076F6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0834D03A222F154000B076F6 /* Extensions.swift */; };
 		084343EF215E515D00D6D3F5 /* ChessBoardKitAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 084343EE215E515D00D6D3F5 /* ChessBoardKitAssets.xcassets */; };
 		0886DDAB2180C22700C7FFE4 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0886DDAA2180C22700C7FFE4 /* Evaluation.swift */; };
 		08C4EB1721447436002ACD23 /* ChessBoardKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 08C4EB1521447436002ACD23 /* ChessBoardKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0834D03A222F154000B076F6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		084343EE215E515D00D6D3F5 /* ChessBoardKitAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChessBoardKitAssets.xcassets; sourceTree = "<group>"; };
 		0886DDAA2180C22700C7FFE4 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
 		08C4EB1221447436002ACD23 /* ChessBoardKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChessBoardKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 				08C4EB4621447A25002ACD23 /* SquarePieceOwner.swift */,
 				08C4EB4821447A3C002ACD23 /* FigurineType.swift */,
 				08C4EB4A21447B64002ACD23 /* NextPlayer.swift */,
+				0834D03A222F154000B076F6 /* Extensions.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0834D03B222F154000B076F6 /* Extensions.swift in Sources */,
 				08C4EB4921447A3C002ACD23 /* FigurineType.swift in Sources */,
 				08C4EB232144775E002ACD23 /* BoardModel.swift in Sources */,
 				08C4EB27214477A7002ACD23 /* Coords.swift in Sources */,

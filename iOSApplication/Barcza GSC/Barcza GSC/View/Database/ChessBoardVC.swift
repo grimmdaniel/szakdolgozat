@@ -66,8 +66,6 @@ class ChessBoardVC: UIViewController, ChessBoardViewDelegate{
         
         moveCollectionView.delegate = self
         moveCollectionView.dataSource = self
-        
-        chessBoardView.datasource = self
         chessBoardView.delegate = self
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(savePGN))

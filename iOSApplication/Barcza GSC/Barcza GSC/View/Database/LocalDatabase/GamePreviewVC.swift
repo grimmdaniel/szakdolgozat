@@ -23,7 +23,6 @@ class GamePreviewVC: UIViewController, ChessBoardViewDelegate {
         
         view.backgroundColor = UIColor.lightGray
         
-        chessBoard.datasource = self
         chessBoard.delegate = self
         chessBoard.isMovementEnabled = false
         
