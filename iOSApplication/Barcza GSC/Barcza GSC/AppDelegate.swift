@@ -241,4 +241,9 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
 }
 // [END ios_10_message_handling]
 
-
+extension UIApplication{
+    
+    var statusBarView: UIView?{
+        return value(forKey: "statusBar") as? UIView
+    }
+}

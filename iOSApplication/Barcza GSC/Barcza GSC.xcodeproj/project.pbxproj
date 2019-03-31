@@ -92,6 +92,14 @@
 		08E789F221ADE4FF0076C565 /* TestRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E789F121ADE4FF0076C565 /* TestRequests.swift */; };
 		08F4129520F2173700166F98 /* RatingChangeCalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4129420F2173700166F98 /* RatingChangeCalculatorVC.swift */; };
 		08F4129720F218D200166F98 /* RatingChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F4129620F218D200166F98 /* RatingChange.swift */; };
+		08FB16AD2251016C00F0A2AC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FB16AC2251016C00F0A2AC /* HeaderView.swift */; };
+		08FB16AE2251016C00F0A2AC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FB16AC2251016C00F0A2AC /* HeaderView.swift */; };
+		08FB16B0225101D500F0A2AC /* FillSuperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FB16AF225101D500F0A2AC /* FillSuperView.swift */; };
+		08FB16B1225101D500F0A2AC /* FillSuperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FB16AF225101D500F0A2AC /* FillSuperView.swift */; };
+		08FB16B32251020D00F0A2AC /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FB16B22251020D00F0A2AC /* StretchyHeaderLayout.swift */; };
+		08FB16B42251020D00F0A2AC /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FB16B22251020D00F0A2AC /* StretchyHeaderLayout.swift */; };
+		08FB16B722510EB800F0A2AC /* DetailedNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FB16B622510EB800F0A2AC /* DetailedNewsCollectionViewCell.swift */; };
+		08FB16B822510EB800F0A2AC /* DetailedNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FB16B622510EB800F0A2AC /* DetailedNewsCollectionViewCell.swift */; };
 		6FF771CF346B894512A38E04 /* Pods_Barcza_GSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C243E2540EDF9684EDE679 /* Pods_Barcza_GSC.framework */; };
 /* End PBXBuildFile section */
 
@@ -237,6 +245,10 @@
 		08E789F121ADE4FF0076C565 /* TestRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequests.swift; sourceTree = "<group>"; };
 		08F4129420F2173700166F98 /* RatingChangeCalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingChangeCalculatorVC.swift; sourceTree = "<group>"; };
 		08F4129620F218D200166F98 /* RatingChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingChange.swift; sourceTree = "<group>"; };
+		08FB16AC2251016C00F0A2AC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		08FB16AF225101D500F0A2AC /* FillSuperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillSuperView.swift; sourceTree = "<group>"; };
+		08FB16B22251020D00F0A2AC /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
+		08FB16B622510EB800F0A2AC /* DetailedNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedNewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2EF7D3E7AC97D0E352295CA8 /* Pods-Barcza GSCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barcza GSCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barcza GSCTests/Pods-Barcza GSCTests.release.xcconfig"; sourceTree = "<group>"; };
 		3B9F00D086466FC1559B5B37 /* Pods-Barcza GSC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barcza GSC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barcza GSC/Pods-Barcza GSC.release.xcconfig"; sourceTree = "<group>"; };
 		54FB556C667BDF73E549871A /* Pods_Barcza_GSCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barcza_GSCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -449,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				0895DC372152469D00663F12 /* Barcza GSC.entitlements */,
+				08FB16AB2251012A00F0A2AC /* StretchableCollectionView */,
 				0864C8A720FBBB4B00435EE3 /* Requests */,
 				08D4030620F130D80005038B /* Cell */,
 				08D4030520F130D00005038B /* Utils */,
@@ -602,6 +615,17 @@
 				08F4129420F2173700166F98 /* RatingChangeCalculatorVC.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		08FB16AB2251012A00F0A2AC /* StretchableCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				08FB16AC2251016C00F0A2AC /* HeaderView.swift */,
+				08FB16AF225101D500F0A2AC /* FillSuperView.swift */,
+				08FB16B22251020D00F0A2AC /* StretchyHeaderLayout.swift */,
+				08FB16B622510EB800F0A2AC /* DetailedNewsCollectionViewCell.swift */,
+			);
+			path = StretchableCollectionView;
 			sourceTree = "<group>";
 		};
 		42CC06398DF194B1E05B3B4D /* Pods */ = {
@@ -866,10 +890,14 @@
 				08400B582184D9AD00D09E28 /* TestKnight.swift in Sources */,
 				08419A4121935B8100258823 /* KingTest.swift in Sources */,
 				0854B8AD2190AC6F0017789D /* BishopTest.swift in Sources */,
+				08FB16B1225101D500F0A2AC /* FillSuperView.swift in Sources */,
+				08FB16AE2251016C00F0A2AC /* HeaderView.swift in Sources */,
 				08E789F221ADE4FF0076C565 /* TestRequests.swift in Sources */,
+				08FB16B42251020D00F0A2AC /* StretchyHeaderLayout.swift in Sources */,
 				08419A3F219353B800258823 /* QueenTest.swift in Sources */,
 				08400B562184867700D09E28 /* TestPawn.swift in Sources */,
 				08419A452193612D00258823 /* BoardModelTest.swift in Sources */,
+				08FB16B822510EB800F0A2AC /* DetailedNewsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,10 +919,12 @@
 				082B521E215FF03F00F06273 /* Team.swift in Sources */,
 				085122E3215F89E70078AB7B /* ResultsVC.swift in Sources */,
 				0895DC3B21526DBD00663F12 /* DocumentsVC.swift in Sources */,
+				08FB16AD2251016C00F0A2AC /* HeaderView.swift in Sources */,
 				08CFCE082175ED6300A93B79 /* TrainingModel.swift in Sources */,
 				0895DC49215409D400663F12 /* DetailedNewsVC.swift in Sources */,
 				08C27C5E2179E45F00335F04 /* TrainingListVC.swift in Sources */,
 				08986262219E162400EBCB3E /* BarczaGedeon.swift in Sources */,
+				08FB16B0225101D500F0A2AC /* FillSuperView.swift in Sources */,
 				08D402F020F125730005038B /* AppDelegate.swift in Sources */,
 				0890687220FCCF31004AD118 /* PhotoLibraryVC.swift in Sources */,
 				086CD511216A4D5B002DD2B2 /* TrainingVC.swift in Sources */,
@@ -904,6 +934,7 @@
 				0801785720F13556009A7982 /* ColorTheme.swift in Sources */,
 				08D4030A20F131020005038B /* GradientView.swift in Sources */,
 				08CCA20B219220D600184611 /* SaveGameInfoCell.swift in Sources */,
+				08FB16B722510EB800F0A2AC /* DetailedNewsCollectionViewCell.swift in Sources */,
 				0890687420FCCFD7004AD118 /* PhotoLibraryCollectionViewCell.swift in Sources */,
 				0802EEDF218DF611007DD9E3 /* TableResultsHeaderCell.swift in Sources */,
 				0895DC4521539AC200663F12 /* NewsTableViewCell.swift in Sources */,
@@ -932,6 +963,7 @@
 				085122EA215FD0120078AB7B /* ExpandableHeaderViewDelegate.swift in Sources */,
 				0801785320F13525009A7982 /* Settings.swift in Sources */,
 				082F8C2C21162F7800A52D7F /* Stack.swift in Sources */,
+				08FB16B32251020D00F0A2AC /* StretchyHeaderLayout.swift in Sources */,
 				08C4EB6D2145A2C7002ACD23 /* ChessBoardVC.swift in Sources */,
 				0839F52621A0505700BA2547 /* NextMatch.swift in Sources */,
 				08DFF318218F13DA0069B713 /* TermsAndConditions.swift in Sources */,
