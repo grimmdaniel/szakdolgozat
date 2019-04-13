@@ -70,7 +70,6 @@ class DetailedNewsVC: UIViewController {
         cell.newsDataTextView.attributedText = detailedArticle.text.htmlToAttributedString
         cell.newsDataTextView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         cell.selectionStyle = .none
-        
         return cell
     }
 }
