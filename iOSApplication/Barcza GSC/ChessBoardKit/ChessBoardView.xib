@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChessBoardView" customModule="ChessBoardKit" customModuleProvider="target">
             <connections>
                 <outlet property="chessBoardView" destination="kmL-Xo-hOK" id="DWQ-zR-WxL"/>
+                <outlet property="mainStackView" destination="c7b-s5-Yqu" id="hSa-PA-RHZ"/>
                 <outletCollection property="squaresStorage" destination="5HV-nb-uKk" collectionClass="NSMutableArray" id="NR5-bC-Oli"/>
                 <outletCollection property="squaresStorage" destination="76I-0P-xcc" collectionClass="NSMutableArray" id="T0J-og-IIc"/>
                 <outletCollection property="squaresStorage" destination="ycj-XW-4bg" collectionClass="NSMutableArray" id="hMo-ol-DdF"/>
@@ -77,6 +78,14 @@
                 <outletCollection property="squaresStorage" destination="dkU-Zo-hXB" collectionClass="NSMutableArray" id="UTm-cE-cS5"/>
                 <outletCollection property="squaresStorage" destination="Ge2-oZ-keh" collectionClass="NSMutableArray" id="ONI-pz-cc6"/>
                 <outletCollection property="squaresStorage" destination="9LC-hM-j2m" collectionClass="NSMutableArray" id="gKV-sV-CZl"/>
+                <outletCollection property="rankStorage" destination="vii-Hp-6qT" collectionClass="NSMutableArray" id="hCH-bo-TuP"/>
+                <outletCollection property="rankStorage" destination="dmn-0X-aQK" collectionClass="NSMutableArray" id="CYW-6D-5wf"/>
+                <outletCollection property="rankStorage" destination="HfO-Lq-8rE" collectionClass="NSMutableArray" id="sXv-Bd-ath"/>
+                <outletCollection property="rankStorage" destination="TX7-lI-aTp" collectionClass="NSMutableArray" id="Tc6-Ea-VBe"/>
+                <outletCollection property="rankStorage" destination="w6G-eV-Y1n" collectionClass="NSMutableArray" id="seF-GJ-ood"/>
+                <outletCollection property="rankStorage" destination="aWJ-dk-fl7" collectionClass="NSMutableArray" id="mmO-Fn-qEl"/>
+                <outletCollection property="rankStorage" destination="Xn2-LZ-dKe" collectionClass="NSMutableArray" id="jk9-Ok-kvV"/>
+                <outletCollection property="rankStorage" destination="scZ-MS-nhI" collectionClass="NSMutableArray" id="sjX-AO-pDw"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -87,7 +96,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="c7b-s5-Yqu">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vii-Hp-6qT">
+                        <stackView opaque="NO" tag="100" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vii-Hp-6qT">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HV-nb-uKk">
@@ -148,7 +157,7 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dmn-0X-aQK">
+                        <stackView opaque="NO" tag="200" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dmn-0X-aQK">
                             <rect key="frame" x="0.0" y="83.5" width="375" height="83.5"/>
                             <subviews>
                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3z-un-MRp">
@@ -209,7 +218,7 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HfO-Lq-8rE">
+                        <stackView opaque="NO" tag="300" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HfO-Lq-8rE">
                             <rect key="frame" x="0.0" y="167" width="375" height="83"/>
                             <subviews>
                                 <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0f-eX-eV4">
@@ -270,7 +279,7 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TX7-lI-aTp">
+                        <stackView opaque="NO" tag="400" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TX7-lI-aTp">
                             <rect key="frame" x="0.0" y="250" width="375" height="83.5"/>
                             <subviews>
                                 <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzV-PM-gaY">
@@ -331,7 +340,7 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="w6G-eV-Y1n">
+                        <stackView opaque="NO" tag="500" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="w6G-eV-Y1n">
                             <rect key="frame" x="0.0" y="333.5" width="375" height="83.5"/>
                             <subviews>
                                 <button opaque="NO" tag="32" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5C-ye-WkN">
@@ -392,7 +401,7 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aWJ-dk-fl7">
+                        <stackView opaque="NO" tag="600" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aWJ-dk-fl7">
                             <rect key="frame" x="0.0" y="417" width="375" height="83.5"/>
                             <subviews>
                                 <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Arp-CY-W8q">
@@ -453,7 +462,7 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Xn2-LZ-dKe">
+                        <stackView opaque="NO" tag="700" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Xn2-LZ-dKe">
                             <rect key="frame" x="0.0" y="500.5" width="375" height="83"/>
                             <subviews>
                                 <button opaque="NO" tag="48" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0H2-6c-Gc9">
@@ -514,7 +523,7 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="scZ-MS-nhI">
+                        <stackView opaque="NO" tag="800" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="scZ-MS-nhI">
                             <rect key="frame" x="0.0" y="583.5" width="375" height="83.5"/>
                             <subviews>
                                 <button opaque="NO" tag="56" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jq9-zJ-gr9">

@@ -18,6 +18,8 @@ public class ChessBoardView: UIView {
     var boardModel = BoardModel()
     var convertTagToCoords = [Int:Coords]()
     var storePGNMoveTexts = [String]()
+    var originalPoint: CGPoint!
+    var currentColor: UIColor!
     
     public var delegate: ChessBoardViewDelegate?
     
@@ -57,6 +59,7 @@ public class ChessBoardView: UIView {
         
         boardModel.initializeBoard()
         initConvertDict() // fill up dictionary with tag - coords pairs
+        addGestureRec()
         refreshBoard()
     }
     
@@ -79,12 +82,95 @@ public class ChessBoardView: UIView {
         return calculator.evaluatePosition(from: boardModel)
     }
     
+    @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var chessBoardView: UIView!
     @IBOutlet var squaresStorage: [UIButton]!
+    @IBOutlet var rankStorage: [UIStackView]!
     
     @IBAction func squarePressed(_ sender: UIButton){
         let coords: Coords = convertTagToCoords[sender.tag]!
         performMove(coords: coords, sender: sender)
+    }
+    
+    @objc func squareDragged(_ sender: UIPanGestureRecognizer) {
+        if let button = sender.view as? UIButton {
+            if sender.state == .began {
+                currentColor = button.backgroundColor
+                contentView.backgroundColor = currentColor
+                button.backgroundColor = UIColor.clear
+                
+                originalPoint = button.center // store old button center
+                let location = sender.location(in: contentView)
+                bringStackViewForward(from: (button.tag / 8), for: button)
+                if let coords = getDestinationSquare(from: location) {
+                    performMove(coords: coords)
+                }
+            } else if sender.state == .failed || sender.state == .cancelled {
+                button.center = originalPoint // restore button center
+                button.backgroundColor = currentColor
+            } else if sender.state == .ended {
+                let location = sender.location(in: contentView)
+                button.center = originalPoint // restore button center
+                button.backgroundColor = currentColor
+                if let coords = getDestinationSquare(from: location) {
+                    performMove(coords: coords)
+                }
+            } else {
+                let location = sender.location(in: contentView) // get pan location
+                let newLoc = getOffset(from: button.tag)
+                button.center = CGPoint(x: location.x, y: location.y - newLoc) // set button to where finger is
+            }
+        }
+    }
+    
+    func bringStackViewForward(from rank: Int, for button: UIButton) {
+        let tag = (rank + 1) * 100
+        for stackView in rankStorage {
+            if stackView.tag == tag {
+                mainStackView.bringSubviewToFront(stackView)
+                stackView.bringSubviewToFront(button)
+                return
+            }
+        }
+    }
+    
+    func getOffset(from tag: Int) -> CGFloat {
+        let divide = tag / 8
+        return CGFloat( CGFloat(divide) * contentView.frame.size.width * 0.1253333333)
+    }
+    
+    func getDestinationSquare(from destination: CGPoint) -> Coords?{
+        let boardSize = contentView.frame.size
+        var sizes = [CGFloat]()
+        let squareSize = boardSize.width / 8
+        for i in 0...7{
+            sizes.append(squareSize * CGFloat(i))
+        }
+        
+        var rank = -1
+        var file = -1
+        for i in (0..<sizes.count).reversed() {
+            if destination.x > sizes[i] {
+                file = i
+                break
+            }
+        }
+        for i in (0..<sizes.count).reversed() {
+            if destination.y > sizes[i] {
+                rank = i
+                break
+            }
+        }
+        
+        if rank < 0 || rank > 7 || file < 0 || file > 7 { return nil }
+        return Coords(rank: rank, file: file)
+    }
+    
+    func addGestureRec() {
+        for button in squaresStorage {
+            let ges = UIPanGestureRecognizer(target: self, action: #selector(squareDragged(_:)))
+            button.addGestureRecognizer(ges)
+        }
     }
     
     private func performMove(coords: Coords, sender: UIButton = UIButton(), inFreeMode: Bool = true){
